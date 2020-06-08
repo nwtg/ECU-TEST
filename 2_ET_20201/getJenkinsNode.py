@@ -50,8 +50,7 @@ bench_node = 'bench_node_mapping.json'
 ws_bench = 'ws_bench_mapping.json'
 authKey = 'SPsdDWt2WinZ1iZBN9Sb4ehCZe41qZkLJV7uKiBiBhLwS6kOuivdxkbLbAiRIOwrPr_pxnetu0GqK4LagJc8hq-MvraD7YWG9D971fR-X0QxIy7ldwayRl8-CYGEnK7kVKUw4PF3QAWwhFjiN26Khs-RqGuWickjnPFgswXsowFSiBhcPGpEIU10wHG0HdBLtrK_W0noOseSNM2WBeqTA6KZKYfIjab06v5DZJ-rKZRjJU0EMhhP2WhkEPVxPUZeeM7ZPXuFa_1YG9QbfQVGe86EU2eDIrZcfWIaCZrhiZMY_To3O6Zrj2AHHfNBh5yyQRi33V_KNsp2R_fy7qjte6FzXFUoSNHki57XoeXEiq0rZsYunUtvjkZu6hz78bz0f86RxvNlV6K9GKCHnduGGQ=='
 projectId = '1'
-wsname = '1_Trex'
-# wsname = params['wsname']
+wsname = params['wsname']
 
 
 idlestBench = getJenkinsNode(ip, authKey, projectId, ws_bench, wsname, bench_node)

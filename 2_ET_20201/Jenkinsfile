@@ -10,7 +10,7 @@ pipeline {
         }
          steps {
             // Echo
-            bat label: '', script: '''python .\\getJenkinsNode.py "1_Trex"'''
+            bat label: '', script: '''python .\\getJenkinsNode.py "2_ET_20201"'''
             script{
                 load('jenkinsNode.properties')}
             echo "${env.jenkinsNode}"
