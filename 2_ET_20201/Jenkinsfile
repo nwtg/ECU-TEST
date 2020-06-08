@@ -24,7 +24,7 @@ pipeline {
         }
         steps {
             //Checkout
-            checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'github_private', url: 'https://github.com/nwtg/ECU-TEST.git']]])
+            //checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'github_private', url: 'https://github.com/nwtg/ECU-TEST.git']]])
             
             // Start ET
             startET toolName: 'ECU-TEST', workspaceDir: '2_ET_20201'
