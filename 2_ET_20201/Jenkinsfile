@@ -10,10 +10,9 @@ pipeline {
         }
          steps {
             // Echo
-            bat label: '', script: '''cd C:\\Users\\Public\\Documents\\Jenkins_Home
-                                      python .\\getJenkinsNode.py "1_Trex"'''
+            bat label: '', script: '''python .\\getJenkinsNode.py "1_Trex"'''
             script{
-                load('C:/Users/Public/Documents/Jenkins_Home/jenkinsNode.properties')}
+                load('jenkinsNode.properties')}
             echo "${env.jenkinsNode}"
          }
       }
