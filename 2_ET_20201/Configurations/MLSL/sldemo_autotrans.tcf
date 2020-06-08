@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONFIGURATION format-rev="6" prog-version="7.2.2.84060" xmlns="http://www.tracetronic.de/xml/ecu-test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tracetronic.de/xml/ecu-test application.configuration.xsd">
+	<COMMON format-rev="1" xsi:type="commonData">
+		<HOST xsi:type="unicode">TT-ddm830</HOST>
+		<QUERY-TESTER xsi:type="integer">2</QUERY-TESTER>
+		<MAPPING-FILES>
+			<ELEMENT xsi:type="unicode">Parameters\sldemo_autotrans.xam</ELEMENT>
+		</MAPPING-FILES>
+	</COMMON>
+	<REPORT format-rev="4" xsi:type="reportData">
+		<REPORT-FORMATES>
+			<ELEMENT format-rev="1" xsi:type="reportFormat">
+				<FORMAT-NAME xsi:type="unicode">HTML complete, separate package files</FORMAT-NAME>
+				<HANDLER-NAME xsi:type="unicode">HTML</HANDLER-NAME>
+				<FILTERS xsi:type="apiFilter"/>
+			</ELEMENT>
+		</REPORT-FORMATES>
+		<INCLUDE-APPLICATION-LOGS xsi:type="boolean">True</INCLUDE-APPLICATION-LOGS>
+	</REPORT>
+	<EXECUTION-DATA format-rev="1" xsi:type="executionData"/>
+	<MODEL-ACCESS format-rev="1" xsi:type="modelAccessData">
+		<DATA dkey="Implementation">
+			<DVALUE format-rev="1" xsi:type="modelData">
+				<MODEL-DATA-SOURCE xsi:type="integer">0</MODEL-DATA-SOURCE>
+				<MODEL-ACCESS-PORT xsi:type="unicode">MDL01</MODEL-ACCESS-PORT>
+				<MODEL-FILE xsi:type="unicode">sldemo_autotrans_startup.m</MODEL-FILE>
+				<MODEL-POSITION xsi:type="integer">1</MODEL-POSITION>
+				<TIME-BASE xsi:type="boolean">True</TIME-BASE>
+			</DVALUE>
+		</DATA>
+	</MODEL-ACCESS>
+</CONFIGURATION>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TRACE-STEP-PROTOTYPE format-rev="1" uuid="9b9129c00d0e11e095ab0024d7351970" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="trcpEventPythonII">
+	<DESCRIPTION xsi:type="string">Deprecated: Use the internal function Average() instead.
+
+Calculates the arithmetic mean (average) of the signal values.</DESCRIPTION>
+	<SIGNALS xsi:type="trcpParameterDescriptionList">
+		<PARAMETER uuid="fbdb47700d0e11e0a7020024d7351970" xsi:type="signalDescription">
+			<NAME xsi:type="string">Signal</NAME>
+			<DESCRIPTION xsi:type="string">The signal for which the average will be calculated.</DESCRIPTION>
+			<EVENT-TYPE xsi:type="string">PHY</EVENT-TYPE>
+		</PARAMETER>
+		<PARAMETER uuid="78189bd1470711e5b2cd08edb9de9bdd" xsi:type="signalDescription">
+			<NAME xsi:type="string">Average</NAME>
+			<DESCRIPTION xsi:type="string">The calculated average signal.</DESCRIPTION>
+			<EVENT-TYPE xsi:type="string">PHY</EVENT-TYPE>
+			<OPTIONAL-SIGNAL xsi:type="boolean">True</OPTIONAL-SIGNAL>
+			<DIRECTION xsi:type="string">OUT</DIRECTION>
+		</PARAMETER>
+	</SIGNALS>
+	<PARAMETERS xsi:type="trcpParameterDescriptionList"/>
+	<INIT-FUNCTION xsi:type="pyFunctionII">
+		<NAME xsi:type="string">Init</NAME>
+		<PARAMETER-NAMES/>
+		<CODE xsi:type="pyCode">
+			<SOURCE xsi:type="string">#Head of function is generated, do not edit!
+def Init(dataContainer, parameters, report):
+    dataContainer.sum = 0
+    dataContainer.eventcount = 0
+    dataContainer.timeList = []
+</SOURCE>
+		</CODE>
+	</INIT-FUNCTION>
+	<FINALIZE-FUNCTION xsi:type="pyFunctionII">
+		<NAME xsi:type="string">Finalize</NAME>
+		<PARAMETER-NAMES/>
+		<CODE xsi:type="pyCode">
+			<SOURCE xsi:type="string">#Head of function is generated, do not edit!
+def Finalize(dataContainer, parameters, report):
+    if dataContainer.eventcount &gt; 0:
+        average = float(dataContainer.sum) / dataContainer.eventcount
+        dataContainer.SetResultText(&quot;The average is %f&quot; % average)
+    else:
+        dataContainer.SetResultText(&quot;No samples in input signal found.&quot;)
+
+    for time in dataContainer.timeList:
+        dataContainer.EmitSignal(time, &quot;Average&quot;, average)
+</SOURCE>
+		</CODE>
+	</FINALIZE-FUNCTION>
+	<FUNCTIONS>
+		<ELEMENT xsi:type="pyEventFunctionII">
+			<NAME xsi:type="string">Next</NAME>
+			<PARAMETER-NAMES/>
+			<CODE xsi:type="pyCode">
+				<SOURCE xsi:type="string">#Head of function is generated, do not edit!
+def Next(event, hold, dataContainer, parameters, report):
+    dataContainer.sum += event.GetValue(&quot;Signal&quot;)
+    dataContainer.eventcount += 1
+    dataContainer.timeList.append(event.GetTime())
+</SOURCE>
+			</CODE>
+			<SIGNAL-NAMES>
+				<ELEMENT xsi:type="string">Signal</ELEMENT>
+			</SIGNAL-NAMES>
+		</ELEMENT>
+	</FUNCTIONS>
+</TRACE-STEP-PROTOTYPE>

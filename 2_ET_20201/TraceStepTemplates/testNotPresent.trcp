@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TRACE-STEP-PROTOTYPE format-rev="2" uuid="ce7a4482125c11eab392f85971183200" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="trcpTimingDiagram">
+	<SIGNALS xsi:type="trcpParameterDescriptionList">
+		<PARAMETER uuid="ce7a6f7e125c11eaa4c8f85971183200" xsi:type="signalDescription">
+			<NAME xsi:type="string">CHM</NAME>
+			<EVENT-TYPE xsi:type="string">PHY</EVENT-TYPE>
+		</PARAMETER>
+		<PARAMETER uuid="ce7a6f7f125c11ea9e53f85971183200" xsi:type="signalDescription">
+			<NAME xsi:type="string">BHM</NAME>
+			<EVENT-TYPE xsi:type="string">PHY</EVENT-TYPE>
+		</PARAMETER>
+	</SIGNALS>
+	<PARAMETERS xsi:type="trcpParameterDescriptionList">
+		<PARAMETER uuid="ce7a6f80125c11eabbbdf85971183200" xsi:type="parameterDescription">
+			<NAME xsi:type="string">MinMaxSuccessfulInstances</NAME>
+			<DESCRIPTION xsi:type="string">Specifies how often the timing diagram must run successfully.
+The value can be a number or a range (two comma-separated values in parentheses).
+For value &quot;None&quot;, the appropriate boundary will not be checked.</DESCRIPTION>
+			<PARAMETER-TYPE xsi:type="string">PYOBJECT</PARAMETER-TYPE>
+		</PARAMETER>
+		<PARAMETER uuid="ce7a6f81125c11eaa3d5f85971183200" xsi:type="parameterDescription">
+			<NAME xsi:type="string">AllowFailedInstances</NAME>
+			<DESCRIPTION xsi:type="string">Specifies if the timing diagram can fail.
+The value has to be a boolean value (True or False).None is also valid here and means False.</DESCRIPTION>
+			<PARAMETER-TYPE xsi:type="string">PYOBJECT</PARAMETER-TYPE>
+		</PARAMETER>
+		<PARAMETER uuid="ce7a6f82125c11eaaebdf85971183200" xsi:type="parameterDescription">
+			<NAME xsi:type="string">MaxParallelInstances</NAME>
+			<DESCRIPTION xsi:type="string">Maximum number of diagram instances that can be evaluated in parallel. A value &lt;= 0 indicates no limitation.None is also valid here and means 1.</DESCRIPTION>
+			<PARAMETER-TYPE xsi:type="string">INTEGER</PARAMETER-TYPE>
+		</PARAMETER>
+	</PARAMETERS>
+	<TDX xsi:type="tdxForEix">
+		<timingDiagram>
+			<version>1.2</version>
+			<timeUnits>SECONDS</timeUnits>
+			<description/>
+			<signal precondition="true">
+				<name>CHM</name>
+				<description/>
+				<waveForm>
+					<edge id="_2782023703912" precondition="true">
+						<minSampleCount>1</minSampleCount>
+						<maxSampleCount>...</maxSampleCount>
+						<description/>
+						<state>
+							<expression>== None</expression>
+						</state>
+					</edge>
+					<edge id="_2782023701000" initial="true">
+						<minSampleCount>1</minSampleCount>
+						<maxSampleCount>...</maxSampleCount>
+						<description/>
+						<state>
+							<expression>== ANY</expression>
+						</state>
+					</edge>
+				</waveForm>
+			</signal>
+			<signal>
+				<name>BHM</name>
+				<description/>
+				<waveForm>
+					<edge id="_2782023525152">
+						<minSampleCount>1</minSampleCount>
+						<maxSampleCount>...</maxSampleCount>
+						<description/>
+						<state>
+							<expression>== None</expression>
+						</state>
+					</edge>
+					<edge id="_2782023526832">
+						<minSampleCount>1</minSampleCount>
+						<maxSampleCount>...</maxSampleCount>
+						<description/>
+						<state>
+							<expression>== ANY</expression>
+						</state>
+					</edge>
+				</waveForm>
+			</signal>
+			<relationship>
+				<minDuration>0</minDuration>
+				<maxDuration>0.25</maxDuration>
+				<sourceId>_2782023701000</sourceId>
+				<targetId>_2782023526832</targetId>
+				<description/>
+			</relationship>
+		</timingDiagram>
+	</TDX>
+	<IMAGE-DATA xsi:type="string">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</IMAGE-DATA>
+</TRACE-STEP-PROTOTYPE>

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PROJECT format-rev="10" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<NAME xsi:type="string">Project</NAME>
+	<ENABLED xsi:type="boolean">True</ENABLED>
+	<REPORTING xsi:type="boolean">True</REPORTING>
+	<ID xsi:type="string">c16e120b639611eaac11bc9a78563412</ID>
+	<COMPONENTS>
+		<COMPONENT format-rev="10" xsi:type="subproject">
+			<NAME xsi:type="string">Works both with sldemo_autotrans.TCF and sldemo_autotrans_ShiftLogic.TCF</NAME>
+			<ENABLED xsi:type="boolean">True</ENABLED>
+			<REPORTING xsi:type="boolean">True</REPORTING>
+			<ID xsi:type="string">c16e1202639611ea8c18bc9a78563412</ID>
+			<COMPONENTS/>
+		</COMPONENT>
+		<COMPONENT format-rev="5" xsi:type="packageTest">
+			<NAME xsi:type="string">Unittest ShiftLogic</NAME>
+			<ENABLED xsi:type="boolean">True</ENABLED>
+			<REPORTING xsi:type="boolean">True</REPORTING>
+			<ID xsi:type="string">c16e1206639611ea9ff7bc9a78563412</ID>
+			<COMPONENTS>
+				<COMPONENT format-rev="3" xsi:type="paramRecord">
+					<NAME xsi:type="string">Unittest ShiftLogic 1</NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<ID xsi:type="string">c181e848639611ea8f81bc9a78563412</ID>
+					<PARAMETER-DATA xsi:type="packageParameterData">
+						<PARAMETER xsi:type="parameterEntry">
+							<NAME xsi:type="string">Speed_set</NAME>
+							<VALUE format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="float">0.0</VALUE>
+							</VALUE>
+						</PARAMETER>
+						<PARAMETER xsi:type="parameterEntry">
+							<NAME xsi:type="string">Throttle_set</NAME>
+							<VALUE format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="float">0.0</VALUE>
+							</VALUE>
+						</PARAMETER>
+					</PARAMETER-DATA>
+				</COMPONENT>
+				<COMPONENT format-rev="3" xsi:type="paramRecord">
+					<NAME xsi:type="string">Unittest ShiftLogic 2</NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<ID xsi:type="string">c181e849639611ea922fbc9a78563412</ID>
+					<PARAMETER-DATA xsi:type="packageParameterData">
+						<PARAMETER xsi:type="parameterEntry">
+							<NAME xsi:type="string">Speed_set</NAME>
+							<VALUE format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="float">0.0</VALUE>
+							</VALUE>
+						</PARAMETER>
+						<PARAMETER xsi:type="parameterEntry">
+							<NAME xsi:type="string">Throttle_set</NAME>
+							<VALUE format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="float">15.0</VALUE>
+							</VALUE>
+						</PARAMETER>
+					</PARAMETER-DATA>
+				</COMPONENT>
+				<COMPONENT format-rev="3" xsi:type="paramRecord">
+					<NAME xsi:type="string">Unittest ShiftLogic 3</NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<ID xsi:type="string">c1820f34639611eaa799bc9a78563412</ID>
+					<PARAMETER-DATA xsi:type="packageParameterData">
+						<PARAMETER xsi:type="parameterEntry">
+							<NAME xsi:type="string">Speed_set</NAME>
+							<VALUE format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="float">0.0</VALUE>
+							</VALUE>
+						</PARAMETER>
+						<PARAMETER xsi:type="parameterEntry">
+							<NAME xsi:type="string">Throttle_set</NAME>
+							<VALUE format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="float">30.0</VALUE>
+							</VALUE>
+						</PARAMETER>
+					</PARAMETER-DATA>
+				</COMPONENT>
+				<COMPONENT format-rev="3" xsi:type="paramRecord">
+					<NAME xsi:type="string">Unittest ShiftLogic 4</NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<ID xsi:type="string">c1820f35639611ea8e01bc9a78563412</ID>
+					<PARAMETER-DATA xsi:type="packageParameterData">
+						<PARAMETER xsi:type="parameterEntry">
+							<NAME xsi:type="string">Speed_set</NAME>
+							<VALUE format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="float">10.0</VALUE>
+							</VALUE>
+						</PARAMETER>
+						<PARAMETER xsi:type="parameterEntry">
+							<NAME xsi:type="string">Throttle_set</NAME>
+							<VALUE format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="float">0.0</VALUE>
+							</VALUE>
+						</PARAMETER>
+					</PARAMETER-DATA>
+				</COMPONENT>
+				<COMPONENT format-rev="3" xsi:type="paramRecord">
+					<NAME xsi:type="string">Unittest ShiftLogic 5</NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<ID xsi:type="string">c1820f36639611eab929bc9a78563412</ID>
+					<PARAMETER-DATA xsi:type="packageParameterData">
+						<PARAMETER xsi:type="parameterEntry">
+							<NAME xsi:type="string">Speed_set</NAME>
+							<VALUE format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="float">10.0</VALUE>
+							</VALUE>
+						</PARAMETER>
+						<PARAMETER xsi:type="parameterEntry">
+							<NAME xsi:type="string">Throttle_set</NAME>
+							<VALUE format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="float">15.0</VALUE>
+							</VALUE>
+						</PARAMETER>
+					</PARAMETER-DATA>
+				</COMPONENT>
+				<COMPONENT format-rev="3" xsi:type="paramRecord">
+					<NAME xsi:type="string">Unittest ShiftLogic 6</NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<ID xsi:type="string">c1820f37639611ea8999bc9a78563412</ID>
+					<PARAMETER-DATA xsi:type="packageParameterData">
+						<PARAMETER xsi:type="parameterEntry">
+							<NAME xsi:type="string">Speed_set</NAME>
+							<VALUE format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="float">10.0</VALUE>
+							</VALUE>
+						</PARAMETER>
+						<PARAMETER xsi:type="parameterEntry">
+							<NAME xsi:type="string">Throttle_set</NAME>
+							<VALUE format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="float">30.0</VALUE>
+							</VALUE>
+						</PARAMETER>
+					</PARAMETER-DATA>
+				</COMPONENT>
+				<COMPONENT format-rev="3" xsi:type="paramRecord">
+					<NAME xsi:type="string">Unittest ShiftLogic 7</NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<ID xsi:type="string">c1820f38639611ea9d7fbc9a78563412</ID>
+					<PARAMETER-DATA xsi:type="packageParameterData">
+						<PARAMETER xsi:type="parameterEntry">
+							<NAME xsi:type="string">Speed_set</NAME>
+							<VALUE format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="float">20.0</VALUE>
+							</VALUE>
+						</PARAMETER>
+						<PARAMETER xsi:type="parameterEntry">
+							<NAME xsi:type="string">Throttle_set</NAME>
+							<VALUE format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="float">0.0</VALUE>
+							</VALUE>
+						</PARAMETER>
+					</PARAMETER-DATA>
+				</COMPONENT>
+				<COMPONENT format-rev="3" xsi:type="paramRecord">
+					<NAME xsi:type="string">Unittest ShiftLogic 8</NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<ID xsi:type="string">c1820f39639611ea99d8bc9a78563412</ID>
+					<PARAMETER-DATA xsi:type="packageParameterData">
+						<PARAMETER xsi:type="parameterEntry">
+							<NAME xsi:type="string">Speed_set</NAME>
+							<VALUE format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="float">20.0</VALUE>
+							</VALUE>
+						</PARAMETER>
+						<PARAMETER xsi:type="parameterEntry">
+							<NAME xsi:type="string">Throttle_set</NAME>
+							<VALUE format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="float">15.0</VALUE>
+							</VALUE>
+						</PARAMETER>
+					</PARAMETER-DATA>
+				</COMPONENT>
+				<COMPONENT format-rev="3" xsi:type="paramRecord">
+					<NAME xsi:type="string">Unittest ShiftLogic 9</NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<ID xsi:type="string">c182363a639611eab1a2bc9a78563412</ID>
+					<PARAMETER-DATA xsi:type="packageParameterData">
+						<PARAMETER xsi:type="parameterEntry">
+							<NAME xsi:type="string">Speed_set</NAME>
+							<VALUE format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="float">20.0</VALUE>
+							</VALUE>
+						</PARAMETER>
+						<PARAMETER xsi:type="parameterEntry">
+							<NAME xsi:type="string">Throttle_set</NAME>
+							<VALUE format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="float">30.0</VALUE>
+							</VALUE>
+						</PARAMETER>
+					</PARAMETER-DATA>
+				</COMPONENT>
+			</COMPONENTS>
+			<PACKAGE-REF format-rev="1" xsi:type="packageRef">
+				<PACKAGE-PATH xsi:type="string">Unittest ShiftLogic.pkg</PACKAGE-PATH>
+			</PACKAGE-REF>
+		</COMPONENT>
+		<COMPONENT format-rev="5" xsi:type="packageTest">
+			<NAME xsi:type="string">VehicleTest</NAME>
+			<ENABLED xsi:type="boolean">True</ENABLED>
+			<REPORTING xsi:type="boolean">True</REPORTING>
+			<ID xsi:type="string">c16e1208639611ea826dbc9a78563412</ID>
+			<COMPONENTS/>
+			<PACKAGE-REF format-rev="1" xsi:type="packageRef">
+				<PACKAGE-PATH xsi:type="string">VehicleTest.pkg</PACKAGE-PATH>
+			</PACKAGE-REF>
+		</COMPONENT>
+		<COMPONENT format-rev="5" xsi:type="packageTest">
+			<NAME xsi:type="string">Driving Cycle Stimulus</NAME>
+			<ENABLED xsi:type="boolean">True</ENABLED>
+			<REPORTING xsi:type="boolean">True</REPORTING>
+			<ID xsi:type="string">c16e120a639611ea9b9bbc9a78563412</ID>
+			<COMPONENTS/>
+			<PACKAGE-REF format-rev="1" xsi:type="packageRef">
+				<PACKAGE-PATH xsi:type="string">Driving Cycle Stimulus.pkg</PACKAGE-PATH>
+			</PACKAGE-REF>
+		</COMPONENT>
+	</COMPONENTS>
+</PROJECT>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PACKAGE format-rev="7" prog-version="2020.1.95258" xmlns="http://www.tracetronic.de/xml/ecu-test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tracetronic.de/xml/ecu-test package.xsd">
+	<INFORMATION format-rev="2" xsi:type="packageInfo">
+		<DESCRIPTION xsi:type="string"/>
+		<VERSION xsi:type="string"/>
+		<ALTERNATE-CALL-REPRESENTATION-ACTION-FIELD-TEMPLATE xsi:type="string"/>
+		<ALTERNATE-CALL-REPRESENTATION-EXPECTATION-FIELD-TEMPLATE xsi:type="string"/>
+	</INFORMATION>
+	<VARIABLES xsi:type="variableContainer">
+		<VARIABLE format-rev="1" xsi:type="variable">
+			<NAME xsi:type="string">a</NAME>
+			<DEFAULT-VALUE xsi:type="undefined"/>
+		</VARIABLE>
+	</VARIABLES>
+	<MAPPING format-rev="1" xsi:type="localMappingSpace"/>
+	<TESTSTEPS xsi:type="testCase">
+		<TESTSTEP format-rev="3" id="2672a436-4f80-4565-ada7-8ba3fff25581" name="TsCalculation" xsi:type="utility-4115fa00-5f3c-11df-8a53-001c233b3528">
+			<VARIABLE-REFS>
+				<VARIABLE-NAME dkey="default">
+					<DVALUE xsi:type="string">a</DVALUE>
+				</VARIABLE-NAME>
+			</VARIABLE-REFS>
+			<FORMULA xsi:type="binaryOpBaseExpression">
+				<NAME xsi:type="string">BINARY_ADD</NAME>
+				<FIRST-COMPONENT format-rev="1" xsi:type="valueBaseExpression">
+					<VALUE xsi:type="integer">1</VALUE>
+				</FIRST-COMPONENT>
+				<SECOND-COMPONENT format-rev="1" xsi:type="valueBaseExpression">
+					<VALUE xsi:type="integer">1</VALUE>
+				</SECOND-COMPONENT>
+			</FORMULA>
+			<EXPECTATION-OPTION xsi:type="timelessOption">
+				<EXPRESSION xsi:type="builtNumericExpression">
+					<RELATION xsi:type="string">==</RELATION>
+					<VALUE format-rev="1" xsi:type="valueBaseExpression">
+						<VALUE xsi:type="integer">2</VALUE>
+					</VALUE>
+				</EXPRESSION>
+			</EXPECTATION-OPTION>
+		</TESTSTEP>
+	</TESTSTEPS>
+</PACKAGE>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PACKAGE format-rev="7" prog-version="8.1.0.92109" xmlns="http://www.tracetronic.de/xml/ecu-test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tracetronic.de/xml/ecu-test package.xsd">
+	<INFORMATION format-rev="2" xsi:type="packageInfo">
+		<DESCRIPTION xsi:type="string">This package can create/modify trace analysis automatically according to signal recording groups. It will modify the original package file in order to add trace steps &quot;ArithmeticMean&quot; and recording step to save ArithmeticMean into CSV file.
+
+All the signals configured inside signal recordings will be created generic signals and calculated by ArithmeticMean and then save its arithmetic mean signal into CSV file under test report folder.
+
+Input: 
+[0] package file path: with test case and recordings implemented;
+[1] trace step template path: &quot;ArithmeticMean&quot; ID, i.e., &quot;Ricardo\ArithmeticMean&quot;;
+[2] duration: parameter for trace step template &quot;ArithmeticMean&quot;.
+
+Out:
+Modified package with newly created/modified trace analysis.
+
+Any problems, please contact: ECU-TEST@turing.cc</DESCRIPTION>
+		<VERSION xsi:type="string">1.0</VERSION>
+		<ALTERNATE-CALL-REPRESENTATION-ACTION-FIELD-TEMPLATE xsi:type="string"/>
+		<ALTERNATE-CALL-REPRESENTATION-EXPECTATION-FIELD-TEMPLATE xsi:type="string"/>
+	</INFORMATION>
+	<VARIABLES xsi:type="variableContainer">
+		<VARIABLE format-rev="1" xsi:type="variable">
+			<NAME xsi:type="string">objectAPI</NAME>
+			<DESCRIPTION xsi:type="string">ObjectApi instance</DESCRIPTION>
+			<DEFAULT-VALUE xsi:type="undefined"/>
+		</VARIABLE>
+		<VARIABLE format-rev="1" in="true" xsi:type="variable">
+			<NAME xsi:type="string">pkgFile</NAME>
+			<DESCRIPTION xsi:type="string">Target package file which should have test case and signal recordings implemented.</DESCRIPTION>
+			<DEFAULT-VALUE format-rev="1" xsi:type="value">
+				<COMPLEX-DATA xsi:type="I18NItem">
+					<MULTILANGDATA>
+						<ELEMENT dkey="en_US">
+							<DVALUE xsi:type="string">test_toto\testNumpyAverage_2.pkg</DVALUE>
+						</ELEMENT>
+					</MULTILANGDATA>
+					<INITIAL-LANGUAGE xsi:type="string">en_US</INITIAL-LANGUAGE>
+				</COMPLEX-DATA>
+			</DEFAULT-VALUE>
+		</VARIABLE>
+		<VARIABLE format-rev="1" in="true" xsi:type="variable">
+			<NAME xsi:type="string">ArithmeticMean_TRCP_ID</NAME>
+			<DESCRIPTION xsi:type="string">The trace step template id for &quot;ArithmeticMean&quot;. i.e., &quot;Ricardo\ArithmeticMean&quot;</DESCRIPTION>
+			<DEFAULT-VALUE format-rev="1" xsi:type="value">
+				<COMPLEX-DATA xsi:type="I18NItem">
+					<MULTILANGDATA>
+						<ELEMENT dkey="en_US">
+							<DVALUE xsi:type="string">Ricardo\ArithmeticMean</DVALUE>
+						</ELEMENT>
+					</MULTILANGDATA>
+					<INITIAL-LANGUAGE xsi:type="string">en_US</INITIAL-LANGUAGE>
+				</COMPLEX-DATA>
+			</DEFAULT-VALUE>
+		</VARIABLE>
+		<VARIABLE format-rev="1" xsi:type="variable">
+			<NAME xsi:type="string">createTA</NAME>
+			<DESCRIPTION xsi:type="string"/>
+			<DEFAULT-VALUE xsi:type="function">
+				<CODE xsi:type="string">
+# function must be named 'func'
+
+def func(duration, api, pkgFile, trcp_path, blockName='CalculateAverage'):
+    pkg = api.PackageApi.OpenPackage(pkgFile)
+    # check if there is already trace analysis exists, if not, create one new.
+    if pkg.GetTraceAnalyses():
+        ta = pkg.GetTraceAnalyses()[0]
+        # check if there is already &quot;Episode&quot; steps exist, if not, create one new.
+        if ta.GetTraceSteps()[-1].GetType() == 'Episode':
+            episode = ta.GetTraceSteps()[-1]
+        else:
+            episode = api.PackageApi.TraceAnalysisApi.CreateEpisode(blockName)
+            ta.AppendTraceStep(episode)
+    else:
+        ta = api.PackageApi.TraceAnalysisApi.CreateTraceAnalysis(blockName)
+        pkg.AppendTraceAnalysis(ta)
+        episode = api.PackageApi.TraceAnalysisApi.CreateEpisode(blockName)
+        ta.AppendTraceStep(episode)
+
+    # create one analysis block
+    anaBlock = api.PackageApi.TraceAnalysisApi.CreateBlock(blockName)
+    episode.AppendTraceStep(anaBlock)
+    # create one recording step
+    recordingStep = api.PackageApi.TraceAnalysisApi.CreateSignalRecording(blockName)
+    # create signal connections from signal recording groups, and create TRCP steps.
+    signalGroups = pkg.GetSignalGroups()
+    for signalGroup in signalGroups:
+        # Only first recording group of this signal group will be used.
+        recordingGroup = signalGroup.GetRecordingGroups()[0]
+        mappingItemNames = signalGroup.GetMappingItemNames()
+        for mappingItemName in mappingItemNames:
+            # check if this mapping item has been assigned to generic signal.
+            # if no generic signal created for this mapping item create one new.
+            # process generic signal names to satisfy name rules of python identifiers.
+            genericSignalName_Trace = mappingItemName.replace(' ', '_').replace('/', '_').replace('[', '_').replace(']', '_').replace('%','_').replace('|','_')
+            if ta.GetGenericSignal(genericSignalName_Trace) is None:
+                genericSignal = api.PackageApi.TraceAnalysisApi.CreateGenericSignal(genericSignalName_Trace)
+                ta.AppendGenericSignal(genericSignal)
+                genericSignal.AssignRecordingSignal(recordingGroup, mappingItemName)
+            else:
+                print('Generic signal {} has already been created before, it will be used directly.'.format(genericSignalName_Trace))
+
+            outSignal_Name = genericSignalName_Trace+'_avg'
+            # if outSignal_Name not in list(sigBindings.values()):
+            if ta.GetGenericSignal(outSignal_Name) is None:
+                outSignal = api.PackageApi.TraceAnalysisApi.CreateGenericSignal(outSignal_Name)
+                ta.AppendGenericSignal(outSignal)
+            else:
+                print('Generic signal {} has already been created before, it will be used directly.'.format(outSignal_Name))
+            
+            # create templated trace step.
+            trcp_average = api.PackageApi.TraceAnalysisApi.CreateTemplateBasedTraceStep(blockName)
+            # TODO: can use search mode
+            trcp_average.SetTemplateById(trcp_path)
+            trcp_average.SetParameters({'duration': str(duration)})
+            anaBlock.AppendTraceStep(trcp_average)
+            trcp_average.AssignGenericSignalByName('Signal', genericSignalName_Trace)
+            trcp_average.AssignGenericSignalByName('ArithmeticMean', outSignal_Name)
+            # append signal to recording step.
+            recordingStep.AddGenericSignalByName(outSignal_Name)
+
+    recordingStep.SetStoreType('CSV')
+    recordingStep.SetFileExpression(repr(blockName))
+    anaBlock.AppendTraceStep(recordingStep)
+    pkg.Save()
+
+</CODE>
+			</DEFAULT-VALUE>
+		</VARIABLE>
+		<VARIABLE format-rev="1" in="true" xsi:type="variable">
+			<NAME xsi:type="string">duration</NAME>
+			<DESCRIPTION xsi:type="string">In seconds. Parameter for trace step template &quot;ArithmeticMean&quot;</DESCRIPTION>
+			<DEFAULT-VALUE format-rev="1" xsi:type="value">
+				<DATA xsi:type="integer">1</DATA>
+			</DEFAULT-VALUE>
+		</VARIABLE>
+	</VARIABLES>
+	<MAPPING format-rev="1" xsi:type="localMappingSpace"/>
+	<TESTSTEPS xsi:type="testCase">
+		<TESTSTEP format-rev="3" id="2584" name="TsCalculation" xsi:type="utility-4115fa00-5f3c-11df-8a53-001c233b3528">
+			<VARIABLE-REFS>
+				<VARIABLE-NAME dkey="default">
+					<DVALUE xsi:type="string">objectAPI</DVALUE>
+				</VARIABLE-NAME>
+			</VARIABLE-REFS>
+			<FORMULA xsi:type="attributeBaseExpression">
+				<COMPONENT xsi:type="varBaseExpression">
+					<NAME xsi:type="string">api</NAME>
+				</COMPONENT>
+				<ATTR-NAME xsi:type="string">ObjectApi</ATTR-NAME>
+			</FORMULA>
+		</TESTSTEP>
+		<TESTSTEP format-rev="3" id="2586" name="TsCalculation" xsi:type="utility-4115fa00-5f3c-11df-8a53-001c233b3528">
+			<FORMULA xsi:type="functionBaseExpression">
+				<COMPONENT xsi:type="varBaseExpression">
+					<NAME xsi:type="string">createTA</NAME>
+				</COMPONENT>
+				<ARGUMENTS>
+					<ARGUMENT xsi:type="varBaseExpression">
+						<NAME xsi:type="string">duration</NAME>
+					</ARGUMENT>
+					<ARGUMENT xsi:type="varBaseExpression">
+						<NAME xsi:type="string">objectAPI</NAME>
+					</ARGUMENT>
+					<ARGUMENT xsi:type="varBaseExpression">
+						<NAME xsi:type="string">pkgFile</NAME>
+					</ARGUMENT>
+					<ARGUMENT xsi:type="varBaseExpression">
+						<NAME xsi:type="string">ArithmeticMean_TRCP_ID</NAME>
+					</ARGUMENT>
+				</ARGUMENTS>
+			</FORMULA>
+		</TESTSTEP>
+	</TESTSTEPS>
+</PACKAGE>

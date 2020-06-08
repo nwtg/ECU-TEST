@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TRACE-STEP-PROTOTYPE format-rev="1" uuid="193301a1663111e288b208edb9de9bdd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="trcpEventPythonII">
+	<DESCRIPTION xsi:type="unicode">This trace step is used to shift a signal into the future or into the past with the sample number of deltaN.
+
+Usage: 
+- deltaN &gt; 0: move to the future,
+- deltaN = 0: nothing happens (default)
+- deltaN &lt; 0: move to the past 
+
+Note: You need a new episode if you choose a deltaN smaller 0, because the signal will be moved into the past. Could only be used for equidistant signals.</DESCRIPTION>
+	<SIGNALS xsi:type="trcpParameterDescriptionList">
+		<PARAMETER uuid="4d9a618f663111e2bfeb08edb9de9bdd" xsi:type="signalDescription">
+			<NAME xsi:type="unicode">Signal</NAME>
+			<DESCRIPTION xsi:type="unicode">The original signal.</DESCRIPTION>
+			<EVENT-TYPE xsi:type="string">PHY</EVENT-TYPE>
+		</PARAMETER>
+		<PARAMETER uuid="4e8c62ae663111e28cd208edb9de9bdd" xsi:type="signalDescription">
+			<NAME xsi:type="unicode">SampleShiftedSignal</NAME>
+			<DESCRIPTION xsi:type="unicode">The shifted signal.</DESCRIPTION>
+			<EVENT-TYPE xsi:type="string">PHY</EVENT-TYPE>
+			<DIRECTION xsi:type="string">OUT</DIRECTION>
+		</PARAMETER>
+	</SIGNALS>
+	<PARAMETERS xsi:type="trcpParameterDescriptionList">
+		<PARAMETER uuid="57d84c80663111e291c408edb9de9bdd" xsi:type="parameterDescription">
+			<NAME xsi:type="unicode">deltaN</NAME>
+			<DESCRIPTION xsi:type="unicode">Parameter for the sample number shift.
+deltaN &gt; 0: move to the future
+deltaN = 0: nothing happens (default)
+deltaN &lt; 0: move to the past </DESCRIPTION>
+			<PARAMETER-TYPE xsi:type="string">FLOAT</PARAMETER-TYPE>
+		</PARAMETER>
+	</PARAMETERS>
+	<INIT-FUNCTION xsi:type="pyFunctionII">
+		<NAME xsi:type="unicode">Init</NAME>
+		<PARAMETER-NAMES/>
+		<CODE xsi:type="pyCode">
+			<SOURCE xsi:type="unicode">#Head of function is generated, do not edit!
+def Init(dataContainer, parameters, report):
+    # set default value
+    dataContainer.emptySignal = True
+    dataContainer.firstSample = None
+    dataContainer.secondSample = None
+    
+    # get parameters
+    dataContainer.deltaN = parameters[&quot;deltaN&quot;]
+
+    # check parameter
+    if dataContainer.deltaN is None:
+        dataContainer.deltaN = 0
+    
+    # check type
+    if not isinstance(dataContainer.deltaN, (float, int, long)):
+        raise TypeError(&quot;The parameter 'deltaN' has no valid type (%s).&quot; % type(dataContainer.deltaN))
+
+    if dataContainer.deltaN % 1 != 0:
+        raise ValueError(&quot;The parameter 'deltaN' must be a whole number (%s).&quot; % dataContainer.deltaN)
+</SOURCE>
+		</CODE>
+	</INIT-FUNCTION>
+	<FINALIZE-FUNCTION xsi:type="pyFunctionII">
+		<NAME xsi:type="unicode">Finalize</NAME>
+		<PARAMETER-NAMES/>
+		<CODE xsi:type="pyCode">
+			<SOURCE xsi:type="unicode">#Head of function is generated, do not edit!
+def Finalize(dataContainer, parameters, report):
+    if dataContainer.emptySignal:
+        report.SetResultText(&quot;Signal is empty.&quot;)
+        return
+        
+    if dataContainer.secondSample is None:
+        report.SetResultText(&quot;The signal must have at least two samples.&quot;)
+        return
+</SOURCE>
+		</CODE>
+	</FINALIZE-FUNCTION>
+	<FUNCTIONS>
+		<ELEMENT xsi:type="pyEventFunctionII">
+			<NAME xsi:type="unicode">Next</NAME>
+			<PARAMETER-NAMES/>
+			<CODE xsi:type="pyCode">
+				<SOURCE xsi:type="unicode">#Head of function is generated, do not edit!
+def Next(event, hold, dataContainer, parameters, report):
+    # get the values and time
+    value = event.GetValue(&quot;Signal&quot;)
+    time = event.GetTime()
+    
+    # signal is not empty
+    dataContainer.emptySignal = False
+    
+    # save value and time of the first sample
+    if dataContainer.firstSample is None:
+        dataContainer.firstValue = value
+        dataContainer.firstTime = time
+        dataContainer.firstSample = True
+        return
+
+    # calculate time between deltaN samples
+    if dataContainer.secondSample is None:
+        # check parameters and calculate deltaT
+        if dataContainer.deltaN == 0:
+            # no time shift
+            dataContainer.deltaT = 0
+        else:
+            # calculate time between the first two samples and multiply it with deltaN
+            dataContainer.deltaT = (time - dataContainer.firstTime) * dataContainer.deltaN
+        # emit first sample
+        dataContainer.EmitSignal(dataContainer.firstTime + dataContainer.deltaT, &quot;SampleShiftedSignal&quot;, dataContainer.firstValue)
+        dataContainer.secondSample = True
+
+    # emit all other shifted samples with calculated deltaT
+    dataContainer.EmitSignal(time + dataContainer.deltaT, &quot;SampleShiftedSignal&quot;, value)
+        
+        
+</SOURCE>
+			</CODE>
+			<SIGNAL-NAMES>
+				<ELEMENT xsi:type="unicode">Signal</ELEMENT>
+			</SIGNAL-NAMES>
+		</ELEMENT>
+	</FUNCTIONS>
+</TRACE-STEP-PROTOTYPE>

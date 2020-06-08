@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SignalDescriptionFile version="1.0" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sti="http://www.asam.net/XIL/Signal/2.0" xmlns="http://www.asam.net/XIL/Signal/2.0">
+    <SignalDescriptionSet name="Stimulus">
+        <SignalDescription name="Model Root/STATUS_VEH/EngineSpeed [rpm]/In1" id="ID_SIGNAL_1">
+            <SegmentSignalDescription loopCount="1">
+                <SineSegment>
+                    <Amplitude xsi:type="ConstSymbol">
+                        <Value>2527.0</Value>
+                    </Amplitude>
+                    <Duration>
+                        <Value>4.0</Value>
+                    </Duration>
+                    <Offset xsi:type="ConstSymbol">
+                        <Value>3347.0</Value>
+                    </Offset>
+                    <Period xsi:type="ConstSymbol">
+                        <Value>8.0</Value>
+                    </Period>
+                    <Phase xsi:type="ConstSymbol">
+                        <Value>0.75</Value>
+                    </Phase>
+                </SineSegment>
+                <ConstSegment>
+                    <Duration>
+                        <Value>120.0</Value>
+                    </Duration>
+                    <Value xsi:type="ConstSymbol">
+                        <Value>5874.0</Value>
+                    </Value>
+                </ConstSegment>
+            </SegmentSignalDescription>
+        </SignalDescription>
+    </SignalDescriptionSet>
+</SignalDescriptionFile>

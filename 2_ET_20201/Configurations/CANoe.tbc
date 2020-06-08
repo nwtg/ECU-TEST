@@ -1,0 +1,670 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TOOLING format-rev="2" prog-version="8.0.0.86579" xmlns="http://www.tracetronic.de/xml/ecu-test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tracetronic.de/xml/ecu-test tooling.xsd">
+	<TOOL-HOSTS>
+		<TOOL-HOST xsi:type="toolHost">
+			<URL xsi:type="string">local</URL>
+			<BASE-PATH xsi:type="string">&lt;workspace&gt;</BASE-PATH>
+		</TOOL-HOST>
+	</TOOL-HOSTS>
+	<TOOLS>
+		<TOOL id="CANoeCANalyzer01" xsi:type="tool">
+			<TOOL-HOST xsi:type="string">local</TOOL-HOST>
+			<TOOL-NAME xsi:type="string">CANoeCANalyzer</TOOL-NAME>
+			<START-OPTION xsi:type="integer">0</START-OPTION>
+			<START-PRIORITY xsi:type="integer">0</START-PRIORITY>
+			<SETTINGS xsi:type="dynamicPropertySet">
+				<PROPERTY format-rev="1" name="CfgFile" propertyType="uri" readonly="false" xsi:type="_property">
+					<VALUE xsi:type="string">C:\Users\Public\Documents\Vector\CANoe\10.0 (x64)\CANoe Sample Configurations\CAN\CANSystemDemo\CANSystemDemo.cfg</VALUE>
+				</PROPERTY>
+				<PROPERTY format-rev="1" name="Messungsstart" propertyType="string" readonly="false" xsi:type="_property">
+					<VALUE xsi:type="string">Manually</VALUE>
+				</PROPERTY>
+				<PROPERTY format-rev="1" name="modelDir" propertyType="uri" readonly="false" xsi:type="_property">
+					<VALUE xsi:type="string">C:\Users\Public\Documents\Vector\CANoe\10.0 (x64)\CANoe Sample Configurations\CAN\CANSystemDemo</VALUE>
+				</PROPERTY>
+				<PROPERTY format-rev="1" name="toolName" propertyType="string" readonly="false" xsi:type="_property">
+					<VALUE xsi:type="string">CANoe</VALUE>
+				</PROPERTY>
+			</SETTINGS>
+		</TOOL>
+	</TOOLS>
+	<PORTS>
+		<PORT format-rev="2" id="BUS01" toolId="CANoeCANalyzer01" xsi:type="port">
+			<PORT-TYPE-ID format-rev="2" xsi:type="toolcaps">
+				<NAME xsi:type="string">BUSACCESS</NAME>
+			</PORT-TYPE-ID>
+			<IMPL-TYPE-ID xsi:type="string">Standard</IMPL-TYPE-ID>
+			<AUTOSTART xsi:type="integer">0</AUTOSTART>
+			<SETTINGS xsi:type="dynamicPropertySet">
+				<PROPERTY format-rev="1" name="busDb" propertyType="string" readonly="false" xsi:type="_property">
+					<VALUE xsi:type="string">ref:SUT</VALUE>
+				</PROPERTY>
+			</SETTINGS>
+		</PORT>
+		<PORT format-rev="2" id="BUS02" toolId="CANoeCANalyzer01" xsi:type="port">
+			<PORT-TYPE-ID format-rev="2" xsi:type="toolcaps">
+				<NAME xsi:type="string">BUSACCESS</NAME>
+			</PORT-TYPE-ID>
+			<IMPL-TYPE-ID xsi:type="string">Standard</IMPL-TYPE-ID>
+			<AUTOSTART xsi:type="integer">0</AUTOSTART>
+			<SETTINGS xsi:type="dynamicPropertySet">
+				<PROPERTY format-rev="1" name="busDb" propertyType="string" readonly="false" xsi:type="_property">
+					<VALUE xsi:type="string">ref:SUT</VALUE>
+				</PROPERTY>
+				<PROPERTY format-rev="1" name="channel" propertyType="string" readonly="false" xsi:type="_property">
+					<VALUE xsi:type="string">2</VALUE>
+				</PROPERTY>
+			</SETTINGS>
+		</PORT>
+		<PORT format-rev="2" id="MDL-SystemVarModel01" toolId="CANoeCANalyzer01" xsi:type="port">
+			<PORT-TYPE-ID format-rev="2" xsi:type="toolcaps">
+				<NAME xsi:type="string">MODELACCESS</NAME>
+			</PORT-TYPE-ID>
+			<IMPL-TYPE-ID xsi:type="string">SystemVarModel</IMPL-TYPE-ID>
+			<AUTOSTART xsi:type="integer">0</AUTOSTART>
+			<SETTINGS xsi:type="dynamicPropertySet"/>
+		</PORT>
+	</PORTS>
+	<TOOL-DESCRIPTORS>
+		<TOOL-DESCRIPTOR dkey="CANoeCANalyzer01">
+			<DVALUE format-rev="2" xsi:type="toolDescriptor">
+				<TOOL-NAME xsi:type="string">CANoeCANalyzer</TOOL-NAME>
+				<PROVIDES>
+					<PORT-TYPE xsi:type="portImplInfo">
+						<PORT-TYPE-ID format-rev="2" xsi:type="toolcaps">
+							<NAME xsi:type="string">MODELACCESS</NAME>
+						</PORT-TYPE-ID>
+						<IMPL-TYPE xsi:type="implTypeDescriptor">
+							<IMPL-TYPE-ID xsi:type="string">EnvVarModel</IMPL-TYPE-ID>
+							<DESCRIPTION xsi:type="string">Environment variables</DESCRIPTION>
+						</IMPL-TYPE>
+						<IMPL-TYPE xsi:type="implTypeDescriptor">
+							<IMPL-TYPE-ID xsi:type="string">SystemVarModel</IMPL-TYPE-ID>
+							<DESCRIPTION xsi:type="string">System variables</DESCRIPTION>
+						</IMPL-TYPE>
+						<IMPL-TYPE xsi:type="implTypeDescriptor">
+							<IMPL-TYPE-ID xsi:type="string">ConfigModel</IMPL-TYPE-ID>
+							<DESCRIPTION xsi:type="string">Configuration</DESCRIPTION>
+						</IMPL-TYPE>
+						<IMPL-TYPE xsi:type="implTypeDescriptor">
+							<IMPL-TYPE-ID xsi:type="string">XIL</IMPL-TYPE-ID>
+							<DESCRIPTION xsi:type="string">XIL MAPort</DESCRIPTION>
+						</IMPL-TYPE>
+					</PORT-TYPE>
+					<PORT-TYPE xsi:type="portImplInfo">
+						<PORT-TYPE-ID format-rev="2" xsi:type="toolcaps">
+							<NAME xsi:type="string">BUSACCESS</NAME>
+						</PORT-TYPE-ID>
+						<IMPL-TYPE xsi:type="implTypeDescriptor">
+							<IMPL-TYPE-ID xsi:type="string">Standard</IMPL-TYPE-ID>
+						</IMPL-TYPE>
+						<IMPL-TYPE xsi:type="implTypeDescriptor">
+							<IMPL-TYPE-ID xsi:type="string">GENERIC</IMPL-TYPE-ID>
+							<DESCRIPTION xsi:type="string">Generic bus access</DESCRIPTION>
+						</IMPL-TYPE>
+					</PORT-TYPE>
+				</PROVIDES>
+				<START-PRIORITY-HINT xsi:type="integer">0</START-PRIORITY-HINT>
+				<PROPERTIES xsi:type="propertyDescriptorSet">
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">toolName</NAME>
+						<DISPLAY-NAME xsi:type="string">Tool selection</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Determines whether CANoe or CANalyzer shall be used</DESCRIPTION>
+						<TYPE xsi:type="string">string</TYPE>
+						<DOMAIN>
+							<ELEMENT xsi:type="string">CANoe</ELEMENT>
+							<ELEMENT xsi:type="string">CANalyzer</ELEMENT>
+						</DOMAIN>
+						<DEFAULT xsi:type="string">CANoe</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">XilID</NAME>
+						<DISPLAY-NAME xsi:type="string">XIL-API Server</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Could not find any XIL API interface. Please install it on the tool host using the CANoe setup file.</DESCRIPTION>
+						<TYPE xsi:type="string">string</TYPE>
+						<DOMAIN>
+							<ELEMENT xsi:type="string">Don't use</ELEMENT>
+						</DOMAIN>
+						<DEFAULT xsi:type="string">Don't use</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">modelDir</NAME>
+						<DISPLAY-NAME xsi:type="string">Model directory</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Base directory for model-file search (DBC files with environment variables) on the tool host (absolute path or relative to the specified base path).</DESCRIPTION>
+						<TYPE xsi:type="string">uri</TYPE>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">Messungsstart</NAME>
+						<DISPLAY-NAME xsi:type="string">Start of measurement</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">When the measurement should start?</DESCRIPTION>
+						<TYPE xsi:type="string">string</TYPE>
+						<DOMAIN>
+							<ELEMENT xsi:type="string">Upon initialization of the test environment</ELEMENT>
+							<ELEMENT xsi:type="string">On start of test</ELEMENT>
+							<ELEMENT xsi:type="string">Manually</ELEMENT>
+						</DOMAIN>
+						<DEFAULT xsi:type="string">Manually</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">CfgFile</NAME>
+						<DISPLAY-NAME xsi:type="string">CFG file</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">CANoe/CANalyzer configuration to load (absolute path or relative to the specified base path)</DESCRIPTION>
+						<TYPE xsi:type="string">uri</TYPE>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">CfgAutoSave</NAME>
+						<DISPLAY-NAME xsi:type="string">CFG auto save</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Automatically save changed CANoe/CANalyzer configuration</DESCRIPTION>
+						<TYPE xsi:type="string">bool</TYPE>
+						<DOMAIN>
+							<ELEMENT xsi:type="string">False</ELEMENT>
+							<ELEMENT xsi:type="string">True</ELEMENT>
+						</DOMAIN>
+						<DEFAULT xsi:type="string">True</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">ToolVersion</NAME>
+						<DISPLAY-NAME xsi:type="string">Version</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">CANoe and CANalyzer version</DESCRIPTION>
+						<TYPE xsi:type="string">string</TYPE>
+						<DEFAULT xsi:type="string">{'CANalyzer': '&lt;unknown&gt;', 'CANoe': '10.0'}</DEFAULT>
+						<READONLY xsi:type="boolean">True</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">ShutdownToolOnDisconnect</NAME>
+						<DISPLAY-NAME xsi:type="string">Exit tool</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">If this option is selected, CANoeCANalyzer gets shut down after quitting ECU-TEST.Otherwise only the running project gets closed.</DESCRIPTION>
+						<TYPE xsi:type="string">bool</TYPE>
+						<DOMAIN>
+							<ELEMENT xsi:type="string">False</ELEMENT>
+							<ELEMENT xsi:type="string">True</ELEMENT>
+						</DOMAIN>
+						<DEFAULT xsi:type="string">False</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+				</PROPERTIES>
+				<JOBS xsi:type="jobDescriptorSet">
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">RegisterCAPLFunction</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">name</NAME>
+								<DESCRIPTION xsi:type="string">Name of capl function</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Registers a CAPL function. This function can only be called when the measurement is not running.</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">CallCAPLFunction</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">name</NAME>
+								<DESCRIPTION xsi:type="string">Name of capl function</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">arg0</NAME>
+								<DESCRIPTION xsi:type="string">Parameter value</DESCRIPTION>
+								<TYPE xsi:type="string">int</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">arg1</NAME>
+								<DESCRIPTION xsi:type="string">Parameter value</DESCRIPTION>
+								<TYPE xsi:type="string">int</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">arg2</NAME>
+								<DESCRIPTION xsi:type="string">Parameter value</DESCRIPTION>
+								<TYPE xsi:type="string">int</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">arg3</NAME>
+								<DESCRIPTION xsi:type="string">Parameter value</DESCRIPTION>
+								<TYPE xsi:type="string">int</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">arg4</NAME>
+								<DESCRIPTION xsi:type="string">Parameter value</DESCRIPTION>
+								<TYPE xsi:type="string">int</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">arg5</NAME>
+								<DESCRIPTION xsi:type="string">Parameter value</DESCRIPTION>
+								<TYPE xsi:type="string">int</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">arg6</NAME>
+								<DESCRIPTION xsi:type="string">Parameter value</DESCRIPTION>
+								<TYPE xsi:type="string">int</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">arg7</NAME>
+								<DESCRIPTION xsi:type="string">Parameter value</DESCRIPTION>
+								<TYPE xsi:type="string">int</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">arg8</NAME>
+								<DESCRIPTION xsi:type="string">Parameter value</DESCRIPTION>
+								<TYPE xsi:type="string">int</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">arg9</NAME>
+								<DESCRIPTION xsi:type="string">Parameter value</DESCRIPTION>
+								<TYPE xsi:type="string">int</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Calls a CAPL function. This function can only be called when the measurement is running. The CAPL function must be registered before starting the measurement, e.g. with RegisterCAPLFunction.</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">ReadEnvVar</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">varName</NAME>
+								<DESCRIPTION xsi:type="string">Name of environment variable</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Reads an environment variable</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">WriteEnvVar</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">varName</NAME>
+								<DESCRIPTION xsi:type="string">Name of environment variable</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">value</NAME>
+								<DESCRIPTION xsi:type="string">Value to be written</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Writes an environment variable</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">ReadSysVar</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">varPath</NAME>
+								<DESCRIPTION xsi:type="string">Path of the system variable, formatted namespace/varname or namespace::varname</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Reads a system variable</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">WriteSysVar</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">varPath</NAME>
+								<DESCRIPTION xsi:type="string">Path of the system variable, formatted namespace/varname or namespace::varname</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">value</NAME>
+								<DESCRIPTION xsi:type="string">Value to be written</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Writes a system variable</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">IsMeasurementRunning</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet"/>
+						<DESCRIPTION xsi:type="string">is measurement running?</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">StartMeasurement</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet"/>
+						<DESCRIPTION xsi:type="string">Starts the measurement.</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">StopMeasurement</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet"/>
+						<DESCRIPTION xsi:type="string">Stop measurement</DESCRIPTION>
+					</JOB>
+					<JOB format-rev="2" xsi:type="jobDescriptor">
+						<NAME xsi:type="string">GetCurrentCfg</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet"/>
+						<DESCRIPTION xsi:type="string">Returns the path of current loaded cfg file in CANoe/CANalyzer.</DESCRIPTION>
+						<RETURN xsi:type="propertyDescriptor">
+							<NAME xsi:type="string">result</NAME>
+							<TYPE xsi:type="string">uri</TYPE>
+							<READONLY xsi:type="boolean">False</READONLY>
+						</RETURN>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">ChangeCfg</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">CfgFile</NAME>
+								<DESCRIPTION xsi:type="string">Configuration file to be loaded. Using the TBC information if the value ist empty or not set.</DESCRIPTION>
+								<TYPE xsi:type="string">uri</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">To load a configuration file</DESCRIPTION>
+					</JOB>
+				</JOBS>
+			</DVALUE>
+		</TOOL-DESCRIPTOR>
+	</TOOL-DESCRIPTORS>
+	<PORT-DESCRIPTORS>
+		<PORT-DESCRIPTOR dkey="BUS01">
+			<DVALUE format-rev="1" xsi:type="portDescriptor">
+				<PORT-TYPE-ID format-rev="2" xsi:type="toolcaps">
+					<NAME xsi:type="string">BUSACCESS</NAME>
+				</PORT-TYPE-ID>
+				<IMPL-TYPE-ID xsi:type="string">Standard</IMPL-TYPE-ID>
+				<BUS-TYPES>
+					<ELEMENT xsi:type="string">AccessActiveNode</ELEMENT>
+					<ELEMENT xsi:type="string">AccessManipulation</ELEMENT>
+				</BUS-TYPES>
+				<PROPERTIES xsi:type="propertyDescriptorSet">
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">channel</NAME>
+						<DISPLAY-NAME xsi:type="string">Channel</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Channel</DESCRIPTION>
+						<TYPE xsi:type="string">string</TYPE>
+						<DOMAIN>
+							<ELEMENT xsi:type="string">1</ELEMENT>
+							<ELEMENT xsi:type="string">2</ELEMENT>
+							<ELEMENT xsi:type="string">3</ELEMENT>
+							<ELEMENT xsi:type="string">4</ELEMENT>
+							<ELEMENT xsi:type="string">5</ELEMENT>
+							<ELEMENT xsi:type="string">6</ELEMENT>
+							<ELEMENT xsi:type="string">7</ELEMENT>
+							<ELEMENT xsi:type="string">8</ELEMENT>
+							<ELEMENT xsi:type="string">9</ELEMENT>
+							<ELEMENT xsi:type="string">10</ELEMENT>
+							<ELEMENT xsi:type="string">11</ELEMENT>
+							<ELEMENT xsi:type="string">12</ELEMENT>
+							<ELEMENT xsi:type="string">13</ELEMENT>
+							<ELEMENT xsi:type="string">14</ELEMENT>
+							<ELEMENT xsi:type="string">15</ELEMENT>
+							<ELEMENT xsi:type="string">16</ELEMENT>
+							<ELEMENT xsi:type="string">17</ELEMENT>
+							<ELEMENT xsi:type="string">18</ELEMENT>
+							<ELEMENT xsi:type="string">19</ELEMENT>
+							<ELEMENT xsi:type="string">20</ELEMENT>
+							<ELEMENT xsi:type="string">21</ELEMENT>
+							<ELEMENT xsi:type="string">22</ELEMENT>
+							<ELEMENT xsi:type="string">23</ELEMENT>
+							<ELEMENT xsi:type="string">24</ELEMENT>
+							<ELEMENT xsi:type="string">25</ELEMENT>
+							<ELEMENT xsi:type="string">26</ELEMENT>
+							<ELEMENT xsi:type="string">27</ELEMENT>
+							<ELEMENT xsi:type="string">28</ELEMENT>
+							<ELEMENT xsi:type="string">29</ELEMENT>
+							<ELEMENT xsi:type="string">30</ELEMENT>
+							<ELEMENT xsi:type="string">31</ELEMENT>
+							<ELEMENT xsi:type="string">32</ELEMENT>
+							<ELEMENT xsi:type="string">33</ELEMENT>
+							<ELEMENT xsi:type="string">34</ELEMENT>
+							<ELEMENT xsi:type="string">35</ELEMENT>
+							<ELEMENT xsi:type="string">36</ELEMENT>
+							<ELEMENT xsi:type="string">37</ELEMENT>
+							<ELEMENT xsi:type="string">38</ELEMENT>
+							<ELEMENT xsi:type="string">39</ELEMENT>
+							<ELEMENT xsi:type="string">40</ELEMENT>
+							<ELEMENT xsi:type="string">41</ELEMENT>
+							<ELEMENT xsi:type="string">42</ELEMENT>
+							<ELEMENT xsi:type="string">43</ELEMENT>
+							<ELEMENT xsi:type="string">44</ELEMENT>
+							<ELEMENT xsi:type="string">45</ELEMENT>
+							<ELEMENT xsi:type="string">46</ELEMENT>
+							<ELEMENT xsi:type="string">47</ELEMENT>
+							<ELEMENT xsi:type="string">48</ELEMENT>
+							<ELEMENT xsi:type="string">49</ELEMENT>
+							<ELEMENT xsi:type="string">50</ELEMENT>
+							<ELEMENT xsi:type="string">51</ELEMENT>
+							<ELEMENT xsi:type="string">52</ELEMENT>
+							<ELEMENT xsi:type="string">53</ELEMENT>
+							<ELEMENT xsi:type="string">54</ELEMENT>
+							<ELEMENT xsi:type="string">55</ELEMENT>
+							<ELEMENT xsi:type="string">56</ELEMENT>
+							<ELEMENT xsi:type="string">57</ELEMENT>
+							<ELEMENT xsi:type="string">58</ELEMENT>
+							<ELEMENT xsi:type="string">59</ELEMENT>
+							<ELEMENT xsi:type="string">60</ELEMENT>
+							<ELEMENT xsi:type="string">61</ELEMENT>
+							<ELEMENT xsi:type="string">62</ELEMENT>
+							<ELEMENT xsi:type="string">63</ELEMENT>
+							<ELEMENT xsi:type="string">64</ELEMENT>
+						</DOMAIN>
+						<DEFAULT xsi:type="string">1</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">busType</NAME>
+						<DISPLAY-NAME xsi:type="string">Bus type</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Bus type</DESCRIPTION>
+						<TYPE xsi:type="string">string</TYPE>
+						<DOMAIN>
+							<ELEMENT xsi:type="string">CAN</ELEMENT>
+							<ELEMENT xsi:type="string">LIN</ELEMENT>
+							<ELEMENT xsi:type="string">FlexRay</ELEMENT>
+						</DOMAIN>
+						<DEFAULT xsi:type="string">CAN</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">busDb</NAME>
+						<DISPLAY-NAME xsi:type="string">Bus-DB</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Bus database</DESCRIPTION>
+						<TYPE xsi:type="string">string</TYPE>
+						<VALID-REFS>
+							<ELEMENT xsi:type="string">SUT</ELEMENT>
+						</VALID-REFS>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">checkMeasurementRunning</NAME>
+						<DISPLAY-NAME xsi:type="string">Check measurement state</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Defines whether the state of the measurement should be checked during the test case execution.</DESCRIPTION>
+						<TYPE xsi:type="string">string</TYPE>
+						<DOMAIN>
+							<ELEMENT xsi:type="string">At the beginning of the test case</ELEMENT>
+							<ELEMENT xsi:type="string">Before each reading test step</ELEMENT>
+							<ELEMENT xsi:type="string">Do not check</ELEMENT>
+						</DOMAIN>
+						<DEFAULT xsi:type="string">Do not check</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+				</PROPERTIES>
+				<JOBS xsi:type="jobDescriptorSet"/>
+			</DVALUE>
+		</PORT-DESCRIPTOR>
+		<PORT-DESCRIPTOR dkey="BUS02">
+			<DVALUE format-rev="1" xsi:type="portDescriptor">
+				<PORT-TYPE-ID format-rev="2" xsi:type="toolcaps">
+					<NAME xsi:type="string">BUSACCESS</NAME>
+				</PORT-TYPE-ID>
+				<IMPL-TYPE-ID xsi:type="string">Standard</IMPL-TYPE-ID>
+				<BUS-TYPES>
+					<ELEMENT xsi:type="string">AccessActiveNode</ELEMENT>
+					<ELEMENT xsi:type="string">AccessManipulation</ELEMENT>
+				</BUS-TYPES>
+				<PROPERTIES xsi:type="propertyDescriptorSet">
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">channel</NAME>
+						<DISPLAY-NAME xsi:type="string">Channel</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Channel</DESCRIPTION>
+						<TYPE xsi:type="string">string</TYPE>
+						<DOMAIN>
+							<ELEMENT xsi:type="string">1</ELEMENT>
+							<ELEMENT xsi:type="string">2</ELEMENT>
+							<ELEMENT xsi:type="string">3</ELEMENT>
+							<ELEMENT xsi:type="string">4</ELEMENT>
+							<ELEMENT xsi:type="string">5</ELEMENT>
+							<ELEMENT xsi:type="string">6</ELEMENT>
+							<ELEMENT xsi:type="string">7</ELEMENT>
+							<ELEMENT xsi:type="string">8</ELEMENT>
+							<ELEMENT xsi:type="string">9</ELEMENT>
+							<ELEMENT xsi:type="string">10</ELEMENT>
+							<ELEMENT xsi:type="string">11</ELEMENT>
+							<ELEMENT xsi:type="string">12</ELEMENT>
+							<ELEMENT xsi:type="string">13</ELEMENT>
+							<ELEMENT xsi:type="string">14</ELEMENT>
+							<ELEMENT xsi:type="string">15</ELEMENT>
+							<ELEMENT xsi:type="string">16</ELEMENT>
+							<ELEMENT xsi:type="string">17</ELEMENT>
+							<ELEMENT xsi:type="string">18</ELEMENT>
+							<ELEMENT xsi:type="string">19</ELEMENT>
+							<ELEMENT xsi:type="string">20</ELEMENT>
+							<ELEMENT xsi:type="string">21</ELEMENT>
+							<ELEMENT xsi:type="string">22</ELEMENT>
+							<ELEMENT xsi:type="string">23</ELEMENT>
+							<ELEMENT xsi:type="string">24</ELEMENT>
+							<ELEMENT xsi:type="string">25</ELEMENT>
+							<ELEMENT xsi:type="string">26</ELEMENT>
+							<ELEMENT xsi:type="string">27</ELEMENT>
+							<ELEMENT xsi:type="string">28</ELEMENT>
+							<ELEMENT xsi:type="string">29</ELEMENT>
+							<ELEMENT xsi:type="string">30</ELEMENT>
+							<ELEMENT xsi:type="string">31</ELEMENT>
+							<ELEMENT xsi:type="string">32</ELEMENT>
+							<ELEMENT xsi:type="string">33</ELEMENT>
+							<ELEMENT xsi:type="string">34</ELEMENT>
+							<ELEMENT xsi:type="string">35</ELEMENT>
+							<ELEMENT xsi:type="string">36</ELEMENT>
+							<ELEMENT xsi:type="string">37</ELEMENT>
+							<ELEMENT xsi:type="string">38</ELEMENT>
+							<ELEMENT xsi:type="string">39</ELEMENT>
+							<ELEMENT xsi:type="string">40</ELEMENT>
+							<ELEMENT xsi:type="string">41</ELEMENT>
+							<ELEMENT xsi:type="string">42</ELEMENT>
+							<ELEMENT xsi:type="string">43</ELEMENT>
+							<ELEMENT xsi:type="string">44</ELEMENT>
+							<ELEMENT xsi:type="string">45</ELEMENT>
+							<ELEMENT xsi:type="string">46</ELEMENT>
+							<ELEMENT xsi:type="string">47</ELEMENT>
+							<ELEMENT xsi:type="string">48</ELEMENT>
+							<ELEMENT xsi:type="string">49</ELEMENT>
+							<ELEMENT xsi:type="string">50</ELEMENT>
+							<ELEMENT xsi:type="string">51</ELEMENT>
+							<ELEMENT xsi:type="string">52</ELEMENT>
+							<ELEMENT xsi:type="string">53</ELEMENT>
+							<ELEMENT xsi:type="string">54</ELEMENT>
+							<ELEMENT xsi:type="string">55</ELEMENT>
+							<ELEMENT xsi:type="string">56</ELEMENT>
+							<ELEMENT xsi:type="string">57</ELEMENT>
+							<ELEMENT xsi:type="string">58</ELEMENT>
+							<ELEMENT xsi:type="string">59</ELEMENT>
+							<ELEMENT xsi:type="string">60</ELEMENT>
+							<ELEMENT xsi:type="string">61</ELEMENT>
+							<ELEMENT xsi:type="string">62</ELEMENT>
+							<ELEMENT xsi:type="string">63</ELEMENT>
+							<ELEMENT xsi:type="string">64</ELEMENT>
+						</DOMAIN>
+						<DEFAULT xsi:type="string">1</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">busType</NAME>
+						<DISPLAY-NAME xsi:type="string">Bus type</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Bus type</DESCRIPTION>
+						<TYPE xsi:type="string">string</TYPE>
+						<DOMAIN>
+							<ELEMENT xsi:type="string">CAN</ELEMENT>
+							<ELEMENT xsi:type="string">LIN</ELEMENT>
+							<ELEMENT xsi:type="string">FlexRay</ELEMENT>
+						</DOMAIN>
+						<DEFAULT xsi:type="string">CAN</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">busDb</NAME>
+						<DISPLAY-NAME xsi:type="string">Bus-DB</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Bus database</DESCRIPTION>
+						<TYPE xsi:type="string">string</TYPE>
+						<VALID-REFS>
+							<ELEMENT xsi:type="string">SUT</ELEMENT>
+						</VALID-REFS>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">checkMeasurementRunning</NAME>
+						<DISPLAY-NAME xsi:type="string">Check measurement state</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Defines whether the state of the measurement should be checked during the test case execution.</DESCRIPTION>
+						<TYPE xsi:type="string">string</TYPE>
+						<DOMAIN>
+							<ELEMENT xsi:type="string">At the beginning of the test case</ELEMENT>
+							<ELEMENT xsi:type="string">Before each reading test step</ELEMENT>
+							<ELEMENT xsi:type="string">Do not check</ELEMENT>
+						</DOMAIN>
+						<DEFAULT xsi:type="string">Do not check</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+				</PROPERTIES>
+				<JOBS xsi:type="jobDescriptorSet"/>
+			</DVALUE>
+		</PORT-DESCRIPTOR>
+		<PORT-DESCRIPTOR dkey="MDL-SystemVarModel01">
+			<DVALUE format-rev="1" xsi:type="portDescriptor">
+				<PORT-TYPE-ID format-rev="2" xsi:type="toolcaps">
+					<NAME xsi:type="string">MODELACCESS</NAME>
+				</PORT-TYPE-ID>
+				<IMPL-TYPE-ID xsi:type="string">SystemVarModel</IMPL-TYPE-ID>
+				<PROPERTIES xsi:type="propertyDescriptorSet">
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">ModelOnlineQuerySupport</NAME>
+						<DISPLAY-NAME xsi:type="string">Support for online model querying</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">(De-)Activates the interface for online querying of model information by the test configuration</DESCRIPTION>
+						<TYPE xsi:type="string">bool</TYPE>
+						<DOMAIN>
+							<ELEMENT xsi:type="string">False</ELEMENT>
+							<ELEMENT xsi:type="string">True</ELEMENT>
+						</DOMAIN>
+						<DEFAULT xsi:type="string">True</DEFAULT>
+						<READONLY xsi:type="boolean">True</READONLY>
+					</PROP>
+				</PROPERTIES>
+				<JOBS xsi:type="jobDescriptorSet"/>
+			</DVALUE>
+		</PORT-DESCRIPTOR>
+	</PORT-DESCRIPTORS>
+</TOOLING>

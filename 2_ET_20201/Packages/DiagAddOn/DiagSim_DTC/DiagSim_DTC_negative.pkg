@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PACKAGE format-rev="7" prog-version="8.0-TRUNK" xmlns="http://www.tracetronic.de/xml/ecu-test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tracetronic.de/xml/ecu-test package.xsd">
+	<INFORMATION xsi:type="packageInfo">
+		<DESCRIPTION xsi:type="string"/>
+		<VERSION xsi:type="string"/>
+		<ALTERNATE-CALL-REPRESENTATION-ACTION-FIELD-TEMPLATE xsi:type="string"/>
+		<ALTERNATE-CALL-REPRESENTATION-EXPECTATION-FIELD-TEMPLATE xsi:type="string"/>
+	</INFORMATION>
+	<VARIABLES xsi:type="variableContainer">
+		<VARIABLE format-rev="1" xsi:type="variable">
+			<NAME xsi:type="string">receivedFrame</NAME>
+			<DESCRIPTION xsi:type="string"/>
+			<DEFAULT-VALUE xsi:type="undefined"/>
+		</VARIABLE>
+		<VARIABLE format-rev="1" in="true" xsi:type="variable">
+			<NAME xsi:type="string">requestId</NAME>
+			<DESCRIPTION xsi:type="string"/>
+			<DEFAULT-VALUE format-rev="1" xsi:type="value">
+				<DATA xsi:type="integer">1777</DATA>
+			</DEFAULT-VALUE>
+		</VARIABLE>
+		<VARIABLE format-rev="1" in="true" xsi:type="variable">
+			<NAME xsi:type="string">responseId</NAME>
+			<DESCRIPTION xsi:type="string"/>
+			<DEFAULT-VALUE format-rev="1" xsi:type="value">
+				<DATA xsi:type="integer">1554</DATA>
+			</DEFAULT-VALUE>
+		</VARIABLE>
+		<VARIABLE format-rev="1" xsi:type="variable">
+			<NAME xsi:type="string">toSend</NAME>
+			<DESCRIPTION xsi:type="string"/>
+			<DEFAULT-VALUE xsi:type="undefined"/>
+		</VARIABLE>
+		<VARIABLE format-rev="1" xsi:type="variable">
+			<NAME xsi:type="string">subFunction</NAME>
+			<DEFAULT-VALUE xsi:type="undefined"/>
+		</VARIABLE>
+		<VARIABLE format-rev="1" xsi:type="variable">
+			<NAME xsi:type="string">statusMask</NAME>
+			<DESCRIPTION xsi:type="string"/>
+			<DEFAULT-VALUE format-rev="1" xsi:type="value">
+				<DATA xsi:type="integer">255</DATA>
+			</DEFAULT-VALUE>
+		</VARIABLE>
+		<VARIABLE format-rev="1" in="true" xsi:type="variable">
+			<NAME xsi:type="string">isExtended</NAME>
+			<DESCRIPTION xsi:type="string"/>
+			<DEFAULT-VALUE xsi:type="aBoolean">
+				<OBJECT xsi:type="string">False</OBJECT>
+			</DEFAULT-VALUE>
+		</VARIABLE>
+	</VARIABLES>
+	<MAPPING format-rev="1" xsi:type="localMappingSpace">
+		<MAPPING-ITEM format-rev="2" xsi:type="mappingItem">
+			<ID xsi:type="string">ClearFrame</ID>
+			<XACCESS xsi:type="xaJob">
+				<PORT-ID xsi:type="string">BUS-CAN02</PORT-ID>
+				<JOB-NAME xsi:type="string">ClearFrame</JOB-NAME>
+			</XACCESS>
+		</MAPPING-ITEM>
+		<MAPPING-ITEM format-rev="2" xsi:type="mappingItem">
+			<ID xsi:type="string">InitFrame</ID>
+			<XACCESS xsi:type="xaJob">
+				<PORT-ID xsi:type="string">BUS-CAN02</PORT-ID>
+				<JOB-NAME xsi:type="string">InitFrame</JOB-NAME>
+			</XACCESS>
+		</MAPPING-ITEM>
+		<MAPPING-ITEM format-rev="2" xsi:type="mappingItem">
+			<ID xsi:type="string">ReadFrameEx</ID>
+			<XACCESS xsi:type="xaJob">
+				<PORT-ID xsi:type="string">BUS-CAN02</PORT-ID>
+				<JOB-NAME xsi:type="string">ReadFrameEx</JOB-NAME>
+			</XACCESS>
+		</MAPPING-ITEM>
+		<MAPPING-ITEM format-rev="2" xsi:type="mappingItem">
+			<ID xsi:type="string">SendFrame</ID>
+			<XACCESS xsi:type="xaJob">
+				<PORT-ID xsi:type="string">BUS-CAN02</PORT-ID>
+				<JOB-NAME xsi:type="string">SendFrame</JOB-NAME>
+			</XACCESS>
+		</MAPPING-ITEM>
+	</MAPPING>
+	<TESTSTEPS xsi:type="testCase">
+		<TESTSTEP format-rev="3" id="14631848" name="TsBlock" xsi:type="utility-2752ad1e-4fef-11dc-81d4-0013728784ee">
+			<ACTION xsi:type="I18NItem">
+				<MULTILANGDATA>
+					<ELEMENT dkey="en_US">
+						<DVALUE xsi:type="string">Initialisierung</DVALUE>
+					</ELEMENT>
+				</MULTILANGDATA>
+				<INITIAL-LANGUAGE xsi:type="string">en_US</INITIAL-LANGUAGE>
+			</ACTION>
+			<TESTSTEP format-rev="4" id="14629640" xsi:type="tsJob">
+				<MAPPING-REF xsi:type="string">InitFrame</MAPPING-REF>
+				<JOB-PARAMETER xsi:type="tsJobParameter">
+					<NAME xsi:type="string">FrameId</NAME>
+					<EXPRESSION xsi:type="varBaseExpression">
+						<NAME xsi:type="string">requestId</NAME>
+					</EXPRESSION>
+				</JOB-PARAMETER>
+				<JOB-PARAMETER xsi:type="tsJobParameter">
+					<NAME xsi:type="string">isExtended</NAME>
+					<EXPRESSION xsi:type="varBaseExpression">
+						<NAME xsi:type="string">isExtended</NAME>
+					</EXPRESSION>
+				</JOB-PARAMETER>
+			</TESTSTEP>
+			<TESTSTEP format-rev="4" id="14629650" xsi:type="tsJob">
+				<MAPPING-REF xsi:type="string">InitFrame</MAPPING-REF>
+				<JOB-PARAMETER xsi:type="tsJobParameter">
+					<NAME xsi:type="string">FrameId</NAME>
+					<EXPRESSION xsi:type="varBaseExpression">
+						<NAME xsi:type="string">responseId</NAME>
+					</EXPRESSION>
+				</JOB-PARAMETER>
+				<JOB-PARAMETER xsi:type="tsJobParameter">
+					<NAME xsi:type="string">isExtended</NAME>
+					<EXPRESSION xsi:type="varBaseExpression">
+						<NAME xsi:type="string">isExtended</NAME>
+					</EXPRESSION>
+				</JOB-PARAMETER>
+			</TESTSTEP>
+			<TESTSTEP format-rev="4" id="46160514" xsi:type="tsJob">
+				<MAPPING-REF xsi:type="string">ClearFrame</MAPPING-REF>
+				<JOB-PARAMETER xsi:type="tsJobParameter">
+					<NAME xsi:type="string">FrameId</NAME>
+					<EXPRESSION xsi:type="varBaseExpression">
+						<NAME xsi:type="string">requestId</NAME>
+					</EXPRESSION>
+				</JOB-PARAMETER>
+				<JOB-PARAMETER xsi:type="tsJobParameter">
+					<NAME xsi:type="string">isExtended</NAME>
+					<EXPRESSION xsi:type="varBaseExpression">
+						<NAME xsi:type="string">isExtended</NAME>
+					</EXPRESSION>
+				</JOB-PARAMETER>
+			</TESTSTEP>
+		</TESTSTEP>
+		<TESTSTEP format-rev="3" id="46161070" name="TsBlock" xsi:type="utility-2752ad1e-4fef-11dc-81d4-0013728784ee">
+			<ACTION xsi:type="I18NItem">
+				<MULTILANGDATA>
+					<ELEMENT dkey="de_DE">
+						<DVALUE xsi:type="string">Request lesen</DVALUE>
+					</ELEMENT>
+					<ELEMENT dkey="en_US">
+						<DVALUE xsi:type="string">Request für WriteDataByIdentifier lesen</DVALUE>
+					</ELEMENT>
+				</MULTILANGDATA>
+				<INITIAL-LANGUAGE xsi:type="string">en_US</INITIAL-LANGUAGE>
+			</ACTION>
+			<TESTSTEP format-rev="4" id="46161052" xsi:type="tsJob">
+				<MAPPING-REF xsi:type="string">ReadFrameEx</MAPPING-REF>
+				<VARIABLE-REFS>
+					<VARIABLE-NAME dkey="default">
+						<DVALUE xsi:type="string">receivedFrame</DVALUE>
+					</VARIABLE-NAME>
+				</VARIABLE-REFS>
+				<JOB-PARAMETER xsi:type="tsJobParameter">
+					<NAME xsi:type="string">FrameId</NAME>
+					<EXPRESSION xsi:type="varBaseExpression">
+						<NAME xsi:type="string">requestId</NAME>
+					</EXPRESSION>
+				</JOB-PARAMETER>
+				<JOB-PARAMETER xsi:type="tsJobParameter">
+					<NAME xsi:type="string">isExtended</NAME>
+					<EXPRESSION xsi:type="varBaseExpression">
+						<NAME xsi:type="string">isExtended</NAME>
+					</EXPRESSION>
+				</JOB-PARAMETER>
+				<EXPECTATION-OPTION xsi:type="syncOnlyOption">
+					<EXPRESSION xsi:type="presentExpression"/>
+					<TIME format-rev="1" xsi:type="valueBaseExpression">
+						<VALUE xsi:type="integer">500</VALUE>
+					</TIME>
+				</EXPECTATION-OPTION>
+			</TESTSTEP>
+			<TESTSTEP format-rev="4" id="46161054" xsi:type="tsJob">
+				<MAPPING-REF xsi:type="string">ClearFrame</MAPPING-REF>
+				<JOB-PARAMETER xsi:type="tsJobParameter">
+					<NAME xsi:type="string">FrameId</NAME>
+					<EXPRESSION xsi:type="varBaseExpression">
+						<NAME xsi:type="string">requestId</NAME>
+					</EXPRESSION>
+				</JOB-PARAMETER>
+				<JOB-PARAMETER xsi:type="tsJobParameter">
+					<NAME xsi:type="string">isExtended</NAME>
+					<EXPRESSION xsi:type="varBaseExpression">
+						<NAME xsi:type="string">isExtended</NAME>
+					</EXPRESSION>
+				</JOB-PARAMETER>
+			</TESTSTEP>
+			<TESTSTEP format-rev="3" id="46161056" name="TsCalculation" xsi:type="utility-4115fa00-5f3c-11df-8a53-001c233b3528">
+				<FORMULA xsi:type="functionBaseExpression">
+					<COMPONENT xsi:type="attributeBaseExpression">
+						<COMPONENT xsi:type="binaryOpBaseExpression">
+							<NAME xsi:type="string">BINARY_SUBSCR</NAME>
+							<FIRST-COMPONENT xsi:type="attributeBaseExpression">
+								<COMPONENT xsi:type="varBaseExpression">
+									<NAME xsi:type="string">receivedFrame</NAME>
+								</COMPONENT>
+								<ATTR-NAME xsi:type="string">payload</ATTR-NAME>
+							</FIRST-COMPONENT>
+							<SECOND-COMPONENT format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="integer">0</VALUE>
+							</SECOND-COMPONENT>
+						</COMPONENT>
+						<ATTR-NAME xsi:type="string">UInt</ATTR-NAME>
+					</COMPONENT>
+				</FORMULA>
+				<EXPECTATION-OPTION xsi:type="timelessOption">
+					<EXPRESSION xsi:type="manualNumericExpression">
+						<BASE-EXPRESSION xsi:type="compareOpBaseExpression">
+							<NAME xsi:type="string">in</NAME>
+							<FIRST-COMPONENT xsi:type="varBaseExpression">
+								<NAME xsi:type="string">value</NAME>
+							</FIRST-COMPONENT>
+							<SECOND-COMPONENT xsi:type="listOrTupleBaseExpression">
+								<IS-LIST xsi:type="boolean">True</IS-LIST>
+								<EXPRESSION-LIST>
+									<BASE-EXPRESSION format-rev="1" xsi:type="valueBaseExpression">
+										<VALUE xsi:type="integer">2</VALUE>
+									</BASE-EXPRESSION>
+									<BASE-EXPRESSION format-rev="1" xsi:type="valueBaseExpression">
+										<VALUE xsi:type="integer">3</VALUE>
+									</BASE-EXPRESSION>
+								</EXPRESSION-LIST>
+							</SECOND-COMPONENT>
+						</BASE-EXPRESSION>
+					</EXPRESSION>
+				</EXPECTATION-OPTION>
+			</TESTSTEP>
+			<TESTSTEP format-rev="3" id="46161759" name="TsCalculation" xsi:type="utility-4115fa00-5f3c-11df-8a53-001c233b3528">
+				<FORMULA xsi:type="functionBaseExpression">
+					<COMPONENT xsi:type="attributeBaseExpression">
+						<COMPONENT xsi:type="binaryOpBaseExpression">
+							<NAME xsi:type="string">BINARY_SUBSCR</NAME>
+							<FIRST-COMPONENT xsi:type="attributeBaseExpression">
+								<COMPONENT xsi:type="varBaseExpression">
+									<NAME xsi:type="string">receivedFrame</NAME>
+								</COMPONENT>
+								<ATTR-NAME xsi:type="string">payload</ATTR-NAME>
+							</FIRST-COMPONENT>
+							<SECOND-COMPONENT format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="integer">1</VALUE>
+							</SECOND-COMPONENT>
+						</COMPONENT>
+						<ATTR-NAME xsi:type="string">UInt</ATTR-NAME>
+					</COMPONENT>
+				</FORMULA>
+				<EXPECTATION-OPTION xsi:type="timelessOption">
+					<EXPRESSION xsi:type="builtNumericExpression">
+						<RELATION xsi:type="string">==</RELATION>
+						<VALUE format-rev="1" xsi:type="valueBaseExpression">
+							<VALUE xsi:type="integer">0x19</VALUE>
+						</VALUE>
+					</EXPRESSION>
+				</EXPECTATION-OPTION>
+			</TESTSTEP>
+			<TESTSTEP format-rev="3" id="46161058" name="TsCalculation" xsi:type="utility-4115fa00-5f3c-11df-8a53-001c233b3528">
+				<VARIABLE-REFS>
+					<VARIABLE-NAME dkey="default">
+						<DVALUE xsi:type="string">subFunction</DVALUE>
+					</VARIABLE-NAME>
+				</VARIABLE-REFS>
+				<FORMULA xsi:type="functionBaseExpression">
+					<COMPONENT xsi:type="attributeBaseExpression">
+						<COMPONENT xsi:type="binaryOpBaseExpression">
+							<NAME xsi:type="string">BINARY_SUBSCR</NAME>
+							<FIRST-COMPONENT xsi:type="attributeBaseExpression">
+								<COMPONENT xsi:type="varBaseExpression">
+									<NAME xsi:type="string">receivedFrame</NAME>
+								</COMPONENT>
+								<ATTR-NAME xsi:type="string">payload</ATTR-NAME>
+							</FIRST-COMPONENT>
+							<SECOND-COMPONENT format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="integer">2</VALUE>
+							</SECOND-COMPONENT>
+						</COMPONENT>
+						<ATTR-NAME xsi:type="string">UInt</ATTR-NAME>
+					</COMPONENT>
+				</FORMULA>
+			</TESTSTEP>
+			<TESTSTEP id="46161068" name="TsIfThenElse" xsi:type="utility-3609c41e-4fef-11dc-899a-0013728784ee">
+				<CONDITION xsi:type="compareOpBaseExpression">
+					<NAME xsi:type="string">in</NAME>
+					<FIRST-COMPONENT xsi:type="varBaseExpression">
+						<NAME xsi:type="string">subFunction</NAME>
+					</FIRST-COMPONENT>
+					<SECOND-COMPONENT xsi:type="listOrTupleBaseExpression">
+						<IS-LIST xsi:type="boolean">True</IS-LIST>
+						<EXPRESSION-LIST>
+							<BASE-EXPRESSION format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="integer">0x02</VALUE>
+							</BASE-EXPRESSION>
+							<BASE-EXPRESSION format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="integer">0x0f</VALUE>
+							</BASE-EXPRESSION>
+							<BASE-EXPRESSION format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="integer">0x13</VALUE>
+							</BASE-EXPRESSION>
+						</EXPRESSION-LIST>
+					</SECOND-COMPONENT>
+				</CONDITION>
+				<THEN id="46161065" xsi:type="ifThenElseNode">
+					<TESTSTEP format-rev="3" id="46161064" name="TsCalculation" xsi:type="utility-4115fa00-5f3c-11df-8a53-001c233b3528">
+						<VARIABLE-REFS>
+							<VARIABLE-NAME dkey="default">
+								<DVALUE xsi:type="string">statusMask</DVALUE>
+							</VARIABLE-NAME>
+						</VARIABLE-REFS>
+						<FORMULA xsi:type="functionBaseExpression">
+							<COMPONENT xsi:type="attributeBaseExpression">
+								<COMPONENT xsi:type="binaryOpBaseExpression">
+									<NAME xsi:type="string">BINARY_SUBSCR</NAME>
+									<FIRST-COMPONENT xsi:type="attributeBaseExpression">
+										<COMPONENT xsi:type="varBaseExpression">
+											<NAME xsi:type="string">receivedFrame</NAME>
+										</COMPONENT>
+										<ATTR-NAME xsi:type="string">payload</ATTR-NAME>
+									</FIRST-COMPONENT>
+									<SECOND-COMPONENT format-rev="1" xsi:type="valueBaseExpression">
+										<VALUE xsi:type="integer">3</VALUE>
+									</SECOND-COMPONENT>
+								</COMPONENT>
+								<ATTR-NAME xsi:type="string">UInt</ATTR-NAME>
+							</COMPONENT>
+						</FORMULA>
+					</TESTSTEP>
+				</THEN>
+				<ELSE id="46161067" xsi:type="ifThenElseNode"/>
+			</TESTSTEP>
+		</TESTSTEP>
+		<TESTSTEP format-rev="3" id="46159357" name="TsBlock" xsi:type="utility-2752ad1e-4fef-11dc-81d4-0013728784ee">
+			<ACTION xsi:type="I18NItem">
+				<MULTILANGDATA>
+					<ELEMENT dkey="en_US">
+						<DVALUE xsi:type="string">SingleFrame-negativ-Antwort für WriteDataByIdentifier senden</DVALUE>
+					</ELEMENT>
+				</MULTILANGDATA>
+				<INITIAL-LANGUAGE xsi:type="string">en_US</INITIAL-LANGUAGE>
+			</ACTION>
+			<TESTSTEP format-rev="3" id="46159377" name="TsCalculation" xsi:type="utility-4115fa00-5f3c-11df-8a53-001c233b3528">
+				<VARIABLE-REFS>
+					<VARIABLE-NAME dkey="default">
+						<DVALUE xsi:type="string">toSend</DVALUE>
+					</VARIABLE-NAME>
+				</VARIABLE-REFS>
+				<FORMULA xsi:type="binaryOpBaseExpression">
+					<NAME xsi:type="string">BINARY_ADD</NAME>
+					<FIRST-COMPONENT xsi:type="binaryOpBaseExpression">
+						<NAME xsi:type="string">BINARY_ADD</NAME>
+						<FIRST-COMPONENT xsi:type="functionBaseExpression">
+							<COMPONENT xsi:type="varBaseExpression">
+								<NAME xsi:type="string">ByteStream</NAME>
+							</COMPONENT>
+							<ARGUMENTS>
+								<ARGUMENT format-rev="1" xsi:type="valueBaseExpression">
+									<VALUE xsi:type="string">04:7F</VALUE>
+								</ARGUMENT>
+							</ARGUMENTS>
+						</FIRST-COMPONENT>
+						<SECOND-COMPONENT xsi:type="sliceBaseExpression">
+							<COMPONENT xsi:type="attributeBaseExpression">
+								<COMPONENT xsi:type="varBaseExpression">
+									<NAME xsi:type="string">receivedFrame</NAME>
+								</COMPONENT>
+								<ATTR-NAME xsi:type="string">payload</ATTR-NAME>
+							</COMPONENT>
+							<START format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="integer">1</VALUE>
+							</START>
+							<STOP format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="integer">2</VALUE>
+							</STOP>
+						</SECOND-COMPONENT>
+					</FIRST-COMPONENT>
+					<SECOND-COMPONENT xsi:type="functionBaseExpression">
+						<COMPONENT xsi:type="varBaseExpression">
+							<NAME xsi:type="string">ByteStream</NAME>
+						</COMPONENT>
+						<ARGUMENTS>
+							<ARGUMENT xsi:type="listOrTupleBaseExpression">
+								<IS-LIST xsi:type="boolean">True</IS-LIST>
+								<EXPRESSION-LIST>
+									<BASE-EXPRESSION format-rev="1" xsi:type="valueBaseExpression">
+										<VALUE xsi:type="integer">0x10</VALUE>
+									</BASE-EXPRESSION>
+								</EXPRESSION-LIST>
+							</ARGUMENT>
+						</ARGUMENTS>
+					</SECOND-COMPONENT>
+				</FORMULA>
+			</TESTSTEP>
+			<TESTSTEP format-rev="4" id="46159365" xsi:type="tsJob">
+				<MAPPING-REF xsi:type="string">SendFrame</MAPPING-REF>
+				<JOB-PARAMETER xsi:type="tsJobParameter">
+					<NAME xsi:type="string">FrameId</NAME>
+					<EXPRESSION xsi:type="varBaseExpression">
+						<NAME xsi:type="string">responseId</NAME>
+					</EXPRESSION>
+				</JOB-PARAMETER>
+				<JOB-PARAMETER xsi:type="tsJobParameter">
+					<NAME xsi:type="string">isExtended</NAME>
+					<EXPRESSION xsi:type="varBaseExpression">
+						<NAME xsi:type="string">isExtended</NAME>
+					</EXPRESSION>
+				</JOB-PARAMETER>
+				<JOB-PARAMETER xsi:type="tsJobParameter">
+					<NAME xsi:type="string">DataByteStream</NAME>
+					<EXPRESSION xsi:type="varBaseExpression">
+						<NAME xsi:type="string">toSend</NAME>
+					</EXPRESSION>
+				</JOB-PARAMETER>
+			</TESTSTEP>
+		</TESTSTEP>
+	</TESTSTEPS>
+</PACKAGE>

@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TOOLING format-rev="2" prog-version="2020.1.95870" xmlns="http://www.tracetronic.de/xml/ecu-test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tracetronic.de/xml/ecu-test tooling.xsd">
+	<TOOL-HOSTS>
+		<TOOL-HOST xsi:type="toolHost">
+			<URL xsi:type="string">local</URL>
+			<BASE-PATH xsi:type="string">&lt;workspace&gt;</BASE-PATH>
+		</TOOL-HOST>
+	</TOOL-HOSTS>
+	<TOOLS>
+		<TOOL id="VECTOR-HW01" xsi:type="tool">
+			<TOOL-HOST xsi:type="string">local</TOOL-HOST>
+			<TOOL-NAME xsi:type="string">VECTOR-HW</TOOL-NAME>
+			<START-OPTION xsi:type="integer">0</START-OPTION>
+			<START-PRIORITY xsi:type="integer">0</START-PRIORITY>
+			<SETTINGS xsi:type="dynamicPropertySet"/>
+		</TOOL>
+	</TOOLS>
+	<PORTS>
+		<PORT format-rev="2" id="DIAG-J193901" toolId="VECTOR-HW01" xsi:type="port">
+			<PORT-TYPE-ID format-rev="2" xsi:type="toolcaps">
+				<NAME xsi:type="string">DIAGNOSTICS</NAME>
+			</PORT-TYPE-ID>
+			<IMPL-TYPE-ID xsi:type="string">J1939</IMPL-TYPE-ID>
+			<AUTOSTART xsi:type="integer">0</AUTOSTART>
+			<SETTINGS xsi:type="dynamicPropertySet"/>
+		</PORT>
+	</PORTS>
+	<TOOL-DESCRIPTORS>
+		<TOOL-DESCRIPTOR dkey="VECTOR-HW01">
+			<DVALUE format-rev="2" xsi:type="toolDescriptor">
+				<TOOL-NAME xsi:type="string">VECTOR-HW</TOOL-NAME>
+				<PROVIDES>
+					<PORT-TYPE xsi:type="portImplInfo">
+						<PORT-TYPE-ID format-rev="2" xsi:type="toolcaps">
+							<NAME xsi:type="string">BUSACCESS</NAME>
+						</PORT-TYPE-ID>
+						<IMPL-TYPE xsi:type="implTypeDescriptor">
+							<IMPL-TYPE-ID xsi:type="string">CAN</IMPL-TYPE-ID>
+							<DESCRIPTION xsi:type="string">VECTOR-HW access to CAN</DESCRIPTION>
+						</IMPL-TYPE>
+						<IMPL-TYPE xsi:type="implTypeDescriptor">
+							<IMPL-TYPE-ID xsi:type="string">CAN_MANIP</IMPL-TYPE-ID>
+							<DESCRIPTION xsi:type="string">VECTOR-HW-manipulation for CAN</DESCRIPTION>
+						</IMPL-TYPE>
+						<IMPL-TYPE xsi:type="implTypeDescriptor">
+							<IMPL-TYPE-ID xsi:type="string">CAN-FD</IMPL-TYPE-ID>
+							<DESCRIPTION xsi:type="string">VECTOR-HW access to CAN FD</DESCRIPTION>
+						</IMPL-TYPE>
+						<IMPL-TYPE xsi:type="implTypeDescriptor">
+							<IMPL-TYPE-ID xsi:type="string">CAN-FD_MANIP</IMPL-TYPE-ID>
+							<DESCRIPTION xsi:type="string">VECTOR-HW-manipulation for CAN</DESCRIPTION>
+						</IMPL-TYPE>
+						<IMPL-TYPE xsi:type="implTypeDescriptor">
+							<IMPL-TYPE-ID xsi:type="string">LIN</IMPL-TYPE-ID>
+							<DESCRIPTION xsi:type="string">VECTOR-HW access to LIN</DESCRIPTION>
+						</IMPL-TYPE>
+						<IMPL-TYPE xsi:type="implTypeDescriptor">
+							<IMPL-TYPE-ID xsi:type="string">LIN_MANIP</IMPL-TYPE-ID>
+							<DESCRIPTION xsi:type="string">VECTOR-HW-manipulation for LIN</DESCRIPTION>
+						</IMPL-TYPE>
+						<IMPL-TYPE xsi:type="implTypeDescriptor">
+							<IMPL-TYPE-ID xsi:type="string">FLX</IMPL-TYPE-ID>
+							<DESCRIPTION xsi:type="string">VECTOR-HW access to FLX</DESCRIPTION>
+						</IMPL-TYPE>
+					</PORT-TYPE>
+					<PORT-TYPE xsi:type="portImplInfo">
+						<PORT-TYPE-ID format-rev="2" xsi:type="toolcaps">
+							<NAME xsi:type="string">DIAGNOSTICS</NAME>
+						</PORT-TYPE-ID>
+						<IMPL-TYPE xsi:type="implTypeDescriptor">
+							<IMPL-TYPE-ID xsi:type="string">CAN</IMPL-TYPE-ID>
+							<DESCRIPTION xsi:type="string">VECTOR-HW Diagnostics</DESCRIPTION>
+						</IMPL-TYPE>
+						<IMPL-TYPE xsi:type="implTypeDescriptor">
+							<IMPL-TYPE-ID xsi:type="string">CAN-FD_TOLERANT</IMPL-TYPE-ID>
+							<DESCRIPTION xsi:type="string">VECTOR-HW diagnostics with CAN frames on a CAN FD bus</DESCRIPTION>
+						</IMPL-TYPE>
+						<IMPL-TYPE xsi:type="implTypeDescriptor">
+							<IMPL-TYPE-ID xsi:type="string">CAN-FD</IMPL-TYPE-ID>
+							<DESCRIPTION xsi:type="string">VECTOR-HW Diagnostics</DESCRIPTION>
+						</IMPL-TYPE>
+						<IMPL-TYPE xsi:type="implTypeDescriptor">
+							<IMPL-TYPE-ID xsi:type="string">J1939</IMPL-TYPE-ID>
+							<DESCRIPTION xsi:type="string">VECTOR-HW access to J1939 via CAN. Component of the ECU-TEST diagnostics add-on</DESCRIPTION>
+						</IMPL-TYPE>
+					</PORT-TYPE>
+					<PORT-TYPE xsi:type="portImplInfo">
+						<PORT-TYPE-ID format-rev="2" xsi:type="toolcaps">
+							<NAME xsi:type="string">ELECTRICERRORSIM</NAME>
+						</PORT-TYPE-ID>
+						<IMPL-TYPE xsi:type="implTypeDescriptor">
+							<IMPL-TYPE-ID xsi:type="string">CANWAY</IMPL-TYPE-ID>
+							<DESCRIPTION xsi:type="string">CAN-Controller for CANWAY-FIU</DESCRIPTION>
+						</IMPL-TYPE>
+					</PORT-TYPE>
+				</PROVIDES>
+				<START-PRIORITY-HINT xsi:type="integer">0</START-PRIORITY-HINT>
+				<PROPERTIES xsi:type="propertyDescriptorSet">
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">hardware</NAME>
+						<DISPLAY-NAME xsi:type="string">Hardware</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Choose the hardware which should be used</DESCRIPTION>
+						<TYPE xsi:type="string">string</TYPE>
+						<DOMAIN>
+							<ELEMENT xsi:type="string">Name: Virtual CAN SerialNumber: 0 Capabilities: CAN (0)</ELEMENT>
+							<ELEMENT xsi:type="string">Entry &quot;ECU-TEST&quot; in Vector Hardware Config (-1)</ELEMENT>
+						</DOMAIN>
+						<DEFAULT xsi:type="string">Name: Virtual CAN SerialNumber: 0 Capabilities: CAN (0)</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">Debug</NAME>
+						<DISPLAY-NAME xsi:type="string">Debug</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<TYPE xsi:type="string">bool</TYPE>
+						<DOMAIN>
+							<ELEMENT xsi:type="string">False</ELEMENT>
+							<ELEMENT xsi:type="string">True</ELEMENT>
+						</DOMAIN>
+						<DEFAULT xsi:type="string">False</DEFAULT>
+						<READONLY xsi:type="boolean">True</READONLY>
+					</PROP>
+				</PROPERTIES>
+				<JOBS xsi:type="jobDescriptorSet"/>
+			</DVALUE>
+		</TOOL-DESCRIPTOR>
+	</TOOL-DESCRIPTORS>
+	<PORT-DESCRIPTORS>
+		<PORT-DESCRIPTOR dkey="DIAG-J193901">
+			<DVALUE format-rev="1" xsi:type="portDescriptor">
+				<PORT-TYPE-ID format-rev="2" xsi:type="toolcaps">
+					<NAME xsi:type="string">DIAGNOSTICS</NAME>
+				</PORT-TYPE-ID>
+				<IMPL-TYPE-ID xsi:type="string">J1939</IMPL-TYPE-ID>
+				<PROPERTIES xsi:type="propertyDescriptorSet">
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">CtrlNumber</NAME>
+						<DISPLAY-NAME xsi:type="string">Controller number</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Selection of controller number if there is more than one controller of same type.</DESCRIPTION>
+						<TYPE xsi:type="string">string</TYPE>
+						<DEFAULT xsi:type="string">1</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">Bitrate</NAME>
+						<DISPLAY-NAME xsi:type="string">Bit rate</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Bit rate</DESCRIPTION>
+						<TYPE xsi:type="string">string</TYPE>
+						<DOMAIN>
+							<ELEMENT xsi:type="string">10KB</ELEMENT>
+							<ELEMENT xsi:type="string">20KB</ELEMENT>
+							<ELEMENT xsi:type="string">50KB</ELEMENT>
+							<ELEMENT xsi:type="string">83.33KB</ELEMENT>
+							<ELEMENT xsi:type="string">100KB</ELEMENT>
+							<ELEMENT xsi:type="string">125KB</ELEMENT>
+							<ELEMENT xsi:type="string">250KB</ELEMENT>
+							<ELEMENT xsi:type="string">500KB</ELEMENT>
+							<ELEMENT xsi:type="string">800KB</ELEMENT>
+							<ELEMENT xsi:type="string">1000KB</ELEMENT>
+						</DOMAIN>
+						<DEFAULT xsi:type="string">500KB</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">NameId</NAME>
+						<DISPLAY-NAME xsi:type="string">J1939 Tester Name</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">1</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Byte sequence for the Address Claim name (separated by a colon)</DESCRIPTION>
+						<TYPE xsi:type="string">string</TYPE>
+						<DEFAULT xsi:type="string">00:00:20:04:00:81:00:20</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">SourceAddr</NAME>
+						<DISPLAY-NAME xsi:type="string">J1939 Tester Source Address</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">1</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Source address used for the J1939 Address Claim (must be&gt; 0).</DESCRIPTION>
+						<TYPE xsi:type="string">int</TYPE>
+						<DEFAULT xsi:type="string">123</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">ConfirmMode</NAME>
+						<DISPLAY-NAME xsi:type="string">Transmission confirmation</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">5</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Activates acknowledged sending. Bus-Write test steps and Send-Tooljobs block until the message was successfully transfered on the bus or the confirm timeout expired.</DESCRIPTION>
+						<TYPE xsi:type="string">bool</TYPE>
+						<DOMAIN>
+							<ELEMENT xsi:type="string">False</ELEMENT>
+							<ELEMENT xsi:type="string">True</ELEMENT>
+						</DOMAIN>
+						<DEFAULT xsi:type="string">False</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">ConfirmTimeout</NAME>
+						<DISPLAY-NAME xsi:type="string">Timeout for transmission confirmation</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">5</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Period in miliseconds in which a message has to be sent successfully. Otherwise or an error is created. (must no be larger than 64535ms). Is only used in active confirm mode.</DESCRIPTION>
+						<TYPE xsi:type="string">int</TYPE>
+						<DEFAULT xsi:type="string">30000</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+				</PROPERTIES>
+				<JOBS xsi:type="jobDescriptorSet">
+					<JOB format-rev="2" xsi:type="jobDescriptor">
+						<NAME xsi:type="string">DTCRequest</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">DestinationAddress</NAME>
+								<DESCRIPTION xsi:type="string">Numeric Id or TLA of the receiver. Use 0xff for broadcast.</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">DTC</NAME>
+								<DESCRIPTION xsi:type="string">Type of DTC</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<DOMAIN>
+									<ELEMENT xsi:type="string">Active</ELEMENT>
+									<ELEMENT xsi:type="string">Previously Active</ELEMENT>
+								</DOMAIN>
+								<DEFAULT xsi:type="string">Active</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Request of active (DM1) and previously active (DM2) error codes</DESCRIPTION>
+						<RETURN xsi:type="propertyDescriptor">
+							<NAME xsi:type="string">Return</NAME>
+							<DESCRIPTION xsi:type="string">List of J1939 objects</DESCRIPTION>
+							<TYPE xsi:type="string">object</TYPE>
+							<READONLY xsi:type="boolean">False</READONLY>
+						</RETURN>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">ClearDTC</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">DestinationAddress</NAME>
+								<DESCRIPTION xsi:type="string">Numeric Id or TLA of the receiver. Use 0xff for broadcast.</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">DTC</NAME>
+								<DESCRIPTION xsi:type="string">Type of DTC</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<DOMAIN>
+									<ELEMENT xsi:type="string">Active</ELEMENT>
+									<ELEMENT xsi:type="string">Previously Active</ELEMENT>
+								</DOMAIN>
+								<DEFAULT xsi:type="string">Previously Active</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Deletes all previously active (DM3) and active (DM11) error codes</DESCRIPTION>
+					</JOB>
+					<JOB format-rev="2" xsi:type="jobDescriptor">
+						<NAME xsi:type="string">GetAvailableTLAs</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet"/>
+						<DESCRIPTION xsi:type="string">Returns a dictionary of all active participants with their source address and their TLA (Three Letter Acronym)</DESCRIPTION>
+						<RETURN xsi:type="propertyDescriptor">
+							<NAME xsi:type="string">Return</NAME>
+							<DESCRIPTION xsi:type="string">Dict {sourceAddress: TLA}</DESCRIPTION>
+							<TYPE xsi:type="string">object</TYPE>
+							<READONLY xsi:type="boolean">False</READONLY>
+						</RETURN>
+					</JOB>
+					<JOB format-rev="2" xsi:type="jobDescriptor">
+						<NAME xsi:type="string">StandardPGNRequestResponse</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">DestinationAddress</NAME>
+								<DESCRIPTION xsi:type="string">Numeric Id or TLA of the receiver. Use 0xff for broadcast.</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">Payload</NAME>
+								<DESCRIPTION xsi:type="string">Payload for the request.</DESCRIPTION>
+								<TYPE xsi:type="string">ByteStream</TYPE>
+								<DEFAULT xsi:type="string">ByteStream()</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Sends a standard PGN request and returns the response</DESCRIPTION>
+						<RETURN xsi:type="propertyDescriptor">
+							<NAME xsi:type="string">Return</NAME>
+							<DESCRIPTION xsi:type="string">List of J1939Message objects</DESCRIPTION>
+							<TYPE xsi:type="string">object</TYPE>
+							<READONLY xsi:type="boolean">False</READONLY>
+						</RETURN>
+					</JOB>
+					<JOB format-rev="2" xsi:type="jobDescriptor">
+						<NAME xsi:type="string">GenericPGNSendReceive</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">SendPriority</NAME>
+								<DESCRIPTION xsi:type="string">Priority of the message to be sent</DESCRIPTION>
+								<TYPE xsi:type="string">int</TYPE>
+								<DEFAULT xsi:type="string">0</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">SendPduFormat</NAME>
+								<DESCRIPTION xsi:type="string">First byte of the PGN to be sent</DESCRIPTION>
+								<TYPE xsi:type="string">int</TYPE>
+								<DEFAULT xsi:type="string">0</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">SendPduSpecific</NAME>
+								<DESCRIPTION xsi:type="string">Second byte of the PGN to be sent</DESCRIPTION>
+								<TYPE xsi:type="string">int</TYPE>
+								<DEFAULT xsi:type="string">0</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">SendPayload</NAME>
+								<DESCRIPTION xsi:type="string">Payload for sending, if the ByteStream is empty, it is only received.</DESCRIPTION>
+								<TYPE xsi:type="string">ByteStream</TYPE>
+								<DEFAULT xsi:type="string">ByteStream()</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">ReceivePduFormat</NAME>
+								<DESCRIPTION xsi:type="string">First byte of the received PGN </DESCRIPTION>
+								<TYPE xsi:type="string">int</TYPE>
+								<DEFAULT xsi:type="string">0</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">ReceivePduSpecific</NAME>
+								<DESCRIPTION xsi:type="string">Second byte of the received PGN</DESCRIPTION>
+								<TYPE xsi:type="string">int</TYPE>
+								<DEFAULT xsi:type="string">0</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">ReceivePayloadFilterMask</NAME>
+								<DESCRIPTION xsi:type="string">Mask for the Byte to be checked (ByteStream)</DESCRIPTION>
+								<TYPE xsi:type="string">ByteStream</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">ReceivePayloadFilterValue</NAME>
+								<DESCRIPTION xsi:type="string">Byte values which the payload of the message must accept (ByteStream)</DESCRIPTION>
+								<TYPE xsi:type="string">ByteStream</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">Timeout</NAME>
+								<DESCRIPTION xsi:type="string">Time in seconds to wait for answers</DESCRIPTION>
+								<TYPE xsi:type="string">int</TYPE>
+								<DEFAULT xsi:type="string">1</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Sends a user-specific J1939 message and expects the response message with the specified parameters</DESCRIPTION>
+						<RETURN xsi:type="propertyDescriptor">
+							<NAME xsi:type="string">Return</NAME>
+							<DESCRIPTION xsi:type="string">J1939 message object</DESCRIPTION>
+							<TYPE xsi:type="string">object</TYPE>
+							<READONLY xsi:type="boolean">False</READONLY>
+						</RETURN>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">Send</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">Priority</NAME>
+								<TYPE xsi:type="string">int</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">PduFormat</NAME>
+								<TYPE xsi:type="string">int</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">PduSpecific</NAME>
+								<TYPE xsi:type="string">int</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">Payload</NAME>
+								<DESCRIPTION xsi:type="string">Payload for the request.</DESCRIPTION>
+								<TYPE xsi:type="string">ByteStream</TYPE>
+								<DEFAULT xsi:type="string">ByteStream()</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Sends a custom J1939 message</DESCRIPTION>
+					</JOB>
+					<JOB format-rev="2" xsi:type="jobDescriptor">
+						<NAME xsi:type="string">Receive</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">PduFormat</NAME>
+								<TYPE xsi:type="string">int</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">PduSpecific</NAME>
+								<TYPE xsi:type="string">int</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">SourceAddress</NAME>
+								<DESCRIPTION xsi:type="string">Sender ID or the filtered TLA (empty if no filter)</DESCRIPTION>
+								<TYPE xsi:type="string">int</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Returns the last received message with the specified PduFormat, PduSpecific and if required the SourceAddress</DESCRIPTION>
+						<RETURN xsi:type="propertyDescriptor">
+							<NAME xsi:type="string">Return</NAME>
+							<DESCRIPTION xsi:type="string">J1939 message object</DESCRIPTION>
+							<TYPE xsi:type="string">object</TYPE>
+							<READONLY xsi:type="boolean">False</READONLY>
+						</RETURN>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">OpenJ1939MemoryAccessSession</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">DestinationAddress</NAME>
+								<DESCRIPTION xsi:type="string">Numerical Id or TLA of the Receiver.</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">Length</NAME>
+								<DESCRIPTION xsi:type="string">Depending on Pointer Type (PT) the length of the addressed memory in bytes (PT = 0) or the number of objects (PT = 1)</DESCRIPTION>
+								<TYPE xsi:type="string">int</TYPE>
+								<DEFAULT xsi:type="string">0</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">PointerType</NAME>
+								<TYPE xsi:type="string">string</TYPE>
+								<DOMAIN>
+									<ELEMENT xsi:type="string">Direct Memory Addressing</ELEMENT>
+									<ELEMENT xsi:type="string">Direct Spatial Addressing</ELEMENT>
+								</DOMAIN>
+								<DEFAULT xsi:type="string">Direct Spatial Addressing</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">Pointer</NAME>
+								<TYPE xsi:type="string">int</TYPE>
+								<DEFAULT xsi:type="string">0</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">PointerExtension</NAME>
+								<TYPE xsi:type="string">int</TYPE>
+								<DEFAULT xsi:type="string">0</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">Key</NAME>
+								<DESCRIPTION xsi:type="string">Default: No Key (0xFFFF)</DESCRIPTION>
+								<TYPE xsi:type="string">int</TYPE>
+								<DEFAULT xsi:type="string">65535</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">Timeout</NAME>
+								<DESCRIPTION xsi:type="string">Time in ms in which a message is sent to the test object to maintain diagnostic access</DESCRIPTION>
+								<TYPE xsi:type="string">int</TYPE>
+								<DEFAULT xsi:type="string">80</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Opens a J1939 diagnostic session (memory access) and keeps it open, by sending the specified message content cyclically via DM14 every [timeout] ms.</DESCRIPTION>
+					</JOB>
+					<JOB format-rev="2" xsi:type="jobDescriptor">
+						<NAME xsi:type="string">MemoryAccessRequest</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">DestinationAddress</NAME>
+								<DESCRIPTION xsi:type="string">Numerical Id or TLA of the Receiver.</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">Length</NAME>
+								<DESCRIPTION xsi:type="string">Depending on Pointer Type (PT) the length of the addressed memory in bytes (PT = 0) or the number of objects (PT = 1)</DESCRIPTION>
+								<TYPE xsi:type="string">int</TYPE>
+								<DEFAULT xsi:type="string">0</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">PointerType</NAME>
+								<TYPE xsi:type="string">string</TYPE>
+								<DOMAIN>
+									<ELEMENT xsi:type="string">Direct Memory Addressing</ELEMENT>
+									<ELEMENT xsi:type="string">Direct Spatial Addressing</ELEMENT>
+								</DOMAIN>
+								<DEFAULT xsi:type="string">Direct Spatial Addressing</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">Command</NAME>
+								<DESCRIPTION xsi:type="string">Type of memory access</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<DOMAIN>
+									<ELEMENT xsi:type="string">Erase</ELEMENT>
+									<ELEMENT xsi:type="string">Read</ELEMENT>
+									<ELEMENT xsi:type="string">Write</ELEMENT>
+									<ELEMENT xsi:type="string">Status Request</ELEMENT>
+									<ELEMENT xsi:type="string">Operation Completed</ELEMENT>
+									<ELEMENT xsi:type="string">Operation Failed</ELEMENT>
+									<ELEMENT xsi:type="string">Boot Load</ELEMENT>
+									<ELEMENT xsi:type="string">EDCP Generation</ELEMENT>
+								</DOMAIN>
+								<DEFAULT xsi:type="string">Read</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">Pointer</NAME>
+								<TYPE xsi:type="string">int</TYPE>
+								<DEFAULT xsi:type="string">0</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">PointerExtension</NAME>
+								<TYPE xsi:type="string">int</TYPE>
+								<DEFAULT xsi:type="string">0</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">Key</NAME>
+								<DESCRIPTION xsi:type="string">Default: No Key (0xFFFF)</DESCRIPTION>
+								<TYPE xsi:type="string">int</TYPE>
+								<DEFAULT xsi:type="string">65535</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">WriteData</NAME>
+								<DESCRIPTION xsi:type="string">Write data for &quot;Write&quot; command</DESCRIPTION>
+								<TYPE xsi:type="string">ByteStream</TYPE>
+								<DEFAULT xsi:type="string">ByteStream()</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Sends a memory access request (DM14) and provides the corresponding answers (DM15, DM16)</DESCRIPTION>
+						<RETURN xsi:type="propertyDescriptor">
+							<NAME xsi:type="string">Return</NAME>
+							<DESCRIPTION xsi:type="string">List of received J1939Message objects</DESCRIPTION>
+							<TYPE xsi:type="string">object</TYPE>
+							<READONLY xsi:type="boolean">False</READONLY>
+						</RETURN>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">CloseJ1939MemoryAccessSession</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">DestinationAddress</NAME>
+								<DESCRIPTION xsi:type="string">Numerical Id or TLA of the Receiver.</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Closes the diagnostic session</DESCRIPTION>
+					</JOB>
+				</JOBS>
+			</DVALUE>
+		</PORT-DESCRIPTOR>
+	</PORT-DESCRIPTORS>
+</TOOLING>

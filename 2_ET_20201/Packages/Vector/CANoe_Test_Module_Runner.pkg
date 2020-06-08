@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PACKAGE format-rev="7" prog-version="8.1.0.92109" xmlns="http://www.tracetronic.de/xml/ecu-test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tracetronic.de/xml/ecu-test package.xsd">
+	<INFORMATION format-rev="2" xsi:type="packageInfo">
+		<DESCRIPTION xsi:type="string"/>
+		<VERSION xsi:type="string"/>
+		<ALTERNATE-CALL-REPRESENTATION-ACTION-FIELD-TEMPLATE xsi:type="string"/>
+		<ALTERNATE-CALL-REPRESENTATION-EXPECTATION-FIELD-TEMPLATE xsi:type="string"/>
+	</INFORMATION>
+	<VARIABLES xsi:type="variableContainer">
+		<VARIABLE format-rev="1" xsi:type="variable">
+			<NAME xsi:type="string">measurementStatus</NAME>
+			<DESCRIPTION xsi:type="string"/>
+			<DEFAULT-VALUE xsi:type="aBoolean">
+				<OBJECT xsi:type="string">False</OBJECT>
+			</DEFAULT-VALUE>
+		</VARIABLE>
+	</VARIABLES>
+	<MAPPING format-rev="1" xsi:type="localMappingSpace">
+		<MAPPING-ITEM format-rev="2" xsi:type="mappingItem">
+			<ID xsi:type="string">IsMeasurementRunning</ID>
+			<XACCESS xsi:type="xaJob">
+				<TOOL-ID xsi:type="string">CANoeCANalyzer01</TOOL-ID>
+				<JOB-NAME xsi:type="string">IsMeasurementRunning</JOB-NAME>
+			</XACCESS>
+		</MAPPING-ITEM>
+		<MAPPING-ITEM format-rev="2" xsi:type="mappingItem">
+			<ID xsi:type="string">StartMeasurement</ID>
+			<XACCESS xsi:type="xaJob">
+				<TOOL-ID xsi:type="string">CANoeCANalyzer01</TOOL-ID>
+				<JOB-NAME xsi:type="string">StartMeasurement</JOB-NAME>
+			</XACCESS>
+		</MAPPING-ITEM>
+	</MAPPING>
+	<TESTSTEPS xsi:type="testCase">
+		<TESTSTEP format-rev="3" id="3786" name="TsBlock" xsi:type="utility-2752ad1e-4fef-11dc-81d4-0013728784ee">
+			<ACTION xsi:type="I18NItem">
+				<MULTILANGDATA>
+					<ELEMENT dkey="en_US">
+						<DVALUE xsi:type="string">Start measurement if necessary</DVALUE>
+					</ELEMENT>
+				</MULTILANGDATA>
+				<INITIAL-LANGUAGE xsi:type="string">en_US</INITIAL-LANGUAGE>
+			</ACTION>
+			<TESTSTEP format-rev="4" id="3774" xsi:type="tsJob">
+				<MAPPING-REF xsi:type="string">IsMeasurementRunning</MAPPING-REF>
+				<VARIABLE-REFS>
+					<VARIABLE-NAME dkey="default">
+						<DVALUE xsi:type="string">measurementStatus</DVALUE>
+					</VARIABLE-NAME>
+				</VARIABLE-REFS>
+			</TESTSTEP>
+			<TESTSTEP id="3784" name="TsIfThenElse" xsi:type="utility-3609c41e-4fef-11dc-899a-0013728784ee">
+				<CONDITION xsi:type="varBaseExpression">
+					<NAME xsi:type="string">measurementStatus</NAME>
+				</CONDITION>
+				<THEN id="3779" xsi:type="ifThenElseNode"/>
+				<ELSE id="3783" xsi:type="ifThenElseNode">
+					<TESTSTEP format-rev="4" id="3782" xsi:type="tsJob">
+						<MAPPING-REF xsi:type="string">StartMeasurement</MAPPING-REF>
+					</TESTSTEP>
+				</ELSE>
+			</TESTSTEP>
+		</TESTSTEP>
+		<TESTSTEP format-rev="2" id="46181807" xsi:type="tsPackage">
+			<PACKAGE-REFERENCE format-rev="1" xsi:type="valueBaseExpression">
+				<VALUE xsi:type="string">Lib\\MotorStart_CANoe.pkg</VALUE>
+			</PACKAGE-REFERENCE>
+			<PARAM-ASSIGNMENTS/>
+			<ALTERNATIVE-MAPPING-SPACE format-rev="1" xsi:type="mappingSpace"/>
+		</TESTSTEP>
+		<TESTSTEP id="135" name="TsCANoeTestModuleRunner" xsi:type="utility-27bef4d8-547a-11e9-b26a-e4b97a806b93">
+			<TEST-ENVIRONMENT format-rev="1" xsi:type="valueBaseExpression">
+				<VALUE xsi:type="string">Test Environment</VALUE>
+			</TEST-ENVIRONMENT>
+			<TEST-MODULES xsi:type="listOrTupleBaseExpression">
+				<IS-LIST xsi:type="boolean">True</IS-LIST>
+				<EXPRESSION-LIST>
+					<BASE-EXPRESSION format-rev="1" xsi:type="valueBaseExpression">
+						<VALUE xsi:type="string">Engine Tester</VALUE>
+					</BASE-EXPRESSION>
+				</EXPRESSION-LIST>
+			</TEST-MODULES>
+		</TESTSTEP>
+	</TESTSTEPS>
+</PACKAGE>

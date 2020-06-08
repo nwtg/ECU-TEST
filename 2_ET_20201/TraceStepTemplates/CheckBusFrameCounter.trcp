@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TRACE-STEP-PROTOTYPE format-rev="1" uuid="3f497780f94011e4878d9cb70deccb28" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="trcpEventPythonII">
+	<DESCRIPTION xsi:type="string">Deprecated: Replaced by array-based NumPy trace step template.
+
+Checks if the signal has the expected signal samples.
+
+Note: The check is: sampleCounter '_mode' expectedSampleCounter.</DESCRIPTION>
+	<SIGNALS xsi:type="trcpParameterDescriptionList">
+		<PARAMETER uuid="48b62fc0f94011e49f539cb70deccb28" xsi:type="signalDescription">
+			<NAME xsi:type="string">FrameID</NAME>
+			<DESCRIPTION xsi:type="string">FrameID</DESCRIPTION>
+			<EVENT-TYPE xsi:type="string">PHY</EVENT-TYPE>
+		</PARAMETER>
+	</SIGNALS>
+	<PARAMETERS xsi:type="trcpParameterDescriptionList">
+		<PARAMETER uuid="e9488800f94211e4ad679cb70deccb28" xsi:type="parameterDescription">
+			<NAME xsi:type="string">expectedSampleCount</NAME>
+			<DESCRIPTION xsi:type="string">Number of expected signal samples.</DESCRIPTION>
+			<PARAMETER-TYPE xsi:type="string">INTEGER</PARAMETER-TYPE>
+		</PARAMETER>
+		<PARAMETER uuid="e90d059ef94211e4900a9cb70deccb28" xsi:type="parameterDescription">
+			<NAME xsi:type="string">_mode</NAME>
+			<DESCRIPTION xsi:type="string">Check modes are '==', '!=', '&lt;', '&gt;', '&gt;=' or '&lt;='.</DESCRIPTION>
+			<PARAMETER-TYPE xsi:type="string">STRING</PARAMETER-TYPE>
+		</PARAMETER>
+		<PARAMETER uuid="3e53969e8f9d11eab5e4bc9a78563412" xsi:type="parameterDescription">
+			<NAME xsi:type="string">id</NAME>
+			<DESCRIPTION xsi:type="string">Frame ID number</DESCRIPTION>
+			<PARAMETER-TYPE xsi:type="string">INTEGER</PARAMETER-TYPE>
+		</PARAMETER>
+	</PARAMETERS>
+	<INIT-FUNCTION xsi:type="pyFunctionII">
+		<NAME xsi:type="string">Init</NAME>
+		<PARAMETER-NAMES/>
+		<CODE xsi:type="pyCode">
+			<SOURCE xsi:type="string">#Head of function is generated, do not edit!
+def Init(dataContainer, parameters, report):
+    # set default value
+    dataContainer.sampleCounter = 0
+
+    # get parameters
+    dataContainer.expectedSampleCount = parameters[&quot;expectedSampleCount&quot;]
+    dataContainer.mode = parameters[&quot;_mode&quot;]
+    dataContainer.id = parameters[&quot;id&quot;]
+
+    # check expectedSampleCount
+    if not isinstance(dataContainer.expectedSampleCount, int):
+        raise TypeError(&quot;The parameter 'expectedSampleCount' has no valid type (%s).&quot; % type(dataContainer.expectedSampleCount))
+
+    if dataContainer.expectedSampleCount is None:
+        raise ValueError(&quot;The parameter 'expectedSampleCount' must be greater equal zero (%s).&quot; % dataContainer.expectedSampleCount)
+    
+    if dataContainer.expectedSampleCount &lt; 0:
+        raise ValueError(&quot;The parameter 'expectedSampleCount' must be greater equal zero (%s).&quot; % dataContainer.expectedSampleCount)
+
+    # check _mode
+    if dataContainer.mode is None:
+        dataContainer.mode = '=='
+
+    if not isinstance(dataContainer.mode, str):
+        raise TypeError(&quot;The parameter 'mode' has no valid type (%s).&quot; % type(dataContainer.mode))
+    
+    if dataContainer.mode not in ['==', '!=', '&lt;', '&gt;', '&gt;=', '&lt;=']:
+        raise ValueError(&quot;The parameter 'mode' must be one item of '==', '!=', '&lt;', '&gt;', '&gt;=', '&lt;=' (%s).&quot; % dataContainer.mode)
+
+
+</SOURCE>
+		</CODE>
+	</INIT-FUNCTION>
+	<FINALIZE-FUNCTION xsi:type="pyFunctionII">
+		<NAME xsi:type="string">Finalize</NAME>
+		<PARAMETER-NAMES/>
+		<CODE xsi:type="pyCode">
+			<SOURCE xsi:type="string">#Head of function is generated, do not edit!
+def Finalize(dataContainer, parameters, report):
+    try:
+        result = eval(&quot;dataContainer.sampleCounter %s dataContainer.expectedSampleCount&quot; % dataContainer.mode)
+    except:
+        raise RunTimeError(&quot;Check is invalid: %s %s %s (counted samples; mode; expected samples).&quot; % (dataContainer.sampleCounter, dataContainer.mode, dataContainer.expectedSampleCount))
+    
+    if result:
+        report.SetResultSuccess()
+        report.SetResultText(&quot;Check is success: %s %s %s (counted samples; mode; expected samples).&quot; % (dataContainer.sampleCounter, dataContainer.mode, dataContainer.expectedSampleCount))
+    else:
+        report.SetResultFailed()
+        report.SetResultText(&quot;Check is failed: %s %s %s (counted samples; mode; expected samples).&quot; % (dataContainer.sampleCounter, dataContainer.mode, dataContainer.expectedSampleCount))
+</SOURCE>
+		</CODE>
+	</FINALIZE-FUNCTION>
+	<FUNCTIONS>
+		<ELEMENT xsi:type="pyEventFunctionII">
+			<NAME xsi:type="string">Signal</NAME>
+			<PARAMETER-NAMES/>
+			<CODE xsi:type="pyCode">
+				<SOURCE xsi:type="string">#Head of function is generated, do not edit!
+def Signal(event, hold, dataContainer, parameters, report):
+    # count signal samples
+    value = event.GetValue(&quot;FrameID&quot;)
+    if value == dataContainer.id:
+        dataContainer.sampleCounter += 1
+    else:
+        pass
+</SOURCE>
+			</CODE>
+			<SIGNAL-NAMES>
+				<ELEMENT xsi:type="string">FrameID</ELEMENT>
+			</SIGNAL-NAMES>
+		</ELEMENT>
+	</FUNCTIONS>
+</TRACE-STEP-PROTOTYPE>

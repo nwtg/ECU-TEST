@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PACKAGE format-rev="4" prog-version="6.0-TRUNK" xmlns="http://www.tracetronic.de/xml/ecu-test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tracetronic.de/xml/ecu-test package.xsd">
+	<INFORMATION xsi:type="packageInfo">
+		<DESCRIPTION xsi:type="string"/>
+		<VERSION xsi:type="string"/>
+		<ALTERNATE-CALL-REPRESENTATION-ACTION-FIELD-TEMPLATE xsi:type="string"/>
+		<ALTERNATE-CALL-REPRESENTATION-EXPECTATION-FIELD-TEMPLATE xsi:type="string"/>
+	</INFORMATION>
+	<MAPPING format-rev="1" xsi:type="mappingSpace"/>
+	<TESTSTEPS xsi:type="testCase">
+		<TESTSTEP format-rev="1" id="15849354" name="TsComment" xsi:type="utility-1f4de951-4fef-11dc-969a-0013728784ee">
+			<COMMENT-EXPRESSION xsi:type="valueBaseExpression">
+				<VALUE xsi:type="string">Weekend Package</VALUE>
+			</COMMENT-EXPRESSION>
+			<COMMENT-VERDICT xsi:type="string">SUCCESS</COMMENT-VERDICT>
+		</TESTSTEP>
+	</TESTSTEPS>
+</PACKAGE>

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<REPORT-CONFIG xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <TYPE xsi:type="unicode">
+		PYTHON
+	</TYPE>
+    <REPORT-NAME xsi:type="unicode">
+		reportOverview.xlsx
+	</REPORT-NAME>
+    <PACKAGE-TEMPLATE xsi:type="unicode">
+        ProcessReport
+	</PACKAGE-TEMPLATE>
+    <PROJECT-TEMPLATE xsi:type="unicode">
+		ProcessReport
+	</PROJECT-TEMPLATE>
+    <SETTINGS>
+        <SETTING default="reportOverview.xlsx" name="reportName" xsi:type="reportConfigItem">
+            <DESCRIPTION xsi:type="I18NItem">
+                <MULTILANGDATA>
+                    <ELEMENT dkey="de_DE">
+                        <DVALUE xsi:type="unicode">Name der generierten Reportdatei</DVALUE>
+                    </ELEMENT>
+                    <ELEMENT dkey="en_US">
+                        <DVALUE xsi:type="unicode">Name of generated report file</DVALUE>
+                    </ELEMENT>
+                </MULTILANGDATA>
+                <INITIAL-LANGUAGE xsi:type="unicode">de_DE</INITIAL-LANGUAGE>
+            </DESCRIPTION>
+        </SETTING>
+        <SETTING default="(7,5)" name="attrCaption" xsi:type="reportConfigItem">
+            <DESCRIPTION xsi:type="I18NItem">
+                <MULTILANGDATA>
+                    <ELEMENT dkey="de_DE">
+                        <DVALUE xsi:type="unicode">Koordinaten für die Überschrift "Attribute" als Paar (x,y)</DVALUE>
+                    </ELEMENT>
+                    <ELEMENT dkey="en_US">
+                        <DVALUE xsi:type="unicode">Coordinates for the "attribute" caption as tuple (x,y)</DVALUE>
+                    </ELEMENT>
+                </MULTILANGDATA>
+                <INITIAL-LANGUAGE xsi:type="unicode">de_DE</INITIAL-LANGUAGE>
+            </DESCRIPTION>
+        </SETTING>
+        <SETTING default="(9,5)" name="attrStartCoord" xsi:type="reportConfigItem">
+            <DESCRIPTION xsi:type="I18NItem">
+                <MULTILANGDATA>
+                    <ELEMENT dkey="de_DE">
+                        <DVALUE xsi:type="unicode">Startfeld für die Attribute als Paar (x,y)</DVALUE>
+                    </ELEMENT>
+                    <ELEMENT dkey="en_US">
+                        <DVALUE xsi:type="unicode">Start field for the attribute list as tuple (x,y)</DVALUE>
+                    </ELEMENT>
+                </MULTILANGDATA>
+                <INITIAL-LANGUAGE xsi:type="unicode">de_DE</INITIAL-LANGUAGE>
+            </DESCRIPTION>
+        </SETTING>
+        <SETTING default="report_template.xlsx" name="templateFile" xsi:type="reportConfigItem">
+            <DESCRIPTION xsi:type="I18NItem">
+                <MULTILANGDATA>
+                    <ELEMENT dkey="de_DE">
+                        <DVALUE xsi:type="unicode">Pfad zur Reportvorlage</DVALUE>
+                    </ELEMENT>
+                    <ELEMENT dkey="en_US">
+                        <DVALUE xsi:type="unicode">Path to report template</DVALUE>
+                    </ELEMENT>
+                </MULTILANGDATA>
+                <INITIAL-LANGUAGE xsi:type="unicode">de_DE</INITIAL-LANGUAGE>
+            </DESCRIPTION>
+        </SETTING>
+        <SETTING default="(9,3)" name="execResult" xsi:type="reportConfigItem">
+            <DESCRIPTION xsi:type="I18NItem">
+                <MULTILANGDATA>
+                    <ELEMENT dkey="de_DE">
+                        <DVALUE xsi:type="unicode">Feld zur Eintragung des Testergebnisses als Paar (x,y)</DVALUE>
+                    </ELEMENT>
+                    <ELEMENT dkey="en_US">
+                        <DVALUE xsi:type="unicode">Field to enter test result as tuple (x,y)</DVALUE>
+                    </ELEMENT>
+                </MULTILANGDATA>
+                <INITIAL-LANGUAGE xsi:type="unicode">de_DE</INITIAL-LANGUAGE>
+            </DESCRIPTION>
+        </SETTING>
+        <SETTING default="(10,3)" name="execDuration" xsi:type="reportConfigItem">
+            <DESCRIPTION xsi:type="I18NItem">
+                <MULTILANGDATA>
+                    <ELEMENT dkey="de_DE">
+                        <DVALUE xsi:type="unicode">Feld zur Eintragung der Testlaufzeit als Paar (x,y)</DVALUE>
+                    </ELEMENT>
+                    <ELEMENT dkey="en_US">
+                        <DVALUE xsi:type="unicode">Field to enter test execution duration as tuple (x,y)</DVALUE>
+                    </ELEMENT>
+                </MULTILANGDATA>
+                <INITIAL-LANGUAGE xsi:type="unicode">de_DE</INITIAL-LANGUAGE>
+            </DESCRIPTION>
+        </SETTING>
+        <SETTING default="(11,3)" name="author" xsi:type="reportConfigItem">
+            <DESCRIPTION xsi:type="I18NItem">
+                <MULTILANGDATA>
+                    <ELEMENT dkey="de_DE">
+                        <DVALUE xsi:type="unicode">Feld zur Eintragung des Testers als Paar (x,y)</DVALUE>
+                    </ELEMENT>
+                    <ELEMENT dkey="en_US">
+                        <DVALUE xsi:type="unicode">Field to enter the testere as tuple (x,y)</DVALUE>
+                    </ELEMENT>
+                </MULTILANGDATA>
+                <INITIAL-LANGUAGE xsi:type="unicode">de_DE</INITIAL-LANGUAGE>
+            </DESCRIPTION>
+        </SETTING>
+        <SETTING default="(12,3)" name="execDate" xsi:type="reportConfigItem">
+            <DESCRIPTION xsi:type="I18NItem">
+                <MULTILANGDATA>
+                    <ELEMENT dkey="de_DE">
+                        <DVALUE xsi:type="unicode">Feld zur Eintragung des Ausführungszeitpunkts als Paar (x,y)</DVALUE>
+                    </ELEMENT>
+                    <ELEMENT dkey="en_US">
+                        <DVALUE xsi:type="unicode">Field to enter test execution time as tuple (x,y)</DVALUE>
+                    </ELEMENT>
+                </MULTILANGDATA>
+                <INITIAL-LANGUAGE xsi:type="unicode">de_DE</INITIAL-LANGUAGE>
+            </DESCRIPTION>
+        </SETTING>
+        <SETTING default="15" name="testCaseResultStartRow" xsi:type="reportConfigItem">
+            <DESCRIPTION xsi:type="I18NItem">
+                <MULTILANGDATA>
+                    <ELEMENT dkey="de_DE">
+                        <DVALUE xsi:type="unicode">Startzeile für Eintragung der Testfallergebnisse</DVALUE>
+                    </ELEMENT>
+                    <ELEMENT dkey="en_US">
+                        <DVALUE xsi:type="unicode">First row to enter test results</DVALUE>
+                    </ELEMENT>
+                </MULTILANGDATA>
+                <INITIAL-LANGUAGE xsi:type="unicode">de_DE</INITIAL-LANGUAGE>
+            </DESCRIPTION>
+        </SETTING>
+        <SETTING default="2" name="testCaseNamesColumn" xsi:type="reportConfigItem">
+            <DESCRIPTION xsi:type="I18NItem">
+                <MULTILANGDATA>
+                    <ELEMENT dkey="de_DE">
+                        <DVALUE xsi:type="unicode">Spalte zur Eintragung der Testfallbezeichner</DVALUE>
+                    </ELEMENT>
+                    <ELEMENT dkey="en_US">
+                        <DVALUE xsi:type="unicode">Column to enter test case names</DVALUE>
+                    </ELEMENT>
+                </MULTILANGDATA>
+                <INITIAL-LANGUAGE xsi:type="unicode">de_DE</INITIAL-LANGUAGE>
+            </DESCRIPTION>
+        </SETTING>
+        <SETTING default="3" name="testCaseResultColumn" xsi:type="reportConfigItem">
+            <DESCRIPTION xsi:type="I18NItem">
+                <MULTILANGDATA>
+                    <ELEMENT dkey="de_DE">
+                        <DVALUE xsi:type="unicode">Spalte zur Eintragung der Testfallbewertungen</DVALUE>
+                    </ELEMENT>
+                    <ELEMENT dkey="en_US">
+                        <DVALUE xsi:type="unicode">Column to enter test case results</DVALUE>
+                    </ELEMENT>
+                </MULTILANGDATA>
+                <INITIAL-LANGUAGE xsi:type="unicode">de_DE</INITIAL-LANGUAGE>
+            </DESCRIPTION>
+        </SETTING>
+        <SETTING default="4" name="testCaseDescriptionColumn" xsi:type="reportConfigItem">
+            <DESCRIPTION xsi:type="I18NItem">
+                <MULTILANGDATA>
+                    <ELEMENT dkey="de_DE">
+                        <DVALUE xsi:type="unicode">Spalte zur Eintragung der Testfallbeschreibung</DVALUE>
+                    </ELEMENT>
+                    <ELEMENT dkey="en_US">
+                        <DVALUE xsi:type="unicode">Column to enter test case description</DVALUE>
+                    </ELEMENT>
+                </MULTILANGDATA>
+                <INITIAL-LANGUAGE xsi:type="unicode">de_DE</INITIAL-LANGUAGE>
+            </DESCRIPTION>
+        </SETTING>
+        <SETTING default="6" name="testCaseDurationColumn" xsi:type="reportConfigItem">
+            <DESCRIPTION xsi:type="I18NItem">
+                <MULTILANGDATA>
+                    <ELEMENT dkey="de_DE">
+                        <DVALUE xsi:type="unicode">Spalte zur Eintragung der TestfallAbarbeitungszeit</DVALUE>
+                    </ELEMENT>
+                    <ELEMENT dkey="en_US">
+                        <DVALUE xsi:type="unicode">Column to enter test case execution time</DVALUE>
+                    </ELEMENT>
+                </MULTILANGDATA>
+                <INITIAL-LANGUAGE xsi:type="unicode">de_DE</INITIAL-LANGUAGE>
+            </DESCRIPTION>
+        </SETTING>
+        <SETTING default="True" name="colorResultCells" xsi:type="reportConfigItem">
+            <DESCRIPTION xsi:type="I18NItem">
+                <MULTILANGDATA>
+                    <ELEMENT dkey="de_DE">
+                        <DVALUE xsi:type="unicode">Farbige Hintergründe für Resultate (True/False)</DVALUE>
+                    </ELEMENT>
+                    <ELEMENT dkey="en_US">
+                        <DVALUE xsi:type="unicode">Colored backgrounds in result cells (True/False)</DVALUE>
+                    </ELEMENT>
+                </MULTILANGDATA>
+                <INITIAL-LANGUAGE xsi:type="unicode">de_DE</INITIAL-LANGUAGE>
+            </DESCRIPTION>
+        </SETTING>
+        <SETTING default="(2,6,True)" name="tableFrames" xsi:type="reportConfigItem">
+            <DESCRIPTION xsi:type="I18NItem">
+                <MULTILANGDATA>
+                    <ELEMENT dkey="de_DE">
+                        <DVALUE xsi:type="unicode">Rahmen um Ergebnisse zeichnen. (Startspalte, 
+						Endspalte, True/False) Wahrheitswert definiert ob Startzeile automatisch 
+						um eins verringert werden soll um auch eine Titelzeile des Templates zu 
+						umfassen.</DVALUE>
+                    </ELEMENT>
+                    <ELEMENT dkey="en_US">
+                        <DVALUE xsi:type="unicode">Paint frames around results. (Start column, 
+						end column, True/False) Boolean value defines if the start row should be
+						decremented by one to also surround a title row defined in the template.
+						</DVALUE>
+                    </ELEMENT>
+                </MULTILANGDATA>
+                <INITIAL-LANGUAGE xsi:type="unicode">de_DE</INITIAL-LANGUAGE>
+            </DESCRIPTION>
+        </SETTING>
+        <SETTING default="(7,2)" name="configEntriesStartAt" xsi:type="reportConfigItem">
+            <DESCRIPTION xsi:type="I18NItem">
+                <MULTILANGDATA>
+                    <ELEMENT dkey="de_DE">
+                        <DVALUE xsi:type="unicode">Startfeld zur Eintragung der Konfiguration als Paar (x,y)</DVALUE>
+                    </ELEMENT>
+                    <ELEMENT dkey="en_US">
+                        <DVALUE xsi:type="unicode">First field to enter configuration infos as tuple (x,y)</DVALUE>
+                    </ELEMENT>
+                </MULTILANGDATA>
+                <INITIAL-LANGUAGE xsi:type="unicode">de_DE</INITIAL-LANGUAGE>
+            </DESCRIPTION>
+        </SETTING>
+    </SETTINGS>
+</REPORT-CONFIG>
