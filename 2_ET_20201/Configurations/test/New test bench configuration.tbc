@@ -1,0 +1,1298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TOOLING format-rev="2" prog-version="8.0.0.86579" xmlns="http://www.tracetronic.de/xml/ecu-test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tracetronic.de/xml/ecu-test tooling.xsd">
+	<TOOL-HOSTS>
+		<TOOL-HOST xsi:type="toolHost">
+			<URL xsi:type="string">local</URL>
+			<BASE-PATH xsi:type="string">&lt;workspace&gt;</BASE-PATH>
+		</TOOL-HOST>
+	</TOOL-HOSTS>
+	<TOOLS>
+		<TOOL id="INCA01" xsi:type="tool">
+			<TOOL-HOST xsi:type="string">local</TOOL-HOST>
+			<TOOL-NAME xsi:type="string">INCA</TOOL-NAME>
+			<START-OPTION xsi:type="integer">0</START-OPTION>
+			<START-PRIORITY xsi:type="integer">0</START-PRIORITY>
+			<SETTINGS xsi:type="dynamicPropertySet"/>
+		</TOOL>
+	</TOOLS>
+	<PORTS>
+		<PORT format-rev="2" id="APL01" toolId="INCA01" xsi:type="port">
+			<PORT-TYPE-ID format-rev="2" xsi:type="toolcaps">
+				<NAME xsi:type="string">APPLICATION</NAME>
+			</PORT-TYPE-ID>
+			<IMPL-TYPE-ID xsi:type="string">Standard</IMPL-TYPE-ID>
+			<AUTOSTART xsi:type="integer">0</AUTOSTART>
+			<SETTINGS xsi:type="dynamicPropertySet">
+				<PROPERTY format-rev="1" name="a2lFile" propertyType="string" readonly="false" xsi:type="_property">
+					<VALUE xsi:type="string">ref:SUT</VALUE>
+				</PROPERTY>
+				<PROPERTY format-rev="1" name="hexFile" propertyType="string" readonly="false" xsi:type="_property">
+					<VALUE xsi:type="string">ref:SUT</VALUE>
+				</PROPERTY>
+			</SETTINGS>
+		</PORT>
+	</PORTS>
+	<TOOL-DESCRIPTORS>
+		<TOOL-DESCRIPTOR dkey="INCA01">
+			<DVALUE format-rev="2" xsi:type="toolDescriptor">
+				<TOOL-NAME xsi:type="string">INCA</TOOL-NAME>
+				<PROVIDES>
+					<PORT-TYPE xsi:type="portImplInfo">
+						<PORT-TYPE-ID format-rev="2" xsi:type="toolcaps">
+							<NAME xsi:type="string">APPLICATION</NAME>
+						</PORT-TYPE-ID>
+						<IMPL-TYPE xsi:type="implTypeDescriptor">
+							<IMPL-TYPE-ID xsi:type="string">Standard</IMPL-TYPE-ID>
+							<DESCRIPTION xsi:type="string">INCA access</DESCRIPTION>
+						</IMPL-TYPE>
+						<IMPL-TYPE xsi:type="implTypeDescriptor">
+							<IMPL-TYPE-ID xsi:type="string">Simulation</IMPL-TYPE-ID>
+							<DESCRIPTION xsi:type="string">INCA access with simulation controller</DESCRIPTION>
+						</IMPL-TYPE>
+					</PORT-TYPE>
+					<PORT-TYPE xsi:type="portImplInfo">
+						<PORT-TYPE-ID format-rev="2" xsi:type="toolcaps">
+							<NAME xsi:type="string">BUSACCESS</NAME>
+						</PORT-TYPE-ID>
+					</PORT-TYPE>
+				</PROVIDES>
+				<START-PRIORITY-HINT xsi:type="integer">0</START-PRIORITY-HINT>
+				<PROPERTIES xsi:type="propertyDescriptorSet">
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">incaRoot</NAME>
+						<DISPLAY-NAME xsi:type="string">INCA Root</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">INCA working directory</DESCRIPTION>
+						<TYPE xsi:type="string">uri</TYPE>
+						<DEFAULT xsi:type="string">C:\Users\Toto\AppData\Local\Temp\ECU-TEST 8.0\ToolLibTemp</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">db</NAME>
+						<DISPLAY-NAME xsi:type="string">Database</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Name of the database to use. Ignored if a Database template is used</DESCRIPTION>
+						<TYPE xsi:type="string">string</TYPE>
+						<DEFAULT xsi:type="string">ECU-TEST</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">folder</NAME>
+						<DISPLAY-NAME xsi:type="string">Folder</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Basic folder in database</DESCRIPTION>
+						<TYPE xsi:type="string">uri</TYPE>
+						<DEFAULT xsi:type="string">ECU-TEST</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">dbTemplate</NAME>
+						<DISPLAY-NAME xsi:type="string">Database template</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Path of the template database.
+If defined, a copy of these database will be created in the current INCA root directory and loaded at tool start.
+Replaces the defined database. If the path is relative, the base path of the tool host settings is used and will be extended by the template database.</DESCRIPTION>
+						<TYPE xsi:type="string">uri</TYPE>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">workspace</NAME>
+						<DISPLAY-NAME xsi:type="string">Working environment</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Name of working environment</DESCRIPTION>
+						<TYPE xsi:type="string">string</TYPE>
+						<DEFAULT xsi:type="string">CCP</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">experiment</NAME>
+						<DISPLAY-NAME xsi:type="string">Experiment</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Name of INCA experiment</DESCRIPTION>
+						<TYPE xsi:type="string">string</TYPE>
+						<DEFAULT xsi:type="string">leer</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">calviewEnbl</NAME>
+						<DISPLAY-NAME xsi:type="string">Refresh calibration values</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">By default, modified calibration values are not displayed in the INCA experiment. This can be changed here, but at the expense of speed.</DESCRIPTION>
+						<TYPE xsi:type="string">bool</TYPE>
+						<DOMAIN>
+							<ELEMENT xsi:type="string">False</ELEMENT>
+							<ELEMENT xsi:type="string">True</ELEMENT>
+						</DOMAIN>
+						<DEFAULT xsi:type="string">False</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">measStart</NAME>
+						<DISPLAY-NAME xsi:type="string">Start of measurement</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Automatic: start measurement automatically at test start. Manuel: Start and stop measurement using tool jobs</DESCRIPTION>
+						<TYPE xsi:type="string">string</TYPE>
+						<DOMAIN>
+							<ELEMENT xsi:type="string">Automatic</ELEMENT>
+							<ELEMENT xsi:type="string">Manual</ELEMENT>
+						</DOMAIN>
+						<DEFAULT xsi:type="string">Automatic</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">connectTimeout</NAME>
+						<DISPLAY-NAME xsi:type="string">Timeout for connection attempt</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Time in seconds, before a the connection attempt will be canceled.</DESCRIPTION>
+						<TYPE xsi:type="string">int</TYPE>
+						<DEFAULT xsi:type="string">60</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">connectionTimeout</NAME>
+						<DISPLAY-NAME xsi:type="string">Timeout for a response from INCA</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Maximumin time seconds for ECU-TEST to wait for a response from INCA.</DESCRIPTION>
+						<TYPE xsi:type="string">int</TYPE>
+						<DEFAULT xsi:type="string">10</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">suppressMessageBoxes</NAME>
+						<DISPLAY-NAME xsi:type="string">Deactivate popup window</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Suppress all INCA popup windows during test execution? It can also be chosen to suppress the popup windows continuous while the configuration is started ('continuous').</DESCRIPTION>
+						<TYPE xsi:type="string">string</TYPE>
+						<DOMAIN>
+							<ELEMENT xsi:type="string">True</ELEMENT>
+							<ELEMENT xsi:type="string">False</ELEMENT>
+							<ELEMENT xsi:type="string">continuous</ELEMENT>
+						</DOMAIN>
+						<DEFAULT xsi:type="string">False</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">suppressMeasureViews</NAME>
+						<DISPLAY-NAME xsi:type="string">Do not open measurement windows</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Do not open windows in INCA exeriment for values used by ECU-TEST. Opening the windows may have a negative impact on performance and stability of the connection. CAUTION: If the measurement windows are not opened, the automatic recording of calibration variables might not work as expected in INCA.</DESCRIPTION>
+						<TYPE xsi:type="string">bool</TYPE>
+						<DOMAIN>
+							<ELEMENT xsi:type="string">False</ELEMENT>
+							<ELEMENT xsi:type="string">True</ELEMENT>
+						</DOMAIN>
+						<DEFAULT xsi:type="string">False</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">disableTriggers</NAME>
+						<DISPLAY-NAME xsi:type="string">Disable recording triggers</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Sets all recording triggers in INCA to manual start and stop (actually triggered by ECU-TEST)</DESCRIPTION>
+						<TYPE xsi:type="string">bool</TYPE>
+						<DOMAIN>
+							<ELEMENT xsi:type="string">False</ELEMENT>
+							<ELEMENT xsi:type="string">True</ELEMENT>
+						</DOMAIN>
+						<DEFAULT xsi:type="string">False</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">quitIncaOnDisconnect</NAME>
+						<DISPLAY-NAME xsi:type="string">Shutdown on exit</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Should INCA be shut down if the tool is closed?</DESCRIPTION>
+						<TYPE xsi:type="string">bool</TYPE>
+						<DOMAIN>
+							<ELEMENT xsi:type="string">False</ELEMENT>
+							<ELEMENT xsi:type="string">True</ELEMENT>
+						</DOMAIN>
+						<DEFAULT xsi:type="string">False</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">saveExperimentOnDisconnect</NAME>
+						<DISPLAY-NAME xsi:type="string">Save Experiment</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Shall the INCA experiment be saved upon closing?</DESCRIPTION>
+						<TYPE xsi:type="string">bool</TYPE>
+						<DOMAIN>
+							<ELEMENT xsi:type="string">False</ELEMENT>
+							<ELEMENT xsi:type="string">True</ELEMENT>
+						</DOMAIN>
+						<DEFAULT xsi:type="string">True</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">toolVersion</NAME>
+						<DISPLAY-NAME xsi:type="string">Version</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Used INCA version</DESCRIPTION>
+						<TYPE xsi:type="string">string</TYPE>
+						<DOMAIN>
+							<ELEMENT xsi:type="string">&lt;system default&gt;</ELEMENT>
+						</DOMAIN>
+						<DEFAULT xsi:type="string">&lt;system default&gt;</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">useMeasureCal</NAME>
+						<DISPLAY-NAME xsi:type="string">Capture calibration variables as measurements</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Use this option to capture the corresponding measurement on the #MeasureCal device in INCA instead of the calibration variable. The #MeasureCal device has to be present in INCA for this option to take effect. Note: The trace analysis automatically detects the #MeasureCal device in INCA recordings and uses it to read calibration values. The time axis of the #MeasureCal device has a reliable sampling rate, but the recording starts delayed in comparison to other devices.</DESCRIPTION>
+						<TYPE xsi:type="string">bool</TYPE>
+						<DOMAIN>
+							<ELEMENT xsi:type="string">False</ELEMENT>
+							<ELEMENT xsi:type="string">True</ELEMENT>
+						</DOMAIN>
+						<DEFAULT xsi:type="string">False</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">mdfFileTypes</NAME>
+						<DISPLAY-NAME xsi:type="string">MDF file type</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Set the MDF file type</DESCRIPTION>
+						<TYPE xsi:type="string">string</TYPE>
+						<DOMAIN>
+							<ELEMENT xsi:type="string">&lt;system default&gt;</ELEMENT>
+							<ELEMENT xsi:type="string">mdf 4.1</ELEMENT>
+							<ELEMENT xsi:type="string">mdf 4.0</ELEMENT>
+							<ELEMENT xsi:type="string">mdf 3.3</ELEMENT>
+							<ELEMENT xsi:type="string">mdf 3.0</ELEMENT>
+						</DOMAIN>
+						<DEFAULT xsi:type="string">&lt;system default&gt;</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">userOptions</NAME>
+						<DISPLAY-NAME xsi:type="string">UserOptions</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Expert Option.
+
+Dictionary with additional user options, e.g. {'AppHistValueChanges': 'persistent', 'NameAlignment': 'left', 'AllowECUReset': 'true'}.
+
+Requires INCA 7.2.6 or newer.
+
+Setting 'MDF file type' takes precedence over '[Measure-General]MdfFileType' here.
+
+See also INCA API documentation on SetOption.</DESCRIPTION>
+						<TYPE xsi:type="string">string</TYPE>
+						<DEFAULT xsi:type="string">{}</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+				</PROPERTIES>
+				<JOBS xsi:type="jobDescriptorSet">
+					<JOB format-rev="2" xsi:type="jobDescriptor">
+						<NAME xsi:type="string">InitializeHardware</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet"/>
+						<DESCRIPTION xsi:type="string">Initialize hardware</DESCRIPTION>
+						<RETURN xsi:type="propertyDescriptor">
+							<NAME xsi:type="string">returnValue</NAME>
+							<DISPLAY-NAME xsi:type="string">Return value</DISPLAY-NAME>
+							<DESCRIPTION xsi:type="string">True on success</DESCRIPTION>
+							<TYPE xsi:type="string">bool</TYPE>
+							<DOMAIN>
+								<ELEMENT xsi:type="string">False</ELEMENT>
+								<ELEMENT xsi:type="string">True</ELEMENT>
+							</DOMAIN>
+							<READONLY xsi:type="boolean">False</READONLY>
+						</RETURN>
+					</JOB>
+					<JOB format-rev="2" xsi:type="jobDescriptor">
+						<NAME xsi:type="string">CheckAllConnections</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet"/>
+						<DESCRIPTION xsi:type="string">Provides the connection state of all devices</DESCRIPTION>
+						<RETURN xsi:type="propertyDescriptor">
+							<NAME xsi:type="string">returnValue</NAME>
+							<DISPLAY-NAME xsi:type="string">Return value</DISPLAY-NAME>
+							<DESCRIPTION xsi:type="string">Dictionary{str -&gt; bool} of all devices in the experiment and their connection status. 'True' means the device is connected and active.</DESCRIPTION>
+							<TYPE xsi:type="string">object</TYPE>
+							<READONLY xsi:type="boolean">False</READONLY>
+						</RETURN>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">Start</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet"/>
+						<DESCRIPTION xsi:type="string">Start tool</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">Stop</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet"/>
+						<DESCRIPTION xsi:type="string">Removes all ECU-TEST values from the experiment</DESCRIPTION>
+					</JOB>
+					<JOB format-rev="2" xsi:type="jobDescriptor">
+						<NAME xsi:type="string">StartMeasurement</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet"/>
+						<DESCRIPTION xsi:type="string">Start measurement</DESCRIPTION>
+						<RETURN xsi:type="propertyDescriptor">
+							<NAME xsi:type="string">returnValue</NAME>
+							<DISPLAY-NAME xsi:type="string">Return value</DISPLAY-NAME>
+							<DESCRIPTION xsi:type="string">'-1' if the job fails</DESCRIPTION>
+							<TYPE xsi:type="string">int</TYPE>
+							<READONLY xsi:type="boolean">False</READONLY>
+						</RETURN>
+					</JOB>
+					<JOB format-rev="2" xsi:type="jobDescriptor">
+						<NAME xsi:type="string">StopMeasurement</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet"/>
+						<DESCRIPTION xsi:type="string">Stop measurement and recording</DESCRIPTION>
+						<RETURN xsi:type="propertyDescriptor">
+							<NAME xsi:type="string">returnValue</NAME>
+							<DISPLAY-NAME xsi:type="string">Return value</DISPLAY-NAME>
+							<DESCRIPTION xsi:type="string">'-1' if the job fails</DESCRIPTION>
+							<TYPE xsi:type="string">int</TYPE>
+							<READONLY xsi:type="boolean">False</READONLY>
+						</RETURN>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">WriteEventComment</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">Comment</NAME>
+								<DISPLAY-NAME xsi:type="string">Comment</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">Comment to set at the marker</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Inserts a marker with an optional comment into a running recording.</DESCRIPTION>
+					</JOB>
+					<JOB format-rev="2" xsi:type="jobDescriptor">
+						<NAME xsi:type="string">GetNonProjectDevices</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet"/>
+						<DESCRIPTION xsi:type="string">Provides a list of devices which not assigned to the project.</DESCRIPTION>
+						<RETURN xsi:type="propertyDescriptor">
+							<NAME xsi:type="string">returnValue</NAME>
+							<DISPLAY-NAME xsi:type="string">Return value</DISPLAY-NAME>
+							<DESCRIPTION xsi:type="string">List[str] of devices</DESCRIPTION>
+							<TYPE xsi:type="string">object</TYPE>
+							<READONLY xsi:type="boolean">False</READONLY>
+						</RETURN>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">InitVariable</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">DeviceName</NAME>
+								<DISPLAY-NAME xsi:type="string">Device</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">Name of device</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">VariableName</NAME>
+								<DISPLAY-NAME xsi:type="string">Label name</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">Name of value</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">Rate</NAME>
+								<DISPLAY-NAME xsi:type="string">Acquisition rate</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">Name of acquisition rate</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Adds measurements to the experiment</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">DeInitVariable</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">DeviceName</NAME>
+								<DISPLAY-NAME xsi:type="string">Device</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">Name of device</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">VariableName</NAME>
+								<DISPLAY-NAME xsi:type="string">Label name</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">Name of value to be removed</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Removes a measurement from experiment</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">ReadVariable</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">DeviceName</NAME>
+								<DISPLAY-NAME xsi:type="string">Device</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">Name of device</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">VariableName</NAME>
+								<DISPLAY-NAME xsi:type="string">Label name</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">Name of value</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Reads a measurement from experiment</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">ReadCalibration</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">Name</NAME>
+								<DISPLAY-NAME xsi:type="string">Name</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">Name of value</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">Device</NAME>
+								<DISPLAY-NAME xsi:type="string">Device</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">Device of variable to be read</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">TypeInfo</NAME>
+								<DISPLAY-NAME xsi:type="string">Type</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">variable type</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<DOMAIN>
+									<ELEMENT xsi:type="string">SCALAR</ELEMENT>
+									<ELEMENT xsi:type="string">VECTOR</ELEMENT>
+									<ELEMENT xsi:type="string">MATRIX</ELEMENT>
+									<ELEMENT xsi:type="string">CURVE</ELEMENT>
+									<ELEMENT xsi:type="string">MAP</ELEMENT>
+								</DOMAIN>
+								<DEFAULT xsi:type="string">SCALAR</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Reads a calibration value</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">WriteCalibration</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">Name</NAME>
+								<DISPLAY-NAME xsi:type="string">Name</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">Name of value to be written</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">Device</NAME>
+								<DISPLAY-NAME xsi:type="string">Device</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">Device of variable to be written</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">TypeInfo</NAME>
+								<DISPLAY-NAME xsi:type="string">Type</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">variable type</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<DOMAIN>
+									<ELEMENT xsi:type="string">SCALAR</ELEMENT>
+									<ELEMENT xsi:type="string">VECTOR</ELEMENT>
+									<ELEMENT xsi:type="string">MATRIX</ELEMENT>
+									<ELEMENT xsi:type="string">CURVE</ELEMENT>
+									<ELEMENT xsi:type="string">MAP</ELEMENT>
+								</DOMAIN>
+								<DEFAULT xsi:type="string">SCALAR</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">Data</NAME>
+								<DISPLAY-NAME xsi:type="string">Value</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">Write data</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">WeakBoundToHardBound</NAME>
+								<DISPLAY-NAME xsi:type="string">Set hard bounds</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">Permanently use hard bounds instead of weak bounds</DESCRIPTION>
+								<TYPE xsi:type="string">bool</TYPE>
+								<DOMAIN>
+									<ELEMENT xsi:type="string">False</ELEMENT>
+									<ELEMENT xsi:type="string">True</ELEMENT>
+								</DOMAIN>
+								<DEFAULT xsi:type="string">True</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Writes a calibration value</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">FlashHexFileWithControlFlowOnFlashPort</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">DeviceName</NAME>
+								<DISPLAY-NAME xsi:type="string">Device</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">Name of device</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">ControlFlow</NAME>
+								<DISPLAY-NAME xsi:type="string">ControlFlow</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">ControlFlow from TGTSVR.log without device and .hex file</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">FlashFile</NAME>
+								<DISPLAY-NAME xsi:type="string">FlashFile</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">Optional: file name and path of the flash file</DESCRIPTION>
+								<TYPE xsi:type="string">uri</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">CopyFile</NAME>
+								<DISPLAY-NAME xsi:type="string">CopyFile</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">Copies the local file to tool host, if &quot;True&quot; selected.</DESCRIPTION>
+								<TYPE xsi:type="string">bool</TYPE>
+								<DOMAIN>
+									<ELEMENT xsi:type="string">False</ELEMENT>
+									<ELEMENT xsi:type="string">True</ELEMENT>
+								</DOMAIN>
+								<DEFAULT xsi:type="string">False</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">FlashPort</NAME>
+								<DISPLAY-NAME xsi:type="string">Flash-Port</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">Optional: Alternative flash port</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Flashes the ECU when the measurement is stopped</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">GetSupportedFlashPortNames</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">DeviceName</NAME>
+								<DISPLAY-NAME xsi:type="string">Device</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">Name of device</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Returns the names of supported FlashPorts</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">SetRecordingHeader</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">Comment</NAME>
+								<DISPLAY-NAME xsi:type="string">Comment</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">Comment field in the recording properties.</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">Company</NAME>
+								<DISPLAY-NAME xsi:type="string">Company</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">Company field in the recording properties.</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">Project</NAME>
+								<DISPLAY-NAME xsi:type="string">Project</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">Project field in the recording properties.</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">User</NAME>
+								<DISPLAY-NAME xsi:type="string">User</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">User field in the recording properties.</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">Vehicle</NAME>
+								<DISPLAY-NAME xsi:type="string">Vehicle</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">Vehicle field in the recording properties.</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Sets the fields of the MDF header. (Not possible during a measurement).</DESCRIPTION>
+					</JOB>
+					<JOB format-rev="2" xsi:type="jobDescriptor">
+						<NAME xsi:type="string">GetLastRecordingFileName</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet"/>
+						<DESCRIPTION xsi:type="string">Returns the file path of the last recording.
+ Attention: The file path always referred to the recently completed recording. This is done automatically at the end of the test and can be done also by using triggers.
+&quot;Stop trace&quot; pauses the recording only.</DESCRIPTION>
+						<RETURN xsi:type="propertyDescriptor">
+							<NAME xsi:type="string">fileName</NAME>
+							<DISPLAY-NAME xsi:type="string">File path</DISPLAY-NAME>
+							<DESCRIPTION xsi:type="string">Complete path of the last capture file. Can be empty.</DESCRIPTION>
+							<TYPE xsi:type="string">object</TYPE>
+							<READONLY xsi:type="boolean">False</READONLY>
+						</RETURN>
+					</JOB>
+					<JOB format-rev="2" xsi:type="jobDescriptor">
+						<NAME xsi:type="string">GetETASTempPath</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet"/>
+						<DESCRIPTION xsi:type="string">Answer the file system path for the ETAS temporary files. </DESCRIPTION>
+						<RETURN xsi:type="propertyDescriptor">
+							<NAME xsi:type="string">filePath</NAME>
+							<DISPLAY-NAME xsi:type="string">Folder path</DISPLAY-NAME>
+							<DESCRIPTION xsi:type="string">Path for the ETAS temporary files</DESCRIPTION>
+							<TYPE xsi:type="string">string</TYPE>
+							<READONLY xsi:type="boolean">False</READONLY>
+						</RETURN>
+					</JOB>
+					<JOB format-rev="2" xsi:type="jobDescriptor">
+						<NAME xsi:type="string">GetETASLogFilePath</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet"/>
+						<DESCRIPTION xsi:type="string">Answer the file system path for the ETAS log files. </DESCRIPTION>
+						<RETURN xsi:type="propertyDescriptor">
+							<NAME xsi:type="string">filePath</NAME>
+							<DISPLAY-NAME xsi:type="string">Folder path</DISPLAY-NAME>
+							<DESCRIPTION xsi:type="string">Path for the ETAS log files</DESCRIPTION>
+							<TYPE xsi:type="string">string</TYPE>
+							<READONLY xsi:type="boolean">False</READONLY>
+						</RETURN>
+					</JOB>
+				</JOBS>
+			</DVALUE>
+		</TOOL-DESCRIPTOR>
+	</TOOL-DESCRIPTORS>
+	<PORT-DESCRIPTORS>
+		<PORT-DESCRIPTOR dkey="APL01">
+			<DVALUE format-rev="1" xsi:type="portDescriptor">
+				<PORT-TYPE-ID format-rev="2" xsi:type="toolcaps">
+					<NAME xsi:type="string">APPLICATION</NAME>
+				</PORT-TYPE-ID>
+				<IMPL-TYPE-ID xsi:type="string">Standard</IMPL-TYPE-ID>
+				<PROPERTIES xsi:type="propertyDescriptorSet">
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">device</NAME>
+						<DISPLAY-NAME xsi:type="string">Device name</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Name of access interface</DESCRIPTION>
+						<TYPE xsi:type="string">string</TYPE>
+						<DEFAULT xsi:type="string">CCP:1</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">deviceType</NAME>
+						<DISPLAY-NAME xsi:type="string">Device type</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">&lt;system type&gt;.&lt;device type&gt; (e.g. &quot;TS-Testsystem.ETK-Testdevice&quot;). Dots in the type name must be escaped with a backslash.
+
+&quot;undefined&quot; if you want to use an existing device with the specified name.</DESCRIPTION>
+						<TYPE xsi:type="string">string</TYPE>
+						<DEFAULT xsi:type="string">undefined</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">a2lFile</NAME>
+						<DISPLAY-NAME xsi:type="string">A2L file</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">A2L file used by the port</DESCRIPTION>
+						<TYPE xsi:type="string">string</TYPE>
+						<VALID-REFS>
+							<ELEMENT xsi:type="string">SUT</ELEMENT>
+						</VALID-REFS>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">hexFile</NAME>
+						<DISPLAY-NAME xsi:type="string">Hex file</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Hex file used by the port</DESCRIPTION>
+						<TYPE xsi:type="string">string</TYPE>
+						<VALID-REFS>
+							<ELEMENT xsi:type="string">SUT</ELEMENT>
+						</VALID-REFS>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">recordAll</NAME>
+						<DISPLAY-NAME xsi:type="string">Automatic recording</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">If this is active, all measurement values in the test case are registered for recording.</DESCRIPTION>
+						<TYPE xsi:type="string">bool</TYPE>
+						<DOMAIN>
+							<ELEMENT xsi:type="string">False</ELEMENT>
+							<ELEMENT xsi:type="string">True</ELEMENT>
+						</DOMAIN>
+						<DEFAULT xsi:type="string">True</DEFAULT>
+						<READONLY xsi:type="boolean">True</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">defaultRaster</NAME>
+						<DISPLAY-NAME xsi:type="string">Default acquisition rate</DISPLAY-NAME>
+						<DESCRIPTION xsi:type="string">Declaration of measurement acquisition rate used as alternative in case no acquisition rate is set in the test step ('*' and '?' can be used as wildcard). &quot;Tool-Default&quot; activates the use of the standard acquisition rate of the tool.</DESCRIPTION>
+						<TYPE xsi:type="string">string</TYPE>
+						<DEFAULT xsi:type="string">Tool-Default</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">pageHandling</NAME>
+						<DISPLAY-NAME xsi:type="string">Refresh page</DISPLAY-NAME>
+						<DESCRIPTION xsi:type="string">Determines the behaviour of page updating.</DESCRIPTION>
+						<TYPE xsi:type="string">string</TYPE>
+						<DOMAIN>
+							<ELEMENT xsi:type="string">Auto (Ignition Off/On)</ELEMENT>
+							<ELEMENT xsi:type="string">Full download</ELEMENT>
+							<ELEMENT xsi:type="string">Download differences</ELEMENT>
+							<ELEMENT xsi:type="string">Copy RP to WP</ELEMENT>
+							<ELEMENT xsi:type="string">No action</ELEMENT>
+						</DOMAIN>
+						<DEFAULT xsi:type="string">Auto (Ignition Off/On)</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">calCheckEnbl</NAME>
+						<DISPLAY-NAME xsi:type="string">Write calibration values check</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Return values of the INCA-API are evaluated to check if writing was successfully.
+If this option is deactivated an error is raised if the check failed.
+Deactivate this option if there are e.g. problem with fix axis maps.</DESCRIPTION>
+						<TYPE xsi:type="string">bool</TYPE>
+						<DOMAIN>
+							<ELEMENT xsi:type="string">False</ELEMENT>
+							<ELEMENT xsi:type="string">True</ELEMENT>
+						</DOMAIN>
+						<DEFAULT xsi:type="string">True</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">reloadPST</NAME>
+						<DISPLAY-NAME xsi:type="string">Reload project</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">specifies how to handle existing ASAP2 projects. This option is relevant if the Hex file or A2L file content changes but not their file names.</DESCRIPTION>
+						<TYPE xsi:type="string">string</TYPE>
+						<DOMAIN>
+							<ELEMENT xsi:type="string">Use existing dataset</ELEMENT>
+							<ELEMENT xsi:type="string">Create new dataset</ELEMENT>
+							<ELEMENT xsi:type="string">Replace ASAP2 project</ELEMENT>
+						</DOMAIN>
+						<DEFAULT xsi:type="string">Use existing dataset</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">WeakBoundToHardBound</NAME>
+						<DISPLAY-NAME xsi:type="string">Set hard bounds</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Permanently use hard bounds instead of weak bounds</DESCRIPTION>
+						<TYPE xsi:type="string">bool</TYPE>
+						<DOMAIN>
+							<ELEMENT xsi:type="string">False</ELEMENT>
+							<ELEMENT xsi:type="string">True</ELEMENT>
+						</DOMAIN>
+						<DEFAULT xsi:type="string">True</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">transportLayer</NAME>
+						<DISPLAY-NAME xsi:type="string">Transport layer instance</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Name of the transport layer instance (optional).</DESCRIPTION>
+						<TYPE xsi:type="string">string</TYPE>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">hwcOptions</NAME>
+						<DISPLAY-NAME xsi:type="string">Extra hardware options</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Expert option.
+
+Dictionary with additional hardware options, e.g. {'MeasureFailureBehavior': '2', 'PageSwitch': 'true', 'ConnectionInterruptBehavior': 'autoReinitializeAndDownload'}.
+
+Requires INCA 7.2.6 or later.
+
+Option 'Transport layer instance' has precedence over specifying 'TransportLayer' here.
+
+See also INCA API documentation for SetOption.</DESCRIPTION>
+						<TYPE xsi:type="string">string</TYPE>
+						<DEFAULT xsi:type="string">{}</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">resetMode</NAME>
+						<DISPLAY-NAME xsi:type="string">Restore behaviour</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Determines which value is used by the test step 'Restore' and by automatic restore of test quantities.</DESCRIPTION>
+						<TYPE xsi:type="string">string</TYPE>
+						<DOMAIN>
+							<ELEMENT xsi:type="string">Value at test start</ELEMENT>
+							<ELEMENT xsi:type="string">Value from reference page</ELEMENT>
+						</DOMAIN>
+						<DEFAULT xsi:type="string">Value at test start</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+				</PROPERTIES>
+				<JOBS xsi:type="jobDescriptorSet">
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">DownloadWorkbase</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">force</NAME>
+								<DISPLAY-NAME xsi:type="string">force</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">Force download (True/False)</DESCRIPTION>
+								<TYPE xsi:type="string">bool</TYPE>
+								<DOMAIN>
+									<ELEMENT xsi:type="string">False</ELEMENT>
+									<ELEMENT xsi:type="string">True</ELEMENT>
+								</DOMAIN>
+								<DEFAULT xsi:type="string">False</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Download WP/RP</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">AutoDownloadWorkbase</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">force</NAME>
+								<DISPLAY-NAME xsi:type="string">force</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">Force download (True/False)</DESCRIPTION>
+								<TYPE xsi:type="string">bool</TYPE>
+								<DOMAIN>
+									<ELEMENT xsi:type="string">False</ELEMENT>
+									<ELEMENT xsi:type="string">True</ELEMENT>
+								</DOMAIN>
+								<DEFAULT xsi:type="string">False</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Automatic Download WP/RP from data set to control unit</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">DownloadDifferences</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet"/>
+						<DESCRIPTION xsi:type="string">Download difference</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">ChecksumDataPages</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet"/>
+						<DESCRIPTION xsi:type="string">Create checksum over WP and RP</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">CopyReferencePageToWorkingPage</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet"/>
+						<DESCRIPTION xsi:type="string">Copy RP to WP</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">SwitchToWorkingPage</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet"/>
+						<DESCRIPTION xsi:type="string">Change to working page</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">SwitchToReferencePage</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet"/>
+						<DESCRIPTION xsi:type="string">Change to reference page</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">ReadMeasurement</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">Name</NAME>
+								<DISPLAY-NAME xsi:type="string">Name</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">Name of value</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">Raster</NAME>
+								<DISPLAY-NAME xsi:type="string">Acquisition rate</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">Name of acquisition rate</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">SuppressErrors</NAME>
+								<DISPLAY-NAME xsi:type="string">Suppress ERROR</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">If set to True, runtime errors will not result in an ERROR in the report, instead ~Not Present~ will be returned.</DESCRIPTION>
+								<TYPE xsi:type="string">bool</TYPE>
+								<DOMAIN>
+									<ELEMENT xsi:type="string">False</ELEMENT>
+									<ELEMENT xsi:type="string">True</ELEMENT>
+								</DOMAIN>
+								<DEFAULT xsi:type="string">False</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Adds label to experiment and reads it</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">ReadCalibration</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">Name</NAME>
+								<DISPLAY-NAME xsi:type="string">Name</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">Name of value</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">TypeInfo</NAME>
+								<DISPLAY-NAME xsi:type="string">Type</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">variable type</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<DOMAIN>
+									<ELEMENT xsi:type="string">SCALAR</ELEMENT>
+									<ELEMENT xsi:type="string">VECTOR</ELEMENT>
+									<ELEMENT xsi:type="string">MATRIX</ELEMENT>
+									<ELEMENT xsi:type="string">CURVE</ELEMENT>
+									<ELEMENT xsi:type="string">MAP</ELEMENT>
+								</DOMAIN>
+								<DEFAULT xsi:type="string">SCALAR</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Reads a calibration value</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">WriteCalibration</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">Name</NAME>
+								<DISPLAY-NAME xsi:type="string">Name</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">Name of value to be written</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">TypeInfo</NAME>
+								<DISPLAY-NAME xsi:type="string">Type</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">variable type</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<DOMAIN>
+									<ELEMENT xsi:type="string">SCALAR</ELEMENT>
+									<ELEMENT xsi:type="string">VECTOR</ELEMENT>
+									<ELEMENT xsi:type="string">MATRIX</ELEMENT>
+									<ELEMENT xsi:type="string">CURVE</ELEMENT>
+									<ELEMENT xsi:type="string">MAP</ELEMENT>
+								</DOMAIN>
+								<DEFAULT xsi:type="string">SCALAR</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">Data</NAME>
+								<DISPLAY-NAME xsi:type="string">Value</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">Write data</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Writes a calibration value</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">GetDeviceType</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet"/>
+						<DESCRIPTION xsi:type="string">Returns the device type</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">GetLabels</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet"/>
+						<DESCRIPTION xsi:type="string">Provides a list of all values</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">GetAquisitionRates</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet"/>
+						<DESCRIPTION xsi:type="string">Provides a list of all acquisition rates</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">FlashHexFileWithControlFlow</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">ControlFlow</NAME>
+								<DISPLAY-NAME xsi:type="string">ControlFlow</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">ControlFlow from TGTSVR.log without device and .hex file</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">FlashFile</NAME>
+								<DISPLAY-NAME xsi:type="string">FlashFile</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">Optional: file name and path of the flash file</DESCRIPTION>
+								<TYPE xsi:type="string">uri</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">CopyFile</NAME>
+								<DISPLAY-NAME xsi:type="string">CopyFile</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">Copies the local file to tool host, if &quot;True&quot; selected.</DESCRIPTION>
+								<TYPE xsi:type="string">bool</TYPE>
+								<DOMAIN>
+									<ELEMENT xsi:type="string">False</ELEMENT>
+									<ELEMENT xsi:type="string">True</ELEMENT>
+								</DOMAIN>
+								<DEFAULT xsi:type="string">False</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">FlashPort</NAME>
+								<DISPLAY-NAME xsi:type="string">Flash-Port</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">Optional: Alternative flash port</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<DOMAIN>
+									<ELEMENT xsi:type="string"/>
+									<ELEMENT xsi:type="string">&lt;online query&gt;</ELEMENT>
+								</DOMAIN>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Flashes the ECU when the measurement is stopped</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">GetSupportedFlashPortNames</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet"/>
+						<DESCRIPTION xsi:type="string">Returns the names of supported FlashPorts</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">UploadWorkbase</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet"/>
+						<DESCRIPTION xsi:type="string">Upload the working and reference page</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">SetStoreBit</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet"/>
+						<DESCRIPTION xsi:type="string">Set store bit</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">CheckConnection</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet"/>
+						<DESCRIPTION xsi:type="string">Get connection state</DESCRIPTION>
+					</JOB>
+					<JOB format-rev="2" xsi:type="jobDescriptor">
+						<NAME xsi:type="string">IsTargetEcuOff</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet"/>
+						<DESCRIPTION xsi:type="string">Returns whether the device is switched off (since INCA 7.2.11)</DESCRIPTION>
+						<RETURN xsi:type="propertyDescriptor">
+							<NAME xsi:type="string">Off</NAME>
+							<DISPLAY-NAME xsi:type="string">Off</DISPLAY-NAME>
+							<DESCRIPTION xsi:type="string">True if switched off, False otherwise</DESCRIPTION>
+							<TYPE xsi:type="string">bool</TYPE>
+							<DOMAIN>
+								<ELEMENT xsi:type="string">False</ELEMENT>
+								<ELEMENT xsi:type="string">True</ELEMENT>
+							</DOMAIN>
+							<READONLY xsi:type="boolean">False</READONLY>
+						</RETURN>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">SetAsyncBuffersToInvalid</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet"/>
+						<DESCRIPTION xsi:type="string">Invalidate asynchronous measurement data buffers for the device (since INCA 7.2.11)</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">IsCalibrationPossible</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet"/>
+						<DESCRIPTION xsi:type="string">Checks whether the calibration access is currently possible</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">DcmToHex</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">dcmFile</NAME>
+								<DISPLAY-NAME xsi:type="string">DCM file</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">DCM file(s) to be processed</DESCRIPTION>
+								<TYPE xsi:type="string">object</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">hexFile</NAME>
+								<DISPLAY-NAME xsi:type="string">HEX-File</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">Hex file (output)</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">ignoreCdmErrors</NAME>
+								<DISPLAY-NAME xsi:type="string">Ignore failures in CDM-Toolbox</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">Ignore failures of CDM-Toolbox and fetch Hex file.</DESCRIPTION>
+								<TYPE xsi:type="string">bool</TYPE>
+								<DOMAIN>
+									<ELEMENT xsi:type="string">False</ELEMENT>
+									<ELEMENT xsi:type="string">True</ELEMENT>
+								</DOMAIN>
+								<DEFAULT xsi:type="string">False</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Creates a new DataSet for the device from the DCM file(s) and saves it to the Hex file. Caution! The files must not be in the ToolLibTemp directory.</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">HexToHex</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">InputHexFile</NAME>
+								<DISPLAY-NAME xsi:type="string">Input HEX file</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">HEX file with compatible data set</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">OutputHexFile</NAME>
+								<DISPLAY-NAME xsi:type="string">Output HEX file</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">Hex file (output)</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">ignoreCdmErrors</NAME>
+								<DISPLAY-NAME xsi:type="string">Ignore failures in CDM-Toolbox</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">Ignore failures of CDM-Toolbox and fetch Hex file.</DESCRIPTION>
+								<TYPE xsi:type="string">bool</TYPE>
+								<DOMAIN>
+									<ELEMENT xsi:type="string">False</ELEMENT>
+									<ELEMENT xsi:type="string">True</ELEMENT>
+								</DOMAIN>
+								<DEFAULT xsi:type="string">False</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Creates a new DataSet based on the HEX file from the test configuration, with data from the specified HEX file. The files must NOT lie in the ToolLibTemp directory. Caution! This Job does not work with INCA versions older than 7.2.4!</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">WriteWorkpageToFile</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">hexFile</NAME>
+								<DISPLAY-NAME xsi:type="string">HEX-File</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">Hex-File to be processed</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Creates a Hex file from the current working page. Warning! The target file must not be stored in the ToollibTemp directory.</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">WriteToDataPage</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">StartAddress</NAME>
+								<DISPLAY-NAME xsi:type="string">Start address</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">Start address for the data to write</DESCRIPTION>
+								<TYPE xsi:type="string">int</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">Length</NAME>
+								<DISPLAY-NAME xsi:type="string">Length</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">Number of bytes to write</DESCRIPTION>
+								<TYPE xsi:type="string">int</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">Values</NAME>
+								<DISPLAY-NAME xsi:type="string">Values</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">The data to write as :api:`ByteStream &lt;general_api/variabledatastructures.html#genericapibytestream&gt;`</DESCRIPTION>
+								<TYPE xsi:type="string">ByteStream</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Write data in the specified memory range.</DESCRIPTION>
+					</JOB>
+					<JOB format-rev="2" xsi:type="jobDescriptor">
+						<NAME xsi:type="string">ReadFromDataPage</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">StartAddress</NAME>
+								<DESCRIPTION xsi:type="string">Start address of memory area</DESCRIPTION>
+								<TYPE xsi:type="string">int</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">Length</NAME>
+								<DESCRIPTION xsi:type="string">Length of the area</DESCRIPTION>
+								<TYPE xsi:type="string">int</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Reads the data of a memory area.</DESCRIPTION>
+						<RETURN xsi:type="propertyDescriptor">
+							<NAME xsi:type="string">result</NAME>
+							<DESCRIPTION xsi:type="string">Read data as tuple of signed integer values</DESCRIPTION>
+							<TYPE xsi:type="string">object</TYPE>
+							<READONLY xsi:type="boolean">False</READONLY>
+						</RETURN>
+					</JOB>
+					<JOB format-rev="2" xsi:type="jobDescriptor">
+						<NAME xsi:type="string">GetEPKfromASAP2</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet"/>
+						<DESCRIPTION xsi:type="string">Get the EPROM ID (EPK) from assigned ASAP2. Returns the EKP string of a2l. </DESCRIPTION>
+						<RETURN xsi:type="propertyDescriptor">
+							<NAME xsi:type="string">EPK</NAME>
+							<DISPLAY-NAME xsi:type="string">EPK</DISPLAY-NAME>
+							<DESCRIPTION xsi:type="string">String with id.</DESCRIPTION>
+							<TYPE xsi:type="string">string</TYPE>
+							<READONLY xsi:type="boolean">False</READONLY>
+						</RETURN>
+					</JOB>
+					<JOB format-rev="2" xsi:type="jobDescriptor">
+						<NAME xsi:type="string">GetEPKfromDS</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet"/>
+						<DESCRIPTION xsi:type="string">Get the EPROM ID (EPK) from assigned dataset. Returns the EKP string of dataset. </DESCRIPTION>
+						<RETURN xsi:type="propertyDescriptor">
+							<NAME xsi:type="string">EPK</NAME>
+							<DISPLAY-NAME xsi:type="string">EPK</DISPLAY-NAME>
+							<DESCRIPTION xsi:type="string">String with id.</DESCRIPTION>
+							<TYPE xsi:type="string">string</TYPE>
+							<READONLY xsi:type="boolean">False</READONLY>
+						</RETURN>
+					</JOB>
+					<JOB format-rev="2" xsi:type="jobDescriptor">
+						<NAME xsi:type="string">GetEPKfromECU</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet"/>
+						<DESCRIPTION xsi:type="string">Get the EPROM ID (EPK) from ECU. Returns the EKP string of ECU. </DESCRIPTION>
+						<RETURN xsi:type="propertyDescriptor">
+							<NAME xsi:type="string">EPK</NAME>
+							<DISPLAY-NAME xsi:type="string">EPK</DISPLAY-NAME>
+							<DESCRIPTION xsi:type="string">String with id.</DESCRIPTION>
+							<TYPE xsi:type="string">string</TYPE>
+							<READONLY xsi:type="boolean">False</READONLY>
+						</RETURN>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">GetDifferencesCounter</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet"/>
+						<DESCRIPTION xsi:type="string">Returns the count of variables changed in working page.</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">ResetToReferencePage</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">Labels</NAME>
+								<DISPLAY-NAME xsi:type="string">Labels</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">List of labels to be reset</DESCRIPTION>
+								<TYPE xsi:type="string">object</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Resets the specified characteristics to the value from the reference page</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">ReadAllCalibrationsFromFile</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">dcmFile</NAME>
+								<DISPLAY-NAME xsi:type="string">DCM file</DISPLAY-NAME>
+								<DESCRIPTION xsi:type="string">DCM file (or other supported format), from which to read the calibration values</DESCRIPTION>
+								<TYPE xsi:type="string">object</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Applies the calibration values from the specified file to the device. Prerequisites: INCA 7.2.6 or newer, measurement stopped, working page activated.</DESCRIPTION>
+					</JOB>
+				</JOBS>
+			</DVALUE>
+		</PORT-DESCRIPTOR>
+	</PORT-DESCRIPTORS>
+</TOOLING>

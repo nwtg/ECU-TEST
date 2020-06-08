@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PACKAGE format-rev="6" prog-version="7.1.0.75213" xmlns="http://www.tracetronic.de/xml/ecu-test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tracetronic.de/xml/ecu-test package.xsd">
+	<INFORMATION xsi:type="packageInfo">
+		<DESCRIPTION xsi:type="unicode"/>
+		<VERSION xsi:type="unicode"/>
+		<ALTERNATE-CALL-REPRESENTATION-ACTION-FIELD-TEMPLATE xsi:type="unicode"/>
+		<ALTERNATE-CALL-REPRESENTATION-EXPECTATION-FIELD-TEMPLATE xsi:type="unicode"/>
+	</INFORMATION>
+	<VARIABLES xsi:type="variableContainer">
+		<VARIABLE format-rev="1" xsi:type="variable">
+			<NAME xsi:type="unicode">loopCounter</NAME>
+			<DEFAULT-VALUE format-rev="1" xsi:type="value">
+				<DATA xsi:type="integer">0</DATA>
+			</DEFAULT-VALUE>
+		</VARIABLE>
+		<VARIABLE format-rev="1" xsi:type="variable">
+			<NAME xsi:type="unicode">Gear</NAME>
+			<DESCRIPTION xsi:type="unicode"/>
+			<DEFAULT-VALUE format-rev="1" xsi:type="value">
+				<DATA xsi:type="integer">0</DATA>
+			</DEFAULT-VALUE>
+		</VARIABLE>
+		<VARIABLE format-rev="1" xsi:type="variable">
+			<NAME xsi:type="unicode">iginitionKeyPosition</NAME>
+			<DESCRIPTION xsi:type="unicode"/>
+			<DEFAULT-VALUE format-rev="1" xsi:type="value">
+				<DATA xsi:type="integer">0</DATA>
+			</DEFAULT-VALUE>
+		</VARIABLE>
+	</VARIABLES>
+	<MAPPING format-rev="1" xsi:type="localMappingSpace">
+		<MAPPING-ITEM format-rev="1" xsi:type="mappingItem">
+			<ID xsi:type="unicode">Engine/GearBoxInfo/GearBoxInfo/Gear</ID>
+			<XACCESS format-rev="1" xsi:type="xaBusSignalVariable">
+				<MAPPING-ENUM xsi:type="vtabInfoEmpty"/>
+				<BUS-KEY xsi:type="unicode">PT-CAN</BUS-KEY>
+				<FRAME-NAME xsi:type="unicode">GearBoxInfo</FRAME-NAME>
+				<SIGNAL-NAME xsi:type="unicode">Gear</SIGNAL-NAME>
+				<NODE-NAME xsi:type="unicode">Engine</NODE-NAME>
+				<PDU-NAME xsi:type="unicode">GearBoxInfo</PDU-NAME>
+			</XACCESS>
+		</MAPPING-ITEM>
+		<MAPPING-ITEM format-rev="1" xsi:type="mappingItem">
+			<ID xsi:type="unicode">Plant model/ComfortBus/GatewaySwitchIgnition</ID>
+			<XACCESS format-rev="2" xsi:type="xaModelValueVariable">
+				<MAPPING-ENUM xsi:type="vtabInfoEmpty"/>
+				<MODEL-KEY xsi:type="unicode">Plant model</MODEL-KEY>
+				<VARIABLE-PATH xsi:type="unicode">ComfortBus/GatewaySwitchIgnition</VARIABLE-PATH>
+			</XACCESS>
+		</MAPPING-ITEM>
+		<MAPPING-ITEM format-rev="1" xsi:type="mappingItem">
+			<ID xsi:type="unicode">Plant model/PowerTrain/BrakeActive</ID>
+			<XACCESS format-rev="2" xsi:type="xaModelValueVariable">
+				<MAPPING-ENUM xsi:type="vtabInfoEmpty"/>
+				<MODEL-KEY xsi:type="unicode">Plant model</MODEL-KEY>
+				<VARIABLE-PATH xsi:type="unicode">PowerTrain/BrakeActive</VARIABLE-PATH>
+			</XACCESS>
+		</MAPPING-ITEM>
+		<MAPPING-ITEM format-rev="1" xsi:type="mappingItem">
+			<ID xsi:type="unicode">Plant model/PowerTrain/GearDown</ID>
+			<XACCESS format-rev="2" xsi:type="xaModelValueVariable">
+				<MAPPING-ENUM xsi:type="vtabInfoEmpty"/>
+				<MODEL-KEY xsi:type="unicode">Plant model</MODEL-KEY>
+				<VARIABLE-PATH xsi:type="unicode">PowerTrain/GearDown</VARIABLE-PATH>
+			</XACCESS>
+		</MAPPING-ITEM>
+		<MAPPING-ITEM format-rev="1" xsi:type="mappingItem">
+			<ID xsi:type="unicode">Plant model/PowerTrain/PedalPosition</ID>
+			<XACCESS format-rev="2" xsi:type="xaModelValueVariable">
+				<MAPPING-ENUM xsi:type="vtabInfoEmpty"/>
+				<MODEL-KEY xsi:type="unicode">Plant model</MODEL-KEY>
+				<VARIABLE-PATH xsi:type="unicode">PowerTrain/PedalPosition</VARIABLE-PATH>
+			</XACCESS>
+		</MAPPING-ITEM>
+	</MAPPING>
+	<TESTSTEPS xsi:type="testCase">
+		<TESTSTEP format-rev="2" id="448" name="TsBlock" xsi:type="utility-2752ad1e-4fef-11dc-81d4-0013728784ee">
+			<BLOCK-NAME xsi:type="I18NItem">
+				<MULTILANGDATA/>
+				<INITIAL-LANGUAGE xsi:type="unicode">en_US</INITIAL-LANGUAGE>
+			</BLOCK-NAME>
+			<ACTION xsi:type="I18NItem">
+				<MULTILANGDATA>
+					<ELEMENT dkey="en_US">
+						<DVALUE xsi:type="unicode">Brake</DVALUE>
+					</ELEMENT>
+				</MULTILANGDATA>
+				<INITIAL-LANGUAGE xsi:type="unicode">en_US</INITIAL-LANGUAGE>
+			</ACTION>
+			<TESTSTEP id="455" xsi:type="tsWrite">
+				<MAPPING-REF xsi:type="unicode">Plant model/PowerTrain/PedalPosition</MAPPING-REF>
+				<VALUE xsi:type="expressionValue">
+					<DATA format-rev="1" xsi:type="valueBaseExpression">
+						<VALUE xsi:type="float">0.0</VALUE>
+					</DATA>
+				</VALUE>
+				<METRIC format-rev="1" xsi:type="metricInfo">
+					<VALUE-TYPE xsi:type="unicode">PHYS</VALUE-TYPE>
+					<DATA-TYPE xsi:type="string">VALUE</DATA-TYPE>
+				</METRIC>
+			</TESTSTEP>
+			<TESTSTEP id="461" name="TsWait" xsi:type="utility-62d5a961-4fef-11dc-9944-0013728784ee">
+				<TIME format-rev="1" xsi:type="valueBaseExpression">
+					<VALUE xsi:type="integer">500</VALUE>
+				</TIME>
+			</TESTSTEP>
+			<TESTSTEP id="459" xsi:type="tsWrite">
+				<MAPPING-REF xsi:type="unicode">Plant model/PowerTrain/BrakeActive</MAPPING-REF>
+				<VALUE xsi:type="expressionValue">
+					<DATA format-rev="1" xsi:type="valueBaseExpression">
+						<VALUE xsi:type="integer">1</VALUE>
+					</DATA>
+				</VALUE>
+				<METRIC format-rev="1" xsi:type="metricInfo">
+					<VALUE-TYPE xsi:type="unicode">PHYS</VALUE-TYPE>
+					<DATA-TYPE xsi:type="string">VALUE</DATA-TYPE>
+				</METRIC>
+			</TESTSTEP>
+			<TESTSTEP id="463" name="TsWait" xsi:type="utility-62d5a961-4fef-11dc-9944-0013728784ee">
+				<TIME format-rev="1" xsi:type="valueBaseExpression">
+					<VALUE xsi:type="integer">4000</VALUE>
+				</TIME>
+			</TESTSTEP>
+			<TESTSTEP id="471" xsi:type="tsWrite">
+				<MAPPING-REF xsi:type="unicode">Plant model/PowerTrain/BrakeActive</MAPPING-REF>
+				<VALUE xsi:type="expressionValue">
+					<DATA format-rev="1" xsi:type="valueBaseExpression">
+						<VALUE xsi:type="integer">0</VALUE>
+					</DATA>
+				</VALUE>
+				<METRIC format-rev="1" xsi:type="metricInfo">
+					<VALUE-TYPE xsi:type="unicode">PHYS</VALUE-TYPE>
+					<DATA-TYPE xsi:type="string">VALUE</DATA-TYPE>
+				</METRIC>
+			</TESTSTEP>
+			<TESTSTEP id="484" name="TsWait" xsi:type="utility-62d5a961-4fef-11dc-9944-0013728784ee">
+				<TIME format-rev="1" xsi:type="valueBaseExpression">
+					<VALUE xsi:type="integer">500</VALUE>
+				</TIME>
+			</TESTSTEP>
+		</TESTSTEP>
+		<TESTSTEP format-rev="2" id="491" name="TsBlock" xsi:type="utility-2752ad1e-4fef-11dc-81d4-0013728784ee">
+			<BLOCK-NAME xsi:type="I18NItem">
+				<MULTILANGDATA/>
+				<INITIAL-LANGUAGE xsi:type="unicode">en_US</INITIAL-LANGUAGE>
+			</BLOCK-NAME>
+			<ACTION xsi:type="I18NItem">
+				<MULTILANGDATA>
+					<ELEMENT dkey="en_US">
+						<DVALUE xsi:type="unicode">Shift down to idle</DVALUE>
+					</ELEMENT>
+				</MULTILANGDATA>
+				<INITIAL-LANGUAGE xsi:type="unicode">en_US</INITIAL-LANGUAGE>
+			</ACTION>
+			<TESTSTEP id="494" name="TsLoop" xsi:type="utility-3da58cf0-4fef-11dc-be56-0013728784ee">
+				<TESTSTEP id="498" xsi:type="tsWrite">
+					<MAPPING-REF xsi:type="unicode">Plant model/PowerTrain/GearDown</MAPPING-REF>
+					<VALUE xsi:type="expressionValue">
+						<DATA format-rev="1" xsi:type="valueBaseExpression">
+							<VALUE xsi:type="integer">1</VALUE>
+						</DATA>
+					</VALUE>
+					<METRIC format-rev="1" xsi:type="metricInfo">
+						<VALUE-TYPE xsi:type="unicode">PHYS</VALUE-TYPE>
+						<DATA-TYPE xsi:type="string">VALUE</DATA-TYPE>
+					</METRIC>
+				</TESTSTEP>
+				<TESTSTEP id="500" name="TsWait" xsi:type="utility-62d5a961-4fef-11dc-9944-0013728784ee">
+					<TIME format-rev="1" xsi:type="valueBaseExpression">
+						<VALUE xsi:type="integer">300</VALUE>
+					</TIME>
+				</TESTSTEP>
+				<TESTSTEP id="521" xsi:type="tsWrite">
+					<MAPPING-REF xsi:type="unicode">Plant model/PowerTrain/GearDown</MAPPING-REF>
+					<VALUE xsi:type="expressionValue">
+						<DATA format-rev="1" xsi:type="valueBaseExpression">
+							<VALUE xsi:type="integer">0</VALUE>
+						</DATA>
+					</VALUE>
+					<METRIC format-rev="1" xsi:type="metricInfo">
+						<VALUE-TYPE xsi:type="unicode">PHYS</VALUE-TYPE>
+						<DATA-TYPE xsi:type="string">VALUE</DATA-TYPE>
+					</METRIC>
+				</TESTSTEP>
+				<TESTSTEP id="513" name="TsWait" xsi:type="utility-62d5a961-4fef-11dc-9944-0013728784ee">
+					<TIME format-rev="1" xsi:type="valueBaseExpression">
+						<VALUE xsi:type="integer">300</VALUE>
+					</TIME>
+				</TESTSTEP>
+				<TESTSTEP id="669" xsi:type="tsRead">
+					<MAPPING-REF xsi:type="unicode">Engine/GearBoxInfo/GearBoxInfo/Gear</MAPPING-REF>
+					<VARIABLE-REFS>
+						<VARIABLE-NAME dkey="default">
+							<DVALUE xsi:type="unicode">Gear</DVALUE>
+						</VARIABLE-NAME>
+					</VARIABLE-REFS>
+					<METRIC format-rev="1" xsi:type="metricInfo">
+						<Z-UNIT xsi:type="unicode">u_none</Z-UNIT>
+						<VALUE-TYPE xsi:type="unicode">PHYS</VALUE-TYPE>
+						<DATA-TYPE xsi:type="string">VALUE</DATA-TYPE>
+					</METRIC>
+				</TESTSTEP>
+				<LOOP-COUNT format-rev="1" xsi:type="valueBaseExpression">
+					<VALUE xsi:type="integer">5</VALUE>
+				</LOOP-COUNT>
+				<STOP-CONDITION xsi:type="compareOpBaseExpression">
+					<NAME xsi:type="unicode">==</NAME>
+					<FIRST-COMPONENT xsi:type="varBaseExpression">
+						<NAME xsi:type="unicode">Gear</NAME>
+					</FIRST-COMPONENT>
+					<SECOND-COMPONENT format-rev="1" xsi:type="valueBaseExpression">
+						<VALUE xsi:type="integer">0</VALUE>
+					</SECOND-COMPONENT>
+				</STOP-CONDITION>
+			</TESTSTEP>
+		</TESTSTEP>
+		<TESTSTEP format-rev="2" id="528" name="TsBlock" xsi:type="utility-2752ad1e-4fef-11dc-81d4-0013728784ee">
+			<BLOCK-NAME xsi:type="I18NItem">
+				<MULTILANGDATA/>
+				<INITIAL-LANGUAGE xsi:type="unicode">en_US</INITIAL-LANGUAGE>
+			</BLOCK-NAME>
+			<ACTION xsi:type="I18NItem">
+				<MULTILANGDATA>
+					<ELEMENT dkey="en_US">
+						<DVALUE xsi:type="unicode">Turn ignition key</DVALUE>
+					</ELEMENT>
+				</MULTILANGDATA>
+				<INITIAL-LANGUAGE xsi:type="unicode">en_US</INITIAL-LANGUAGE>
+			</ACTION>
+			<TESTSTEP id="535" name="TsLoop" xsi:type="utility-3da58cf0-4fef-11dc-be56-0013728784ee">
+				<TESTSTEP id="724" xsi:type="tsRead">
+					<MAPPING-REF xsi:type="unicode">Plant model/ComfortBus/GatewaySwitchIgnition</MAPPING-REF>
+					<VARIABLE-REFS>
+						<VARIABLE-NAME dkey="default">
+							<DVALUE xsi:type="unicode">iginitionKeyPosition</DVALUE>
+						</VARIABLE-NAME>
+					</VARIABLE-REFS>
+					<METRIC format-rev="1" xsi:type="metricInfo">
+						<VALUE-TYPE xsi:type="unicode">PHYS</VALUE-TYPE>
+						<DATA-TYPE xsi:type="string">VALUE</DATA-TYPE>
+					</METRIC>
+				</TESTSTEP>
+				<TESTSTEP id="539" xsi:type="tsWrite">
+					<MAPPING-REF xsi:type="unicode">Plant model/ComfortBus/GatewaySwitchIgnition</MAPPING-REF>
+					<VALUE xsi:type="expressionValue">
+						<DATA xsi:type="binaryOpBaseExpression">
+							<NAME xsi:type="unicode">BINARY_SUBTRACT</NAME>
+							<FIRST-COMPONENT xsi:type="varBaseExpression">
+								<NAME xsi:type="unicode">iginitionKeyPosition</NAME>
+							</FIRST-COMPONENT>
+							<SECOND-COMPONENT format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="integer">1</VALUE>
+							</SECOND-COMPONENT>
+						</DATA>
+					</VALUE>
+					<METRIC format-rev="1" xsi:type="metricInfo">
+						<VALUE-TYPE xsi:type="unicode">PHYS</VALUE-TYPE>
+						<DATA-TYPE xsi:type="string">VALUE</DATA-TYPE>
+					</METRIC>
+				</TESTSTEP>
+				<TESTSTEP id="541" name="TsWait" xsi:type="utility-62d5a961-4fef-11dc-9944-0013728784ee">
+					<TIME format-rev="1" xsi:type="valueBaseExpression">
+						<VALUE xsi:type="integer">500</VALUE>
+					</TIME>
+				</TESTSTEP>
+				<TESTSTEP id="698" xsi:type="tsRead">
+					<MAPPING-REF xsi:type="unicode">Plant model/ComfortBus/GatewaySwitchIgnition</MAPPING-REF>
+					<VARIABLE-REFS>
+						<VARIABLE-NAME dkey="default">
+							<DVALUE xsi:type="unicode">iginitionKeyPosition</DVALUE>
+						</VARIABLE-NAME>
+					</VARIABLE-REFS>
+					<METRIC format-rev="1" xsi:type="metricInfo">
+						<VALUE-TYPE xsi:type="unicode">PHYS</VALUE-TYPE>
+						<DATA-TYPE xsi:type="string">VALUE</DATA-TYPE>
+					</METRIC>
+				</TESTSTEP>
+				<LOOP-COUNT format-rev="1" xsi:type="valueBaseExpression">
+					<VALUE xsi:type="integer">3</VALUE>
+				</LOOP-COUNT>
+				<STOP-CONDITION xsi:type="compareOpBaseExpression">
+					<NAME xsi:type="unicode">==</NAME>
+					<FIRST-COMPONENT xsi:type="varBaseExpression">
+						<NAME xsi:type="unicode">iginitionKeyPosition</NAME>
+					</FIRST-COMPONENT>
+					<SECOND-COMPONENT format-rev="1" xsi:type="valueBaseExpression">
+						<VALUE xsi:type="integer">0</VALUE>
+					</SECOND-COMPONENT>
+				</STOP-CONDITION>
+			</TESTSTEP>
+		</TESTSTEP>
+	</TESTSTEPS>
+</PACKAGE>

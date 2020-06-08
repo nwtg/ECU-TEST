@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PROJECT format-rev="10" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<NAME xsi:type="string">DCT_01 档位控制</NAME>
+	<ENABLED xsi:type="boolean">True</ENABLED>
+	<REPORTING xsi:type="boolean">True</REPORTING>
+	<ID xsi:type="string">e728612430f111ea9c4fbc9a78563412</ID>
+	<COMPONENTS>
+		<COMPONENT format-rev="10" xsi:type="subproject">
+			<NAME xsi:type="string">DCT_0101 驾驶档位识别</NAME>
+			<ENABLED xsi:type="boolean">True</ENABLED>
+			<REPORTING xsi:type="boolean">True</REPORTING>
+			<ID xsi:type="string">e728612530f111eabf5bbc9a78563412</ID>
+			<COMPONENTS>
+				<COMPONENT format-rev="5" xsi:type="packageTest">
+					<NAME xsi:type="string">DCT_010101 </NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<ID xsi:type="string">e729bfe830f111ea8339bc9a78563412</ID>
+					<COMPONENTS/>
+					<PACKAGE-REF format-rev="1" style="relative" xsi:type="packageRef">
+						<PACKAGE-PATH xsi:type="string">DCT_010101 .pkg</PACKAGE-PATH>
+					</PACKAGE-REF>
+				</COMPONENT>
+				<COMPONENT format-rev="5" xsi:type="packageTest">
+					<NAME xsi:type="string">DCT_010102 </NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<ID xsi:type="string">e72aa92e30f111ea8c5bbc9a78563412</ID>
+					<COMPONENTS/>
+					<PACKAGE-REF format-rev="1" style="relative" xsi:type="packageRef">
+						<PACKAGE-PATH xsi:type="string">DCT_010102 .pkg</PACKAGE-PATH>
+					</PACKAGE-REF>
+				</COMPONENT>
+				<COMPONENT format-rev="5" xsi:type="packageTest">
+					<NAME xsi:type="string">DCT_010103 </NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<ID xsi:type="string">e72bbdde30f111ea831cbc9a78563412</ID>
+					<COMPONENTS/>
+					<PACKAGE-REF format-rev="1" style="relative" xsi:type="packageRef">
+						<PACKAGE-PATH xsi:type="string">DCT_010103 .pkg</PACKAGE-PATH>
+					</PACKAGE-REF>
+				</COMPONENT>
+				<COMPONENT format-rev="5" xsi:type="packageTest">
+					<NAME xsi:type="string">DCT_010104 </NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<ID xsi:type="string">e72ca79030f111eab074bc9a78563412</ID>
+					<COMPONENTS/>
+					<PACKAGE-REF format-rev="1" style="relative" xsi:type="packageRef">
+						<PACKAGE-PATH xsi:type="string">DCT_010104 .pkg</PACKAGE-PATH>
+					</PACKAGE-REF>
+				</COMPONENT>
+				<COMPONENT format-rev="5" xsi:type="packageTest">
+					<NAME xsi:type="string">DCT_010105 </NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<ID xsi:type="string">e72de3cc30f111eab324bc9a78563412</ID>
+					<COMPONENTS/>
+					<PACKAGE-REF format-rev="1" style="relative" xsi:type="packageRef">
+						<PACKAGE-PATH xsi:type="string">DCT_010105 .pkg</PACKAGE-PATH>
+					</PACKAGE-REF>
+				</COMPONENT>
+				<COMPONENT format-rev="5" xsi:type="packageTest">
+					<NAME xsi:type="string">DCT_010106 </NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<ID xsi:type="string">e72eeecc30f111ea9c73bc9a78563412</ID>
+					<COMPONENTS/>
+					<PACKAGE-REF format-rev="1" style="relative" xsi:type="packageRef">
+						<PACKAGE-PATH xsi:type="string">DCT_010106 .pkg</PACKAGE-PATH>
+					</PACKAGE-REF>
+				</COMPONENT>
+				<COMPONENT format-rev="5" xsi:type="packageTest">
+					<NAME xsi:type="string">DCT_010107 </NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<ID xsi:type="string">e72fd94830f111eab43dbc9a78563412</ID>
+					<COMPONENTS/>
+					<PACKAGE-REF format-rev="1" style="relative" xsi:type="packageRef">
+						<PACKAGE-PATH xsi:type="string">DCT_010107 .pkg</PACKAGE-PATH>
+					</PACKAGE-REF>
+				</COMPONENT>
+				<COMPONENT format-rev="5" xsi:type="packageTest">
+					<NAME xsi:type="string">DCT_010108 </NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<ID xsi:type="string">e730eb1e30f111eaada2bc9a78563412</ID>
+					<COMPONENTS/>
+					<PACKAGE-REF format-rev="1" style="relative" xsi:type="packageRef">
+						<PACKAGE-PATH xsi:type="string">DCT_010108 .pkg</PACKAGE-PATH>
+					</PACKAGE-REF>
+				</COMPONENT>
+				<COMPONENT format-rev="5" xsi:type="packageTest">
+					<NAME xsi:type="string">DCT_010109 </NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<ID xsi:type="string">e731fe3630f111ea8ef4bc9a78563412</ID>
+					<COMPONENTS/>
+					<PACKAGE-REF format-rev="1" style="relative" xsi:type="packageRef">
+						<PACKAGE-PATH xsi:type="string">DCT_010109 .pkg</PACKAGE-PATH>
+					</PACKAGE-REF>
+				</COMPONENT>
+				<COMPONENT format-rev="5" xsi:type="packageTest">
+					<NAME xsi:type="string">DCT_010110 </NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<ID xsi:type="string">e7330d8a30f111eaa0abbc9a78563412</ID>
+					<COMPONENTS/>
+					<PACKAGE-REF format-rev="1" style="relative" xsi:type="packageRef">
+						<PACKAGE-PATH xsi:type="string">DCT_010110 .pkg</PACKAGE-PATH>
+					</PACKAGE-REF>
+				</COMPONENT>
+			</COMPONENTS>
+		</COMPONENT>
+		<COMPONENT format-rev="10" xsi:type="subproject">
+			<NAME xsi:type="string">DCT_0102 基础档位控制</NAME>
+			<ENABLED xsi:type="boolean">True</ENABLED>
+			<REPORTING xsi:type="boolean">True</REPORTING>
+			<ID xsi:type="string">e7330d8b30f111eab8f1bc9a78563412</ID>
+			<COMPONENTS>
+				<COMPONENT format-rev="5" xsi:type="packageTest">
+					<NAME xsi:type="string">DCT_010201 </NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<ID xsi:type="string">e7346de230f111eaa126bc9a78563412</ID>
+					<COMPONENTS/>
+					<PACKAGE-REF format-rev="1" style="relative" xsi:type="packageRef">
+						<PACKAGE-PATH xsi:type="string">DCT_010201 .pkg</PACKAGE-PATH>
+					</PACKAGE-REF>
+				</COMPONENT>
+				<COMPONENT format-rev="5" xsi:type="packageTest">
+					<NAME xsi:type="string">DCT_010202 </NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<ID xsi:type="string">e735d0d030f111eaad65bc9a78563412</ID>
+					<COMPONENTS/>
+					<PACKAGE-REF format-rev="1" style="relative" xsi:type="packageRef">
+						<PACKAGE-PATH xsi:type="string">DCT_010202 .pkg</PACKAGE-PATH>
+					</PACKAGE-REF>
+				</COMPONENT>
+				<COMPONENT format-rev="5" xsi:type="packageTest">
+					<NAME xsi:type="string">DCT_010203 </NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<ID xsi:type="string">e736dffe30f111eab20cbc9a78563412</ID>
+					<COMPONENTS/>
+					<PACKAGE-REF format-rev="1" style="relative" xsi:type="packageRef">
+						<PACKAGE-PATH xsi:type="string">DCT_010203 .pkg</PACKAGE-PATH>
+					</PACKAGE-REF>
+				</COMPONENT>
+				<COMPONENT format-rev="5" xsi:type="packageTest">
+					<NAME xsi:type="string">DCT_010204 </NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<ID xsi:type="string">e738659230f111ea84f5bc9a78563412</ID>
+					<COMPONENTS/>
+					<PACKAGE-REF format-rev="1" style="relative" xsi:type="packageRef">
+						<PACKAGE-PATH xsi:type="string">DCT_010204 .pkg</PACKAGE-PATH>
+					</PACKAGE-REF>
+				</COMPONENT>
+				<COMPONENT format-rev="5" xsi:type="packageTest">
+					<NAME xsi:type="string">DCT_010205 </NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<ID xsi:type="string">e739c5cc30f111ea9279bc9a78563412</ID>
+					<COMPONENTS/>
+					<PACKAGE-REF format-rev="1" style="relative" xsi:type="packageRef">
+						<PACKAGE-PATH xsi:type="string">DCT_010205 .pkg</PACKAGE-PATH>
+					</PACKAGE-REF>
+				</COMPONENT>
+			</COMPONENTS>
+		</COMPONENT>
+		<COMPONENT format-rev="10" xsi:type="subproject">
+			<NAME xsi:type="string">DCT_0103 档位解锁</NAME>
+			<ENABLED xsi:type="boolean">True</ENABLED>
+			<REPORTING xsi:type="boolean">True</REPORTING>
+			<ID xsi:type="string">e739c5cd30f111ea95eabc9a78563412</ID>
+			<COMPONENTS/>
+		</COMPONENT>
+	</COMPONENTS>
+</PROJECT>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PROJECT format-rev="10" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<NAME xsi:type="string">Project</NAME>
+	<ENABLED xsi:type="boolean">True</ENABLED>
+	<REPORTING xsi:type="boolean">True</REPORTING>
+	<ID xsi:type="string">fd7e956c3b5411eab83dbc9a78563412</ID>
+	<COMPONENTS>
+		<COMPONENT format-rev="5" xsi:type="packageTest">
+			<NAME xsi:type="string">recording</NAME>
+			<ENABLED xsi:type="boolean">True</ENABLED>
+			<REPORTING xsi:type="boolean">True</REPORTING>
+			<ID xsi:type="string">fec1c44c3b5411eaa1e0bc9a78563412</ID>
+			<COMPONENTS>
+				<COMPONENT format-rev="3" xsi:type="paramRecord">
+					<NAME xsi:type="string">BMEP_2</NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<ID xsi:type="string">ff46fdfe3b5411ea952dbc9a78563412</ID>
+					<PARAMETER-DATA xsi:type="packageParameterData">
+						<PARAMETER xsi:type="parameterEntry">
+							<NAME xsi:type="string">BMEP</NAME>
+							<VALUE format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="integer">2</VALUE>
+							</VALUE>
+						</PARAMETER>
+						<PARAMETER xsi:type="parameterEntry">
+							<NAME xsi:type="string">speed</NAME>
+							<VALUE format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="integer">1000</VALUE>
+							</VALUE>
+						</PARAMETER>
+					</PARAMETER-DATA>
+					<TM-INFO format-rev="1" xsi:type="testManagementInfo"/>
+				</COMPONENT>
+				<COMPONENT format-rev="3" xsi:type="paramRecord">
+					<NAME xsi:type="string">BMEP_2.2</NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<ID xsi:type="string">ff9b5f463b5411eabb0cbc9a78563412</ID>
+					<PARAMETER-DATA xsi:type="packageParameterData">
+						<PARAMETER xsi:type="parameterEntry">
+							<NAME xsi:type="string">BMEP</NAME>
+							<VALUE format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="float">2.2</VALUE>
+							</VALUE>
+						</PARAMETER>
+						<PARAMETER xsi:type="parameterEntry">
+							<NAME xsi:type="string">speed</NAME>
+							<VALUE format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="integer">1000</VALUE>
+							</VALUE>
+						</PARAMETER>
+					</PARAMETER-DATA>
+					<TM-INFO format-rev="1" xsi:type="testManagementInfo"/>
+				</COMPONENT>
+				<COMPONENT format-rev="3" xsi:type="paramRecord">
+					<NAME xsi:type="string">speed_1500</NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<ID xsi:type="string">ffe0a6243b5411ea9d98bc9a78563412</ID>
+					<PARAMETER-DATA xsi:type="packageParameterData">
+						<PARAMETER xsi:type="parameterEntry">
+							<NAME xsi:type="string">BMEP</NAME>
+							<VALUE format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="integer">2</VALUE>
+							</VALUE>
+						</PARAMETER>
+						<PARAMETER xsi:type="parameterEntry">
+							<NAME xsi:type="string">speed</NAME>
+							<VALUE format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="integer">1500</VALUE>
+							</VALUE>
+						</PARAMETER>
+					</PARAMETER-DATA>
+					<TM-INFO format-rev="1" xsi:type="testManagementInfo"/>
+				</COMPONENT>
+			</COMPONENTS>
+			<PACKAGE-REF format-rev="1" style="relative" xsi:type="packageRef">
+				<PACKAGE-PATH xsi:type="string">recording.pkg</PACKAGE-PATH>
+			</PACKAGE-REF>
+		</COMPONENT>
+		<COMPONENT format-rev="5" xsi:type="packageTest">
+			<NAME xsi:type="string">mergeCSV</NAME>
+			<ENABLED xsi:type="boolean">True</ENABLED>
+			<REPORTING xsi:type="boolean">True</REPORTING>
+			<ID xsi:type="string">6be19e3a3b6911ea8f42bc9a78563412</ID>
+			<COMPONENTS/>
+			<PACKAGE-REF format-rev="1" style="relative" xsi:type="packageRef">
+				<PACKAGE-PATH xsi:type="string">mergeCSV.pkg</PACKAGE-PATH>
+			</PACKAGE-REF>
+		</COMPONENT>
+	</COMPONENTS>
+</PROJECT>

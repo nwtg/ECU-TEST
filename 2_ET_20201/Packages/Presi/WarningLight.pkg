@@ -1,0 +1,960 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PACKAGE format-rev="6" prog-version="6.6.0.65821" xmlns="http://www.tracetronic.de/xml/ecu-test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tracetronic.de/xml/ecu-test package.xsd">
+	<INFORMATION xsi:type="packageInfo">
+		<DESCRIPTION xsi:type="unicode"/>
+		<VERSION xsi:type="unicode"/>
+		<ALTERNATE-CALL-REPRESENTATION-ACTION-FIELD-TEMPLATE xsi:type="unicode"/>
+		<ALTERNATE-CALL-REPRESENTATION-EXPECTATION-FIELD-TEMPLATE xsi:type="unicode"/>
+	</INFORMATION>
+	<VARIABLES xsi:type="variableContainer">
+		<VARIABLE format-rev="1" xsi:type="variable">
+			<NAME xsi:type="unicode">threshold</NAME>
+			<DESCRIPTION xsi:type="unicode"/>
+			<DEFAULT-VALUE format-rev="1" xsi:type="value">
+				<DATA xsi:type="integer">120</DATA>
+			</DEFAULT-VALUE>
+		</VARIABLE>
+		<VARIABLE format-rev="1" xsi:type="variable">
+			<NAME xsi:type="unicode">timeout</NAME>
+			<DESCRIPTION xsi:type="unicode">in seconds</DESCRIPTION>
+			<DEFAULT-VALUE format-rev="1" xsi:type="value">
+				<DATA xsi:type="float">0.2</DATA>
+			</DEFAULT-VALUE>
+		</VARIABLE>
+	</VARIABLES>
+	<MAPPING format-rev="1" xsi:type="localMappingSpace">
+		<MAPPING-ITEM format-rev="1" xsi:type="mappingItem">
+			<ID xsi:type="unicode">APP/w1_intern</ID>
+			<XACCESS xsi:type="xaMeasValueVariable">
+				<MAPPING-ENUM xsi:type="vtabInfoEmpty"/>
+				<ECU-KEY xsi:type="unicode">Engine</ECU-KEY>
+				<LABEL xsi:type="unicode">w1_intern</LABEL>
+				<RASTER xsi:type="unicode">Port-Default</RASTER>
+			</XACCESS>
+		</MAPPING-ITEM>
+		<MAPPING-ITEM format-rev="1" xsi:type="mappingItem">
+			<ID xsi:type="unicode">MDL/temp</ID>
+			<XACCESS format-rev="2" xsi:type="xaModelValueVariable">
+				<MAPPING-ENUM xsi:type="vtabInfoEmpty"/>
+				<MODEL-KEY xsi:type="unicode">Plant model</MODEL-KEY>
+				<VARIABLE-PATH xsi:type="unicode">temp</VARIABLE-PATH>
+			</XACCESS>
+		</MAPPING-ITEM>
+		<MAPPING-ITEM format-rev="1" xsi:type="mappingItem">
+			<ID xsi:type="unicode">MDL/w1</ID>
+			<XACCESS format-rev="2" xsi:type="xaModelValueVariable">
+				<MAPPING-ENUM xsi:type="vtabInfoEmpty"/>
+				<MODEL-KEY xsi:type="unicode">Plant model</MODEL-KEY>
+				<VARIABLE-PATH xsi:type="unicode">w1</VARIABLE-PATH>
+			</XACCESS>
+		</MAPPING-ITEM>
+	</MAPPING>
+	<TRACE-RECORDING format-rev="1" xsi:type="recordingManager">
+		<SIGNAL-GROUPS>
+			<ELEMENT format-rev="2" xsi:type="signalGroup">
+				<NAME xsi:type="unicode">Model-Signals</NAME>
+				<DESCRIPTION xsi:type="unicode">model signals to be recorded during test</DESCRIPTION>
+				<SIGNALS>
+					<ELEMENT xsi:type="signal">
+						<MAPPING-REF xsi:type="unicode">MDL/temp</MAPPING-REF>
+					</ELEMENT>
+					<ELEMENT xsi:type="signal">
+						<MAPPING-REF xsi:type="unicode">MDL/w1</MAPPING-REF>
+					</ELEMENT>
+				</SIGNALS>
+			</ELEMENT>
+		</SIGNAL-GROUPS>
+		<RECORDING-GROUP>
+			<ELEMENT format-rev="2" xsi:type="recordingGroup">
+				<NAME xsi:type="unicode">Recording group for Plant model</NAME>
+				<UUID xsi:type="string">ca2c28c07bef11e58501ecf4bb108913</UUID>
+				<AUTOSTART xsi:type="boolean">True</AUTOSTART>
+				<RECORDING-TRIGGER xsi:type="recordingTrigger">
+					<START-CONDITION xsi:type="unicode">Signal1 &lt;Operator&gt; Signal2</START-CONDITION>
+					<STOP-CONDITION xsi:type="unicode"/>
+					<PRE-START-DURATION xsi:type="float">0.0</PRE-START-DURATION>
+					<POST-START-DURATION xsi:type="float">0.0</POST-START-DURATION>
+				</RECORDING-TRIGGER>
+				<SIGNAL-GROUP-REF>Model-Signals</SIGNAL-GROUP-REF>
+			</ELEMENT>
+		</RECORDING-GROUP>
+	</TRACE-RECORDING>
+	<TESTSTEPS xsi:type="testCase">
+		<TESTSTEP id="2223279" xsi:type="tsWrite">
+			<MAPPING-REF xsi:type="unicode">MDL/temp</MAPPING-REF>
+			<VALUE xsi:type="expressionValue">
+				<DATA xsi:type="binaryOpBaseExpression">
+					<NAME xsi:type="unicode">BINARY_ADD</NAME>
+					<FIRST-COMPONENT xsi:type="varBaseExpression">
+						<NAME xsi:type="unicode">threshold</NAME>
+					</FIRST-COMPONENT>
+					<SECOND-COMPONENT format-rev="1" xsi:type="valueBaseExpression">
+						<VALUE xsi:type="integer">1</VALUE>
+					</SECOND-COMPONENT>
+				</DATA>
+			</VALUE>
+			<METRIC format-rev="1" xsi:type="metricInfo">
+				<VALUE-TYPE xsi:type="unicode">PHYS</VALUE-TYPE>
+				<DATA-TYPE xsi:type="string">VALUE</DATA-TYPE>
+			</METRIC>
+		</TESTSTEP>
+		<TESTSTEP id="2223281" name="TsWait" xsi:type="utility-62d5a961-4fef-11dc-9944-0013728784ee">
+			<TIME xsi:type="varBaseExpression">
+				<NAME xsi:type="unicode">timeout</NAME>
+			</TIME>
+			<UNIT xsi:type="unicode">s</UNIT>
+		</TESTSTEP>
+		<TESTSTEP id="2223284" xsi:type="tsRead">
+			<MAPPING-REF xsi:type="unicode">MDL/w1</MAPPING-REF>
+			<EXPECTATION xsi:type="timelessOption">
+				<EXPRESSION xsi:type="builtNumericExpression">
+					<RELATION xsi:type="unicode">==</RELATION>
+					<VALUE format-rev="1" xsi:type="valueBaseExpression">
+						<VALUE xsi:type="integer">1</VALUE>
+					</VALUE>
+				</EXPRESSION>
+			</EXPECTATION>
+			<METRIC format-rev="1" xsi:type="metricInfo">
+				<VALUE-TYPE xsi:type="unicode">PHYS</VALUE-TYPE>
+				<DATA-TYPE xsi:type="string">VALUE</DATA-TYPE>
+			</METRIC>
+		</TESTSTEP>
+		<TESTSTEP id="2223287" xsi:type="tsRead">
+			<MAPPING-REF xsi:type="unicode">APP/w1_intern</MAPPING-REF>
+			<EXPECTATION xsi:type="timelessOption">
+				<EXPRESSION xsi:type="builtNumericExpression">
+					<RELATION xsi:type="unicode">==</RELATION>
+					<VALUE format-rev="1" xsi:type="valueBaseExpression">
+						<VALUE xsi:type="integer">1</VALUE>
+					</VALUE>
+				</EXPRESSION>
+			</EXPECTATION>
+			<METRIC format-rev="1" xsi:type="metricInfo">
+				<VALUE-TYPE xsi:type="unicode">PHYS</VALUE-TYPE>
+				<DATA-TYPE xsi:type="string">VALUE</DATA-TYPE>
+			</METRIC>
+		</TESTSTEP>
+		<TESTSTEP id="2223290" name="TsWait" xsi:type="utility-62d5a961-4fef-11dc-9944-0013728784ee">
+			<TIME format-rev="1" xsi:type="valueBaseExpression">
+				<VALUE xsi:type="integer">50</VALUE>
+			</TIME>
+		</TESTSTEP>
+	</TESTSTEPS>
+	<TRACE-ANALYSES format-rev="1" xsi:type="traceAnalyses">
+		<TRACE-ANALYSIS format-rev="3" uuid="51c97440be7b11e5a02cecf4bb108913" xsi:type="traceAnalysis">
+			<NAME xsi:type="unicode">Trace analysis</NAME>
+			<ANALYSISITEM format-rev="1" uuid="51c97441be7b11e595d6ecf4bb108913" xsi:type="episode">
+				<NAME xsi:type="unicode">New episode</NAME>
+				<ANALYSISITEM format-rev="3" uuid="c166a570d19911e686cf08edb9de9bdd" xsi:type="plotItem">
+					<NAME xsi:type="unicode">Plot</NAME>
+					<SUB-PLOTS>
+						<SUB-PLOT format-rev="1" xsi:type="plotSubPlot">
+							<TYPE xsi:type="string">common</TYPE>
+							<ENTITIES>
+								<ENTITY format-rev="1" isTraceStepSignal="False" xsi:type="plotSignalEntity">
+									<NAME xsi:type="unicode">MDL_temp</NAME>
+									<AXIS xsi:type="integer">0</AXIS>
+									<MARKER-STYLE xsi:type="unicode">o</MARKER-STYLE>
+								</ENTITY>
+							</ENTITIES>
+							<AXES>
+								<AXIS xsi:type="plotAxis"/>
+							</AXES>
+						</SUB-PLOT>
+						<SUB-PLOT format-rev="1" xsi:type="plotSubPlot">
+							<TYPE xsi:type="string">separate</TYPE>
+							<ENTITIES>
+								<ENTITY format-rev="1" isTraceStepSignal="False" xsi:type="plotSignalEntity">
+									<NAME xsi:type="unicode">MDL_w1</NAME>
+									<AXIS xsi:type="integer">0</AXIS>
+									<MARKER-STYLE xsi:type="unicode">o</MARKER-STYLE>
+								</ENTITY>
+							</ENTITIES>
+							<AXES>
+								<AXIS xsi:type="plotAxis"/>
+							</AXES>
+						</SUB-PLOT>
+						<SUB-PLOT format-rev="1" xsi:type="plotSubPlot">
+							<TYPE xsi:type="string">common</TYPE>
+							<ENTITIES/>
+							<AXES/>
+						</SUB-PLOT>
+					</SUB-PLOTS>
+					<SUB-CONFIG-OVERVIEW xsi:type="plotSubConfig">
+						<CONDITION xsi:type="unicode">NONE</CONDITION>
+						<MAX-NUMBER format-rev="1" xsi:type="valueBaseExpression">
+							<VALUE xsi:type="integer">5</VALUE>
+						</MAX-NUMBER>
+						<EXPAND-XLIMITS-LEFT format-rev="1" xsi:type="valueBaseExpression">
+							<VALUE xsi:type="float">0.5</VALUE>
+						</EXPAND-XLIMITS-LEFT>
+						<EXPAND-XLIMITS-RIGHT format-rev="1" xsi:type="valueBaseExpression">
+							<VALUE xsi:type="float">0.5</VALUE>
+						</EXPAND-XLIMITS-RIGHT>
+					</SUB-CONFIG-OVERVIEW>
+					<SUB-CONFIG-PARENT-CONTEXT xsi:type="plotSubConfig">
+						<CONDITION xsi:type="unicode">NONE</CONDITION>
+						<MAX-NUMBER format-rev="1" xsi:type="valueBaseExpression">
+							<VALUE xsi:type="integer">10</VALUE>
+						</MAX-NUMBER>
+						<EXPAND-XLIMITS-LEFT format-rev="1" xsi:type="valueBaseExpression">
+							<VALUE xsi:type="float">0.5</VALUE>
+						</EXPAND-XLIMITS-LEFT>
+						<EXPAND-XLIMITS-RIGHT format-rev="1" xsi:type="valueBaseExpression">
+							<VALUE xsi:type="float">0.5</VALUE>
+						</EXPAND-XLIMITS-RIGHT>
+					</SUB-CONFIG-PARENT-CONTEXT>
+					<SUB-CONFIG-DETAILS xsi:type="plotSubConfig">
+						<CONDITION xsi:type="unicode">NONE</CONDITION>
+						<MAX-NUMBER format-rev="1" xsi:type="valueBaseExpression">
+							<VALUE xsi:type="integer">10</VALUE>
+						</MAX-NUMBER>
+						<EXPAND-XLIMITS-LEFT format-rev="1" xsi:type="valueBaseExpression">
+							<VALUE xsi:type="float">0.5</VALUE>
+						</EXPAND-XLIMITS-LEFT>
+						<EXPAND-XLIMITS-RIGHT format-rev="1" xsi:type="valueBaseExpression">
+							<VALUE xsi:type="float">0.5</VALUE>
+						</EXPAND-XLIMITS-RIGHT>
+					</SUB-CONFIG-DETAILS>
+					<SIGNAL-NAME-TYPE xsi:type="string">generic</SIGNAL-NAME-TYPE>
+					<LEGEND-LOCATION xsi:type="integer">0</LEGEND-LOCATION>
+				</ANALYSISITEM>
+				<ANALYSISITEM uuid="f5ed798f5d4011e68a115ce0c54afbfe" xsi:type="analysisBlock">
+					<NAME xsi:type="unicode">My trace step templates</NAME>
+					<ANALYSISITEM format-rev="1" uuid="5aaeba807de611e78547a0afbd2cbadb" xsi:type="SwitchDefCase">
+						<ANALYSISITEM uuid="6932b3917de611e789a9a0afbd2cbadb" xsi:type="taCaseDefNode">
+							<ANALYSISITEM format-rev="2" poolRev="3" uuid="dc844571327411e69d73fcf8aeb9b2bf" xsi:type="referencingTraceStep">
+								<NAME xsi:type="unicode">WarningLight_Logic</NAME>
+								<ANALYSISITEM format-rev="3" uuid="d63221f0d19911e695a608edb9de9bdd" xsi:type="plotItem">
+									<NAME xsi:type="unicode">Plot</NAME>
+									<SUB-PLOTS>
+										<SUB-PLOT format-rev="1" xsi:type="plotSubPlot">
+											<TYPE xsi:type="string">common</TYPE>
+											<ENTITIES>
+												<ENTITY format-rev="1" isTraceStepSignal="False" xsi:type="plotSignalEntity">
+													<NAME xsi:type="unicode">MDL_temp</NAME>
+													<AXIS xsi:type="integer">0</AXIS>
+													<MARKER-STYLE xsi:type="unicode">o</MARKER-STYLE>
+												</ENTITY>
+											</ENTITIES>
+											<AXES>
+												<AXIS xsi:type="plotAxis"/>
+											</AXES>
+										</SUB-PLOT>
+										<SUB-PLOT format-rev="1" xsi:type="plotSubPlot">
+											<TYPE xsi:type="string">separate</TYPE>
+											<ENTITIES>
+												<ENTITY format-rev="1" isTraceStepSignal="False" xsi:type="plotSignalEntity">
+													<NAME xsi:type="unicode">MDL_w1</NAME>
+													<AXIS xsi:type="integer">0</AXIS>
+													<MARKER-STYLE xsi:type="unicode">o</MARKER-STYLE>
+												</ENTITY>
+											</ENTITIES>
+											<AXES>
+												<AXIS xsi:type="plotAxis"/>
+											</AXES>
+										</SUB-PLOT>
+										<SUB-PLOT format-rev="1" xsi:type="plotSubPlot">
+											<TYPE xsi:type="string">common</TYPE>
+											<ENTITIES/>
+											<AXES/>
+										</SUB-PLOT>
+									</SUB-PLOTS>
+									<SUB-CONFIG-OVERVIEW xsi:type="plotSubConfig">
+										<CONDITION xsi:type="unicode">NONE</CONDITION>
+										<MAX-NUMBER format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">5</VALUE>
+										</MAX-NUMBER>
+										<EXPAND-XLIMITS-LEFT format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="float">0.5</VALUE>
+										</EXPAND-XLIMITS-LEFT>
+										<EXPAND-XLIMITS-RIGHT format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="float">0.5</VALUE>
+										</EXPAND-XLIMITS-RIGHT>
+									</SUB-CONFIG-OVERVIEW>
+									<SUB-CONFIG-PARENT-CONTEXT xsi:type="plotSubConfig">
+										<CONDITION xsi:type="unicode">NONE</CONDITION>
+										<MAX-NUMBER format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">10</VALUE>
+										</MAX-NUMBER>
+										<EXPAND-XLIMITS-LEFT format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="float">0.5</VALUE>
+										</EXPAND-XLIMITS-LEFT>
+										<EXPAND-XLIMITS-RIGHT format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="float">0.5</VALUE>
+										</EXPAND-XLIMITS-RIGHT>
+									</SUB-CONFIG-PARENT-CONTEXT>
+									<SUB-CONFIG-DETAILS xsi:type="plotSubConfig">
+										<CONDITION xsi:type="unicode">NONE</CONDITION>
+										<MAX-NUMBER format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">10</VALUE>
+										</MAX-NUMBER>
+										<EXPAND-XLIMITS-LEFT format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="float">0.5</VALUE>
+										</EXPAND-XLIMITS-LEFT>
+										<EXPAND-XLIMITS-RIGHT format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="float">0.5</VALUE>
+										</EXPAND-XLIMITS-RIGHT>
+									</SUB-CONFIG-DETAILS>
+									<SIGNAL-NAME-TYPE xsi:type="string">generic</SIGNAL-NAME-TYPE>
+									<LEGEND-LOCATION xsi:type="integer">0</LEGEND-LOCATION>
+								</ANALYSISITEM>
+								<SIGNAL-BINDING xsi:type="signalBinding">
+									<PARAMETER dkey="Temperature">
+										<DVALUE format-rev="1" xsi:type="signalParameter">
+											<REF-SIGNAL-NAME xsi:type="unicode">MDL_temp</REF-SIGNAL-NAME>
+										</DVALUE>
+									</PARAMETER>
+									<PARAMETER dkey="WarningLight">
+										<DVALUE format-rev="1" xsi:type="signalParameter">
+											<REF-SIGNAL-NAME xsi:type="unicode">MDL_w1</REF-SIGNAL-NAME>
+										</DVALUE>
+									</PARAMETER>
+								</SIGNAL-BINDING>
+								<PARAM-ASSIGNMENTS xsi:type="trcpParameterAssignments">
+									<PARAM-ASSIGNMENTS>
+										<ASSIGNMENT dkey="threshold">
+											<DVALUE xsi:type="varBaseExpression">
+												<NAME xsi:type="unicode">threshold</NAME>
+											</DVALUE>
+										</ASSIGNMENT>
+										<ASSIGNMENT dkey="timeout">
+											<DVALUE xsi:type="varBaseExpression">
+												<NAME xsi:type="unicode">timeout</NAME>
+											</DVALUE>
+										</ASSIGNMENT>
+									</PARAM-ASSIGNMENTS>
+								</PARAM-ASSIGNMENTS>
+								<REPORT-CONFIG xsi:type="trcpReportConfig">
+									<MAX-SPOTS xsi:type="integer">100</MAX-SPOTS>
+									<MIN-DELTA xsi:type="float">0.0</MIN-DELTA>
+								</REPORT-CONFIG>
+								<PROTOTYPE-ID xsi:type="unicode">Results\WarningLight_Logic</PROTOTYPE-ID>
+							</ANALYSISITEM>
+							<CASE-VALUE format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="unicode">Logic</VALUE>
+							</CASE-VALUE>
+						</ANALYSISITEM>
+						<ANALYSISITEM uuid="6932b3927de611e78a02a0afbd2cbadb" xsi:type="taCaseDefNode">
+							<ANALYSISITEM format-rev="2" poolRev="3" uuid="e17894f2327411e6b6f7fcf8aeb9b2bf" xsi:type="referencingTraceStep">
+								<NAME xsi:type="unicode">WarningLight_Timing</NAME>
+								<ANALYSISITEM format-rev="3" uuid="deab526ed19911e6825308edb9de9bdd" xsi:type="plotItem">
+									<NAME xsi:type="unicode">Plot</NAME>
+									<SUB-PLOTS>
+										<SUB-PLOT format-rev="1" xsi:type="plotSubPlot">
+											<TYPE xsi:type="string">common</TYPE>
+											<ENTITIES>
+												<ENTITY format-rev="1" isTraceStepSignal="False" xsi:type="plotSignalEntity">
+													<NAME xsi:type="unicode">MDL_temp</NAME>
+													<AXIS xsi:type="integer">0</AXIS>
+													<MARKER-STYLE xsi:type="unicode">o</MARKER-STYLE>
+												</ENTITY>
+											</ENTITIES>
+											<AXES>
+												<AXIS xsi:type="plotAxis"/>
+											</AXES>
+										</SUB-PLOT>
+										<SUB-PLOT format-rev="1" xsi:type="plotSubPlot">
+											<TYPE xsi:type="string">separate</TYPE>
+											<ENTITIES>
+												<ENTITY format-rev="1" isTraceStepSignal="False" xsi:type="plotSignalEntity">
+													<NAME xsi:type="unicode">MDL_w1</NAME>
+													<AXIS xsi:type="integer">0</AXIS>
+													<MARKER-STYLE xsi:type="unicode">o</MARKER-STYLE>
+												</ENTITY>
+											</ENTITIES>
+											<AXES>
+												<AXIS xsi:type="plotAxis"/>
+											</AXES>
+										</SUB-PLOT>
+										<SUB-PLOT format-rev="1" xsi:type="plotSubPlot">
+											<TYPE xsi:type="string">common</TYPE>
+											<ENTITIES/>
+											<AXES/>
+										</SUB-PLOT>
+									</SUB-PLOTS>
+									<SUB-CONFIG-OVERVIEW xsi:type="plotSubConfig">
+										<CONDITION xsi:type="unicode">NONE</CONDITION>
+										<MAX-NUMBER format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">5</VALUE>
+										</MAX-NUMBER>
+										<EXPAND-XLIMITS-LEFT format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="float">0.5</VALUE>
+										</EXPAND-XLIMITS-LEFT>
+										<EXPAND-XLIMITS-RIGHT format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="float">0.5</VALUE>
+										</EXPAND-XLIMITS-RIGHT>
+									</SUB-CONFIG-OVERVIEW>
+									<SUB-CONFIG-PARENT-CONTEXT xsi:type="plotSubConfig">
+										<CONDITION xsi:type="unicode">NONE</CONDITION>
+										<MAX-NUMBER format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">10</VALUE>
+										</MAX-NUMBER>
+										<EXPAND-XLIMITS-LEFT format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="float">0.5</VALUE>
+										</EXPAND-XLIMITS-LEFT>
+										<EXPAND-XLIMITS-RIGHT format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="float">0.5</VALUE>
+										</EXPAND-XLIMITS-RIGHT>
+									</SUB-CONFIG-PARENT-CONTEXT>
+									<SUB-CONFIG-DETAILS xsi:type="plotSubConfig">
+										<CONDITION xsi:type="unicode">NONE</CONDITION>
+										<MAX-NUMBER format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">10</VALUE>
+										</MAX-NUMBER>
+										<EXPAND-XLIMITS-LEFT format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="float">0.01</VALUE>
+										</EXPAND-XLIMITS-LEFT>
+										<EXPAND-XLIMITS-RIGHT format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="float">0.01</VALUE>
+										</EXPAND-XLIMITS-RIGHT>
+									</SUB-CONFIG-DETAILS>
+									<SIGNAL-NAME-TYPE xsi:type="string">generic</SIGNAL-NAME-TYPE>
+									<LEGEND-LOCATION xsi:type="integer">0</LEGEND-LOCATION>
+								</ANALYSISITEM>
+								<SIGNAL-BINDING xsi:type="signalBinding">
+									<PARAMETER dkey="Temperature">
+										<DVALUE format-rev="1" xsi:type="signalParameter">
+											<REF-SIGNAL-NAME xsi:type="unicode">MDL_temp</REF-SIGNAL-NAME>
+										</DVALUE>
+									</PARAMETER>
+									<PARAMETER dkey="WarningLight">
+										<DVALUE format-rev="1" xsi:type="signalParameter">
+											<REF-SIGNAL-NAME xsi:type="unicode">MDL_w1</REF-SIGNAL-NAME>
+										</DVALUE>
+									</PARAMETER>
+								</SIGNAL-BINDING>
+								<PARAM-ASSIGNMENTS xsi:type="trcpParameterAssignments">
+									<PARAM-ASSIGNMENTS>
+										<ASSIGNMENT dkey="AllowFailedInstances">
+											<DVALUE format-rev="1" xsi:type="valueBaseExpression">
+												<VALUE xsi:type="boolean">False</VALUE>
+											</DVALUE>
+										</ASSIGNMENT>
+										<ASSIGNMENT dkey="MaxParallelInstances">
+											<DVALUE format-rev="1" xsi:type="valueBaseExpression"/>
+										</ASSIGNMENT>
+										<ASSIGNMENT dkey="MinMaxSuccessfulInstances">
+											<DVALUE format-rev="1" xsi:type="valueBaseExpression">
+												<VALUE xsi:type="integer">1</VALUE>
+											</DVALUE>
+										</ASSIGNMENT>
+										<ASSIGNMENT dkey="threshold">
+											<DVALUE xsi:type="varBaseExpression">
+												<NAME xsi:type="unicode">threshold</NAME>
+											</DVALUE>
+										</ASSIGNMENT>
+										<ASSIGNMENT dkey="timeout">
+											<DVALUE xsi:type="varBaseExpression">
+												<NAME xsi:type="unicode">timeout</NAME>
+											</DVALUE>
+										</ASSIGNMENT>
+									</PARAM-ASSIGNMENTS>
+								</PARAM-ASSIGNMENTS>
+								<REPORT-CONFIG xsi:type="trcpReportConfig">
+									<MAX-SPOTS xsi:type="integer">100</MAX-SPOTS>
+									<MIN-DELTA xsi:type="float">0.0</MIN-DELTA>
+								</REPORT-CONFIG>
+								<PROTOTYPE-ID xsi:type="unicode">Results\WarningLight_Timing</PROTOTYPE-ID>
+							</ANALYSISITEM>
+							<CASE-VALUE format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="unicode">TimingDiagram</VALUE>
+							</CASE-VALUE>
+						</ANALYSISITEM>
+						<ANALYSISITEM uuid="6932daa17de611e7b868a0afbd2cbadb" xsi:type="taCaseDefNode">
+							<ANALYSISITEM format-rev="2" poolRev="3" uuid="e3cb3021327711e6988efcf8aeb9b2bf" xsi:type="referencingTraceStep">
+								<NAME xsi:type="unicode">WarningLight_Python</NAME>
+								<ANALYSISITEM format-rev="3" uuid="8a8a14e1d19b11e6a8dd08edb9de9bdd" xsi:type="plotItem">
+									<NAME xsi:type="unicode">Plot</NAME>
+									<SUB-PLOTS>
+										<SUB-PLOT format-rev="1" xsi:type="plotSubPlot">
+											<TYPE xsi:type="string">common</TYPE>
+											<ENTITIES>
+												<ENTITY format-rev="1" isTraceStepSignal="False" xsi:type="plotSignalEntity">
+													<NAME xsi:type="unicode">MDL_temp</NAME>
+													<AXIS xsi:type="integer">0</AXIS>
+													<MARKER-STYLE xsi:type="unicode">o</MARKER-STYLE>
+												</ENTITY>
+											</ENTITIES>
+											<AXES>
+												<AXIS xsi:type="plotAxis"/>
+											</AXES>
+										</SUB-PLOT>
+										<SUB-PLOT format-rev="1" xsi:type="plotSubPlot">
+											<TYPE xsi:type="string">separate</TYPE>
+											<ENTITIES>
+												<ENTITY format-rev="1" isTraceStepSignal="False" xsi:type="plotSignalEntity">
+													<NAME xsi:type="unicode">MDL_w1</NAME>
+													<AXIS xsi:type="integer">0</AXIS>
+													<MARKER-STYLE xsi:type="unicode">o</MARKER-STYLE>
+												</ENTITY>
+											</ENTITIES>
+											<AXES>
+												<AXIS xsi:type="plotAxis"/>
+											</AXES>
+										</SUB-PLOT>
+										<SUB-PLOT format-rev="1" xsi:type="plotSubPlot">
+											<TYPE xsi:type="string">common</TYPE>
+											<ENTITIES/>
+											<AXES/>
+										</SUB-PLOT>
+									</SUB-PLOTS>
+									<SUB-CONFIG-OVERVIEW xsi:type="plotSubConfig">
+										<CONDITION xsi:type="unicode">NONE</CONDITION>
+										<MAX-NUMBER format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">5</VALUE>
+										</MAX-NUMBER>
+										<EXPAND-XLIMITS-LEFT format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="float">0.5</VALUE>
+										</EXPAND-XLIMITS-LEFT>
+										<EXPAND-XLIMITS-RIGHT format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="float">0.5</VALUE>
+										</EXPAND-XLIMITS-RIGHT>
+									</SUB-CONFIG-OVERVIEW>
+									<SUB-CONFIG-PARENT-CONTEXT xsi:type="plotSubConfig">
+										<CONDITION xsi:type="unicode">NONE</CONDITION>
+										<MAX-NUMBER format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">10</VALUE>
+										</MAX-NUMBER>
+										<EXPAND-XLIMITS-LEFT format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="float">0.5</VALUE>
+										</EXPAND-XLIMITS-LEFT>
+										<EXPAND-XLIMITS-RIGHT format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="float">0.5</VALUE>
+										</EXPAND-XLIMITS-RIGHT>
+									</SUB-CONFIG-PARENT-CONTEXT>
+									<SUB-CONFIG-DETAILS xsi:type="plotSubConfig">
+										<CONDITION xsi:type="unicode">NONE</CONDITION>
+										<MAX-NUMBER format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">10</VALUE>
+										</MAX-NUMBER>
+										<EXPAND-XLIMITS-LEFT format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="float">0.01</VALUE>
+										</EXPAND-XLIMITS-LEFT>
+										<EXPAND-XLIMITS-RIGHT format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="float">0.01</VALUE>
+										</EXPAND-XLIMITS-RIGHT>
+									</SUB-CONFIG-DETAILS>
+									<SIGNAL-NAME-TYPE xsi:type="string">generic</SIGNAL-NAME-TYPE>
+									<LEGEND-LOCATION xsi:type="integer">0</LEGEND-LOCATION>
+								</ANALYSISITEM>
+								<SIGNAL-BINDING xsi:type="signalBinding">
+									<PARAMETER dkey="Temperature">
+										<DVALUE format-rev="1" xsi:type="signalParameter">
+											<REF-SIGNAL-NAME xsi:type="unicode">MDL_temp</REF-SIGNAL-NAME>
+										</DVALUE>
+									</PARAMETER>
+									<PARAMETER dkey="WarningLight">
+										<DVALUE format-rev="1" xsi:type="signalParameter">
+											<REF-SIGNAL-NAME xsi:type="unicode">MDL_w1</REF-SIGNAL-NAME>
+										</DVALUE>
+									</PARAMETER>
+								</SIGNAL-BINDING>
+								<PARAM-ASSIGNMENTS xsi:type="trcpParameterAssignments">
+									<PARAM-ASSIGNMENTS>
+										<ASSIGNMENT dkey="threshold">
+											<DVALUE xsi:type="varBaseExpression">
+												<NAME xsi:type="unicode">threshold</NAME>
+											</DVALUE>
+										</ASSIGNMENT>
+										<ASSIGNMENT dkey="timeout">
+											<DVALUE xsi:type="varBaseExpression">
+												<NAME xsi:type="unicode">timeout</NAME>
+											</DVALUE>
+										</ASSIGNMENT>
+									</PARAM-ASSIGNMENTS>
+								</PARAM-ASSIGNMENTS>
+								<REPORT-CONFIG xsi:type="trcpReportConfig">
+									<MAX-SPOTS xsi:type="integer">100</MAX-SPOTS>
+									<MIN-DELTA xsi:type="float">0.0</MIN-DELTA>
+								</REPORT-CONFIG>
+								<PROTOTYPE-ID xsi:type="unicode">Results\WarningLight_Python</PROTOTYPE-ID>
+							</ANALYSISITEM>
+							<CASE-VALUE format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="unicode">Python</VALUE>
+							</CASE-VALUE>
+						</ANALYSISITEM>
+						<ANALYSISITEM uuid="8d12a94f7de611e78c1ba0afbd2cbadb" xsi:type="taCaseDefNode">
+							<ANALYSISITEM format-rev="2" poolRev="3" uuid="8ef991c07de611e7b163a0afbd2cbadb" xsi:type="referencingTraceStep">
+								<NAME xsi:type="unicode">WarningLight_Logic</NAME>
+								<ANALYSISITEM format-rev="3" uuid="8ef991c17de611e7b90ea0afbd2cbadb" xsi:type="plotItem">
+									<NAME xsi:type="unicode">Plot</NAME>
+									<SUB-PLOTS>
+										<SUB-PLOT format-rev="1" xsi:type="plotSubPlot">
+											<TYPE xsi:type="string">common</TYPE>
+											<ENTITIES>
+												<ENTITY format-rev="1" isTraceStepSignal="False" xsi:type="plotSignalEntity">
+													<NAME xsi:type="unicode">MDL_temp</NAME>
+													<AXIS xsi:type="integer">0</AXIS>
+													<MARKER-STYLE xsi:type="unicode">o</MARKER-STYLE>
+												</ENTITY>
+											</ENTITIES>
+											<AXES>
+												<AXIS xsi:type="plotAxis"/>
+											</AXES>
+										</SUB-PLOT>
+										<SUB-PLOT format-rev="1" xsi:type="plotSubPlot">
+											<TYPE xsi:type="string">separate</TYPE>
+											<ENTITIES>
+												<ENTITY format-rev="1" isTraceStepSignal="False" xsi:type="plotSignalEntity">
+													<NAME xsi:type="unicode">MDL_w1</NAME>
+													<AXIS xsi:type="integer">0</AXIS>
+													<MARKER-STYLE xsi:type="unicode">o</MARKER-STYLE>
+												</ENTITY>
+											</ENTITIES>
+											<AXES>
+												<AXIS xsi:type="plotAxis"/>
+											</AXES>
+										</SUB-PLOT>
+										<SUB-PLOT format-rev="1" xsi:type="plotSubPlot">
+											<TYPE xsi:type="string">common</TYPE>
+											<ENTITIES/>
+											<AXES/>
+										</SUB-PLOT>
+									</SUB-PLOTS>
+									<SUB-CONFIG-OVERVIEW xsi:type="plotSubConfig">
+										<CONDITION xsi:type="unicode">NONE</CONDITION>
+										<MAX-NUMBER format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">5</VALUE>
+										</MAX-NUMBER>
+										<EXPAND-XLIMITS-LEFT format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="float">0.5</VALUE>
+										</EXPAND-XLIMITS-LEFT>
+										<EXPAND-XLIMITS-RIGHT format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="float">0.5</VALUE>
+										</EXPAND-XLIMITS-RIGHT>
+									</SUB-CONFIG-OVERVIEW>
+									<SUB-CONFIG-PARENT-CONTEXT xsi:type="plotSubConfig">
+										<CONDITION xsi:type="unicode">NONE</CONDITION>
+										<MAX-NUMBER format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">10</VALUE>
+										</MAX-NUMBER>
+										<EXPAND-XLIMITS-LEFT format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="float">0.5</VALUE>
+										</EXPAND-XLIMITS-LEFT>
+										<EXPAND-XLIMITS-RIGHT format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="float">0.5</VALUE>
+										</EXPAND-XLIMITS-RIGHT>
+									</SUB-CONFIG-PARENT-CONTEXT>
+									<SUB-CONFIG-DETAILS xsi:type="plotSubConfig">
+										<CONDITION xsi:type="unicode">NONE</CONDITION>
+										<MAX-NUMBER format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">10</VALUE>
+										</MAX-NUMBER>
+										<EXPAND-XLIMITS-LEFT format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="float">0.5</VALUE>
+										</EXPAND-XLIMITS-LEFT>
+										<EXPAND-XLIMITS-RIGHT format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="float">0.5</VALUE>
+										</EXPAND-XLIMITS-RIGHT>
+									</SUB-CONFIG-DETAILS>
+									<SIGNAL-NAME-TYPE xsi:type="string">generic</SIGNAL-NAME-TYPE>
+									<LEGEND-LOCATION xsi:type="integer">0</LEGEND-LOCATION>
+								</ANALYSISITEM>
+								<SIGNAL-BINDING xsi:type="signalBinding">
+									<PARAMETER dkey="Temperature">
+										<DVALUE format-rev="1" xsi:type="signalParameter">
+											<REF-SIGNAL-NAME xsi:type="unicode">MDL_temp</REF-SIGNAL-NAME>
+										</DVALUE>
+									</PARAMETER>
+									<PARAMETER dkey="WarningLight">
+										<DVALUE format-rev="1" xsi:type="signalParameter">
+											<REF-SIGNAL-NAME xsi:type="unicode">MDL_w1</REF-SIGNAL-NAME>
+										</DVALUE>
+									</PARAMETER>
+								</SIGNAL-BINDING>
+								<PARAM-ASSIGNMENTS xsi:type="trcpParameterAssignments">
+									<PARAM-ASSIGNMENTS>
+										<ASSIGNMENT dkey="threshold">
+											<DVALUE xsi:type="varBaseExpression">
+												<NAME xsi:type="unicode">threshold</NAME>
+											</DVALUE>
+										</ASSIGNMENT>
+										<ASSIGNMENT dkey="timeout">
+											<DVALUE xsi:type="varBaseExpression">
+												<NAME xsi:type="unicode">timeout</NAME>
+											</DVALUE>
+										</ASSIGNMENT>
+									</PARAM-ASSIGNMENTS>
+								</PARAM-ASSIGNMENTS>
+								<REPORT-CONFIG xsi:type="trcpReportConfig">
+									<MAX-SPOTS xsi:type="integer">100</MAX-SPOTS>
+									<MIN-DELTA xsi:type="float">0.0</MIN-DELTA>
+								</REPORT-CONFIG>
+								<PROTOTYPE-ID xsi:type="unicode">Results\WarningLight_Logic</PROTOTYPE-ID>
+							</ANALYSISITEM>
+							<ANALYSISITEM format-rev="2" poolRev="3" uuid="9101489e7de611e79d7aa0afbd2cbadb" xsi:type="referencingTraceStep">
+								<NAME xsi:type="unicode">WarningLight_Timing</NAME>
+								<ANALYSISITEM format-rev="3" uuid="9101489f7de611e7bf91a0afbd2cbadb" xsi:type="plotItem">
+									<NAME xsi:type="unicode">Plot</NAME>
+									<SUB-PLOTS>
+										<SUB-PLOT format-rev="1" xsi:type="plotSubPlot">
+											<TYPE xsi:type="string">common</TYPE>
+											<ENTITIES>
+												<ENTITY format-rev="1" isTraceStepSignal="False" xsi:type="plotSignalEntity">
+													<NAME xsi:type="unicode">MDL_temp</NAME>
+													<AXIS xsi:type="integer">0</AXIS>
+													<MARKER-STYLE xsi:type="unicode">o</MARKER-STYLE>
+												</ENTITY>
+											</ENTITIES>
+											<AXES>
+												<AXIS xsi:type="plotAxis"/>
+											</AXES>
+										</SUB-PLOT>
+										<SUB-PLOT format-rev="1" xsi:type="plotSubPlot">
+											<TYPE xsi:type="string">separate</TYPE>
+											<ENTITIES>
+												<ENTITY format-rev="1" isTraceStepSignal="False" xsi:type="plotSignalEntity">
+													<NAME xsi:type="unicode">MDL_w1</NAME>
+													<AXIS xsi:type="integer">0</AXIS>
+													<MARKER-STYLE xsi:type="unicode">o</MARKER-STYLE>
+												</ENTITY>
+											</ENTITIES>
+											<AXES>
+												<AXIS xsi:type="plotAxis"/>
+											</AXES>
+										</SUB-PLOT>
+										<SUB-PLOT format-rev="1" xsi:type="plotSubPlot">
+											<TYPE xsi:type="string">common</TYPE>
+											<ENTITIES/>
+											<AXES/>
+										</SUB-PLOT>
+									</SUB-PLOTS>
+									<SUB-CONFIG-OVERVIEW xsi:type="plotSubConfig">
+										<CONDITION xsi:type="unicode">NONE</CONDITION>
+										<MAX-NUMBER format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">5</VALUE>
+										</MAX-NUMBER>
+										<EXPAND-XLIMITS-LEFT format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="float">0.5</VALUE>
+										</EXPAND-XLIMITS-LEFT>
+										<EXPAND-XLIMITS-RIGHT format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="float">0.5</VALUE>
+										</EXPAND-XLIMITS-RIGHT>
+									</SUB-CONFIG-OVERVIEW>
+									<SUB-CONFIG-PARENT-CONTEXT xsi:type="plotSubConfig">
+										<CONDITION xsi:type="unicode">NONE</CONDITION>
+										<MAX-NUMBER format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">10</VALUE>
+										</MAX-NUMBER>
+										<EXPAND-XLIMITS-LEFT format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="float">0.5</VALUE>
+										</EXPAND-XLIMITS-LEFT>
+										<EXPAND-XLIMITS-RIGHT format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="float">0.5</VALUE>
+										</EXPAND-XLIMITS-RIGHT>
+									</SUB-CONFIG-PARENT-CONTEXT>
+									<SUB-CONFIG-DETAILS xsi:type="plotSubConfig">
+										<CONDITION xsi:type="unicode">NONE</CONDITION>
+										<MAX-NUMBER format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">10</VALUE>
+										</MAX-NUMBER>
+										<EXPAND-XLIMITS-LEFT format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="float">0.01</VALUE>
+										</EXPAND-XLIMITS-LEFT>
+										<EXPAND-XLIMITS-RIGHT format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="float">0.01</VALUE>
+										</EXPAND-XLIMITS-RIGHT>
+									</SUB-CONFIG-DETAILS>
+									<SIGNAL-NAME-TYPE xsi:type="string">generic</SIGNAL-NAME-TYPE>
+									<LEGEND-LOCATION xsi:type="integer">0</LEGEND-LOCATION>
+								</ANALYSISITEM>
+								<SIGNAL-BINDING xsi:type="signalBinding">
+									<PARAMETER dkey="Temperature">
+										<DVALUE format-rev="1" xsi:type="signalParameter">
+											<REF-SIGNAL-NAME xsi:type="unicode">MDL_temp</REF-SIGNAL-NAME>
+										</DVALUE>
+									</PARAMETER>
+									<PARAMETER dkey="WarningLight">
+										<DVALUE format-rev="1" xsi:type="signalParameter">
+											<REF-SIGNAL-NAME xsi:type="unicode">MDL_w1</REF-SIGNAL-NAME>
+										</DVALUE>
+									</PARAMETER>
+								</SIGNAL-BINDING>
+								<PARAM-ASSIGNMENTS xsi:type="trcpParameterAssignments">
+									<PARAM-ASSIGNMENTS>
+										<ASSIGNMENT dkey="AllowFailedInstances">
+											<DVALUE format-rev="1" xsi:type="valueBaseExpression">
+												<VALUE xsi:type="boolean">False</VALUE>
+											</DVALUE>
+										</ASSIGNMENT>
+										<ASSIGNMENT dkey="MaxParallelInstances">
+											<DVALUE format-rev="1" xsi:type="valueBaseExpression"/>
+										</ASSIGNMENT>
+										<ASSIGNMENT dkey="MinMaxSuccessfulInstances">
+											<DVALUE format-rev="1" xsi:type="valueBaseExpression">
+												<VALUE xsi:type="integer">1</VALUE>
+											</DVALUE>
+										</ASSIGNMENT>
+										<ASSIGNMENT dkey="threshold">
+											<DVALUE xsi:type="varBaseExpression">
+												<NAME xsi:type="unicode">threshold</NAME>
+											</DVALUE>
+										</ASSIGNMENT>
+										<ASSIGNMENT dkey="timeout">
+											<DVALUE xsi:type="varBaseExpression">
+												<NAME xsi:type="unicode">timeout</NAME>
+											</DVALUE>
+										</ASSIGNMENT>
+									</PARAM-ASSIGNMENTS>
+								</PARAM-ASSIGNMENTS>
+								<REPORT-CONFIG xsi:type="trcpReportConfig">
+									<MAX-SPOTS xsi:type="integer">100</MAX-SPOTS>
+									<MIN-DELTA xsi:type="float">0.0</MIN-DELTA>
+								</REPORT-CONFIG>
+								<PROTOTYPE-ID xsi:type="unicode">Results\WarningLight_Timing</PROTOTYPE-ID>
+							</ANALYSISITEM>
+							<ANALYSISITEM format-rev="2" poolRev="3" uuid="933d07cf7de611e7addba0afbd2cbadb" xsi:type="referencingTraceStep">
+								<NAME xsi:type="unicode">WarningLight_Python</NAME>
+								<ANALYSISITEM format-rev="3" uuid="933d07d07de611e7882da0afbd2cbadb" xsi:type="plotItem">
+									<NAME xsi:type="unicode">Plot</NAME>
+									<SUB-PLOTS>
+										<SUB-PLOT format-rev="1" xsi:type="plotSubPlot">
+											<TYPE xsi:type="string">common</TYPE>
+											<ENTITIES>
+												<ENTITY format-rev="1" isTraceStepSignal="False" xsi:type="plotSignalEntity">
+													<NAME xsi:type="unicode">MDL_temp</NAME>
+													<AXIS xsi:type="integer">0</AXIS>
+													<MARKER-STYLE xsi:type="unicode">o</MARKER-STYLE>
+												</ENTITY>
+											</ENTITIES>
+											<AXES>
+												<AXIS xsi:type="plotAxis"/>
+											</AXES>
+										</SUB-PLOT>
+										<SUB-PLOT format-rev="1" xsi:type="plotSubPlot">
+											<TYPE xsi:type="string">separate</TYPE>
+											<ENTITIES>
+												<ENTITY format-rev="1" isTraceStepSignal="False" xsi:type="plotSignalEntity">
+													<NAME xsi:type="unicode">MDL_w1</NAME>
+													<AXIS xsi:type="integer">0</AXIS>
+													<MARKER-STYLE xsi:type="unicode">o</MARKER-STYLE>
+												</ENTITY>
+											</ENTITIES>
+											<AXES>
+												<AXIS xsi:type="plotAxis"/>
+											</AXES>
+										</SUB-PLOT>
+										<SUB-PLOT format-rev="1" xsi:type="plotSubPlot">
+											<TYPE xsi:type="string">common</TYPE>
+											<ENTITIES/>
+											<AXES/>
+										</SUB-PLOT>
+									</SUB-PLOTS>
+									<SUB-CONFIG-OVERVIEW xsi:type="plotSubConfig">
+										<CONDITION xsi:type="unicode">NONE</CONDITION>
+										<MAX-NUMBER format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">5</VALUE>
+										</MAX-NUMBER>
+										<EXPAND-XLIMITS-LEFT format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="float">0.5</VALUE>
+										</EXPAND-XLIMITS-LEFT>
+										<EXPAND-XLIMITS-RIGHT format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="float">0.5</VALUE>
+										</EXPAND-XLIMITS-RIGHT>
+									</SUB-CONFIG-OVERVIEW>
+									<SUB-CONFIG-PARENT-CONTEXT xsi:type="plotSubConfig">
+										<CONDITION xsi:type="unicode">NONE</CONDITION>
+										<MAX-NUMBER format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">10</VALUE>
+										</MAX-NUMBER>
+										<EXPAND-XLIMITS-LEFT format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="float">0.5</VALUE>
+										</EXPAND-XLIMITS-LEFT>
+										<EXPAND-XLIMITS-RIGHT format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="float">0.5</VALUE>
+										</EXPAND-XLIMITS-RIGHT>
+									</SUB-CONFIG-PARENT-CONTEXT>
+									<SUB-CONFIG-DETAILS xsi:type="plotSubConfig">
+										<CONDITION xsi:type="unicode">NONE</CONDITION>
+										<MAX-NUMBER format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">10</VALUE>
+										</MAX-NUMBER>
+										<EXPAND-XLIMITS-LEFT format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="float">0.01</VALUE>
+										</EXPAND-XLIMITS-LEFT>
+										<EXPAND-XLIMITS-RIGHT format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="float">0.01</VALUE>
+										</EXPAND-XLIMITS-RIGHT>
+									</SUB-CONFIG-DETAILS>
+									<SIGNAL-NAME-TYPE xsi:type="string">generic</SIGNAL-NAME-TYPE>
+									<LEGEND-LOCATION xsi:type="integer">0</LEGEND-LOCATION>
+								</ANALYSISITEM>
+								<SIGNAL-BINDING xsi:type="signalBinding">
+									<PARAMETER dkey="Temperature">
+										<DVALUE format-rev="1" xsi:type="signalParameter">
+											<REF-SIGNAL-NAME xsi:type="unicode">MDL_temp</REF-SIGNAL-NAME>
+										</DVALUE>
+									</PARAMETER>
+									<PARAMETER dkey="WarningLight">
+										<DVALUE format-rev="1" xsi:type="signalParameter">
+											<REF-SIGNAL-NAME xsi:type="unicode">MDL_w1</REF-SIGNAL-NAME>
+										</DVALUE>
+									</PARAMETER>
+								</SIGNAL-BINDING>
+								<PARAM-ASSIGNMENTS xsi:type="trcpParameterAssignments">
+									<PARAM-ASSIGNMENTS>
+										<ASSIGNMENT dkey="threshold">
+											<DVALUE xsi:type="varBaseExpression">
+												<NAME xsi:type="unicode">threshold</NAME>
+											</DVALUE>
+										</ASSIGNMENT>
+										<ASSIGNMENT dkey="timeout">
+											<DVALUE xsi:type="varBaseExpression">
+												<NAME xsi:type="unicode">timeout</NAME>
+											</DVALUE>
+										</ASSIGNMENT>
+									</PARAM-ASSIGNMENTS>
+								</PARAM-ASSIGNMENTS>
+								<REPORT-CONFIG xsi:type="trcpReportConfig">
+									<MAX-SPOTS xsi:type="integer">100</MAX-SPOTS>
+									<MIN-DELTA xsi:type="float">0.0</MIN-DELTA>
+								</REPORT-CONFIG>
+								<PROTOTYPE-ID xsi:type="unicode">Results\WarningLight_Python</PROTOTYPE-ID>
+							</ANALYSISITEM>
+							<CASE-VALUE format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="unicode">All</VALUE>
+							</CASE-VALUE>
+						</ANALYSISITEM>
+						<ANALYSISITEM uuid="5aaeba817de611e7a9ffa0afbd2cbadb" xsi:type="taCaseDefNode">
+							<CASE-VALUE format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="integer">0</VALUE>
+							</CASE-VALUE>
+							<IS-DEFAULT xsi:type="boolean">True</IS-DEFAULT>
+						</ANALYSISITEM>
+						<SWITCH-VALUE xsi:type="varBaseExpression">
+							<NAME xsi:type="unicode">TraceAnalysisMode</NAME>
+						</SWITCH-VALUE>
+					</ANALYSISITEM>
+				</ANALYSISITEM>
+			</ANALYSISITEM>
+			<SYNCHRONISATION-CONFIG xsi:type="syncConfig"/>
+			<SYNCHRONISATION-ACTIVATED xsi:type="boolean">False</SYNCHRONISATION-ACTIVATED>
+			<TRACE-MERGE-FILEPATH format-rev="1" xsi:type="valueBaseExpression">
+				<VALUE xsi:type="unicode"/>
+			</TRACE-MERGE-FILEPATH>
+			<VIRTUAL-SIGNALS-MANAGER xsi:type="virtualSignalsManager">
+				<VIRTUAL-SIGNALS>
+					<VIRTUAL-SIGNAL uuid="a4e9daeec4cc11e59b7208edb9de9bdd" xsi:type="virtualSessionSignal">
+						<NAME xsi:type="unicode">MDL_w1</NAME>
+						<SIGNAL-FOR-ANALYSIS xsi:type="recordingSignalForAnalysis">
+							<KEY xsi:type="unicode">MDL/w1</KEY>
+							<SOURCE-TYPE xsi:type="string">RECORDING-GROUP</SOURCE-TYPE>
+							<SOURCE-REF xsi:type="string">ca2c28c07bef11e58501ecf4bb108913</SOURCE-REF>
+						</SIGNAL-FOR-ANALYSIS>
+						<EVENT-TYPE xsi:type="string">PHY</EVENT-TYPE>
+					</VIRTUAL-SIGNAL>
+					<VIRTUAL-SIGNAL uuid="e3a78fcfc4cc11e5915308edb9de9bdd" xsi:type="virtualSessionSignal">
+						<NAME xsi:type="unicode">MDL_temp</NAME>
+						<SIGNAL-FOR-ANALYSIS xsi:type="recordingSignalForAnalysis">
+							<KEY xsi:type="unicode">MDL/temp</KEY>
+							<SOURCE-TYPE xsi:type="string">RECORDING-GROUP</SOURCE-TYPE>
+							<SOURCE-REF xsi:type="string">ca2c28c07bef11e58501ecf4bb108913</SOURCE-REF>
+						</SIGNAL-FOR-ANALYSIS>
+						<EVENT-TYPE xsi:type="string">PHY</EVENT-TYPE>
+					</VIRTUAL-SIGNAL>
+				</VIRTUAL-SIGNALS>
+			</VIRTUAL-SIGNALS-MANAGER>
+		</TRACE-ANALYSIS>
+	</TRACE-ANALYSES>
+</PACKAGE>

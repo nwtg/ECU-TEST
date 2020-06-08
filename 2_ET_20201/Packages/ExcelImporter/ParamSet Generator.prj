@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PROJECT format-rev="10" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<NAME xsi:type="string">Project</NAME>
+	<ENABLED xsi:type="boolean">True</ENABLED>
+	<REPORTING xsi:type="boolean">True</REPORTING>
+	<ID xsi:type="string">882e6d2958ac11ea9834bc9a78563412</ID>
+	<COMPONENTS>
+		<COMPONENT format-rev="5" xsi:type="packageTest">
+			<NAME xsi:type="string">DriverRequest</NAME>
+			<ENABLED xsi:type="boolean">True</ENABLED>
+			<REPORTING xsi:type="boolean">True</REPORTING>
+			<ID xsi:type="string">882e6d2758ac11ea9fc4bc9a78563412</ID>
+			<COMPONENTS>
+				<COMPONENT format-rev="1" xsi:type="variationSet">
+					<NAME xsi:type="string">Excel example generator</NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<ID xsi:type="string">882e6d2658ac11eaaefcbc9a78563412</ID>
+					<COMPONENTS/>
+					<PARAM-GENERATOR xsi:type="paramGenerator-56fe8f8f-e11d-11df-a48c-12386baaabec">
+						<FILENAME xsi:type="string">Parameters\DriverRequests.xlsx</FILENAME>
+					</PARAM-GENERATOR>
+				</COMPONENT>
+			</COMPONENTS>
+			<PACKAGE-REF format-rev="1" xsi:type="packageRef">
+				<PACKAGE-PATH xsi:type="string">DriverRequest.pkg</PACKAGE-PATH>
+			</PACKAGE-REF>
+		</COMPONENT>
+	</COMPONENTS>
+</PROJECT>

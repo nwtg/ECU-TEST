@@ -1,0 +1,964 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ODX MODEL-VERSION="2.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="odx.xsd">
+  <DIAG-LAYER-CONTAINER ID="_194">
+    <SHORT-NAME>ENGINE</SHORT-NAME>
+    <LONG-NAME>ENGINE</LONG-NAME>
+    <BASE-VARIANTS>
+      <BASE-VARIANT ID="ENGINE">
+        <SHORT-NAME>ENGINE</SHORT-NAME>
+        <LONG-NAME>ENGINE</LONG-NAME>
+        <DIAG-DATA-DICTIONARY-SPEC>
+          <DTC-DOPS>
+            <DTC-DOP ID="_146">
+              <SHORT-NAME>RecordDataType</SHORT-NAME>
+              <LONG-NAME>RecordDataType</LONG-NAME>
+              <DIAG-CODED-TYPE BASE-TYPE-ENCODING="NONE" BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+                <BIT-LENGTH>24</BIT-LENGTH>
+              </DIAG-CODED-TYPE>
+              <PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="HEX"/>
+              <COMPU-METHOD>
+                <CATEGORY>IDENTICAL</CATEGORY>
+              </COMPU-METHOD>
+              <DTCS>
+                <DTC ID="_222">
+                  <SHORT-NAME>DTC5B0123</SHORT-NAME>
+                  <TROUBLE-CODE>5963778</TROUBLE-CODE>
+                  <DISPLAY-TROUBLE-CODE>C1B0123</DISPLAY-TROUBLE-CODE>
+                  <TEXT>Compare - Data Erratic, Intermittent Or Incorrect</TEXT>
+                  <SDGS>
+                    <SDG>
+                      <SDG-CAPTION ID="_261">
+                        <SHORT-NAME>DTC_OPERATION_CYCLE</SHORT-NAME>
+                        <LONG-NAME>Operation Cycle</LONG-NAME>
+                      </SDG-CAPTION>
+                      <SD>DEM_POWER</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION ID="_262">
+                        <SHORT-NAME>DTC_AGING_SUPPORTED</SHORT-NAME>
+                        <LONG-NAME>Self Healing (Aging)</LONG-NAME>
+                      </SDG-CAPTION>
+                      <SD>supported</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION ID="_263">
+                        <SHORT-NAME>DTC_AGING_CYCLE</SHORT-NAME>
+                        <LONG-NAME>Healing Cycle</LONG-NAME>
+                      </SDG-CAPTION>
+                      <SD>DEM_POWER</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION ID="_264">
+                        <SHORT-NAME>DTC_AGING_COUNTER</SHORT-NAME>
+                        <LONG-NAME>Healing Cycles</LONG-NAME>
+                      </SDG-CAPTION>
+                      <SD>0</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION ID="_265">
+                        <SHORT-NAME>DTC_INIT_MONITOR_REQUIRED</SHORT-NAME>
+                        <LONG-NAME>Monitor Initialization Function</LONG-NAME>
+                      </SDG-CAPTION>
+                      <SD>not required</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION ID="_266">
+                        <SHORT-NAME>DTC_PRIORITY_VALUE</SHORT-NAME>
+                        <LONG-NAME>DTC Priority</LONG-NAME>
+                      </SDG-CAPTION>
+                      <SD>1</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION ID="_267">
+                        <SHORT-NAME>DTC_SEVERITY_VALUE</SHORT-NAME>
+                        <LONG-NAME>DTC Severity</LONG-NAME>
+                      </SDG-CAPTION>
+                      <SD>noSeverity</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION ID="_268">
+                        <SHORT-NAME>DTC_DEBOUNCING_ALGORITHM</SHORT-NAME>
+                        <LONG-NAME>Pre-Debounce Algorithm</LONG-NAME>
+                      </SDG-CAPTION>
+                      <SD>Counter based</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION ID="_269">
+                        <SHORT-NAME>DTC_STEP_SIZE_PREFAILED</SHORT-NAME>
+                        <LONG-NAME>Count-In step size</LONG-NAME>
+                      </SDG-CAPTION>
+                      <SD>1</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION ID="_270">
+                        <SHORT-NAME>DTC_STEP_SIZE_PREPASSED</SHORT-NAME>
+                        <LONG-NAME>Count-out step size</LONG-NAME>
+                      </SDG-CAPTION>
+                      <SD>1</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION ID="_271">
+                        <SHORT-NAME>DTC_JUMP_UP_PREFAILED</SHORT-NAME>
+                        <LONG-NAME>Use Jump-Up (Prefailed)</LONG-NAME>
+                      </SDG-CAPTION>
+                      <SD>Yes</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION ID="_272">
+                        <SHORT-NAME>DTC_JUMP_DOWN_PREPASSED</SHORT-NAME>
+                        <LONG-NAME>Use Jump-Down (Prepassed)</LONG-NAME>
+                      </SDG-CAPTION>
+                      <SD>No</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION ID="_273">
+                        <SHORT-NAME>DTC_WARNING_INDICATOR_FLAG</SHORT-NAME>
+                        <LONG-NAME>Set WarningIndicatorBit at fault</LONG-NAME>
+                      </SDG-CAPTION>
+                      <SD>supported</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION ID="_274">
+                        <SHORT-NAME>DTC_TIMEOUT_VALUE_PREFAILED</SHORT-NAME>
+                        <LONG-NAME>DTC Debounce Failed Timeout Value</LONG-NAME>
+                      </SDG-CAPTION>
+                      <SD>100</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION ID="_275">
+                        <SHORT-NAME>DTC_TIMEOUT_VALUE_PREPASSED</SHORT-NAME>
+                        <LONG-NAME>DTC Debounce Passed Timeout Value</LONG-NAME>
+                      </SDG-CAPTION>
+                      <SD>200</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION ID="_276">
+                        <SHORT-NAME>Lamp_Status</SHORT-NAME>
+                        <LONG-NAME>Lamp Status</LONG-NAME>
+                      </SDG-CAPTION>
+                      <SD>None</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION ID="_277">
+                        <SHORT-NAME>In_Cab_Severity_Level</SHORT-NAME>
+                        <LONG-NAME>In Cab Severity Level</LONG-NAME>
+                      </SDG-CAPTION>
+                      <SD>No Lamp</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION ID="_278">
+                        <SHORT-NAME>Symbol</SHORT-NAME>
+                        <LONG-NAME>Symbol</LONG-NAME>
+                      </SDG-CAPTION>
+                      <SD>NONE</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION ID="_279">
+                        <SHORT-NAME>Acknowledge_Alert</SHORT-NAME>
+                        <LONG-NAME>Acknowledge Alert</LONG-NAME>
+                      </SDG-CAPTION>
+                      <SD>Yes</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION ID="_280">
+                        <SHORT-NAME>Display_Pop_Up</SHORT-NAME>
+                        <LONG-NAME>Display Pop-Up</LONG-NAME>
+                      </SDG-CAPTION>
+                      <SD>Yes</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION ID="_281">
+                        <SHORT-NAME>Priority_within_Severity</SHORT-NAME>
+                        <LONG-NAME>Priority (within Severity)</LONG-NAME>
+                      </SDG-CAPTION>
+                      <SD>250</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION ID="_282">
+                        <SHORT-NAME>Alert_Interval</SHORT-NAME>
+                        <LONG-NAME>Alert Interval</LONG-NAME>
+                      </SDG-CAPTION>
+                      <SD>Power Up</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION ID="_283">
+                        <SHORT-NAME>Off_Board_Severity_Level</SHORT-NAME>
+                        <LONG-NAME>Off Board Severity Level</LONG-NAME>
+                      </SDG-CAPTION>
+                      <SD>Grey</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION ID="_284">
+                        <SHORT-NAME>Off_Board_Immediate_Call_In</SHORT-NAME>
+                        <LONG-NAME>Off Board Immediate Call In</LONG-NAME>
+                      </SDG-CAPTION>
+                      <SD>No</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION ID="_285">
+                        <SHORT-NAME>SPN</SHORT-NAME>
+                        <LONG-NAME>SPN</LONG-NAME>
+                      </SDG-CAPTION>
+                      <SD>91</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION ID="_286">
+                        <SHORT-NAME>FMI</SHORT-NAME>
+                        <LONG-NAME>FMI</LONG-NAME>
+                      </SDG-CAPTION>
+                      <SD>2</SD>
+                    </SDG>
+                  </SDGS>
+                </DTC>
+                <DTC ID="_333">
+                  <SHORT-NAME>DTC5B0321</SHORT-NAME>
+                  <TROUBLE-CODE>5963784</TROUBLE-CODE>
+                  <DISPLAY-TROUBLE-CODE>C1B0321</DISPLAY-TROUBLE-CODE>
+                  <TEXT>DutyCycOOR - Abnormal Frequency Or Pulse Width Or Period</TEXT>
+                  <SDGS>
+                    <SDG>
+                      <SDG-CAPTION-REF ID-REF="_261"/>
+                      <SD>DEM_POWER</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION-REF ID-REF="_262"/>
+                      <SD>supported</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION-REF ID-REF="_263"/>
+                      <SD>DEM_POWER</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION-REF ID-REF="_264"/>
+                      <SD>0</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION-REF ID-REF="_265"/>
+                      <SD>not required</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION-REF ID-REF="_266"/>
+                      <SD>1</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION-REF ID-REF="_267"/>
+                      <SD>noSeverity</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION-REF ID-REF="_268"/>
+                      <SD>Counter based</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION-REF ID-REF="_269"/>
+                      <SD>1</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION-REF ID-REF="_270"/>
+                      <SD>1</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION-REF ID-REF="_271"/>
+                      <SD>Yes</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION-REF ID-REF="_272"/>
+                      <SD>No</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION-REF ID-REF="_273"/>
+                      <SD>supported</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION-REF ID-REF="_274"/>
+                      <SD>100</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION-REF ID-REF="_275"/>
+                      <SD>200</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION-REF ID-REF="_276"/>
+                      <SD>None</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION-REF ID-REF="_277"/>
+                      <SD>No Lamp</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION-REF ID-REF="_278"/>
+                      <SD>NONE</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION ID="_288">
+                        <SHORT-NAME>Level_1_Text</SHORT-NAME>
+                        <LONG-NAME>Level 1 Text</LONG-NAME>
+                      </SDG-CAPTION>
+                      <SD>Test3</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION ID="_289">
+                        <SHORT-NAME>Level_2_Text_Impact</SHORT-NAME>
+                        <LONG-NAME>Level 2 Text_Impact</LONG-NAME>
+                      </SDG-CAPTION>
+                      <SD>Test2</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION ID="_290">
+                        <SHORT-NAME>Level_2_Text_Mitigation</SHORT-NAME>
+                        <LONG-NAME>Level 2 Text_Mitigation</LONG-NAME>
+                      </SDG-CAPTION>
+                      <SD>Test1</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION-REF ID-REF="_279"/>
+                      <SD>Yes</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION-REF ID-REF="_280"/>
+                      <SD>Yes</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION-REF ID-REF="_281"/>
+                      <SD>250</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION-REF ID-REF="_282"/>
+                      <SD>Power Up</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION-REF ID-REF="_283"/>
+                      <SD>Yellow</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION-REF ID-REF="_284"/>
+                      <SD>No</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION ID="_291">
+                        <SHORT-NAME>SPN</SHORT-NAME>
+                        <LONG-NAME>SPN</LONG-NAME>
+                      </SDG-CAPTION>
+                      <SD>91</SD>
+                    </SDG>
+                    <SDG>
+                      <SDG-CAPTION ID="_292">
+                        <SHORT-NAME>FMI</SHORT-NAME>
+                        <LONG-NAME>FMI</LONG-NAME>
+                      </SDG-CAPTION>
+                      <SD>8</SD>
+                    </SDG>
+                  </SDGS>
+                </DTC>
+              </DTCS>
+            </DTC-DOP>
+          </DTC-DOPS>
+          <DATA-OBJECT-PROPS>
+            <DATA-OBJECT-PROP ID="_1">
+              <SHORT-NAME>HexDump_1Byte</SHORT-NAME>
+              <LONG-NAME>HexDump (1 Byte)</LONG-NAME>
+              <COMPU-METHOD>
+                <CATEGORY>IDENTICAL</CATEGORY>
+              </COMPU-METHOD>
+              <DIAG-CODED-TYPE BASE-TYPE-ENCODING="NONE" BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+                <BIT-LENGTH>8</BIT-LENGTH>
+              </DIAG-CODED-TYPE>
+              <PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="HEX"/>
+            </DATA-OBJECT-PROP>
+            <DATA-OBJECT-PROP ID="_92">
+              <SHORT-NAME>EnAirTempSt</SHORT-NAME>
+              <LONG-NAME>EnAirTempSt</LONG-NAME>
+              <COMPU-METHOD>
+                <CATEGORY>TEXTTABLE</CATEGORY>
+                <COMPU-INTERNAL-TO-PHYS>
+                  <COMPU-SCALES>
+                    <COMPU-SCALE>
+                      <LOWER-LIMIT>0</LOWER-LIMIT>
+                      <UPPER-LIMIT>0</UPPER-LIMIT>
+                      <COMPU-CONST>
+                        <VT>AirTempReld</VT>
+                      </COMPU-CONST>
+                    </COMPU-SCALE>
+                    <COMPU-SCALE>
+                      <LOWER-LIMIT>1</LOWER-LIMIT>
+                      <UPPER-LIMIT>1</UPPER-LIMIT>
+                      <COMPU-CONST>
+                        <VT>AirTempNotReld</VT>
+                      </COMPU-CONST>
+                    </COMPU-SCALE>
+                    <COMPU-SCALE>
+                      <LOWER-LIMIT>2</LOWER-LIMIT>
+                      <UPPER-LIMIT>2</UPPER-LIMIT>
+                      <COMPU-CONST>
+                        <VT>AirTempPsd</VT>
+                      </COMPU-CONST>
+                    </COMPU-SCALE>
+                    <COMPU-SCALE>
+                      <LOWER-LIMIT>7</LOWER-LIMIT>
+                      <UPPER-LIMIT>7</UPPER-LIMIT>
+                      <COMPU-CONST>
+                        <VT>AirTempStNotAvl</VT>
+                      </COMPU-CONST>
+                    </COMPU-SCALE>
+                  </COMPU-SCALES>
+                </COMPU-INTERNAL-TO-PHYS>
+              </COMPU-METHOD>
+              <DIAG-CODED-TYPE BASE-TYPE-ENCODING="NONE" BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+                <BIT-LENGTH>8</BIT-LENGTH>
+              </DIAG-CODED-TYPE>
+              <PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+              <INTERNAL-CONSTR>
+                <SCALE-CONSTRS>
+                  <SCALE-CONSTR VALIDITY="NOT-DEFINED">
+                    <LOWER-LIMIT>3</LOWER-LIMIT>
+                    <UPPER-LIMIT>6</UPPER-LIMIT>
+                  </SCALE-CONSTR>
+                  <SCALE-CONSTR VALIDITY="NOT-DEFINED">
+                    <LOWER-LIMIT>8</LOWER-LIMIT>
+                    <UPPER-LIMIT>255</UPPER-LIMIT>
+                  </SCALE-CONSTR>
+                </SCALE-CONSTRS>
+              </INTERNAL-CONSTR>
+            </DATA-OBJECT-PROP>
+            <DATA-OBJECT-PROP ID="_93">
+              <SHORT-NAME>DiagRat</SHORT-NAME>
+              <LONG-NAME>DiagRat</LONG-NAME>
+              <COMPU-METHOD>
+                <CATEGORY>LINEAR</CATEGORY>
+                <COMPU-INTERNAL-TO-PHYS>
+                  <COMPU-SCALES>
+                    <COMPU-SCALE>
+                      <COMPU-RATIONAL-COEFFS>
+                        <COMPU-NUMERATOR>
+                          <V>-300</V>
+                          <V>0.01</V>
+                        </COMPU-NUMERATOR>
+                      </COMPU-RATIONAL-COEFFS>
+                    </COMPU-SCALE>
+                  </COMPU-SCALES>
+                </COMPU-INTERNAL-TO-PHYS>
+              </COMPU-METHOD>
+              <DIAG-CODED-TYPE BASE-TYPE-ENCODING="NONE" BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+                <BIT-LENGTH>16</BIT-LENGTH>
+              </DIAG-CODED-TYPE>
+              <PHYSICAL-TYPE BASE-DATA-TYPE="A_FLOAT64">
+                <PRECISION>2</PRECISION>
+              </PHYSICAL-TYPE>
+              <UNIT-REF ID-REF="_219"/>
+            </DATA-OBJECT-PROP>
+          </DATA-OBJECT-PROPS>
+          <STRUCTURES>
+            <STRUCTURE ID="_114">
+              <SHORT-NAME>EngineRPM</SHORT-NAME>
+              <LONG-NAME>EngineRPM</LONG-NAME>
+              <BYTE-SIZE>1</BYTE-SIZE>
+              <PARAMS>
+                <PARAM SEMANTIC="DATA" xsi:type="VALUE">
+                  <SHORT-NAME>AirTempSt</SHORT-NAME>
+                  <LONG-NAME>AirTempSt</LONG-NAME>
+                  <SDGS>
+                    <SDG>
+                      <SDG-CAPTION ID="_222">
+                        <SHORT-NAME>SYNCHELEMENT</SHORT-NAME>
+                      </SDG-CAPTION>
+                      <SD>Oac1132c016110773d029946dXOac10c91715cd09c659e392a310Oac10c91715cd09c659e392a3</SD>
+                    </SDG>
+                  </SDGS>
+                  <BYTE-POSITION>0</BYTE-POSITION>
+                  <PHYSICAL-DEFAULT-VALUE>AirTempReld</PHYSICAL-DEFAULT-VALUE>
+                  <DOP-REF ID-REF="_92"/>
+                </PARAM>
+              </PARAMS>
+            </STRUCTURE>
+            <STRUCTURE ID="_116">
+              <SHORT-NAME>LambdaCorr</SHORT-NAME>
+              <LONG-NAME>LambdaCorr</LONG-NAME>
+              <BYTE-SIZE>2</BYTE-SIZE>
+              <PARAMS>
+                <PARAM SEMANTIC="DATA" xsi:type="VALUE">
+                  <SHORT-NAME>IgnOutp</SHORT-NAME>
+                  <LONG-NAME>IgnOutp</LONG-NAME>
+                  <SDGS>
+                    <SDG>
+                      <SDG-CAPTION ID="_224">
+                        <SHORT-NAME>SYNCHELEMENT</SHORT-NAME>
+                      </SDG-CAPTION>
+                      <SD>Oac1132c016110773d029974dXOac1132c016110773d0285e8b10Oac1132c016110773d0285e8b</SD>
+                    </SDG>
+                  </SDGS>
+                  <BYTE-POSITION>0</BYTE-POSITION>
+                  <PHYSICAL-DEFAULT-VALUE>False</PHYSICAL-DEFAULT-VALUE>
+                  <DOP-REF ID-REF="_91"/>
+                </PARAM>
+                <PARAM SEMANTIC="DATA" xsi:type="VALUE">
+                  <SHORT-NAME>IgnOutpSts</SHORT-NAME>
+                  <LONG-NAME>IgnOutpSts</LONG-NAME>
+                  <SDGS>
+                    <SDG>
+                      <SDG-CAPTION ID="_225">
+                        <SHORT-NAME>SYNCHELEMENT</SHORT-NAME>
+                      </SDG-CAPTION>
+                      <SD>Oac1132c016110773d02997dfXOac1132c016110773d028637610Oac1132c016110773d0286376</SD>
+                    </SDG>
+                  </SDGS>
+                  <BYTE-POSITION>1</BYTE-POSITION>
+                  <PHYSICAL-DEFAULT-VALUE>DIAG_NOT_SPPRTD</PHYSICAL-DEFAULT-VALUE>
+                  <DOP-REF ID-REF="_96"/>
+                </PARAM>
+              </PARAMS>
+            </STRUCTURE>
+            <STRUCTURE ID="_126">
+              <SHORT-NAME>AirTemp</SHORT-NAME>
+              <LONG-NAME>AirTemp</LONG-NAME>
+              <BYTE-SIZE>1</BYTE-SIZE>
+              <PARAMS>
+                <PARAM SEMANTIC="DATA" xsi:type="VALUE">
+                  <SHORT-NAME>IgnSwtSt</SHORT-NAME>
+                  <LONG-NAME>IgnSwtSt</LONG-NAME>
+                  <SDGS>
+                    <SDG>
+                      <SDG-CAPTION ID="_241">
+                        <SHORT-NAME>SYNCHELEMENT</SHORT-NAME>
+                      </SDG-CAPTION>
+                      <SD>Oac1132c016110773d029a602XOac1132c016110773d02942b810Oac1132c016110773d02942b8</SD>
+                    </SDG>
+                  </SDGS>
+                  <BYTE-POSITION>0</BYTE-POSITION>
+                  <DOP-REF ID-REF="_1"/>
+                </PARAM>
+              </PARAMS>
+            </STRUCTURE>
+            <STRUCTURE ID="_138">
+              <SHORT-NAME>IgnAngle</SHORT-NAME>
+              <LONG-NAME>IgnAngle</LONG-NAME>
+              <BYTE-SIZE>2</BYTE-SIZE>
+              <PARAMS>
+                <PARAM SEMANTIC="DATA" xsi:type="VALUE">
+                  <SHORT-NAME>DataServices_DualChPWMSnsrPedlPosn</SHORT-NAME>
+                  <LONG-NAME>DataServices_DualChPWMSnsrPedlPosn</LONG-NAME>
+                  <SDGS>
+                    <SDG>
+                      <SDG-CAPTION ID="_259">
+                        <SHORT-NAME>SYNCHELEMENT</SHORT-NAME>
+                      </SDG-CAPTION>
+                      <SD>Oac1132c016110773d029940dXOac10c91715cd09c659e38b7e10Oac10c91715cd09c659e38b7e</SD>
+                    </SDG>
+                  </SDGS>
+                  <BYTE-POSITION>0</BYTE-POSITION>
+                  <PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+                  <DOP-REF ID-REF="_93"/>
+                </PARAM>
+              </PARAMS>
+            </STRUCTURE>
+          </STRUCTURES>
+        </DIAG-DATA-DICTIONARY-SPEC>
+        <DIAG-COMMS>
+			<DIAG-SERVICE ID="_724" SEMANTIC="CONTROL" ADDRESSING="FUNCTIONAL-OR-PHYSICAL">
+				<SHORT-NAME>IgnActr_Read</SHORT-NAME>
+				<LONG-NAME>IgnActr Read</LONG-NAME>
+				<SDGS>
+				  <SDG>
+					<SDG-CAPTION ID="_725">
+					  <SHORT-NAME>CANdelaServiceInformation</SHORT-NAME>
+					</SDG-CAPTION>
+					<SD SI="DiagInstanceQualifier">IgnActr</SD>
+					<SD SI="DiagInstanceName">IgnActr</SD>
+					<SD SI="ServiceQualifier">Read</SD>
+					<SD SI="ServiceName">Read</SD>
+					<SD SI="PositiveResponseSuppressed">no</SD>
+				  </SDG>
+				  <SDG>
+					<SDG-CAPTION ID="_726">
+					  <SHORT-NAME>User_Mode</SHORT-NAME>
+					  <LONG-NAME>User Mode</LONG-NAME>
+					</SDG-CAPTION>
+					<SD SI="Operator_Mode">Enabled</SD>
+					<SD SI="Technician_Mode">Enabled</SD>
+				  </SDG>
+				</SDGS>
+				<FUNCT-CLASS-REFS>
+				  <FUNCT-CLASS-REF ID-REF="_213"/>
+				</FUNCT-CLASS-REFS>
+				<AUDIENCE IS-SUPPLIER="false" IS-DEVELOPMENT="false" IS-MANUFACTURING="false" IS-AFTERSALES="false" IS-AFTERMARKET="false">
+				  <ENABLED-AUDIENCE-REFS>
+					<ENABLED-AUDIENCE-REF ID-REF="_204"/>
+					<ENABLED-AUDIENCE-REF ID-REF="_205"/>
+				  </ENABLED-AUDIENCE-REFS>
+				</AUDIENCE>
+				<REQUEST-REF ID-REF="_721"/>
+				<POS-RESPONSE-REFS>
+				  <POS-RESPONSE-REF ID-REF="_722"/>
+				</POS-RESPONSE-REFS>
+				<NEG-RESPONSE-REFS>
+				  <NEG-RESPONSE-REF ID-REF="_723"/>
+				</NEG-RESPONSE-REFS>
+          </DIAG-SERVICE>
+			<DIAG-SERVICE ID="_784" SEMANTIC="CONTROL" ADDRESSING="FUNCTIONAL-OR-PHYSICAL">
+			<SHORT-NAME>IgnSwt_Read</SHORT-NAME>
+			<LONG-NAME>IgnSwt Read</LONG-NAME>
+			<SDGS>
+			  <SDG>
+				<SDG-CAPTION ID="_785">
+				  <SHORT-NAME>CANdelaServiceInformation</SHORT-NAME>
+				</SDG-CAPTION>
+				<SD SI="DiagInstanceQualifier">IgnSwt</SD>
+				<SD SI="DiagInstanceName">IgnSwt</SD>
+				<SD SI="ServiceQualifier">Read</SD>
+				<SD SI="ServiceName">Read</SD>
+				<SD SI="PositiveResponseSuppressed">no</SD>
+			  </SDG>
+			  <SDG>
+				<SDG-CAPTION ID="_786">
+				  <SHORT-NAME>User_Mode</SHORT-NAME>
+				  <LONG-NAME>User Mode</LONG-NAME>
+				</SDG-CAPTION>
+				<SD SI="Operator_Mode">Enabled</SD>
+				<SD SI="Technician_Mode">Enabled</SD>
+			  </SDG>
+			</SDGS>
+			<FUNCT-CLASS-REFS>
+			  <FUNCT-CLASS-REF ID-REF="_213"/>
+			</FUNCT-CLASS-REFS>
+			<AUDIENCE IS-SUPPLIER="false" IS-DEVELOPMENT="false" IS-MANUFACTURING="false" IS-AFTERSALES="false" IS-AFTERMARKET="false">
+			  <ENABLED-AUDIENCE-REFS>
+				<ENABLED-AUDIENCE-REF ID-REF="_204"/>
+				<ENABLED-AUDIENCE-REF ID-REF="_205"/>
+			  </ENABLED-AUDIENCE-REFS>
+			</AUDIENCE>
+			<REQUEST-REF ID-REF="_781"/>
+			<POS-RESPONSE-REFS>
+			  <POS-RESPONSE-REF ID-REF="_782"/>
+			</POS-RESPONSE-REFS>
+			<NEG-RESPONSE-REFS>
+			  <NEG-RESPONSE-REF ID-REF="_783"/>
+			</NEG-RESPONSE-REFS>
+			</DIAG-SERVICE>
+		  <DIAG-SERVICE ID="_712" SEMANTIC="CONTROL" ADDRESSING="FUNCTIONAL-OR-PHYSICAL">
+            <SHORT-NAME>AirTemp_Read</SHORT-NAME>
+            <LONG-NAME>AirTemp Read</LONG-NAME>
+            <SDGS>
+              <SDG>
+                <SDG-CAPTION ID="_713">
+                  <SHORT-NAME>CANdelaServiceInformation</SHORT-NAME>
+                </SDG-CAPTION>
+                <SD SI="DiagInstanceQualifier">AirTemp</SD>
+                <SD SI="DiagInstanceName">AirTemp</SD>
+                <SD SI="ServiceQualifier">Read</SD>
+                <SD SI="ServiceName">Read</SD>
+                <SD SI="PositiveResponseSuppressed">no</SD>
+              </SDG>
+              <SDG>
+                <SDG-CAPTION ID="_714">
+                  <SHORT-NAME>User_Mode</SHORT-NAME>
+                  <LONG-NAME>User Mode</LONG-NAME>
+                </SDG-CAPTION>
+                <SD SI="Operator_Mode">Enabled</SD>
+                <SD SI="Technician_Mode">Enabled</SD>
+              </SDG>
+            </SDGS>
+            <FUNCT-CLASS-REFS>
+              <FUNCT-CLASS-REF ID-REF="_213"/>
+            </FUNCT-CLASS-REFS>
+            <AUDIENCE IS-SUPPLIER="false" IS-DEVELOPMENT="false" IS-MANUFACTURING="false" IS-AFTERSALES="false" IS-AFTERMARKET="false">
+              <ENABLED-AUDIENCE-REFS>
+                <ENABLED-AUDIENCE-REF ID-REF="_204"/>
+                <ENABLED-AUDIENCE-REF ID-REF="_205"/>
+              </ENABLED-AUDIENCE-REFS>
+            </AUDIENCE>
+            <REQUEST-REF ID-REF="_709"/>
+            <POS-RESPONSE-REFS>
+              <POS-RESPONSE-REF ID-REF="_710"/>
+            </POS-RESPONSE-REFS>
+            <NEG-RESPONSE-REFS>
+              <NEG-RESPONSE-REF ID-REF="_711"/>
+            </NEG-RESPONSE-REFS>
+          </DIAG-SERVICE>
+		  <DIAG-SERVICE ID="_856" SEMANTIC="CONTROL" ADDRESSING="FUNCTIONAL-OR-PHYSICAL">
+            <SHORT-NAME>AirTemp_Pwm_Read</SHORT-NAME>
+            <LONG-NAME>AirTemp_Pwm Read</LONG-NAME>
+            <SDGS>
+              <SDG>
+                <SDG-CAPTION ID="_857">
+                  <SHORT-NAME>CANdelaServiceInformation</SHORT-NAME>
+                </SDG-CAPTION>
+                <SD SI="DiagInstanceQualifier">AirTemp_Pwm</SD>
+                <SD SI="DiagInstanceName">AirTemp_Pwm</SD>
+                <SD SI="ServiceQualifier">Read</SD>
+                <SD SI="ServiceName">Read</SD>
+                <SD SI="PositiveResponseSuppressed">no</SD>
+              </SDG>
+              <SDG>
+                <SDG-CAPTION ID="_858">
+                  <SHORT-NAME>User_Mode</SHORT-NAME>
+                  <LONG-NAME>User Mode</LONG-NAME>
+                </SDG-CAPTION>
+                <SD SI="Operator_Mode">Enabled</SD>
+                <SD SI="Technician_Mode">Enabled</SD>
+              </SDG>
+            </SDGS>
+            <FUNCT-CLASS-REFS>
+              <FUNCT-CLASS-REF ID-REF="_213"/>
+            </FUNCT-CLASS-REFS>
+            <AUDIENCE IS-SUPPLIER="false" IS-DEVELOPMENT="false" IS-MANUFACTURING="false" IS-AFTERSALES="false" IS-AFTERMARKET="false">
+              <ENABLED-AUDIENCE-REFS>
+                <ENABLED-AUDIENCE-REF ID-REF="_204"/>
+                <ENABLED-AUDIENCE-REF ID-REF="_205"/>
+              </ENABLED-AUDIENCE-REFS>
+            </AUDIENCE>
+            <REQUEST-REF ID-REF="_853"/>
+            <POS-RESPONSE-REFS>
+              <POS-RESPONSE-REF ID-REF="_854"/>
+            </POS-RESPONSE-REFS>
+            <NEG-RESPONSE-REFS>
+              <NEG-RESPONSE-REF ID-REF="_855"/>
+            </NEG-RESPONSE-REFS>
+          </DIAG-SERVICE>
+        </DIAG-COMMS>
+        <REQUESTS>
+			<REQUEST ID="_721">
+            <SHORT-NAME>RQ_IgnActr_Read</SHORT-NAME>
+            <LONG-NAME>RQ IgnActr Read</LONG-NAME>
+            <PARAMS>
+              <PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+                <SHORT-NAME>SID_RQ</SHORT-NAME>
+                <LONG-NAME>SID-RQ</LONG-NAME>
+                <BYTE-POSITION>0</BYTE-POSITION>
+                <CODED-VALUE>34</CODED-VALUE>
+                <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+                  <BIT-LENGTH>8</BIT-LENGTH>
+                </DIAG-CODED-TYPE>
+              </PARAM>
+              <PARAM SEMANTIC="ID" xsi:type="CODED-CONST">
+                <SHORT-NAME>RecordDataIdentifier</SHORT-NAME>
+                <LONG-NAME>Identifier</LONG-NAME>
+                <BYTE-POSITION>1</BYTE-POSITION>
+                <CODED-VALUE>3</CODED-VALUE>
+                <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+                  <BIT-LENGTH>16</BIT-LENGTH>
+                </DIAG-CODED-TYPE>
+              </PARAM>
+            </PARAMS>
+          </REQUEST>
+		  <REQUEST ID="_781">
+            <SHORT-NAME>RQ_IgnSwt_Read</SHORT-NAME>
+            <LONG-NAME>RQ IgnSwt Read</LONG-NAME>
+            <PARAMS>
+              <PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+                <SHORT-NAME>SID_RQ</SHORT-NAME>
+                <LONG-NAME>SID-RQ</LONG-NAME>
+                <BYTE-POSITION>0</BYTE-POSITION>
+                <CODED-VALUE>34</CODED-VALUE>
+                <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+                  <BIT-LENGTH>8</BIT-LENGTH>
+                </DIAG-CODED-TYPE>
+              </PARAM>
+              <PARAM SEMANTIC="ID" xsi:type="CODED-CONST">
+                <SHORT-NAME>RecordDataIdentifier</SHORT-NAME>
+                <LONG-NAME>Identifier</LONG-NAME>
+                <BYTE-POSITION>1</BYTE-POSITION>
+                <CODED-VALUE>13</CODED-VALUE>
+                <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+                  <BIT-LENGTH>16</BIT-LENGTH>
+                </DIAG-CODED-TYPE>
+              </PARAM>
+            </PARAMS>
+          </REQUEST>
+		  <REQUEST ID="_709">
+            <SHORT-NAME>RQ_AirTemp_Read</SHORT-NAME>
+            <LONG-NAME>RQ AirTemp Read</LONG-NAME>
+            <PARAMS>
+              <PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+                <SHORT-NAME>SID_RQ</SHORT-NAME>
+                <LONG-NAME>SID-RQ</LONG-NAME>
+                <BYTE-POSITION>0</BYTE-POSITION>
+                <CODED-VALUE>34</CODED-VALUE>
+                <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+                  <BIT-LENGTH>8</BIT-LENGTH>
+                </DIAG-CODED-TYPE>
+              </PARAM>
+              <PARAM SEMANTIC="ID" xsi:type="CODED-CONST">
+                <SHORT-NAME>RecordDataIdentifier</SHORT-NAME>
+                <LONG-NAME>Identifier</LONG-NAME>
+                <BYTE-POSITION>1</BYTE-POSITION>
+                <CODED-VALUE>1</CODED-VALUE>
+                <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+                  <BIT-LENGTH>16</BIT-LENGTH>
+                </DIAG-CODED-TYPE>
+              </PARAM>
+            </PARAMS>
+          </REQUEST>
+		  <REQUEST ID="_853">
+            <SHORT-NAME>RQ_AirTemp_Pwm_Read</SHORT-NAME>
+            <LONG-NAME>RQ AirTemp_Pwm Read</LONG-NAME>
+            <PARAMS>
+              <PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+                <SHORT-NAME>SID_RQ</SHORT-NAME>
+                <LONG-NAME>SID-RQ</LONG-NAME>
+                <BYTE-POSITION>0</BYTE-POSITION>
+                <CODED-VALUE>34</CODED-VALUE>
+                <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+                  <BIT-LENGTH>8</BIT-LENGTH>
+                </DIAG-CODED-TYPE>
+              </PARAM>
+              <PARAM SEMANTIC="ID" xsi:type="CODED-CONST">
+                <SHORT-NAME>RecordDataIdentifier</SHORT-NAME>
+                <LONG-NAME>Identifier</LONG-NAME>
+                <BYTE-POSITION>1</BYTE-POSITION>
+                <CODED-VALUE>25</CODED-VALUE>
+                <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+                  <BIT-LENGTH>16</BIT-LENGTH>
+                </DIAG-CODED-TYPE>
+              </PARAM>
+            </PARAMS>
+          </REQUEST>
+        </REQUESTS>
+        <POS-RESPONSES>
+			<POS-RESPONSE ID="_722">
+            <SHORT-NAME>PR_IgnActr_Read</SHORT-NAME>
+            <LONG-NAME>PR IgnActr Read</LONG-NAME>
+            <PARAMS>
+              <PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+                <SHORT-NAME>SID_PR</SHORT-NAME>
+                <LONG-NAME>SID-PR</LONG-NAME>
+                <BYTE-POSITION>0</BYTE-POSITION>
+                <CODED-VALUE>98</CODED-VALUE>
+                <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+                  <BIT-LENGTH>8</BIT-LENGTH>
+                </DIAG-CODED-TYPE>
+              </PARAM>
+              <PARAM SEMANTIC="ID" xsi:type="CODED-CONST">
+                <SHORT-NAME>RecordDataIdentifier</SHORT-NAME>
+                <LONG-NAME>Identifier</LONG-NAME>
+                <BYTE-POSITION>1</BYTE-POSITION>
+                <CODED-VALUE>3</CODED-VALUE>
+                <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+                  <BIT-LENGTH>16</BIT-LENGTH>
+                </DIAG-CODED-TYPE>
+              </PARAM>
+              <PARAM SEMANTIC="DATA" xsi:type="VALUE">
+                <SHORT-NAME>LambdaCorr</SHORT-NAME>
+                <LONG-NAME>LambdaCorr</LONG-NAME>
+                <BYTE-POSITION>3</BYTE-POSITION>
+                <DOP-REF ID-REF="_116"/>
+              </PARAM>
+            </PARAMS>
+          </POS-RESPONSE>
+		<POS-RESPONSE ID="_782">
+            <SHORT-NAME>PR_IgnSwt_Read</SHORT-NAME>
+            <LONG-NAME>PR IgnSwt Read</LONG-NAME>
+            <PARAMS>
+              <PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+                <SHORT-NAME>SID_PR</SHORT-NAME>
+                <LONG-NAME>SID-PR</LONG-NAME>
+                <BYTE-POSITION>0</BYTE-POSITION>
+                <CODED-VALUE>98</CODED-VALUE>
+                <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+                  <BIT-LENGTH>8</BIT-LENGTH>
+                </DIAG-CODED-TYPE>
+              </PARAM>
+              <PARAM SEMANTIC="ID" xsi:type="CODED-CONST">
+                <SHORT-NAME>RecordDataIdentifier</SHORT-NAME>
+                <LONG-NAME>Identifier</LONG-NAME>
+                <BYTE-POSITION>1</BYTE-POSITION>
+                <CODED-VALUE>13</CODED-VALUE>
+                <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+                  <BIT-LENGTH>16</BIT-LENGTH>
+                </DIAG-CODED-TYPE>
+              </PARAM>
+              <PARAM SEMANTIC="DATA" xsi:type="VALUE">
+                <SHORT-NAME>AirTemp</SHORT-NAME>
+                <LONG-NAME>AirTemp</LONG-NAME>
+                <BYTE-POSITION>3</BYTE-POSITION>
+                <DOP-REF ID-REF="_126"/>
+              </PARAM>
+            </PARAMS>
+          </POS-RESPONSE>
+		  <POS-RESPONSE ID="_710">
+            <SHORT-NAME>PR_AirTemp_Read</SHORT-NAME>
+            <LONG-NAME>PR AirTemp Read</LONG-NAME>
+            <PARAMS>
+              <PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+                <SHORT-NAME>SID_PR</SHORT-NAME>
+                <LONG-NAME>SID-PR</LONG-NAME>
+                <BYTE-POSITION>0</BYTE-POSITION>
+                <CODED-VALUE>98</CODED-VALUE>
+                <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+                  <BIT-LENGTH>8</BIT-LENGTH>
+                </DIAG-CODED-TYPE>
+              </PARAM>
+              <PARAM SEMANTIC="ID" xsi:type="CODED-CONST">
+                <SHORT-NAME>RecordDataIdentifier</SHORT-NAME>
+                <LONG-NAME>Identifier</LONG-NAME>
+                <BYTE-POSITION>1</BYTE-POSITION>
+                <CODED-VALUE>1</CODED-VALUE>
+                <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+                  <BIT-LENGTH>16</BIT-LENGTH>
+                </DIAG-CODED-TYPE>
+              </PARAM>
+              <PARAM SEMANTIC="DATA" xsi:type="VALUE">
+                <SHORT-NAME>EngineRPM</SHORT-NAME>
+                <LONG-NAME>EngineRPM</LONG-NAME>
+                <BYTE-POSITION>3</BYTE-POSITION>
+                <DOP-REF ID-REF="_114"/>
+              </PARAM>
+            </PARAMS>
+          </POS-RESPONSE>
+		   <POS-RESPONSE ID="_854">
+            <SHORT-NAME>PR_AirTemp_Pwm_Read</SHORT-NAME>
+            <LONG-NAME>PR AirTemp_Pwm Read</LONG-NAME>
+            <PARAMS>
+              <PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+                <SHORT-NAME>SID_PR</SHORT-NAME>
+                <LONG-NAME>SID-PR</LONG-NAME>
+                <BYTE-POSITION>0</BYTE-POSITION>
+                <CODED-VALUE>98</CODED-VALUE>
+                <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+                  <BIT-LENGTH>8</BIT-LENGTH>
+                </DIAG-CODED-TYPE>
+              </PARAM>
+              <PARAM SEMANTIC="ID" xsi:type="CODED-CONST">
+                <SHORT-NAME>RecordDataIdentifier</SHORT-NAME>
+                <LONG-NAME>Identifier</LONG-NAME>
+                <BYTE-POSITION>1</BYTE-POSITION>
+                <CODED-VALUE>25</CODED-VALUE>
+                <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+                  <BIT-LENGTH>16</BIT-LENGTH>
+                </DIAG-CODED-TYPE>
+              </PARAM>
+              <PARAM SEMANTIC="DATA" xsi:type="VALUE">
+                <SHORT-NAME>IgnAngle</SHORT-NAME>
+                <LONG-NAME>IgnAngle</LONG-NAME>
+                <BYTE-POSITION>3</BYTE-POSITION>
+                <DOP-REF ID-REF="_138"/>
+              </PARAM>
+            </PARAMS>
+          </POS-RESPONSE>
+        </POS-RESPONSES>
+        <COMPARAM-REFS>
+          <COMPARAM-REF ID-REF="ISO_15765_2.CP_CanFillerByte" DOCREF="ISO_15765_2" DOCTYPE="COMPARAM-SUBSET">
+            <SIMPLE-VALUE>255</SIMPLE-VALUE>
+            <PROTOCOL-SNREF SHORT-NAME="Diagnostic_CAN"/>
+          </COMPARAM-REF>
+          <COMPARAM-REF ID-REF="ISO_15765_2.CP_CanFillerByteHandling" DOCREF="ISO_15765_2" DOCTYPE="COMPARAM-SUBSET">
+            <SIMPLE-VALUE>Enabled</SIMPLE-VALUE>
+            <PROTOCOL-SNREF SHORT-NAME="Diagnostic_CAN"/>
+          </COMPARAM-REF>
+          <COMPARAM-REF ID-REF="ISO_15765_2.CP_UniqueRespIdTable" DOCREF="ISO_15765_2" DOCTYPE="COMPARAM-SUBSET">
+            <COMPLEX-VALUE>
+              <SIMPLE-VALUE>0</SIMPLE-VALUE>
+              <SIMPLE-VALUE>normal segmented 29-bit transmit with FC</SIMPLE-VALUE>
+              <SIMPLE-VALUE>416940529</SIMPLE-VALUE>
+              <SIMPLE-VALUE>0</SIMPLE-VALUE>
+              <SIMPLE-VALUE>normal segmented 29-bit receive with FC</SIMPLE-VALUE>
+              <SIMPLE-VALUE>417001729</SIMPLE-VALUE>
+              <SIMPLE-VALUE>0</SIMPLE-VALUE>
+              <SIMPLE-VALUE>normal unsegmented 29-bit receive</SIMPLE-VALUE>
+              <SIMPLE-VALUE>1920</SIMPLE-VALUE>
+              <SIMPLE-VALUE>DUMMY</SIMPLE-VALUE>
+            </COMPLEX-VALUE>
+            <PROTOCOL-SNREF SHORT-NAME="Diagnostic_CAN"/>
+          </COMPARAM-REF>
+        </COMPARAM-REFS>
+      </BASE-VARIANT>
+    </BASE-VARIANTS>
+  </DIAG-LAYER-CONTAINER>
+</ODX>

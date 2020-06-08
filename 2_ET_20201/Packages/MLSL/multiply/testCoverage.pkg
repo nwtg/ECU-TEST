@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PACKAGE format-rev="7" prog-version="2020.1.95870" xmlns="http://www.tracetronic.de/xml/ecu-test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tracetronic.de/xml/ecu-test package.xsd">
+	<INFORMATION format-rev="2" xsi:type="packageInfo">
+		<DESCRIPTION xsi:type="string"/>
+		<VERSION xsi:type="string"/>
+		<ALTERNATE-CALL-REPRESENTATION-ACTION-FIELD-TEMPLATE xsi:type="string"/>
+		<ALTERNATE-CALL-REPRESENTATION-EXPECTATION-FIELD-TEMPLATE xsi:type="string"/>
+	</INFORMATION>
+	<MAPPING format-rev="1" xsi:type="localMappingSpace">
+		<MAPPING-ITEM format-rev="2" xsi:type="mappingItem">
+			<ID xsi:type="string">ExecuteWorkspaceCmd</ID>
+			<XACCESS xsi:type="xaJob">
+				<TOOL-ID xsi:type="string">MATLAB/Simulink01</TOOL-ID>
+				<JOB-NAME xsi:type="string">ExecuteWorkspaceCmd</JOB-NAME>
+			</XACCESS>
+		</MAPPING-ITEM>
+		<MAPPING-ITEM format-rev="2" xsi:type="mappingItem">
+			<ID xsi:type="string">Plant model/In1/Out1</ID>
+			<XACCESS format-rev="2" xsi:type="xaModelSignal">
+				<MAPPING-ENUM xsi:type="vtabInfoEmpty"/>
+				<MODEL-KEY xsi:type="string">Plant model</MODEL-KEY>
+				<VARIABLE-PATH xsi:type="string">In1/Out1</VARIABLE-PATH>
+				<VARIABLE-TYPE xsi:type="string">double</VARIABLE-TYPE>
+			</XACCESS>
+		</MAPPING-ITEM>
+		<MAPPING-ITEM format-rev="2" xsi:type="mappingItem">
+			<ID xsi:type="string">Plant model/Physical value/In1</ID>
+			<XACCESS format-rev="2" xsi:type="xaModelSignal">
+				<MAPPING-ENUM xsi:type="vtabInfoEmpty"/>
+				<MODEL-KEY xsi:type="string">Plant model</MODEL-KEY>
+				<VARIABLE-PATH xsi:type="string">Physical value/In1</VARIABLE-PATH>
+				<VARIABLE-TYPE xsi:type="string">double</VARIABLE-TYPE>
+			</XACCESS>
+		</MAPPING-ITEM>
+		<MAPPING-ITEM format-rev="2" xsi:type="mappingItem">
+			<ID xsi:type="string">Plant model/Scale/Gain</ID>
+			<XACCESS format-rev="2" xsi:type="xaModelValueVariable">
+				<MAPPING-ENUM xsi:type="vtabInfoEmpty"/>
+				<MODEL-KEY xsi:type="string">Plant model</MODEL-KEY>
+				<VARIABLE-PATH xsi:type="string">Scale/Gain</VARIABLE-PATH>
+				<VARIABLE-TYPE xsi:type="string">double</VARIABLE-TYPE>
+			</XACCESS>
+		</MAPPING-ITEM>
+		<MAPPING-ITEM format-rev="2" xsi:type="mappingItem">
+			<ID xsi:type="string">Plant model/raw value/Out1</ID>
+			<XACCESS format-rev="2" xsi:type="xaModelSignal">
+				<MAPPING-ENUM xsi:type="vtabInfoEmpty"/>
+				<MODEL-KEY xsi:type="string">Plant model</MODEL-KEY>
+				<VARIABLE-PATH xsi:type="string">raw value/Out1</VARIABLE-PATH>
+				<VARIABLE-TYPE xsi:type="string">double</VARIABLE-TYPE>
+			</XACCESS>
+		</MAPPING-ITEM>
+		<MAPPING-ITEM format-rev="2" xsi:type="mappingItem">
+			<ID xsi:type="string">StartSimulation</ID>
+			<XACCESS xsi:type="xaJob">
+				<PORT-ID xsi:type="string">Matlab</PORT-ID>
+				<JOB-NAME xsi:type="string">StartSimulation</JOB-NAME>
+			</XACCESS>
+		</MAPPING-ITEM>
+		<MAPPING-ITEM format-rev="2" xsi:type="mappingItem">
+			<ID xsi:type="string">StopSimulation</ID>
+			<XACCESS xsi:type="xaJob">
+				<PORT-ID xsi:type="string">Matlab</PORT-ID>
+				<JOB-NAME xsi:type="string">StopSimulation</JOB-NAME>
+			</XACCESS>
+		</MAPPING-ITEM>
+	</MAPPING>
+	<TESTSTEPS xsi:type="testCase">
+		<TESTSTEP format-rev="2" id="2ef373ef-6ba4-4a67-bd33-7ee30a3e1be4" name="TsPrecondBlock" xsi:type="utility-fd32d18b-c16d-45ca-9934-f8bffe11fcc3">
+			<ACTION xsi:type="I18NItem">
+				<MULTILANGDATA>
+					<ELEMENT dkey="de_DE">
+						<DVALUE xsi:type="string">Precondition</DVALUE>
+					</ELEMENT>
+					<ELEMENT dkey="en_US">
+						<DVALUE xsi:type="string">Precondition</DVALUE>
+					</ELEMENT>
+				</MULTILANGDATA>
+				<INITIAL-LANGUAGE xsi:type="string">en_US</INITIAL-LANGUAGE>
+			</ACTION>
+			<TESTSTEP format-rev="4" id="62dc908f-dc22-4f86-9196-7f59339363e2" xsi:type="tsJob">
+				<MAPPING-REF xsi:type="string">ExecuteWorkspaceCmd</MAPPING-REF>
+				<JOB-PARAMETER xsi:type="tsJobParameter">
+					<NAME xsi:type="string">Command</NAME>
+					<EXPRESSION format-rev="1" xsi:type="valueBaseExpression">
+						<VALUE xsi:type="string">set_param(bdroot,'RecordCoverage','on')</VALUE>
+					</EXPRESSION>
+				</JOB-PARAMETER>
+			</TESTSTEP>
+			<TESTSTEP format-rev="4" id="76309ae1-33b9-4b9f-87ec-b49f34b5a803" xsi:type="tsJob">
+				<MAPPING-REF xsi:type="string">ExecuteWorkspaceCmd</MAPPING-REF>
+				<JOB-PARAMETER xsi:type="tsJobParameter">
+					<NAME xsi:type="string">Command</NAME>
+					<EXPRESSION format-rev="1" xsi:type="valueBaseExpression">
+						<VALUE xsi:type="string">set_param(bdroot,'CovMetricSettings','dc') </VALUE>
+					</EXPRESSION>
+				</JOB-PARAMETER>
+			</TESTSTEP>
+			<TESTSTEP format-rev="4" id="a16533e1-1bcf-489b-ac44-bba0d1866479" xsi:type="tsJob">
+				<MAPPING-REF xsi:type="string">ExecuteWorkspaceCmd</MAPPING-REF>
+				<JOB-PARAMETER xsi:type="tsJobParameter">
+					<NAME xsi:type="string">Command</NAME>
+					<EXPRESSION format-rev="1" xsi:type="valueBaseExpression">
+						<VALUE xsi:type="string">set_param(bdroot,'CovSaveSingleToWorkspaceVar','on')</VALUE>
+					</EXPRESSION>
+				</JOB-PARAMETER>
+			</TESTSTEP>
+			<TESTSTEP format-rev="4" id="3b12b062-7800-492e-9e1c-0f2d609ef185" xsi:type="tsJob">
+				<MAPPING-REF xsi:type="string">ExecuteWorkspaceCmd</MAPPING-REF>
+				<JOB-PARAMETER xsi:type="tsJobParameter">
+					<NAME xsi:type="string">Command</NAME>
+					<EXPRESSION format-rev="1" xsi:type="valueBaseExpression">
+						<VALUE xsi:type="string">set_param(bdroot,'CovSaveName','covSingleData')</VALUE>
+					</EXPRESSION>
+				</JOB-PARAMETER>
+			</TESTSTEP>
+			<TESTSTEP format-rev="4" id="feee6ff0-b62a-4524-933c-a07e9227bcac" xsi:type="tsJob">
+				<MAPPING-REF xsi:type="string">ExecuteWorkspaceCmd</MAPPING-REF>
+				<JOB-PARAMETER xsi:type="tsJobParameter">
+					<NAME xsi:type="string">Command</NAME>
+					<EXPRESSION format-rev="1" xsi:type="valueBaseExpression">
+						<VALUE xsi:type="string">set_param(bdroot,'CovHtmlReporting','on')</VALUE>
+					</EXPRESSION>
+				</JOB-PARAMETER>
+			</TESTSTEP>
+			<TESTSTEP format-rev="4" id="421b7f9a-1df3-481e-bf38-6c0890559d50" xsi:type="tsJob">
+				<MAPPING-REF xsi:type="string">ExecuteWorkspaceCmd</MAPPING-REF>
+				<JOB-PARAMETER xsi:type="tsJobParameter">
+					<NAME xsi:type="string">Command</NAME>
+					<EXPRESSION format-rev="1" xsi:type="valueBaseExpression">
+						<VALUE xsi:type="string">set_param(bdroot,'CovHTMLOptions','-sRT=0 -aTS=1 -bRG=1 -bTC=1 -hTR=0 -nFC=0 -scm=1 -bcm=1 -xEv=0')</VALUE>
+					</EXPRESSION>
+				</JOB-PARAMETER>
+			</TESTSTEP>
+		</TESTSTEP>
+		<TESTSTEP format-rev="3" id="908b79d2-9319-44c4-916b-28536a9096db" name="TsBlock" xsi:type="utility-2752ad1e-4fef-11dc-81d4-0013728784ee">
+			<ACTION xsi:type="I18NItem">
+				<MULTILANGDATA>
+					<ELEMENT dkey="en_US">
+						<DVALUE xsi:type="string">Action</DVALUE>
+					</ELEMENT>
+				</MULTILANGDATA>
+				<INITIAL-LANGUAGE xsi:type="string">en_US</INITIAL-LANGUAGE>
+			</ACTION>
+			<TESTSTEP format-rev="4" id="81f5fb4d-7275-4b24-b136-540998a8727e" xsi:type="tsJob">
+				<MAPPING-REF xsi:type="string">StartSimulation</MAPPING-REF>
+			</TESTSTEP>
+			<TESTSTEP id="7ec42501-d294-4e3d-9505-d2f20113773a" xsi:type="tsWrite">
+				<MAPPING-REF xsi:type="string">Plant model/In1/Out1</MAPPING-REF>
+				<VALUE xsi:type="expressionValue">
+					<DATA format-rev="1" xsi:type="valueBaseExpression">
+						<VALUE xsi:type="integer">20</VALUE>
+					</DATA>
+				</VALUE>
+				<METRIC format-rev="1" xsi:type="metricInfo">
+					<VALUE-TYPE xsi:type="string">PHYS</VALUE-TYPE>
+					<DATA-TYPE xsi:type="string">VALUE</DATA-TYPE>
+				</METRIC>
+			</TESTSTEP>
+			<TESTSTEP id="4f5bda2c-3e59-4c2c-bf9e-9361907796fc" xsi:type="tsWrite">
+				<MAPPING-REF xsi:type="string">Plant model/raw value/Out1</MAPPING-REF>
+				<VALUE xsi:type="expressionValue">
+					<DATA format-rev="1" xsi:type="valueBaseExpression">
+						<VALUE xsi:type="integer">5</VALUE>
+					</DATA>
+				</VALUE>
+				<METRIC format-rev="1" xsi:type="metricInfo">
+					<VALUE-TYPE xsi:type="string">PHYS</VALUE-TYPE>
+					<DATA-TYPE xsi:type="string">VALUE</DATA-TYPE>
+				</METRIC>
+			</TESTSTEP>
+			<TESTSTEP id="edbfd649-7751-4ea1-8861-496e5b03d14d" xsi:type="tsWrite">
+				<MAPPING-REF xsi:type="string">Plant model/Scale/Gain</MAPPING-REF>
+				<VALUE xsi:type="expressionValue">
+					<DATA format-rev="1" xsi:type="valueBaseExpression">
+						<VALUE xsi:type="integer">2</VALUE>
+					</DATA>
+				</VALUE>
+				<METRIC format-rev="1" xsi:type="metricInfo">
+					<VALUE-TYPE xsi:type="string">PHYS</VALUE-TYPE>
+					<DATA-TYPE xsi:type="string">VALUE</DATA-TYPE>
+				</METRIC>
+			</TESTSTEP>
+			<TESTSTEP id="26ad9129-cde6-4146-aade-3328b84e286a" name="TsWait" xsi:type="utility-62d5a961-4fef-11dc-9944-0013728784ee">
+				<TIME format-rev="1" xsi:type="valueBaseExpression">
+					<VALUE xsi:type="integer">100</VALUE>
+				</TIME>
+			</TESTSTEP>
+			<TESTSTEP id="a9514242-d505-48bf-ae3c-05a36ea763bf" xsi:type="tsRead">
+				<MAPPING-REF xsi:type="string">Plant model/Physical value/In1</MAPPING-REF>
+				<EXPECTATION xsi:type="timelessOption">
+					<EXPRESSION xsi:type="builtNumericExpression">
+						<RELATION xsi:type="string">==</RELATION>
+						<VALUE format-rev="1" xsi:type="valueBaseExpression">
+							<VALUE xsi:type="integer">30</VALUE>
+						</VALUE>
+					</EXPRESSION>
+				</EXPECTATION>
+				<METRIC format-rev="1" xsi:type="metricInfo">
+					<VALUE-TYPE xsi:type="string">PHYS</VALUE-TYPE>
+					<DATA-TYPE xsi:type="string">VALUE</DATA-TYPE>
+				</METRIC>
+			</TESTSTEP>
+			<TESTSTEP format-rev="4" id="5aba7297-cd61-4e87-940f-3bc5ef55ef05" xsi:type="tsJob">
+				<MAPPING-REF xsi:type="string">StopSimulation</MAPPING-REF>
+			</TESTSTEP>
+		</TESTSTEP>
+		<TESTSTEP format-rev="2" id="ff84bd2b-3e9f-4081-8204-f27b3846d908" name="TsPostcondBlock" xsi:type="utility-0d2ac4dc-1d8f-4182-81d1-a5d5ca74a44f">
+			<ACTION xsi:type="I18NItem">
+				<MULTILANGDATA>
+					<ELEMENT dkey="de_DE">
+						<DVALUE xsi:type="string">Postcondition</DVALUE>
+					</ELEMENT>
+					<ELEMENT dkey="en_US">
+						<DVALUE xsi:type="string">Postcondition</DVALUE>
+					</ELEMENT>
+				</MULTILANGDATA>
+				<INITIAL-LANGUAGE xsi:type="string">en_US</INITIAL-LANGUAGE>
+			</ACTION>
+			<EFFECT-TEST-RESULT xsi:type="boolean">False</EFFECT-TEST-RESULT>
+			<TESTSTEP format-rev="2" id="de14b1d9-8c1f-40c7-89ea-12c37e8caa7c" xsi:type="tsPackage">
+				<PACKAGE-REFERENCE format-rev="1" xsi:type="valueBaseExpression">
+					<VALUE xsi:type="string">..\\Coverage\\GetModelCoverageResults.pkg</VALUE>
+				</PACKAGE-REFERENCE>
+				<PARAM-ASSIGNMENTS/>
+				<ALTERNATIVE-MAPPING-SPACE format-rev="1" xsi:type="mappingSpace"/>
+			</TESTSTEP>
+		</TESTSTEP>
+	</TESTSTEPS>
+</PACKAGE>

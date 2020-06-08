@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TOOLING format-rev="2" prog-version="8.0.0.86579" xmlns="http://www.tracetronic.de/xml/ecu-test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tracetronic.de/xml/ecu-test tooling.xsd">
+	<TOOL-HOSTS>
+		<TOOL-HOST xsi:type="toolHost">
+			<URL xsi:type="string">local</URL>
+			<BASE-PATH xsi:type="string">&lt;workspace&gt;</BASE-PATH>
+		</TOOL-HOST>
+	</TOOL-HOSTS>
+	<TOOLS>
+		<TOOL id="EDIABAS01" xsi:type="tool">
+			<TOOL-HOST xsi:type="string">local</TOOL-HOST>
+			<TOOL-NAME xsi:type="string">EDIABAS</TOOL-NAME>
+			<START-OPTION xsi:type="integer">0</START-OPTION>
+			<START-PRIORITY xsi:type="integer">0</START-PRIORITY>
+			<SETTINGS xsi:type="dynamicPropertySet"/>
+		</TOOL>
+	</TOOLS>
+	<PORTS>
+		<PORT format-rev="2" id="EBAS01" toolId="EDIABAS01" xsi:type="port">
+			<PORT-TYPE-ID format-rev="2" xsi:type="toolcaps">
+				<NAME xsi:type="string">EDIABAS</NAME>
+			</PORT-TYPE-ID>
+			<AUTOSTART xsi:type="integer">0</AUTOSTART>
+			<SETTINGS xsi:type="dynamicPropertySet">
+				<PROPERTY format-rev="1" name="repeatOnErrorCount" propertyType="int" readonly="false" xsi:type="_property">
+					<VALUE xsi:type="string">3</VALUE>
+				</PROPERTY>
+				<PROPERTY format-rev="1" name="repeatOnErrorDelay" propertyType="int" readonly="false" xsi:type="_property">
+					<VALUE xsi:type="string">2</VALUE>
+				</PROPERTY>
+				<PROPERTY format-rev="1" name="sgbd" propertyType="string" readonly="false" xsi:type="_property">
+					<VALUE xsi:type="string">ref:SUT</VALUE>
+				</PROPERTY>
+			</SETTINGS>
+		</PORT>
+	</PORTS>
+	<TOOL-DESCRIPTORS>
+		<TOOL-DESCRIPTOR dkey="EDIABAS01">
+			<DVALUE format-rev="2" xsi:type="toolDescriptor">
+				<TOOL-NAME xsi:type="string">EDIABAS</TOOL-NAME>
+				<PROVIDES>
+					<PORT-TYPE xsi:type="portImplInfo">
+						<PORT-TYPE-ID format-rev="2" xsi:type="toolcaps">
+							<NAME xsi:type="string">EDIABAS</NAME>
+						</PORT-TYPE-ID>
+					</PORT-TYPE>
+				</PROVIDES>
+				<START-PRIORITY-HINT xsi:type="integer">0</START-PRIORITY-HINT>
+				<PROPERTIES xsi:type="propertyDescriptorSet">
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">toolVersion</NAME>
+						<DISPLAY-NAME xsi:type="string">Version</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Verwendete EDIABAS-Version</DESCRIPTION>
+						<TYPE xsi:type="string">string</TYPE>
+						<DEFAULT xsi:type="string">7.3.0</DEFAULT>
+						<READONLY xsi:type="boolean">True</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">timeout</NAME>
+						<DISPLAY-NAME xsi:type="string">Timeout für Jobaufrufe (in Sek.)</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Timeout für Jobaufrufe in Sekunden</DESCRIPTION>
+						<TYPE xsi:type="string">int</TYPE>
+						<DEFAULT xsi:type="string">20</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+				</PROPERTIES>
+				<JOBS xsi:type="jobDescriptorSet">
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">ApiJob</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">SGBD</NAME>
+								<DESCRIPTION xsi:type="string">Name der zu verwendenden SGBD.</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">SGBDJob</NAME>
+								<DESCRIPTION xsi:type="string">Name des SGBD-Jobs der ausgeführt werden soll.</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">SGBDJobParameter</NAME>
+								<DESCRIPTION xsi:type="string">Parameter-String, bei mehreren Parametern wird das Semikolon als Trennzeichen verwenden.</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Zum Ausführen eines SGBD-Jobs.</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">ApiJobData</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">SGBD</NAME>
+								<DESCRIPTION xsi:type="string">Name der zu verwendenden SGBD.</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">SGBDJob</NAME>
+								<DESCRIPTION xsi:type="string">Name des SGBD-Jobs der ausgeführt werden soll.</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">SGBDJobParameterByteStream</NAME>
+								<DESCRIPTION xsi:type="string">Parameter-Bytestrom als Liste von Bytes.</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Zum Ausführen eines SGBD-Jobs mit Binärdaten als Argument.</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">ApiInit</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet"/>
+						<DESCRIPTION xsi:type="string">Exklusiven API-Zugriff erzwingen</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">ApiEnd</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet"/>
+						<DESCRIPTION xsi:type="string">Exklusiven API-Zugriff freigeben</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">GetSGBDJobs</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">SGBD</NAME>
+								<DESCRIPTION xsi:type="string">Name der zu verwendenden SGBD.</DESCRIPTION>
+								<TYPE xsi:type="string">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Liefert eine Liste mit Namen aller SGBD-Jobs.</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">ApiTraceLevel</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">SetLevel</NAME>
+								<DESCRIPTION xsi:type="string">Ermöglicht ein neues Level zu setzen. Die gesetzte Einstellung leibt nur bis zum nächten ApiInit erhalten. EDIABASLockBlock-Utility, Tooljobs ApiInit und ApiEnd verwenden oder in den Porteinstellung 'Exklusiver API-Zugriff' einschalten.</DESCRIPTION>
+								<TYPE xsi:type="string">int</TYPE>
+								<DOMAIN>
+									<ELEMENT xsi:type="string">0</ELEMENT>
+									<ELEMENT xsi:type="string">1</ELEMENT>
+									<ELEMENT xsi:type="string">2</ELEMENT>
+									<ELEMENT xsi:type="string">3</ELEMENT>
+									<ELEMENT xsi:type="string">4</ELEMENT>
+									<ELEMENT xsi:type="string">5</ELEMENT>
+									<ELEMENT xsi:type="string">6</ELEMENT>
+									<ELEMENT xsi:type="string">7</ELEMENT>
+									<ELEMENT xsi:type="string">8</ELEMENT>
+								</DOMAIN>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Zum Abfragen und Setzen des ApiTrace-Levels.</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="string">IfhTraceLevel</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="string">SetLevel</NAME>
+								<DESCRIPTION xsi:type="string">Ermöglicht ein neues Level zu setzen. Die gesetzte Einstellung leibt nur bis zum nächten ApiInit erhalten. EDIABASLockBlock-Utility, Tooljobs ApiInit und ApiEnd verwenden oder in den Porteinstellung 'Exklusiver API-Zugriff' einschalten.</DESCRIPTION>
+								<TYPE xsi:type="string">int</TYPE>
+								<DOMAIN>
+									<ELEMENT xsi:type="string">0</ELEMENT>
+									<ELEMENT xsi:type="string">1</ELEMENT>
+									<ELEMENT xsi:type="string">2</ELEMENT>
+									<ELEMENT xsi:type="string">3</ELEMENT>
+								</DOMAIN>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="string">Zum Abfragen und Setzen des IfhTrace-Levels.</DESCRIPTION>
+					</JOB>
+				</JOBS>
+			</DVALUE>
+		</TOOL-DESCRIPTOR>
+	</TOOL-DESCRIPTORS>
+	<PORT-DESCRIPTORS>
+		<PORT-DESCRIPTOR dkey="EBAS01">
+			<DVALUE format-rev="1" xsi:type="portDescriptor">
+				<PORT-TYPE-ID format-rev="2" xsi:type="toolcaps">
+					<NAME xsi:type="string">EDIABAS</NAME>
+				</PORT-TYPE-ID>
+				<PROPERTIES xsi:type="propertyDescriptorSet">
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">sgbd</NAME>
+						<DISPLAY-NAME xsi:type="string">SGBD</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">SG-Beschreibungsdatei</DESCRIPTION>
+						<TYPE xsi:type="string">string</TYPE>
+						<VALID-REFS>
+							<ELEMENT xsi:type="string">SUT</ELEMENT>
+						</VALID-REFS>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">holdApiLock</NAME>
+						<DISPLAY-NAME xsi:type="string">Exklusiver API-Zugriff</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Beschleunigt EDIABAS Zugriff; dadurch wird die EDIABAS-API während der Testausführung für andere Tools gesperrt.</DESCRIPTION>
+						<TYPE xsi:type="string">bool</TYPE>
+						<DOMAIN>
+							<ELEMENT xsi:type="string">False</ELEMENT>
+							<ELEMENT xsi:type="string">True</ELEMENT>
+						</DOMAIN>
+						<DEFAULT xsi:type="string">False</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">repeatOnErrorCount</NAME>
+						<DISPLAY-NAME xsi:type="string">Wiederholungen bei Fehler</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Anzahl der Versuche bei Fehlern während der ApiJob-Ausführung.</DESCRIPTION>
+						<TYPE xsi:type="string">int</TYPE>
+						<DEFAULT xsi:type="string">0</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="string">repeatOnErrorDelay</NAME>
+						<DISPLAY-NAME xsi:type="string">Wartezeit vor Wiederholung</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="string">Zeit in Sekunden die vor einer Wiederholung aufgrund eines Fehlers der ApiJob-Ausführung gewartet wird.</DESCRIPTION>
+						<TYPE xsi:type="string">int</TYPE>
+						<DEFAULT xsi:type="string">0</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+				</PROPERTIES>
+				<JOBS xsi:type="jobDescriptorSet"/>
+			</DVALUE>
+		</PORT-DESCRIPTOR>
+	</PORT-DESCRIPTORS>
+</TOOLING>
