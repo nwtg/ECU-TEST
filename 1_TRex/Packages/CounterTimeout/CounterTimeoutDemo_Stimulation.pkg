@@ -41,7 +41,7 @@
 	<TESTSTEPS xsi:type="testCase">
 		<TESTSTEP id="1e4e73b3-5363-48a3-88ef-a9609c9365e6" name="TsWait" xsi:type="utility-62d5a961-4fef-11dc-9944-0013728784ee">
 			<TIME format-rev="1" xsi:type="valueBaseExpression">
-				<VALUE xsi:type="integer">5</VALUE>
+				<VALUE xsi:type="integer">2</VALUE>
 			</TIME>
 			<UNIT xsi:type="string">s</UNIT>
 		</TESTSTEP>
