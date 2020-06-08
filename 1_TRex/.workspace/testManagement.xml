@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TESTMANAGEMENT-SETTINGS format-rev="3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<CONFIGURATIONS>
+		<ELEMENT format-rev="1" xsi:type="tmsConfiguration">
+			<ADAPTER-NAME xsi:type="string">Siemens Polarion ALM</ADAPTER-NAME>
+			<ADAPTER-SETTINGS>
+				<ELEMENT dkey="Project">
+					<DVALUE xsi:type="string">drivepilot</DVALUE>
+				</ELEMENT>
+				<ELEMENT dkey="Testcase filter">
+					<DVALUE xsi:type="string"/>
+				</ELEMENT>
+				<ELEMENT dkey="Testcase type">
+					<DVALUE xsi:type="string"/>
+				</ELEMENT>
+				<ELEMENT dkey="URL">
+					<DVALUE xsi:type="string">http://yatao.local/polarion</DVALUE>
+				</ELEMENT>
+			</ADAPTER-SETTINGS>
+			<EXPORT_REPORT_SETTINGS xsi:type="exportReportSettings">
+				<GENERATOR-NAME xsi:type="string"/>
+			</EXPORT_REPORT_SETTINGS>
+			<PROXY_SETTINGS xsi:type="tmsProxySettings">
+				<FLAG_PROXY_SELECTION xsi:type="integer">1</FLAG_PROXY_SELECTION>
+			</PROXY_SETTINGS>
+			<CONFIGURATION-NAME xsi:type="string">Polarion</CONFIGURATION-NAME>
+			<KEYSTORE xsi:type="integer">2</KEYSTORE>
+			<VERDICT-MAPPING-COLLECTION format-rev="1" xsi:type="VerdictMappingCollection">
+				<VERDICT-MAPPINGS>
+					<ELEMENT xsi:type="VerdictMapping">
+						<ET-VERDICT xsi:type="string">NONE</ET-VERDICT>
+						<TM-VERDICTS>
+							<ELEMENT xsi:type="string">notRequired</ELEMENT>
+						</TM-VERDICTS>
+					</ELEMENT>
+					<ELEMENT xsi:type="VerdictMapping">
+						<ET-VERDICT xsi:type="string">SUCCESS</ET-VERDICT>
+						<TM-VERDICTS>
+							<ELEMENT xsi:type="string">passed</ELEMENT>
+						</TM-VERDICTS>
+					</ELEMENT>
+					<ELEMENT xsi:type="VerdictMapping">
+						<ET-VERDICT xsi:type="string">INCONCLUSIVE</ET-VERDICT>
+						<TM-VERDICTS>
+							<ELEMENT xsi:type="string">notPerformed</ELEMENT>
+						</TM-VERDICTS>
+					</ELEMENT>
+					<ELEMENT xsi:type="VerdictMapping">
+						<ET-VERDICT xsi:type="string">FAILED</ET-VERDICT>
+						<TM-VERDICTS>
+							<ELEMENT xsi:type="string">failed</ELEMENT>
+						</TM-VERDICTS>
+					</ELEMENT>
+					<ELEMENT xsi:type="VerdictMapping">
+						<ET-VERDICT xsi:type="string">ERROR</ET-VERDICT>
+						<TM-VERDICTS>
+							<ELEMENT xsi:type="string">blocked</ELEMENT>
+							<ELEMENT xsi:type="string">notPerformed</ELEMENT>
+						</TM-VERDICTS>
+					</ELEMENT>
+				</VERDICT-MAPPINGS>
+				<EXECUTION-STATE-VERDICTS>
+					<ELEMENT xsi:type="ExecutionStateVerdicts">
+						<STATE-NAME xsi:type="string">PRECONDITION</STATE-NAME>
+						<TM-VERDICTS>
+							<ELEMENT xsi:type="string">notPerformed</ELEMENT>
+						</TM-VERDICTS>
+					</ELEMENT>
+				</EXECUTION-STATE-VERDICTS>
+			</VERDICT-MAPPING-COLLECTION>
+		</ELEMENT>
+	</CONFIGURATIONS>
+	<ACTIVE-CONFIGURATION-NAME xsi:type="string">Polarion</ACTIVE-CONFIGURATION-NAME>
+</TESTMANAGEMENT-SETTINGS>

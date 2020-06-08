@@ -1,0 +1,81 @@
+<SignalDescriptionFile xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sti="http://www.asam.net/XIL/Signal/2.0" xmlns="http://www.asam.net/XIL/Signal/2.0" version="1.0">
+    <SignalDescriptionSet name="Stimulus">
+        <SignalDescription name="CounterSource" id="ID_SIGNAL_4">
+            <SegmentSignalDescription loopCount="5">
+                <RampSegment>
+                    <Duration xsi:type="ConstSymbol">
+                        <Value>60.0</Value>
+                    </Duration>
+                    <Start xsi:type="ConstSymbol">
+                        <Value>0.0</Value>
+                    </Start>
+                    <Stop xsi:type="ConstSymbol">
+                        <Value>60.0</Value>
+                    </Stop>
+                </RampSegment>
+            </SegmentSignalDescription>
+        </SignalDescription>
+        <SignalDescription name="BinaryError" id="ID_SIGNAL_1">
+            <SegmentSignalDescription loopCount="1">
+                <ConstSegment>
+                    <Duration xsi:type="ConstSymbol">
+                        <Value>120.0</Value>
+                    </Duration>
+                    <Value xsi:type="ConstSymbol">
+                        <Value>1.0</Value>
+                    </Value>
+                </ConstSegment>
+                <ConstSegment>
+                    <Duration xsi:type="ConstSymbol">
+                        <Value>100.0</Value>
+                    </Duration>
+                    <Value xsi:type="ConstSymbol">
+                        <Value>0.0</Value>
+                    </Value>
+                </ConstSegment>
+                <ConstSegment>
+                    <Duration xsi:type="ConstSymbol">
+                        <Value>80.0</Value>
+                    </Duration>
+                    <Value xsi:type="ConstSymbol">
+                        <Value>1.0</Value>
+                    </Value>
+                </ConstSegment>
+            </SegmentSignalDescription>
+        </SignalDescription>
+        <SignalDescription name="Noise" id="ID_SIGNAL_3">
+            <SegmentSignalDescription loopCount="1">
+                <NoiseSegment>
+                    <Duration xsi:type="ConstSymbol">
+                        <Value>300.0</Value>
+                    </Duration>
+                    <Mean xsi:type="ConstSymbol">
+                        <Value>0.0</Value>
+                    </Mean>
+                    <Seed xsi:type="ConstSymbol">
+                        <Value>1.0</Value>
+                    </Seed>
+                    <Sigma xsi:type="ConstSymbol">
+                        <Value>0.1</Value>
+                    </Sigma>
+                </NoiseSegment>
+            </SegmentSignalDescription>
+        </SignalDescription>
+        <SignalDescription name="CounterSignal0" id="ID_SIGNAL_2">
+            <OperationSignalDescription>
+                <Operation value="eAdd">
+                    <LeftSignal value="ID_SIGNAL_4"/>
+                    <RightSignal value="ID_SIGNAL_3"/>
+                </Operation>
+            </OperationSignalDescription>
+        </SignalDescription>
+        <SignalDescription name="CounterSignal" id="ID_SIGNAL_5">
+            <OperationSignalDescription>
+                <Operation value="eMult">
+                    <LeftSignal value="ID_SIGNAL_1"/>
+                    <RightSignal value="ID_SIGNAL_2"/>
+                </Operation>
+            </OperationSignalDescription>
+        </SignalDescription>
+    </SignalDescriptionSet>
+</SignalDescriptionFile>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ANALYSIS-PACKAGE prog-version="8.1.0.88907-FeatureSet" xmlns="http://www.tracetronic.de/xml/ecu-test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tracetronic.de/xml/ecu-test analysisPackage.xsd">
+	<INFORMATION xsi:type="packageInfo">
+		<DESCRIPTION xsi:type="string"/>
+		<VERSION xsi:type="string"/>
+		<ALTERNATE-CALL-REPRESENTATION-ACTION-FIELD-TEMPLATE xsi:type="string"/>
+		<ALTERNATE-CALL-REPRESENTATION-EXPECTATION-FIELD-TEMPLATE xsi:type="string"/>
+	</INFORMATION>
+	<MAPPING format-rev="1" xsi:type="localMappingSpace">
+		<MAPPING-ITEM format-rev="2" xsi:type="mappingItem">
+			<ID xsi:type="string">Counter</ID>
+			<XACCESS xsi:type="xaReadWriteValueVariable">
+				<MAPPING-ENUM xsi:type="vtabInfoEmpty"/>
+			</XACCESS>
+		</MAPPING-ITEM>
+	</MAPPING>
+	<TRACE-ANALYSIS format-rev="3" uuid="232067eed60411e998caa0510b0a9cbc" xsi:type="traceAnalysis">
+		<NAME xsi:type="string">Traceanalyse</NAME>
+		<ANALYSISITEM format-rev="1" uuid="232067efd60411e9baa6a0510b0a9cbc" xsi:type="episode">
+			<NAME xsi:type="string">CheckCounterSignal</NAME>
+			<ANALYSISITEM uuid="f1dcab00d60411e9bfafa0510b0a9cbc" xsi:type="analysisBlock">
+				<NAME xsi:type="string">CheckCounterGraph</NAME>
+				<ANALYSISITEM format-rev="1" uuid="6487dbd2d61811e98954a0510b0a9cbc" xsi:type="calculation">
+					<DESCRIPTION xsi:type="string">checks whether the time signal is always between 0 and 59</DESCRIPTION>
+					<ANALYSISITEM format-rev="3" uuid="cfe436a6d62f11e9aa12a0510b0a9cbc" xsi:type="plotItem">
+						<NAME xsi:type="string">Plot</NAME>
+						<SUB-PLOTS>
+							<SUB-PLOT format-rev="1" xsi:type="plotSubPlot">
+								<TYPE xsi:type="string">common</TYPE>
+								<ENTITIES>
+									<ENTITY format-rev="1" isTraceStepSignal="False" xsi:type="plotSignalEntity">
+										<NAME xsi:type="string">Counter</NAME>
+										<AXIS xsi:type="integer">0</AXIS>
+									</ENTITY>
+								</ENTITIES>
+								<AXES>
+									<AXIS xsi:type="plotAxis"/>
+								</AXES>
+							</SUB-PLOT>
+							<SUB-PLOT format-rev="1" xsi:type="plotSubPlot">
+								<TYPE xsi:type="string">separate</TYPE>
+								<ENTITIES/>
+								<AXES>
+									<AXIS xsi:type="plotAxis"/>
+								</AXES>
+							</SUB-PLOT>
+							<SUB-PLOT format-rev="1" xsi:type="plotSubPlot">
+								<TYPE xsi:type="string">common</TYPE>
+								<ENTITIES/>
+								<AXES/>
+							</SUB-PLOT>
+						</SUB-PLOTS>
+						<SUB-CONFIG-OVERVIEW xsi:type="plotSubConfig">
+							<CONDITION xsi:type="string">NONE</CONDITION>
+							<MAX-NUMBER format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="integer">5</VALUE>
+							</MAX-NUMBER>
+							<EXPAND-XLIMITS-LEFT format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="float">0.5</VALUE>
+							</EXPAND-XLIMITS-LEFT>
+							<EXPAND-XLIMITS-RIGHT format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="float">0.5</VALUE>
+							</EXPAND-XLIMITS-RIGHT>
+						</SUB-CONFIG-OVERVIEW>
+						<SUB-CONFIG-PARENT-CONTEXT xsi:type="plotSubConfig">
+							<CONDITION xsi:type="string">NEVER</CONDITION>
+							<MAX-NUMBER format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="integer">5</VALUE>
+							</MAX-NUMBER>
+							<EXPAND-XLIMITS-LEFT format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="float">0.5</VALUE>
+							</EXPAND-XLIMITS-LEFT>
+							<EXPAND-XLIMITS-RIGHT format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="float">0.5</VALUE>
+							</EXPAND-XLIMITS-RIGHT>
+						</SUB-CONFIG-PARENT-CONTEXT>
+						<SUB-CONFIG-DETAILS xsi:type="plotSubConfig">
+							<CONDITION xsi:type="string">NEVER</CONDITION>
+							<MAX-NUMBER format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="integer">5</VALUE>
+							</MAX-NUMBER>
+							<EXPAND-XLIMITS-LEFT format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="float">0.5</VALUE>
+							</EXPAND-XLIMITS-LEFT>
+							<EXPAND-XLIMITS-RIGHT format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="float">0.5</VALUE>
+							</EXPAND-XLIMITS-RIGHT>
+						</SUB-CONFIG-DETAILS>
+						<SIGNAL-NAME-TYPE xsi:type="string">generic</SIGNAL-NAME-TYPE>
+						<LEGEND-LOCATION xsi:type="integer">11</LEGEND-LOCATION>
+					</ANALYSISITEM>
+					<NAME xsi:type="string">CheckValueRange</NAME>
+					<FORMULA xsi:type="string">Counter &lt; 60.2 and Counter &gt;= -0.2</FORMULA>
+					<EXPECTATION xsi:type="manualExpression">
+						<BASE-EXPRESSION xsi:type="varBaseExpression">
+							<NAME xsi:type="string">value</NAME>
+						</BASE-EXPRESSION>
+					</EXPECTATION>
+					<REPORT-CONFIG xsi:type="trcpReportConfig">
+						<MAX-SPOTS xsi:type="integer">100</MAX-SPOTS>
+						<MIN-DELTA xsi:type="float">0.0</MIN-DELTA>
+					</REPORT-CONFIG>
+				</ANALYSISITEM>
+				<ANALYSISITEM format-rev="1" uuid="0431dfa8d61611e9949ca0510b0a9cbc" xsi:type="calculation">
+					<DESCRIPTION xsi:type="string">checks whether the time signal is monotonously rising within a minute</DESCRIPTION>
+					<ANALYSISITEM format-rev="3" uuid="d25a6922d62f11e98b21a0510b0a9cbc" xsi:type="plotItem">
+						<NAME xsi:type="string">Plot</NAME>
+						<SUB-PLOTS>
+							<SUB-PLOT format-rev="1" xsi:type="plotSubPlot">
+								<TYPE xsi:type="string">common</TYPE>
+								<ENTITIES>
+									<ENTITY format-rev="1" isTraceStepSignal="False" xsi:type="plotSignalEntity">
+										<NAME xsi:type="string">Counter</NAME>
+										<AXIS xsi:type="integer">0</AXIS>
+									</ENTITY>
+								</ENTITIES>
+								<AXES>
+									<AXIS xsi:type="plotAxis"/>
+								</AXES>
+							</SUB-PLOT>
+							<SUB-PLOT format-rev="1" xsi:type="plotSubPlot">
+								<TYPE xsi:type="string">separate</TYPE>
+								<ENTITIES/>
+								<AXES>
+									<AXIS xsi:type="plotAxis"/>
+								</AXES>
+							</SUB-PLOT>
+							<SUB-PLOT format-rev="1" xsi:type="plotSubPlot">
+								<TYPE xsi:type="string">common</TYPE>
+								<ENTITIES/>
+								<AXES/>
+							</SUB-PLOT>
+						</SUB-PLOTS>
+						<SUB-CONFIG-OVERVIEW xsi:type="plotSubConfig">
+							<CONDITION xsi:type="string">NONE</CONDITION>
+							<MAX-NUMBER format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="integer">5</VALUE>
+							</MAX-NUMBER>
+							<EXPAND-XLIMITS-LEFT format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="float">0.5</VALUE>
+							</EXPAND-XLIMITS-LEFT>
+							<EXPAND-XLIMITS-RIGHT format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="float">0.5</VALUE>
+							</EXPAND-XLIMITS-RIGHT>
+						</SUB-CONFIG-OVERVIEW>
+						<SUB-CONFIG-PARENT-CONTEXT xsi:type="plotSubConfig">
+							<CONDITION xsi:type="string">NEVER</CONDITION>
+							<MAX-NUMBER format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="integer">5</VALUE>
+							</MAX-NUMBER>
+							<EXPAND-XLIMITS-LEFT format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="float">0.5</VALUE>
+							</EXPAND-XLIMITS-LEFT>
+							<EXPAND-XLIMITS-RIGHT format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="float">0.5</VALUE>
+							</EXPAND-XLIMITS-RIGHT>
+						</SUB-CONFIG-PARENT-CONTEXT>
+						<SUB-CONFIG-DETAILS xsi:type="plotSubConfig">
+							<CONDITION xsi:type="string">NEVER</CONDITION>
+							<MAX-NUMBER format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="integer">5</VALUE>
+							</MAX-NUMBER>
+							<EXPAND-XLIMITS-LEFT format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="float">0.5</VALUE>
+							</EXPAND-XLIMITS-LEFT>
+							<EXPAND-XLIMITS-RIGHT format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="float">0.5</VALUE>
+							</EXPAND-XLIMITS-RIGHT>
+						</SUB-CONFIG-DETAILS>
+						<SIGNAL-NAME-TYPE xsi:type="string">generic</SIGNAL-NAME-TYPE>
+						<LEGEND-LOCATION xsi:type="integer">11</LEGEND-LOCATION>
+					</ANALYSISITEM>
+					<NAME xsi:type="string">CheckMonotonyWithinMinute</NAME>
+					<FORMULA xsi:type="string">Monotony(Counter,'inc_strict') or (Time(Counter) % 60 == 0)</FORMULA>
+					<EXPECTATION xsi:type="manualExpression">
+						<BASE-EXPRESSION xsi:type="varBaseExpression">
+							<NAME xsi:type="string">value</NAME>
+						</BASE-EXPRESSION>
+					</EXPECTATION>
+					<EXPECTATION-MODE-PARAM format-rev="1" xsi:type="valueBaseExpression">
+						<VALUE xsi:type="integer">59</VALUE>
+					</EXPECTATION-MODE-PARAM>
+					<REPORT-CONFIG xsi:type="trcpReportConfig">
+						<MAX-SPOTS xsi:type="integer">100</MAX-SPOTS>
+						<MIN-DELTA xsi:type="float">0.0</MIN-DELTA>
+					</REPORT-CONFIG>
+				</ANALYSISITEM>
+			</ANALYSISITEM>
+		</ANALYSISITEM>
+		<VIRTUAL-SIGNALS-MANAGER xsi:type="virtualSignalsManager">
+			<VIRTUAL-SIGNALS>
+				<VIRTUAL-SIGNAL uuid="3925c47ad60711e9b99da0510b0a9cbc" xsi:type="virtualSessionSignal">
+					<NAME xsi:type="string">Counter</NAME>
+					<MAPPING-NAME xsi:type="string">Counter</MAPPING-NAME>
+					<EVENT-TYPE xsi:type="string">PHY</EVENT-TYPE>
+				</VIRTUAL-SIGNAL>
+			</VIRTUAL-SIGNALS>
+		</VIRTUAL-SIGNALS-MANAGER>
+	</TRACE-ANALYSIS>
+</ANALYSIS-PACKAGE>

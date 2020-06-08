@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<filterTreeV2>
+    <node>
+        <label>Project A</label>
+        <scope name="Project">A</scope>        
+        <leaf>
+            <label>Component Tests</label>
+            <scope name="Test Levels"/>
+            <filters>
+                <constant name="Project">
+                    <value>'A'</value>
+                </constant>            
+                <attribute name="Testlevel">
+                    <value>component</value>
+                </attribute>
+            </filters>
+        </leaf>
+
+        <leaf>
+            <label>Module Tests</label>
+            <scope name="Test Levels"/>
+            <filters>
+                <constant name="Project">
+                    <value>'A'</value>
+                </constant>
+                <attribute name="Testlevel">
+                    <value>module</value>
+                </attribute>
+            </filters>
+        </leaf>
+
+        <leaf>
+            <label>Known Bugs</label>
+            <scope name="Test Levels"/>
+            <filters>
+                <attribute name="Project">
+                    <value>'A'</value>
+                </attribute>
+            </filters>
+        </leaf>
+
+    </node>
+
+    <node>
+        <label>Project B</label>
+        <scope name="Project">B</scope>
+        
+        <leaf>
+            <label>Component Tests</label>
+            <scope name="Test Levels"/>
+            <filters>
+                <constant name="Project">
+                    <value>'B'</value>
+                </constant>
+                <attribute name="Testlevel">
+                    <value>component</value>
+                </attribute>
+            </filters>
+        </leaf>
+
+        <leaf>
+            <label>Module Tests</label>
+            <scope name="Test Levels"/>
+            <filters>
+                <constant name="Project">
+                    <value>'B'</value>
+                </constant>
+                <attribute name="Testlevel">
+                    <value>module</value>
+                </attribute>
+            </filters>
+        </leaf>
+
+        <leaf>
+            <label>Known Bugs</label>
+            <scope name="Test Levels"/>
+            <filters>
+                <attribute name="Project">
+                    <value>'B'</value>
+                </attribute>
+            </filters>
+        </leaf>
+
+    </node>
+
+    <node>
+        <label>Project C</label>
+        <scope name="Project">C</scope>
+
+        <leaf>
+            <label>Component Tests</label>
+            <scope name="Test Levels"/>
+            <filters>
+                <constant name="Project">
+                    <value>'C'</value>
+                </constant>
+                <attribute name="Testlevel">
+                    <value>component</value>
+                </attribute>
+            </filters>
+        </leaf>
+
+        <leaf>
+            <label>Module Tests</label>
+            <scope name="Test Levels"/>
+            <filters>
+                <constant name="Project">
+                    <value>'C'</value>
+                </constant>
+                <attribute name="Testlevel">
+                    <value>module</value>
+                </attribute>
+            </filters>
+        </leaf>
+
+        <leaf>
+            <label>Known Bugs</label>
+            <scope name="Test Levels"/>
+            <filters>
+                <attribute name="Project">
+                    <value>'C'</value>
+                </attribute>
+            </filters>
+        </leaf>
+
+    </node>
+
+</filterTreeV2>
