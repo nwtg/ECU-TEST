@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PROJECT format-rev="10" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<NAME xsi:type="string">Project</NAME>
+	<ENABLED xsi:type="boolean">True</ENABLED>
+	<REPORTING xsi:type="boolean">True</REPORTING>
+	<ID xsi:type="string">7458230075be11e980e2e4b97a8801f1</ID>
+	<COMPONENTS>
+		<COMPONENT format-rev="10" xsi:type="subproject">
+			<NAME xsi:type="string">Works both with sldemo_autotrans.TCF and sldemo_autotrans_ShiftLogic.TCF</NAME>
+			<ENABLED xsi:type="boolean">True</ENABLED>
+			<REPORTING xsi:type="boolean">True</REPORTING>
+			<ID xsi:type="string">0ab7b09c935d11e994a9e4b97a8801f1</ID>
+			<COMPONENTS/>
+		</COMPONENT>
+		<COMPONENT format-rev="5" xsi:type="packageTest">
+			<NAME xsi:type="string">Unittest ShiftLogic</NAME>
+			<ENABLED xsi:type="boolean">True</ENABLED>
+			<REPORTING xsi:type="boolean">True</REPORTING>
+			<ID xsi:type="string">791fbd3075be11e98497e4b97a8801f1</ID>
+			<COMPONENTS>
+				<COMPONENT format-rev="1" xsi:type="variationSet">
+					<NAME xsi:type="string">Parameter variation</NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<ID xsi:type="string">7e4afb3075be11e987e5e4b97a8801f1</ID>
+					<COMPONENTS/>
+					<PARAM-GENERATOR xsi:type="paramGenerator-d94fc3b6-7764-4692-9883-a838a9aae009">
+						<VERSION xsi:type="integer">2</VERSION>
+						<LIMIT-SETTINGS xsi:type="limitSettings">
+							<LIMIT xsi:type="integer">15000</LIMIT>
+						</LIMIT-SETTINGS>
+						<DATA-STORE xsi:type="parameterDataStore">
+							<PARAMETERS>
+								<ELEMENT dkey="Speed_set">
+									<DVALUE xsi:type="list">
+										<ELEMENT xsi:type="string">0(10)20</ELEMENT>
+										<ELEMENT xsi:type="string">Numeric</ELEMENT>
+									</DVALUE>
+								</ELEMENT>
+								<ELEMENT dkey="Throttle_set">
+									<DVALUE xsi:type="list">
+										<ELEMENT xsi:type="string">0(15)30</ELEMENT>
+										<ELEMENT xsi:type="string">Numeric</ELEMENT>
+									</DVALUE>
+								</ELEMENT>
+							</PARAMETERS>
+							<ALGORITHM xsi:type="integer">0</ALGORITHM>
+							<N-WISE-FACTOR xsi:type="integer">2</N-WISE-FACTOR>
+							<LIMIT-SETTINGS xsi:type="limitSettings">
+								<LIMIT xsi:type="integer">100</LIMIT>
+								<RANDOM xsi:type="boolean">True</RANDOM>
+							</LIMIT-SETTINGS>
+						</DATA-STORE>
+					</PARAM-GENERATOR>
+				</COMPONENT>
+			</COMPONENTS>
+			<PACKAGE-REF format-rev="1" xsi:type="packageRef">
+				<PACKAGE-PATH xsi:type="string">Unittest ShiftLogic.pkg</PACKAGE-PATH>
+			</PACKAGE-REF>
+		</COMPONENT>
+		<COMPONENT format-rev="5" xsi:type="packageTest">
+			<NAME xsi:type="string">VehicleTest</NAME>
+			<ENABLED xsi:type="boolean">True</ENABLED>
+			<REPORTING xsi:type="boolean">True</REPORTING>
+			<ID xsi:type="string">791092c259dc11ea874ebc9a78563412</ID>
+			<COMPONENTS/>
+			<PACKAGE-REF format-rev="1" xsi:type="packageRef">
+				<PACKAGE-PATH xsi:type="string">VehicleTest.pkg</PACKAGE-PATH>
+			</PACKAGE-REF>
+		</COMPONENT>
+		<COMPONENT format-rev="5" xsi:type="packageTest">
+			<NAME xsi:type="string">Driving Cycle Stimulus</NAME>
+			<ENABLED xsi:type="boolean">True</ENABLED>
+			<REPORTING xsi:type="boolean">True</REPORTING>
+			<ID xsi:type="string">7d3c0efa59dc11eaa883bc9a78563412</ID>
+			<COMPONENTS/>
+			<PACKAGE-REF format-rev="1" xsi:type="packageRef">
+				<PACKAGE-PATH xsi:type="string">Driving Cycle Stimulus.pkg</PACKAGE-PATH>
+			</PACKAGE-REF>
+		</COMPONENT>
+	</COMPONENTS>
+</PROJECT>

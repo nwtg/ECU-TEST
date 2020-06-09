@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PACKAGE format-rev="7" prog-version="8.1.0.92109" xmlns="http://www.tracetronic.de/xml/ecu-test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tracetronic.de/xml/ecu-test package.xsd">
+	<INFORMATION format-rev="2" xsi:type="packageInfo">
+		<DESCRIPTION xsi:type="string"/>
+		<VERSION xsi:type="string"/>
+		<ALTERNATE-CALL-REPRESENTATION-ACTION-FIELD-TEMPLATE xsi:type="string"/>
+		<ALTERNATE-CALL-REPRESENTATION-EXPECTATION-FIELD-TEMPLATE xsi:type="string"/>
+	</INFORMATION>
+	<MAPPING format-rev="1" xsi:type="localMappingSpace">
+		<MAPPING-ITEM format-rev="2" xsi:type="mappingItem">
+			<ID xsi:type="string">Engine/EngineData/EngineData/EngPower</ID>
+			<XACCESS format-rev="1" xsi:type="xaBusSignalVariable">
+				<MAPPING-ENUM xsi:type="vtabInfoEmpty"/>
+				<BUS-KEY xsi:type="string">PT-CAN</BUS-KEY>
+				<FRAME-NAME xsi:type="string">EngineData</FRAME-NAME>
+				<SIGNAL-NAME xsi:type="string">EngPower</SIGNAL-NAME>
+				<NODE-NAME xsi:type="string">Engine</NODE-NAME>
+				<PDU-NAME xsi:type="string">EngineData</PDU-NAME>
+			</XACCESS>
+		</MAPPING-ITEM>
+		<MAPPING-ITEM format-rev="2" xsi:type="mappingItem">
+			<ID xsi:type="string">FrameID</ID>
+			<XACCESS format-rev="1" xsi:type="xaTraceFileSignal">
+				<SIGNAL-NAME xsi:type="string">FrameID</SIGNAL-NAME>
+			</XACCESS>
+		</MAPPING-ITEM>
+	</MAPPING>
+	<TRACE-RECORDING format-rev="1" xsi:type="recordingManager">
+		<SIGNAL-GROUPS>
+			<ELEMENT format-rev="2" xsi:type="signalGroup">
+				<NAME xsi:type="string">Recording</NAME>
+				<SIGNALS>
+					<ELEMENT xsi:type="signal">
+						<MAPPING-REF xsi:type="string">FrameID</MAPPING-REF>
+					</ELEMENT>
+					<ELEMENT xsi:type="signal">
+						<MAPPING-REF xsi:type="string">Engine/EngineData/EngineData/EngPower</MAPPING-REF>
+					</ELEMENT>
+				</SIGNALS>
+			</ELEMENT>
+		</SIGNAL-GROUPS>
+		<RECORDING-GROUP>
+			<ELEMENT format-rev="2" xsi:type="recordingGroup">
+				<NAME xsi:type="string">Recording group for Recording</NAME>
+				<UUID xsi:type="string">7be6879c517911ea8e03bc9a78563412</UUID>
+				<RECORDINGS>
+					<ELEMENT format-rev="2" xsi:type="recordingInfo">
+						<RECORDING-TYPE xsi:type="string">BLF_VECTOR</RECORDING-TYPE>
+						<PATHS>
+							<PATH xsi:type="fileReference">
+								<PATH xsi:type="string">Tracefiles\Recording.BLF</PATH>
+								<PATH-TYPE xsi:type="string">relTraces</PATH-TYPE>
+							</PATH>
+						</PATHS>
+						<RECORDING-NAME xsi:type="string">Recording</RECORDING-NAME>
+						<FORMAT-DETAILS xsi:type="string">AUTO_02_RxTx</FORMAT-DETAILS>
+					</ELEMENT>
+				</RECORDINGS>
+				<SIGNAL-GROUP-REF>Recording</SIGNAL-GROUP-REF>
+			</ELEMENT>
+		</RECORDING-GROUP>
+		<SYNCHRONISATION-CONFIG xsi:type="syncConfig"/>
+	</TRACE-RECORDING>
+	<TRACE-ANALYSES format-rev="1" xsi:type="traceAnalyses">
+		<TRACE-ANALYSIS format-rev="3" uuid="7fecefe4517911ea8073bc9a78563412" xsi:type="traceAnalysis">
+			<NAME xsi:type="string">Trace analysis 1</NAME>
+			<ANALYSISITEM format-rev="1" uuid="7fecefe5517911ea865abc9a78563412" xsi:type="episode">
+				<NAME xsi:type="string">New episode</NAME>
+				<ANALYSISITEM format-rev="2" poolRev="6" uuid="87fc666d517911eab284bc9a78563412" xsi:type="referencingTraceStep">
+					<NAME xsi:type="string">CheckBusFrameCycleTime</NAME>
+					<SIGNAL-BINDING xsi:type="signalBinding">
+						<PARAMETER dkey="FrameID">
+							<DVALUE format-rev="1" xsi:type="signalParameter">
+								<REF-SIGNAL-NAME xsi:type="string">FrameID</REF-SIGNAL-NAME>
+							</DVALUE>
+						</PARAMETER>
+					</SIGNAL-BINDING>
+					<PARAM-ASSIGNMENTS xsi:type="trcpParameterAssignments">
+						<PARAM-ASSIGNMENTS>
+							<ASSIGNMENT dkey="_tolerance">
+								<DVALUE format-rev="1" xsi:type="valueBaseExpression">
+									<VALUE xsi:type="float">0.01</VALUE>
+								</DVALUE>
+							</ASSIGNMENT>
+							<ASSIGNMENT dkey="cycleTime">
+								<DVALUE format-rev="1" xsi:type="valueBaseExpression">
+									<VALUE xsi:type="float">0.1</VALUE>
+								</DVALUE>
+							</ASSIGNMENT>
+							<ASSIGNMENT dkey="frameID">
+								<DVALUE format-rev="1" xsi:type="valueBaseExpression">
+									<VALUE xsi:type="integer">0x64</VALUE>
+								</DVALUE>
+							</ASSIGNMENT>
+						</PARAM-ASSIGNMENTS>
+					</PARAM-ASSIGNMENTS>
+					<REPORT-CONFIG xsi:type="trcpReportConfig">
+						<MAX-SPOTS xsi:type="integer">100</MAX-SPOTS>
+						<MIN-DELTA xsi:type="float">0.0</MIN-DELTA>
+					</REPORT-CONFIG>
+					<PROTOTYPE-ID xsi:type="string">legacy\7.x\CheckBusFrameCycleTime</PROTOTYPE-ID>
+				</ANALYSISITEM>
+				<ANALYSISITEM format-rev="2" poolRev="6" uuid="ef2a93dc517911eaa762bc9a78563412" xsi:type="referencingTraceStep">
+					<NAME xsi:type="string">CheckBusSignalCycleTime</NAME>
+					<SIGNAL-BINDING xsi:type="signalBinding">
+						<PARAMETER dkey="Signal">
+							<DVALUE format-rev="1" xsi:type="signalParameter">
+								<REF-SIGNAL-NAME xsi:type="string">EngineData_EngPower</REF-SIGNAL-NAME>
+							</DVALUE>
+						</PARAMETER>
+					</SIGNAL-BINDING>
+					<PARAM-ASSIGNMENTS xsi:type="trcpParameterAssignments">
+						<PARAM-ASSIGNMENTS>
+							<ASSIGNMENT dkey="_tolerance">
+								<DVALUE format-rev="1" xsi:type="valueBaseExpression">
+									<VALUE xsi:type="float">0.05</VALUE>
+								</DVALUE>
+							</ASSIGNMENT>
+							<ASSIGNMENT dkey="cycleTime">
+								<DVALUE format-rev="1" xsi:type="valueBaseExpression">
+									<VALUE xsi:type="float">0.2</VALUE>
+								</DVALUE>
+							</ASSIGNMENT>
+						</PARAM-ASSIGNMENTS>
+					</PARAM-ASSIGNMENTS>
+					<REPORT-CONFIG xsi:type="trcpReportConfig">
+						<MAX-SPOTS xsi:type="integer">100</MAX-SPOTS>
+						<MIN-DELTA xsi:type="float">0.0</MIN-DELTA>
+					</REPORT-CONFIG>
+					<PROTOTYPE-ID xsi:type="string">legacy\7.x\CheckBusSignalCycleTime</PROTOTYPE-ID>
+				</ANALYSISITEM>
+			</ANALYSISITEM>
+			<VIRTUAL-SIGNALS-MANAGER xsi:type="virtualSignalsManager">
+				<VIRTUAL-SIGNALS>
+					<VIRTUAL-SIGNAL uuid="92995d0a517911ea870ebc9a78563412" xsi:type="virtualSessionSignal">
+						<NAME xsi:type="string">FrameID</NAME>
+						<SIGNAL-FOR-ANALYSIS xsi:type="recordingSignalForAnalysis">
+							<KEY xsi:type="string">FrameID</KEY>
+							<SOURCE-TYPE xsi:type="string">RECORDING-GROUP</SOURCE-TYPE>
+							<SOURCE-REF xsi:type="string">7be6879c517911ea8e03bc9a78563412</SOURCE-REF>
+						</SIGNAL-FOR-ANALYSIS>
+						<EVENT-TYPE xsi:type="string">PHY</EVENT-TYPE>
+					</VIRTUAL-SIGNAL>
+					<VIRTUAL-SIGNAL uuid="dbd16dfa517911ea92cbbc9a78563412" xsi:type="virtualSessionSignal">
+						<NAME xsi:type="string">EngineData_EngPower</NAME>
+						<SIGNAL-FOR-ANALYSIS xsi:type="recordingSignalForAnalysis">
+							<KEY xsi:type="string">Engine/EngineData/EngineData/EngPower</KEY>
+							<SOURCE-TYPE xsi:type="string">RECORDING-GROUP</SOURCE-TYPE>
+							<SOURCE-REF xsi:type="string">7be6879c517911ea8e03bc9a78563412</SOURCE-REF>
+						</SIGNAL-FOR-ANALYSIS>
+						<EVENT-TYPE xsi:type="string">PHY</EVENT-TYPE>
+					</VIRTUAL-SIGNAL>
+				</VIRTUAL-SIGNALS>
+			</VIRTUAL-SIGNALS-MANAGER>
+		</TRACE-ANALYSIS>
+	</TRACE-ANALYSES>
+</PACKAGE>

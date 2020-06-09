@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PACKAGE format-rev="7" prog-version="8.0.0.86579" xmlns="http://www.tracetronic.de/xml/ecu-test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tracetronic.de/xml/ecu-test package.xsd">
+	<INFORMATION xsi:type="packageInfo">
+		<DESCRIPTION xsi:type="string"/>
+		<VERSION xsi:type="string"/>
+		<ALTERNATE-CALL-REPRESENTATION-ACTION-FIELD-TEMPLATE xsi:type="string"/>
+		<ALTERNATE-CALL-REPRESENTATION-EXPECTATION-FIELD-TEMPLATE xsi:type="string"/>
+	</INFORMATION>
+	<VARIABLES xsi:type="variableContainer">
+		<VARIABLE format-rev="1" xsi:type="variable">
+			<NAME xsi:type="string">Rpm</NAME>
+			<DESCRIPTION xsi:type="string"/>
+			<DEFAULT-VALUE format-rev="1" xsi:type="value">
+				<DATA xsi:type="integer">0</DATA>
+			</DEFAULT-VALUE>
+		</VARIABLE>
+		<VARIABLE format-rev="1" xsi:type="variable">
+			<NAME xsi:type="string">Speed</NAME>
+			<DESCRIPTION xsi:type="string"/>
+			<DEFAULT-VALUE format-rev="1" xsi:type="value">
+				<DATA xsi:type="integer">0</DATA>
+			</DEFAULT-VALUE>
+		</VARIABLE>
+		<VARIABLE format-rev="1" xsi:type="variable">
+			<NAME xsi:type="string">getRpmColor</NAME>
+			<DESCRIPTION xsi:type="string"/>
+			<DEFAULT-VALUE xsi:type="function">
+				<CODE xsi:type="string">
+# function must be named 'func'
+
+def func(rpm):
+    if rpm &lt; 5000:
+        return &quot;green&quot;
+    else:
+        return &quot;red&quot;
+</CODE>
+			</DEFAULT-VALUE>
+		</VARIABLE>
+	</VARIABLES>
+	<MAPPING format-rev="1" xsi:type="localMappingSpace">
+		<MAPPING-ITEM format-rev="2" xsi:type="mappingItem">
+			<ID xsi:type="string">BATTERY_UNIT/STATE/STATE/STATE_OF_CHARGE</ID>
+			<XACCESS format-rev="1" xsi:type="xaBusSignalVariable">
+				<MAPPING-ENUM xsi:type="vtabInfoEmpty"/>
+				<BUS-KEY xsi:type="string">EPT-CAN</BUS-KEY>
+				<FRAME-NAME xsi:type="string">STATE</FRAME-NAME>
+				<SIGNAL-NAME xsi:type="string">STATE_OF_CHARGE</SIGNAL-NAME>
+				<NODE-NAME xsi:type="string">BATTERY_UNIT</NODE-NAME>
+				<PDU-NAME xsi:type="string">STATE</PDU-NAME>
+			</XACCESS>
+		</MAPPING-ITEM>
+	</MAPPING>
+	<TESTSTEPS xsi:type="testCase">
+		<TESTSTEP id="114" name="TsInfoBlock" xsi:type="utility-0908a261-ccf9-11e2-a7a4-ec97313539d6">
+			<BLOCK-NAME xsi:type="string">Infoblock</BLOCK-NAME>
+			<MESSAGEEXPR xsi:type="binaryOpBaseExpression">
+				<NAME xsi:type="string">BINARY_MODULO</NAME>
+				<FIRST-COMPONENT format-rev="1" xsi:type="valueBaseExpression">
+					<VALUE xsi:type="string">&lt;font color=&quot;%s&quot;&gt;Current Rpm: %s rpm&lt;br&gt;&lt;br&gt;&lt;/font&gt;&lt;font color=&quot;%s&quot;&gt;Current velocity: %s km/h&lt;/font&gt;</VALUE>
+				</FIRST-COMPONENT>
+				<SECOND-COMPONENT xsi:type="listOrTupleBaseExpression">
+					<IS-LIST xsi:type="boolean">False</IS-LIST>
+					<EXPRESSION-LIST>
+						<BASE-EXPRESSION xsi:type="functionBaseExpression">
+							<COMPONENT xsi:type="varBaseExpression">
+								<NAME xsi:type="string">getRpmColor</NAME>
+							</COMPONENT>
+							<ARGUMENTS>
+								<ARGUMENT xsi:type="varBaseExpression">
+									<NAME xsi:type="string">Rpm</NAME>
+								</ARGUMENT>
+							</ARGUMENTS>
+						</BASE-EXPRESSION>
+						<BASE-EXPRESSION xsi:type="varBaseExpression">
+							<NAME xsi:type="string">Rpm</NAME>
+						</BASE-EXPRESSION>
+						<BASE-EXPRESSION format-rev="1" xsi:type="valueBaseExpression">
+							<VALUE xsi:type="string">green</VALUE>
+						</BASE-EXPRESSION>
+						<BASE-EXPRESSION xsi:type="varBaseExpression">
+							<NAME xsi:type="string">Speed</NAME>
+						</BASE-EXPRESSION>
+					</EXPRESSION-LIST>
+				</SECOND-COMPONENT>
+			</MESSAGEEXPR>
+			<TIMEOUT format-rev="1" xsi:type="valueBaseExpression">
+				<VALUE xsi:type="integer">0</VALUE>
+			</TIMEOUT>
+			<DIALOG-SIZE-X format-rev="1" xsi:type="valueBaseExpression">
+				<VALUE xsi:type="integer">450</VALUE>
+			</DIALOG-SIZE-X>
+			<DIALOG-SIZE-Y format-rev="1" xsi:type="valueBaseExpression">
+				<VALUE xsi:type="integer">350</VALUE>
+			</DIALOG-SIZE-Y>
+			<EXIT-BLOCK xsi:type="boolean">True</EXIT-BLOCK>
+			<EXIT-TEST xsi:type="boolean">False</EXIT-TEST>
+			<TESTSTEP id="250" name="TsLoop" xsi:type="utility-3da58cf0-4fef-11dc-be56-0013728784ee">
+				<TESTSTEP id="118" xsi:type="tsRead">
+					<MAPPING-REF xsi:type="string">BATTERY_UNIT/STATE/STATE/STATE_OF_CHARGE</MAPPING-REF>
+					<VARIABLE-REFS>
+						<VARIABLE-NAME dkey="default">
+							<DVALUE xsi:type="string">Rpm</DVALUE>
+						</VARIABLE-NAME>
+					</VARIABLE-REFS>
+					<EXPECTATION xsi:type="timelessOption">
+						<EXPRESSION xsi:type="builtNumericExpression">
+							<RELATION xsi:type="string">==</RELATION>
+							<VALUE format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="integer">75</VALUE>
+							</VALUE>
+						</EXPRESSION>
+					</EXPECTATION>
+					<METRIC format-rev="1" xsi:type="metricInfo">
+						<Z-UNIT xsi:type="string">u_none</Z-UNIT>
+						<VALUE-TYPE xsi:type="string">PHYS</VALUE-TYPE>
+						<DATA-TYPE xsi:type="string">VALUE</DATA-TYPE>
+					</METRIC>
+				</TESTSTEP>
+				<TESTSTEP id="239" name="TsWait" xsi:type="utility-62d5a961-4fef-11dc-9944-0013728784ee">
+					<TIME format-rev="1" xsi:type="valueBaseExpression">
+						<VALUE xsi:type="integer">10</VALUE>
+					</TIME>
+				</TESTSTEP>
+				<LOOP-COUNT format-rev="1" xsi:type="valueBaseExpression">
+					<VALUE xsi:type="integer">100</VALUE>
+				</LOOP-COUNT>
+			</TESTSTEP>
+		</TESTSTEP>
+		<TESTSTEP id="282" name="TsWaitForUser" xsi:type="utility-62d5a961-4fef-11dc-9944-0013728784ef">
+			<MAX-WAIT-TIME format-rev="1" xsi:type="valueBaseExpression">
+				<VALUE xsi:type="integer">5000</VALUE>
+			</MAX-WAIT-TIME>
+			<QUERY-EVALUATION xsi:type="boolean">True</QUERY-EVALUATION>
+			<INFO-TEXT format-rev="1" xsi:type="valueBaseExpression">
+				<VALUE xsi:type="string"/>
+			</INFO-TEXT>
+		</TESTSTEP>
+	</TESTSTEPS>
+</PACKAGE>

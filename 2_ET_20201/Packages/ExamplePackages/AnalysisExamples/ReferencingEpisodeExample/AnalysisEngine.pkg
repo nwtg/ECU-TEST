@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PACKAGE format-rev="3" prog-version="5.0-TRUNK" xmlns="http://www.tracetronic.de/xml/ecu-test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tracetronic.de/xml/ecu-test package.xsd">
+	<INFORMATION xsi:type="packageInfo">
+		<DESCRIPTION xsi:type="string"/>
+		<VERSION xsi:type="string"/>
+	</INFORMATION>
+	<MAPPING format-rev="1" xsi:type="mappingSpace"/>
+	<TRACE-ANALYSES xsi:type="traceAnalyses">
+		<TRACE-ANALYSIS format-rev="2" uuid="e38143b01feb11e088740800271b258f" xsi:type="traceAnalysis">
+			<NAME xsi:type="string">AnalyseEngine</NAME>
+			<SYNCHRONISATION-CONFIG xsi:type="syncConfig"/>
+			<SYNCHRONISATION-ACTIVATED xsi:type="boolean">False</SYNCHRONISATION-ACTIVATED>
+			<EPISODES>
+				<EPISODE uuid="ea2e3fb01feb11e0acce0800271b258f" xsi:type="episode">
+					<NAME xsi:type="string">AnalysisEngine</NAME>
+					<TRACE-STEP uuid="f9f1487f1feb11e0879a0800271b258f" xsi:type="referencingTraceStep">
+						<NAME xsi:type="string">PlotEngine-Signals</NAME>
+						<SIGNAL-BINDING xsi:type="trcpParameterBinding">
+							<PARAMETER dkey="Signal_0">
+								<DVALUE xsi:type="signalParameter">
+									<REF-SIGNAL-NAME xsi:type="string">EngSpeed</REF-SIGNAL-NAME>
+								</DVALUE>
+							</PARAMETER>
+							<PARAMETER dkey="Signal_1">
+								<DVALUE xsi:type="signalParameter">
+									<REF-SIGNAL-NAME xsi:type="string">Gear</REF-SIGNAL-NAME>
+								</DVALUE>
+							</PARAMETER>
+							<PARAMETER dkey="Signal_10">
+								<DVALUE xsi:type="signalParameter"/>
+							</PARAMETER>
+							<PARAMETER dkey="Signal_11">
+								<DVALUE xsi:type="signalParameter"/>
+							</PARAMETER>
+							<PARAMETER dkey="Signal_12">
+								<DVALUE xsi:type="signalParameter"/>
+							</PARAMETER>
+							<PARAMETER dkey="Signal_13">
+								<DVALUE xsi:type="signalParameter"/>
+							</PARAMETER>
+							<PARAMETER dkey="Signal_14">
+								<DVALUE xsi:type="signalParameter"/>
+							</PARAMETER>
+							<PARAMETER dkey="Signal_15">
+								<DVALUE xsi:type="signalParameter"/>
+							</PARAMETER>
+							<PARAMETER dkey="Signal_16">
+								<DVALUE xsi:type="signalParameter"/>
+							</PARAMETER>
+							<PARAMETER dkey="Signal_17">
+								<DVALUE xsi:type="signalParameter"/>
+							</PARAMETER>
+							<PARAMETER dkey="Signal_18">
+								<DVALUE xsi:type="signalParameter"/>
+							</PARAMETER>
+							<PARAMETER dkey="Signal_19">
+								<DVALUE xsi:type="signalParameter"/>
+							</PARAMETER>
+							<PARAMETER dkey="Signal_2">
+								<DVALUE xsi:type="signalParameter"/>
+							</PARAMETER>
+							<PARAMETER dkey="Signal_20">
+								<DVALUE xsi:type="signalParameter"/>
+							</PARAMETER>
+							<PARAMETER dkey="Signal_3">
+								<DVALUE xsi:type="signalParameter"/>
+							</PARAMETER>
+							<PARAMETER dkey="Signal_4">
+								<DVALUE xsi:type="signalParameter"/>
+							</PARAMETER>
+							<PARAMETER dkey="Signal_5">
+								<DVALUE xsi:type="signalParameter"/>
+							</PARAMETER>
+							<PARAMETER dkey="Signal_6">
+								<DVALUE xsi:type="signalParameter"/>
+							</PARAMETER>
+							<PARAMETER dkey="Signal_7">
+								<DVALUE xsi:type="signalParameter"/>
+							</PARAMETER>
+							<PARAMETER dkey="Signal_8">
+								<DVALUE xsi:type="signalParameter"/>
+							</PARAMETER>
+							<PARAMETER dkey="Signal_9">
+								<DVALUE xsi:type="signalParameter"/>
+							</PARAMETER>
+						</SIGNAL-BINDING>
+						<PARAMETER-BINDING xsi:type="trcpParameterBinding">
+							<PARAMETER dkey="dottedLines">
+								<DVALUE xsi:type="booleanParameter"/>
+							</PARAMETER>
+							<PARAMETER dkey="plotScaleFactor">
+								<DVALUE xsi:type="floatParameter"/>
+							</PARAMETER>
+							<PARAMETER dkey="subPlots">
+								<DVALUE xsi:type="booleanParameter"/>
+							</PARAMETER>
+							<PARAMETER dkey="xmax">
+								<DVALUE xsi:type="floatParameter"/>
+							</PARAMETER>
+							<PARAMETER dkey="xmin">
+								<DVALUE xsi:type="floatParameter"/>
+							</PARAMETER>
+							<PARAMETER dkey="ymax">
+								<DVALUE xsi:type="floatParameter"/>
+							</PARAMETER>
+							<PARAMETER dkey="ymin">
+								<DVALUE xsi:type="floatParameter"/>
+							</PARAMETER>
+						</PARAMETER-BINDING>
+						<REPORT-CONFIG xsi:type="trcpReportConfig">
+							<MAX-SPOTS xsi:type="integer">10</MAX-SPOTS>
+							<MIN-DELTA xsi:type="float">0.5</MIN-DELTA>
+						</REPORT-CONFIG>
+						<VISIBLE xsi:type="boolean">True</VISIBLE>
+						<PROTOTYPE-ID xsi:type="string">GenericTraceStepTemplates\Plot\PyPlotSignals</PROTOTYPE-ID>
+					</TRACE-STEP>
+					<TRACE-STEP uuid="703e97c17a1f11e0b0290024d7351970" xsi:type="referencingTraceStep">
+						<NAME xsi:type="string">MinimumMaximum</NAME>
+						<SIGNAL-BINDING xsi:type="trcpParameterBinding">
+							<PARAMETER dkey="Signal">
+								<DVALUE xsi:type="signalParameter">
+									<REF-SIGNAL-NAME xsi:type="string">EngSpeed</REF-SIGNAL-NAME>
+								</DVALUE>
+							</PARAMETER>
+						</SIGNAL-BINDING>
+						<PARAMETER-BINDING xsi:type="trcpParameterBinding"/>
+						<REPORT-CONFIG xsi:type="trcpReportConfig">
+							<MAX-SPOTS xsi:type="integer">10</MAX-SPOTS>
+							<MIN-DELTA xsi:type="float">0.5</MIN-DELTA>
+						</REPORT-CONFIG>
+						<VISIBLE xsi:type="boolean">True</VISIBLE>
+						<PROTOTYPE-ID xsi:type="string">ExampleTraceStepTemplates\MinimumMaximum\MinimumMaximum</PROTOTYPE-ID>
+					</TRACE-STEP>
+				</EPISODE>
+			</EPISODES>
+			<VIRTUAL-SIGNALS-MANAGER xsi:type="virtualSignalsManager">
+				<VIRTUAL-SIGNALS>
+					<VIRTUAL-SIGNAL uuid="ef5d272e1feb11e0958a0800271b258f" xsi:type="virtualSessionSignal">
+						<NAME xsi:type="string">EngSpeed</NAME>
+					</VIRTUAL-SIGNAL>
+					<VIRTUAL-SIGNAL uuid="f1fb51b01feb11e0869e0800271b258f" xsi:type="virtualSessionSignal">
+						<NAME xsi:type="string">Gear</NAME>
+					</VIRTUAL-SIGNAL>
+				</VIRTUAL-SIGNALS>
+			</VIRTUAL-SIGNALS-MANAGER>
+		</TRACE-ANALYSIS>
+	</TRACE-ANALYSES>
+</PACKAGE>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PROJECT format-rev="9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<NAME xsi:type="string">Projekt</NAME>
+	<ENABLED xsi:type="boolean">True</ENABLED>
+	<REPORTING xsi:type="boolean">True</REPORTING>
+	<COMPONENTS>
+		<COMPONENT xsi:type="packageGeneratorCycleSet">
+			<NAME xsi:type="string">Test Case Generator</NAME>
+			<ENABLED xsi:type="boolean">True</ENABLED>
+			<REPORTING xsi:type="boolean">True</REPORTING>
+			<COMPONENTS/>
+			<PACKAGE-GENERATOR xsi:type="packageGenerator-f6b6bd00-8b65-43dc-8f15-2c06f43afefe">
+				<SHEETNAME xsi:type="string">test cases</SHEETNAME>
+				<FILENAME xsi:type="string">Parameters\SampleTestcase.xlsx</FILENAME>
+			</PACKAGE-GENERATOR>
+		</COMPONENT>
+	</COMPONENTS>
+</PROJECT>

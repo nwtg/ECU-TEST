@@ -1,0 +1,911 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PACKAGE format-rev="7" prog-version="8.1.0.92109" xmlns="http://www.tracetronic.de/xml/ecu-test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tracetronic.de/xml/ecu-test package.xsd">
+	<INFORMATION format-rev="2" xsi:type="packageInfo">
+		<DESCRIPTION xsi:type="string"/>
+		<VERSION xsi:type="string"/>
+		<ALTERNATE-CALL-REPRESENTATION-ACTION-FIELD-TEMPLATE xsi:type="string"/>
+		<ALTERNATE-CALL-REPRESENTATION-EXPECTATION-FIELD-TEMPLATE xsi:type="string"/>
+	</INFORMATION>
+	<VARIABLES xsi:type="variableContainer">
+		<VARIABLE format-rev="1" in="true" xsi:type="variable">
+			<NAME xsi:type="string">speed</NAME>
+			<DESCRIPTION xsi:type="string"/>
+			<DEFAULT-VALUE format-rev="1" xsi:type="value">
+				<DATA xsi:type="integer">1000</DATA>
+			</DEFAULT-VALUE>
+		</VARIABLE>
+		<VARIABLE format-rev="1" in="true" xsi:type="variable">
+			<NAME xsi:type="string">BMEP</NAME>
+			<DESCRIPTION xsi:type="string"/>
+			<DEFAULT-VALUE format-rev="1" xsi:type="value">
+				<DATA xsi:type="integer">2</DATA>
+			</DEFAULT-VALUE>
+		</VARIABLE>
+	</VARIABLES>
+	<MAPPING format-rev="1" xsi:type="localMappingSpace">
+		<MAPPING-ITEM format-rev="2" xsi:type="mappingItem">
+			<ID xsi:type="string">PhysicalECU_wdk_w_msg</ID>
+			<XACCESS format-rev="1" xsi:type="xaTraceFileSignal">
+				<SIGNAL-NAME xsi:type="string">PhysicalECU_wdk_w_msg</SIGNAL-NAME>
+			</XACCESS>
+		</MAPPING-ITEM>
+		<MAPPING-ITEM format-rev="2" xsi:type="mappingItem">
+			<ID xsi:type="string">Throttle_Pct_factor_In1</ID>
+			<XACCESS format-rev="1" xsi:type="xaTraceFileSignal">
+				<SIGNAL-NAME xsi:type="string">Throttle_Pct_factor_In1</SIGNAL-NAME>
+			</XACCESS>
+		</MAPPING-ITEM>
+		<MAPPING-ITEM format-rev="2" xsi:type="mappingItem">
+			<ID xsi:type="string">Throttle_Pct_factor_Out1</ID>
+			<XACCESS format-rev="1" xsi:type="xaTraceFileSignal">
+				<SIGNAL-NAME xsi:type="string">Throttle_Pct_factor_Out1</SIGNAL-NAME>
+			</XACCESS>
+		</MAPPING-ITEM>
+		<MAPPING-ITEM format-rev="2" xsi:type="mappingItem">
+			<ID xsi:type="string">XCP:1/APP_r</ID>
+			<XACCESS format-rev="1" xsi:type="xaTraceFileSignal">
+				<SIGNAL-NAME xsi:type="string">XCP:1/APP_r</SIGNAL-NAME>
+			</XACCESS>
+		</MAPPING-ITEM>
+		<MAPPING-ITEM format-rev="2" xsi:type="mappingItem">
+			<ID xsi:type="string">XCP:1/AccPed_rTrq</ID>
+			<XACCESS format-rev="1" xsi:type="xaTraceFileSignal">
+				<SIGNAL-NAME xsi:type="string">XCP:1/AccPed_rTrq</SIGNAL-NAME>
+			</XACCESS>
+		</MAPPING-ITEM>
+		<MAPPING-ITEM format-rev="2" xsi:type="mappingItem">
+			<ID xsi:type="string">XCP:1/AccPed_tqMapBasd</ID>
+			<XACCESS format-rev="1" xsi:type="xaTraceFileSignal">
+				<SIGNAL-NAME xsi:type="string">XCP:1/AccPed_tqMapBasd</SIGNAL-NAME>
+			</XACCESS>
+		</MAPPING-ITEM>
+		<MAPPING-ITEM format-rev="2" xsi:type="mappingItem">
+			<ID xsi:type="string">XCP:1/AccPed_trqDes</ID>
+			<XACCESS format-rev="1" xsi:type="xaTraceFileSignal">
+				<SIGNAL-NAME xsi:type="string">XCP:1/AccPed_trqDes</SIGNAL-NAME>
+			</XACCESS>
+		</MAPPING-ITEM>
+		<MAPPING-ITEM format-rev="2" xsi:type="mappingItem">
+			<ID xsi:type="string">XCP:1/ActMod_trqClth</ID>
+			<XACCESS format-rev="1" xsi:type="xaTraceFileSignal">
+				<SIGNAL-NAME xsi:type="string">XCP:1/ActMod_trqClth</SIGNAL-NAME>
+			</XACCESS>
+		</MAPPING-ITEM>
+		<MAPPING-ITEM format-rev="2" xsi:type="mappingItem">
+			<ID xsi:type="string">XCP:1/ActMod_trqInr</ID>
+			<XACCESS format-rev="1" xsi:type="xaTraceFileSignal">
+				<SIGNAL-NAME xsi:type="string">XCP:1/ActMod_trqInr</SIGNAL-NAME>
+			</XACCESS>
+		</MAPPING-ITEM>
+		<MAPPING-ITEM format-rev="2" xsi:type="mappingItem">
+			<ID xsi:type="string">XCP:1/B_emxldr_msg</ID>
+			<XACCESS format-rev="1" xsi:type="xaTraceFileSignal">
+				<SIGNAL-NAME xsi:type="string">XCP:1/B_emxldr_msg</SIGNAL-NAME>
+			</XACCESS>
+		</MAPPING-ITEM>
+		<MAPPING-ITEM format-rev="2" xsi:type="mappingItem">
+			<ID xsi:type="string">XCP:1/B_ldr_msg</ID>
+			<XACCESS format-rev="1" xsi:type="xaTraceFileSignal">
+				<SIGNAL-NAME xsi:type="string">XCP:1/B_ldr_msg</SIGNAL-NAME>
+			</XACCESS>
+		</MAPPING-ITEM>
+		<MAPPING-ITEM format-rev="2" xsi:type="mappingItem">
+			<ID xsi:type="string">XCP:1/B_rlxexldr_msg</ID>
+			<XACCESS format-rev="1" xsi:type="xaTraceFileSignal">
+				<SIGNAL-NAME xsi:type="string">XCP:1/B_rlxexldr_msg</SIGNAL-NAME>
+			</XACCESS>
+		</MAPPING-ITEM>
+		<MAPPING-ITEM format-rev="2" xsi:type="mappingItem">
+			<ID xsi:type="string">XCP:1/B_rlxred_msg</ID>
+			<XACCESS format-rev="1" xsi:type="xaTraceFileSignal">
+				<SIGNAL-NAME xsi:type="string">XCP:1/B_rlxred_msg</SIGNAL-NAME>
+			</XACCESS>
+		</MAPPING-ITEM>
+		<MAPPING-ITEM format-rev="2" xsi:type="mappingItem">
+			<ID xsi:type="string">XCP:1/ChrCtl_ratDesPosnThrVlvB1</ID>
+			<XACCESS format-rev="1" xsi:type="xaTraceFileSignal">
+				<SIGNAL-NAME xsi:type="string">XCP:1/ChrCtl_ratDesPosnThrVlvB1</SIGNAL-NAME>
+			</XACCESS>
+		</MAPPING-ITEM>
+	</MAPPING>
+	<TRACE-RECORDING format-rev="1" xsi:type="recordingManager">
+		<SIGNAL-GROUPS>
+			<ELEMENT format-rev="2" xsi:type="signalGroup">
+				<NAME xsi:type="string">Recording</NAME>
+				<SIGNALS>
+					<ELEMENT xsi:type="signal">
+						<MAPPING-REF xsi:type="string">XCP:1/ActMod_trqClth</MAPPING-REF>
+					</ELEMENT>
+					<ELEMENT xsi:type="signal">
+						<MAPPING-REF xsi:type="string">XCP:1/B_rlxexldr_msg</MAPPING-REF>
+					</ELEMENT>
+					<ELEMENT xsi:type="signal">
+						<MAPPING-REF xsi:type="string">XCP:1/B_rlxred_msg</MAPPING-REF>
+					</ELEMENT>
+					<ELEMENT xsi:type="signal">
+						<MAPPING-REF xsi:type="string">XCP:1/AccPed_tqMapBasd</MAPPING-REF>
+					</ELEMENT>
+					<ELEMENT xsi:type="signal">
+						<MAPPING-REF xsi:type="string">XCP:1/APP_r</MAPPING-REF>
+					</ELEMENT>
+					<ELEMENT xsi:type="signal">
+						<MAPPING-REF xsi:type="string">XCP:1/ActMod_trqInr</MAPPING-REF>
+					</ELEMENT>
+					<ELEMENT xsi:type="signal">
+						<MAPPING-REF xsi:type="string">XCP:1/AccPed_trqDes</MAPPING-REF>
+					</ELEMENT>
+					<ELEMENT xsi:type="signal">
+						<MAPPING-REF xsi:type="string">XCP:1/B_emxldr_msg</MAPPING-REF>
+					</ELEMENT>
+					<ELEMENT xsi:type="signal">
+						<MAPPING-REF xsi:type="string">XCP:1/B_ldr_msg</MAPPING-REF>
+					</ELEMENT>
+					<ELEMENT xsi:type="signal">
+						<MAPPING-REF xsi:type="string">XCP:1/ChrCtl_ratDesPosnThrVlvB1</MAPPING-REF>
+					</ELEMENT>
+					<ELEMENT xsi:type="signal">
+						<MAPPING-REF xsi:type="string">XCP:1/AccPed_rTrq</MAPPING-REF>
+					</ELEMENT>
+				</SIGNALS>
+			</ELEMENT>
+			<ELEMENT format-rev="2" xsi:type="signalGroup">
+				<NAME xsi:type="string">default</NAME>
+				<SIGNALS>
+					<ELEMENT xsi:type="signal">
+						<MAPPING-REF xsi:type="string">Throttle_Pct_factor_In1</MAPPING-REF>
+					</ELEMENT>
+					<ELEMENT xsi:type="signal">
+						<MAPPING-REF xsi:type="string">Throttle_Pct_factor_Out1</MAPPING-REF>
+					</ELEMENT>
+					<ELEMENT xsi:type="signal">
+						<MAPPING-REF xsi:type="string">PhysicalECU_wdk_w_msg</MAPPING-REF>
+					</ELEMENT>
+				</SIGNALS>
+			</ELEMENT>
+		</SIGNAL-GROUPS>
+		<RECORDING-GROUP>
+			<ELEMENT format-rev="2" xsi:type="recordingGroup">
+				<NAME xsi:type="string">Recording group for Recording</NAME>
+				<UUID xsi:type="string">b187d4e83a9611eab54abc9a78563412</UUID>
+				<RECORDINGS>
+					<ELEMENT format-rev="2" xsi:type="recordingInfo">
+						<RECORDING-TYPE xsi:type="string">MDF4</RECORDING-TYPE>
+						<PATHS>
+							<PATH xsi:type="fileReference">
+								<PATH xsi:type="string">Tracefiles\Speed1000_2\INCA.mf4</PATH>
+								<PATH-TYPE xsi:type="string">relTraces</PATH-TYPE>
+							</PATH>
+						</PATHS>
+						<RECORDING-NAME xsi:type="string">Recording</RECORDING-NAME>
+						<FORMAT-DETAILS xsi:type="string">XCP:1##CAN-Monitoring:1</FORMAT-DETAILS>
+					</ELEMENT>
+				</RECORDINGS>
+				<SIGNAL-GROUP-REF>Recording</SIGNAL-GROUP-REF>
+			</ELEMENT>
+			<ELEMENT format-rev="2" xsi:type="recordingGroup">
+				<NAME xsi:type="string">Recording group for default</NAME>
+				<UUID xsi:type="string">bb347c863a9611ea9927bc9a78563412</UUID>
+				<RECORDINGS>
+					<ELEMENT format-rev="2" xsi:type="recordingInfo">
+						<RECORDING-TYPE xsi:type="string">CSV</RECORDING-TYPE>
+						<PATHS>
+							<PATH xsi:type="fileReference">
+								<PATH xsi:type="string">Tracefiles\Speed1000_2\CDNG.csv</PATH>
+								<PATH-TYPE xsi:type="string">relTraces</PATH-TYPE>
+							</PATH>
+						</PATHS>
+						<RECORDING-NAME xsi:type="string">default</RECORDING-NAME>
+						<FORMAT-DETAILS xsi:type="string">columnSeparator: ';', decimalSeparator: '.', thousandSeparator: ',', headLineNumber: '0', timeColumn: '0'</FORMAT-DETAILS>
+					</ELEMENT>
+				</RECORDINGS>
+				<SIGNAL-GROUP-REF>default</SIGNAL-GROUP-REF>
+			</ELEMENT>
+		</RECORDING-GROUP>
+		<SYNCHRONISATION-CONFIG xsi:type="syncConfig"/>
+	</TRACE-RECORDING>
+	<TRACE-ANALYSES format-rev="1" xsi:type="traceAnalyses">
+		<TRACE-ANALYSIS format-rev="3" uuid="40f24dda3b5411ea961ebc9a78563412" xsi:type="traceAnalysis">
+			<NAME xsi:type="string">CalculateAverage</NAME>
+			<ANALYSISITEM format-rev="1" uuid="40f24ddb3b5411ea8d67bc9a78563412" xsi:type="episode">
+				<NAME xsi:type="string">CalculateAverage</NAME>
+				<ANALYSISITEM format-rev="1" uuid="40f24ddc3b5411ea9ec2bc9a78563412" xsi:type="triggerBlock">
+					<NAME xsi:type="string">CalculateAverage</NAME>
+					<ANALYSISITEM uuid="40f274a83b5411ea9fddbc9a78563412" xsi:type="analysisBlock">
+						<NAME xsi:type="string">CalculateAverage</NAME>
+						<ANALYSISITEM format-rev="2" poolRev="6" uuid="40f29bb83b5411eaae5ebc9a78563412" xsi:type="referencingTraceStep">
+							<NAME xsi:type="string">CalculateAverage</NAME>
+							<SIGNAL-BINDING xsi:type="signalBinding">
+								<PARAMETER dkey="ArithmeticMean">
+									<DVALUE format-rev="1" xsi:type="signalParameter">
+										<REF-SIGNAL-NAME xsi:type="string">XCP_1_ActMod_trqClth_avg</REF-SIGNAL-NAME>
+									</DVALUE>
+								</PARAMETER>
+								<PARAMETER dkey="Signal">
+									<DVALUE format-rev="1" xsi:type="signalParameter">
+										<REF-SIGNAL-NAME xsi:type="string">XCP_1_ActMod_trqClth</REF-SIGNAL-NAME>
+									</DVALUE>
+								</PARAMETER>
+							</SIGNAL-BINDING>
+							<PARAM-ASSIGNMENTS xsi:type="trcpParameterAssignments">
+								<PARAM-ASSIGNMENTS>
+									<ASSIGNMENT dkey="duration">
+										<DVALUE format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">1</VALUE>
+										</DVALUE>
+									</ASSIGNMENT>
+									<ASSIGNMENT dkey="startTime">
+										<DVALUE format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">0</VALUE>
+										</DVALUE>
+									</ASSIGNMENT>
+								</PARAM-ASSIGNMENTS>
+							</PARAM-ASSIGNMENTS>
+							<REPORT-CONFIG xsi:type="trcpReportConfig">
+								<MAX-SPOTS xsi:type="integer">100</MAX-SPOTS>
+								<MIN-DELTA xsi:type="float">0.0</MIN-DELTA>
+							</REPORT-CONFIG>
+							<PROTOTYPE-ID xsi:type="string">Ricardo\ArithmeticMean_v2</PROTOTYPE-ID>
+						</ANALYSISITEM>
+						<ANALYSISITEM format-rev="2" poolRev="6" uuid="40f2e9d63b5411ea9350bc9a78563412" xsi:type="referencingTraceStep">
+							<NAME xsi:type="string">CalculateAverage</NAME>
+							<SIGNAL-BINDING xsi:type="signalBinding">
+								<PARAMETER dkey="ArithmeticMean">
+									<DVALUE format-rev="1" xsi:type="signalParameter">
+										<REF-SIGNAL-NAME xsi:type="string">XCP_1_B_rlxexldr_msg_avg</REF-SIGNAL-NAME>
+									</DVALUE>
+								</PARAMETER>
+								<PARAMETER dkey="Signal">
+									<DVALUE format-rev="1" xsi:type="signalParameter">
+										<REF-SIGNAL-NAME xsi:type="string">XCP_1_B_rlxexldr_msg</REF-SIGNAL-NAME>
+									</DVALUE>
+								</PARAMETER>
+							</SIGNAL-BINDING>
+							<PARAM-ASSIGNMENTS xsi:type="trcpParameterAssignments">
+								<PARAM-ASSIGNMENTS>
+									<ASSIGNMENT dkey="duration">
+										<DVALUE format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">1</VALUE>
+										</DVALUE>
+									</ASSIGNMENT>
+									<ASSIGNMENT dkey="startTime">
+										<DVALUE format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">0</VALUE>
+										</DVALUE>
+									</ASSIGNMENT>
+								</PARAM-ASSIGNMENTS>
+							</PARAM-ASSIGNMENTS>
+							<REPORT-CONFIG xsi:type="trcpReportConfig">
+								<MAX-SPOTS xsi:type="integer">100</MAX-SPOTS>
+								<MIN-DELTA xsi:type="float">0.0</MIN-DELTA>
+							</REPORT-CONFIG>
+							<PROTOTYPE-ID xsi:type="string">Ricardo\ArithmeticMean_v2</PROTOTYPE-ID>
+						</ANALYSISITEM>
+						<ANALYSISITEM format-rev="2" poolRev="6" uuid="40f337ec3b5411eabc00bc9a78563412" xsi:type="referencingTraceStep">
+							<NAME xsi:type="string">CalculateAverage</NAME>
+							<SIGNAL-BINDING xsi:type="signalBinding">
+								<PARAMETER dkey="ArithmeticMean">
+									<DVALUE format-rev="1" xsi:type="signalParameter">
+										<REF-SIGNAL-NAME xsi:type="string">XCP_1_B_rlxred_msg_avg</REF-SIGNAL-NAME>
+									</DVALUE>
+								</PARAMETER>
+								<PARAMETER dkey="Signal">
+									<DVALUE format-rev="1" xsi:type="signalParameter">
+										<REF-SIGNAL-NAME xsi:type="string">XCP_1_B_rlxred_msg</REF-SIGNAL-NAME>
+									</DVALUE>
+								</PARAMETER>
+							</SIGNAL-BINDING>
+							<PARAM-ASSIGNMENTS xsi:type="trcpParameterAssignments">
+								<PARAM-ASSIGNMENTS>
+									<ASSIGNMENT dkey="duration">
+										<DVALUE format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">1</VALUE>
+										</DVALUE>
+									</ASSIGNMENT>
+									<ASSIGNMENT dkey="startTime">
+										<DVALUE format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">0</VALUE>
+										</DVALUE>
+									</ASSIGNMENT>
+								</PARAM-ASSIGNMENTS>
+							</PARAM-ASSIGNMENTS>
+							<REPORT-CONFIG xsi:type="trcpReportConfig">
+								<MAX-SPOTS xsi:type="integer">100</MAX-SPOTS>
+								<MIN-DELTA xsi:type="float">0.0</MIN-DELTA>
+							</REPORT-CONFIG>
+							<PROTOTYPE-ID xsi:type="string">Ricardo\ArithmeticMean_v2</PROTOTYPE-ID>
+						</ANALYSISITEM>
+						<ANALYSISITEM format-rev="2" poolRev="6" uuid="40f3ad363b5411ea9277bc9a78563412" xsi:type="referencingTraceStep">
+							<NAME xsi:type="string">CalculateAverage</NAME>
+							<SIGNAL-BINDING xsi:type="signalBinding">
+								<PARAMETER dkey="ArithmeticMean">
+									<DVALUE format-rev="1" xsi:type="signalParameter">
+										<REF-SIGNAL-NAME xsi:type="string">XCP_1_AccPed_tqMapBasd_avg</REF-SIGNAL-NAME>
+									</DVALUE>
+								</PARAMETER>
+								<PARAMETER dkey="Signal">
+									<DVALUE format-rev="1" xsi:type="signalParameter">
+										<REF-SIGNAL-NAME xsi:type="string">XCP_1_AccPed_tqMapBasd</REF-SIGNAL-NAME>
+									</DVALUE>
+								</PARAMETER>
+							</SIGNAL-BINDING>
+							<PARAM-ASSIGNMENTS xsi:type="trcpParameterAssignments">
+								<PARAM-ASSIGNMENTS>
+									<ASSIGNMENT dkey="duration">
+										<DVALUE format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">1</VALUE>
+										</DVALUE>
+									</ASSIGNMENT>
+									<ASSIGNMENT dkey="startTime">
+										<DVALUE format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">0</VALUE>
+										</DVALUE>
+									</ASSIGNMENT>
+								</PARAM-ASSIGNMENTS>
+							</PARAM-ASSIGNMENTS>
+							<REPORT-CONFIG xsi:type="trcpReportConfig">
+								<MAX-SPOTS xsi:type="integer">100</MAX-SPOTS>
+								<MIN-DELTA xsi:type="float">0.0</MIN-DELTA>
+							</REPORT-CONFIG>
+							<PROTOTYPE-ID xsi:type="string">Ricardo\ArithmeticMean_v2</PROTOTYPE-ID>
+						</ANALYSISITEM>
+						<ANALYSISITEM format-rev="2" poolRev="6" uuid="40f3fb543b5411eaa1debc9a78563412" xsi:type="referencingTraceStep">
+							<NAME xsi:type="string">CalculateAverage</NAME>
+							<SIGNAL-BINDING xsi:type="signalBinding">
+								<PARAMETER dkey="ArithmeticMean">
+									<DVALUE format-rev="1" xsi:type="signalParameter">
+										<REF-SIGNAL-NAME xsi:type="string">XCP_1_APP_r_avg</REF-SIGNAL-NAME>
+									</DVALUE>
+								</PARAMETER>
+								<PARAMETER dkey="Signal">
+									<DVALUE format-rev="1" xsi:type="signalParameter">
+										<REF-SIGNAL-NAME xsi:type="string">XCP_1_APP_r</REF-SIGNAL-NAME>
+									</DVALUE>
+								</PARAMETER>
+							</SIGNAL-BINDING>
+							<PARAM-ASSIGNMENTS xsi:type="trcpParameterAssignments">
+								<PARAM-ASSIGNMENTS>
+									<ASSIGNMENT dkey="duration">
+										<DVALUE format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">1</VALUE>
+										</DVALUE>
+									</ASSIGNMENT>
+									<ASSIGNMENT dkey="startTime">
+										<DVALUE format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">0</VALUE>
+										</DVALUE>
+									</ASSIGNMENT>
+								</PARAM-ASSIGNMENTS>
+							</PARAM-ASSIGNMENTS>
+							<REPORT-CONFIG xsi:type="trcpReportConfig">
+								<MAX-SPOTS xsi:type="integer">100</MAX-SPOTS>
+								<MIN-DELTA xsi:type="float">0.0</MIN-DELTA>
+							</REPORT-CONFIG>
+							<PROTOTYPE-ID xsi:type="string">Ricardo\ArithmeticMean_v2</PROTOTYPE-ID>
+						</ANALYSISITEM>
+						<ANALYSISITEM format-rev="2" poolRev="6" uuid="40f4746e3b5411eabc6bbc9a78563412" xsi:type="referencingTraceStep">
+							<NAME xsi:type="string">CalculateAverage</NAME>
+							<SIGNAL-BINDING xsi:type="signalBinding">
+								<PARAMETER dkey="ArithmeticMean">
+									<DVALUE format-rev="1" xsi:type="signalParameter">
+										<REF-SIGNAL-NAME xsi:type="string">XCP_1_ActMod_trqInr_avg</REF-SIGNAL-NAME>
+									</DVALUE>
+								</PARAMETER>
+								<PARAMETER dkey="Signal">
+									<DVALUE format-rev="1" xsi:type="signalParameter">
+										<REF-SIGNAL-NAME xsi:type="string">XCP_1_ActMod_trqInr</REF-SIGNAL-NAME>
+									</DVALUE>
+								</PARAMETER>
+							</SIGNAL-BINDING>
+							<PARAM-ASSIGNMENTS xsi:type="trcpParameterAssignments">
+								<PARAM-ASSIGNMENTS>
+									<ASSIGNMENT dkey="duration">
+										<DVALUE format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">1</VALUE>
+										</DVALUE>
+									</ASSIGNMENT>
+									<ASSIGNMENT dkey="startTime">
+										<DVALUE format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">0</VALUE>
+										</DVALUE>
+									</ASSIGNMENT>
+								</PARAM-ASSIGNMENTS>
+							</PARAM-ASSIGNMENTS>
+							<REPORT-CONFIG xsi:type="trcpReportConfig">
+								<MAX-SPOTS xsi:type="integer">100</MAX-SPOTS>
+								<MIN-DELTA xsi:type="float">0.0</MIN-DELTA>
+							</REPORT-CONFIG>
+							<PROTOTYPE-ID xsi:type="string">Ricardo\ArithmeticMean_v2</PROTOTYPE-ID>
+						</ANALYSISITEM>
+						<ANALYSISITEM format-rev="2" poolRev="6" uuid="40f4bea63b5411eaa237bc9a78563412" xsi:type="referencingTraceStep">
+							<NAME xsi:type="string">CalculateAverage</NAME>
+							<SIGNAL-BINDING xsi:type="signalBinding">
+								<PARAMETER dkey="ArithmeticMean">
+									<DVALUE format-rev="1" xsi:type="signalParameter">
+										<REF-SIGNAL-NAME xsi:type="string">XCP_1_AccPed_trqDes_avg</REF-SIGNAL-NAME>
+									</DVALUE>
+								</PARAMETER>
+								<PARAMETER dkey="Signal">
+									<DVALUE format-rev="1" xsi:type="signalParameter">
+										<REF-SIGNAL-NAME xsi:type="string">XCP_1_AccPed_trqDes</REF-SIGNAL-NAME>
+									</DVALUE>
+								</PARAMETER>
+							</SIGNAL-BINDING>
+							<PARAM-ASSIGNMENTS xsi:type="trcpParameterAssignments">
+								<PARAM-ASSIGNMENTS>
+									<ASSIGNMENT dkey="duration">
+										<DVALUE format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">1</VALUE>
+										</DVALUE>
+									</ASSIGNMENT>
+									<ASSIGNMENT dkey="startTime">
+										<DVALUE format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">0</VALUE>
+										</DVALUE>
+									</ASSIGNMENT>
+								</PARAM-ASSIGNMENTS>
+							</PARAM-ASSIGNMENTS>
+							<REPORT-CONFIG xsi:type="trcpReportConfig">
+								<MAX-SPOTS xsi:type="integer">100</MAX-SPOTS>
+								<MIN-DELTA xsi:type="float">0.0</MIN-DELTA>
+							</REPORT-CONFIG>
+							<PROTOTYPE-ID xsi:type="string">Ricardo\ArithmeticMean_v2</PROTOTYPE-ID>
+						</ANALYSISITEM>
+						<ANALYSISITEM format-rev="2" poolRev="6" uuid="40f50cc43b5411eaaa43bc9a78563412" xsi:type="referencingTraceStep">
+							<NAME xsi:type="string">CalculateAverage</NAME>
+							<SIGNAL-BINDING xsi:type="signalBinding">
+								<PARAMETER dkey="ArithmeticMean">
+									<DVALUE format-rev="1" xsi:type="signalParameter">
+										<REF-SIGNAL-NAME xsi:type="string">XCP_1_B_emxldr_msg_avg</REF-SIGNAL-NAME>
+									</DVALUE>
+								</PARAMETER>
+								<PARAMETER dkey="Signal">
+									<DVALUE format-rev="1" xsi:type="signalParameter">
+										<REF-SIGNAL-NAME xsi:type="string">XCP_1_B_emxldr_msg</REF-SIGNAL-NAME>
+									</DVALUE>
+								</PARAMETER>
+							</SIGNAL-BINDING>
+							<PARAM-ASSIGNMENTS xsi:type="trcpParameterAssignments">
+								<PARAM-ASSIGNMENTS>
+									<ASSIGNMENT dkey="duration">
+										<DVALUE format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">1</VALUE>
+										</DVALUE>
+									</ASSIGNMENT>
+									<ASSIGNMENT dkey="startTime">
+										<DVALUE format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">0</VALUE>
+										</DVALUE>
+									</ASSIGNMENT>
+								</PARAM-ASSIGNMENTS>
+							</PARAM-ASSIGNMENTS>
+							<REPORT-CONFIG xsi:type="trcpReportConfig">
+								<MAX-SPOTS xsi:type="integer">100</MAX-SPOTS>
+								<MIN-DELTA xsi:type="float">0.0</MIN-DELTA>
+							</REPORT-CONFIG>
+							<PROTOTYPE-ID xsi:type="string">Ricardo\ArithmeticMean_v2</PROTOTYPE-ID>
+						</ANALYSISITEM>
+						<ANALYSISITEM format-rev="2" poolRev="6" uuid="40f55de53b5411ea9296bc9a78563412" xsi:type="referencingTraceStep">
+							<NAME xsi:type="string">CalculateAverage</NAME>
+							<SIGNAL-BINDING xsi:type="signalBinding">
+								<PARAMETER dkey="ArithmeticMean">
+									<DVALUE format-rev="1" xsi:type="signalParameter">
+										<REF-SIGNAL-NAME xsi:type="string">XCP_1_B_ldr_msg_avg</REF-SIGNAL-NAME>
+									</DVALUE>
+								</PARAMETER>
+								<PARAMETER dkey="Signal">
+									<DVALUE format-rev="1" xsi:type="signalParameter">
+										<REF-SIGNAL-NAME xsi:type="string">XCP_1_B_ldr_msg</REF-SIGNAL-NAME>
+									</DVALUE>
+								</PARAMETER>
+							</SIGNAL-BINDING>
+							<PARAM-ASSIGNMENTS xsi:type="trcpParameterAssignments">
+								<PARAM-ASSIGNMENTS>
+									<ASSIGNMENT dkey="duration">
+										<DVALUE format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">1</VALUE>
+										</DVALUE>
+									</ASSIGNMENT>
+									<ASSIGNMENT dkey="startTime">
+										<DVALUE format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">0</VALUE>
+										</DVALUE>
+									</ASSIGNMENT>
+								</PARAM-ASSIGNMENTS>
+							</PARAM-ASSIGNMENTS>
+							<REPORT-CONFIG xsi:type="trcpReportConfig">
+								<MAX-SPOTS xsi:type="integer">100</MAX-SPOTS>
+								<MIN-DELTA xsi:type="float">0.0</MIN-DELTA>
+							</REPORT-CONFIG>
+							<PROTOTYPE-ID xsi:type="string">Ricardo\ArithmeticMean_v2</PROTOTYPE-ID>
+						</ANALYSISITEM>
+						<ANALYSISITEM format-rev="2" poolRev="6" uuid="40f5a8fa3b5411ea8e05bc9a78563412" xsi:type="referencingTraceStep">
+							<NAME xsi:type="string">CalculateAverage</NAME>
+							<SIGNAL-BINDING xsi:type="signalBinding">
+								<PARAMETER dkey="ArithmeticMean">
+									<DVALUE format-rev="1" xsi:type="signalParameter">
+										<REF-SIGNAL-NAME xsi:type="string">XCP_1_ChrCtl_ratDesPosnThrVlvB1_avg</REF-SIGNAL-NAME>
+									</DVALUE>
+								</PARAMETER>
+								<PARAMETER dkey="Signal">
+									<DVALUE format-rev="1" xsi:type="signalParameter">
+										<REF-SIGNAL-NAME xsi:type="string">XCP_1_ChrCtl_ratDesPosnThrVlvB1</REF-SIGNAL-NAME>
+									</DVALUE>
+								</PARAMETER>
+							</SIGNAL-BINDING>
+							<PARAM-ASSIGNMENTS xsi:type="trcpParameterAssignments">
+								<PARAM-ASSIGNMENTS>
+									<ASSIGNMENT dkey="duration">
+										<DVALUE format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">1</VALUE>
+										</DVALUE>
+									</ASSIGNMENT>
+									<ASSIGNMENT dkey="startTime">
+										<DVALUE format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">0</VALUE>
+										</DVALUE>
+									</ASSIGNMENT>
+								</PARAM-ASSIGNMENTS>
+							</PARAM-ASSIGNMENTS>
+							<REPORT-CONFIG xsi:type="trcpReportConfig">
+								<MAX-SPOTS xsi:type="integer">100</MAX-SPOTS>
+								<MIN-DELTA xsi:type="float">0.0</MIN-DELTA>
+							</REPORT-CONFIG>
+							<PROTOTYPE-ID xsi:type="string">Ricardo\ArithmeticMean_v2</PROTOTYPE-ID>
+						</ANALYSISITEM>
+						<ANALYSISITEM format-rev="2" poolRev="6" uuid="40f5f7183b5411ea8c7cbc9a78563412" xsi:type="referencingTraceStep">
+							<NAME xsi:type="string">CalculateAverage</NAME>
+							<SIGNAL-BINDING xsi:type="signalBinding">
+								<PARAMETER dkey="ArithmeticMean">
+									<DVALUE format-rev="1" xsi:type="signalParameter">
+										<REF-SIGNAL-NAME xsi:type="string">XCP_1_AccPed_rTrq_avg</REF-SIGNAL-NAME>
+									</DVALUE>
+								</PARAMETER>
+								<PARAMETER dkey="Signal">
+									<DVALUE format-rev="1" xsi:type="signalParameter">
+										<REF-SIGNAL-NAME xsi:type="string">XCP_1_AccPed_rTrq</REF-SIGNAL-NAME>
+									</DVALUE>
+								</PARAMETER>
+							</SIGNAL-BINDING>
+							<PARAM-ASSIGNMENTS xsi:type="trcpParameterAssignments">
+								<PARAM-ASSIGNMENTS>
+									<ASSIGNMENT dkey="duration">
+										<DVALUE format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">1</VALUE>
+										</DVALUE>
+									</ASSIGNMENT>
+									<ASSIGNMENT dkey="startTime">
+										<DVALUE format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">0</VALUE>
+										</DVALUE>
+									</ASSIGNMENT>
+								</PARAM-ASSIGNMENTS>
+							</PARAM-ASSIGNMENTS>
+							<REPORT-CONFIG xsi:type="trcpReportConfig">
+								<MAX-SPOTS xsi:type="integer">100</MAX-SPOTS>
+								<MIN-DELTA xsi:type="float">0.0</MIN-DELTA>
+							</REPORT-CONFIG>
+							<PROTOTYPE-ID xsi:type="string">Ricardo\ArithmeticMean_v2</PROTOTYPE-ID>
+						</ANALYSISITEM>
+						<ANALYSISITEM format-rev="2" poolRev="6" uuid="40f645283b5411eabbc3bc9a78563412" xsi:type="referencingTraceStep">
+							<NAME xsi:type="string">CalculateAverage</NAME>
+							<SIGNAL-BINDING xsi:type="signalBinding">
+								<PARAMETER dkey="ArithmeticMean">
+									<DVALUE format-rev="1" xsi:type="signalParameter">
+										<REF-SIGNAL-NAME xsi:type="string">Throttle_Pct_factor_In1_avg</REF-SIGNAL-NAME>
+									</DVALUE>
+								</PARAMETER>
+								<PARAMETER dkey="Signal">
+									<DVALUE format-rev="1" xsi:type="signalParameter">
+										<REF-SIGNAL-NAME xsi:type="string">Throttle_Pct_factor_In1</REF-SIGNAL-NAME>
+									</DVALUE>
+								</PARAMETER>
+							</SIGNAL-BINDING>
+							<PARAM-ASSIGNMENTS xsi:type="trcpParameterAssignments">
+								<PARAM-ASSIGNMENTS>
+									<ASSIGNMENT dkey="duration">
+										<DVALUE format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">1</VALUE>
+										</DVALUE>
+									</ASSIGNMENT>
+									<ASSIGNMENT dkey="startTime">
+										<DVALUE format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">0</VALUE>
+										</DVALUE>
+									</ASSIGNMENT>
+								</PARAM-ASSIGNMENTS>
+							</PARAM-ASSIGNMENTS>
+							<REPORT-CONFIG xsi:type="trcpReportConfig">
+								<MAX-SPOTS xsi:type="integer">100</MAX-SPOTS>
+								<MIN-DELTA xsi:type="float">0.0</MIN-DELTA>
+							</REPORT-CONFIG>
+							<PROTOTYPE-ID xsi:type="string">Ricardo\ArithmeticMean_v2</PROTOTYPE-ID>
+						</ANALYSISITEM>
+						<ANALYSISITEM format-rev="2" poolRev="6" uuid="40f693583b5411eaa033bc9a78563412" xsi:type="referencingTraceStep">
+							<NAME xsi:type="string">CalculateAverage</NAME>
+							<SIGNAL-BINDING xsi:type="signalBinding">
+								<PARAMETER dkey="ArithmeticMean">
+									<DVALUE format-rev="1" xsi:type="signalParameter">
+										<REF-SIGNAL-NAME xsi:type="string">Throttle_Pct_factor_Out1_avg</REF-SIGNAL-NAME>
+									</DVALUE>
+								</PARAMETER>
+								<PARAMETER dkey="Signal">
+									<DVALUE format-rev="1" xsi:type="signalParameter">
+										<REF-SIGNAL-NAME xsi:type="string">Throttle_Pct_factor_Out1</REF-SIGNAL-NAME>
+									</DVALUE>
+								</PARAMETER>
+							</SIGNAL-BINDING>
+							<PARAM-ASSIGNMENTS xsi:type="trcpParameterAssignments">
+								<PARAM-ASSIGNMENTS>
+									<ASSIGNMENT dkey="duration">
+										<DVALUE format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">1</VALUE>
+										</DVALUE>
+									</ASSIGNMENT>
+									<ASSIGNMENT dkey="startTime">
+										<DVALUE format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">0</VALUE>
+										</DVALUE>
+									</ASSIGNMENT>
+								</PARAM-ASSIGNMENTS>
+							</PARAM-ASSIGNMENTS>
+							<REPORT-CONFIG xsi:type="trcpReportConfig">
+								<MAX-SPOTS xsi:type="integer">100</MAX-SPOTS>
+								<MIN-DELTA xsi:type="float">0.0</MIN-DELTA>
+							</REPORT-CONFIG>
+							<PROTOTYPE-ID xsi:type="string">Ricardo\ArithmeticMean_v2</PROTOTYPE-ID>
+						</ANALYSISITEM>
+						<ANALYSISITEM format-rev="2" poolRev="6" uuid="40f6e1823b5411ea957dbc9a78563412" xsi:type="referencingTraceStep">
+							<NAME xsi:type="string">CalculateAverage</NAME>
+							<SIGNAL-BINDING xsi:type="signalBinding">
+								<PARAMETER dkey="ArithmeticMean">
+									<DVALUE format-rev="1" xsi:type="signalParameter">
+										<REF-SIGNAL-NAME xsi:type="string">PhysicalECU_wdk_w_msg_avg</REF-SIGNAL-NAME>
+									</DVALUE>
+								</PARAMETER>
+								<PARAMETER dkey="Signal">
+									<DVALUE format-rev="1" xsi:type="signalParameter">
+										<REF-SIGNAL-NAME xsi:type="string">PhysicalECU_wdk_w_msg</REF-SIGNAL-NAME>
+									</DVALUE>
+								</PARAMETER>
+							</SIGNAL-BINDING>
+							<PARAM-ASSIGNMENTS xsi:type="trcpParameterAssignments">
+								<PARAM-ASSIGNMENTS>
+									<ASSIGNMENT dkey="duration">
+										<DVALUE format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">1</VALUE>
+										</DVALUE>
+									</ASSIGNMENT>
+									<ASSIGNMENT dkey="startTime">
+										<DVALUE format-rev="1" xsi:type="valueBaseExpression">
+											<VALUE xsi:type="integer">0</VALUE>
+										</DVALUE>
+									</ASSIGNMENT>
+								</PARAM-ASSIGNMENTS>
+							</PARAM-ASSIGNMENTS>
+							<REPORT-CONFIG xsi:type="trcpReportConfig">
+								<MAX-SPOTS xsi:type="integer">100</MAX-SPOTS>
+								<MIN-DELTA xsi:type="float">0.0</MIN-DELTA>
+							</REPORT-CONFIG>
+							<PROTOTYPE-ID xsi:type="string">Ricardo\ArithmeticMean_v2</PROTOTYPE-ID>
+						</ANALYSISITEM>
+						<ANALYSISITEM format-rev="2" uuid="40f274a93b5411ea891fbc9a78563412" xsi:type="eventStore">
+							<NAME xsi:type="string">CalculateAverage</NAME>
+							<RECORDED-GENERIC-SIGNALS>
+								<GENERIC-SIGNAL xsi:type="string">XCP_1_ActMod_trqClth_avg</GENERIC-SIGNAL>
+								<GENERIC-SIGNAL xsi:type="string">XCP_1_B_rlxexldr_msg_avg</GENERIC-SIGNAL>
+								<GENERIC-SIGNAL xsi:type="string">XCP_1_B_rlxred_msg_avg</GENERIC-SIGNAL>
+								<GENERIC-SIGNAL xsi:type="string">XCP_1_AccPed_tqMapBasd_avg</GENERIC-SIGNAL>
+								<GENERIC-SIGNAL xsi:type="string">XCP_1_APP_r_avg</GENERIC-SIGNAL>
+								<GENERIC-SIGNAL xsi:type="string">XCP_1_ActMod_trqInr_avg</GENERIC-SIGNAL>
+								<GENERIC-SIGNAL xsi:type="string">XCP_1_AccPed_trqDes_avg</GENERIC-SIGNAL>
+								<GENERIC-SIGNAL xsi:type="string">XCP_1_B_emxldr_msg_avg</GENERIC-SIGNAL>
+								<GENERIC-SIGNAL xsi:type="string">XCP_1_B_ldr_msg_avg</GENERIC-SIGNAL>
+								<GENERIC-SIGNAL xsi:type="string">XCP_1_ChrCtl_ratDesPosnThrVlvB1_avg</GENERIC-SIGNAL>
+								<GENERIC-SIGNAL xsi:type="string">XCP_1_AccPed_rTrq_avg</GENERIC-SIGNAL>
+								<GENERIC-SIGNAL xsi:type="string">Throttle_Pct_factor_In1_avg</GENERIC-SIGNAL>
+								<GENERIC-SIGNAL xsi:type="string">Throttle_Pct_factor_Out1_avg</GENERIC-SIGNAL>
+								<GENERIC-SIGNAL xsi:type="string">PhysicalECU_wdk_w_msg_avg</GENERIC-SIGNAL>
+							</RECORDED-GENERIC-SIGNALS>
+							<USE-REAL-SIGNAL-NAMES xsi:type="boolean">False</USE-REAL-SIGNAL-NAMES>
+							<FILE-NAME-PREFIX format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="string">CalculateAverage</VALUE>
+							</FILE-NAME-PREFIX>
+							<STORE-TYPE xsi:type="string">CSV</STORE-TYPE>
+						</ANALYSISITEM>
+					</ANALYSISITEM>
+					<START-CONDITION xsi:type="string">0 &lt; Time() + PhysicalECU_wdk_w_msg*0 &lt; 4</START-CONDITION>
+					<REPORT-LIMIT-TO-MAX-NUMBER xsi:type="boolean">True</REPORT-LIMIT-TO-MAX-NUMBER>
+					<REPORT-MAX-NUMBER format-rev="1" xsi:type="valueBaseExpression">
+						<VALUE xsi:type="integer">10</VALUE>
+					</REPORT-MAX-NUMBER>
+				</ANALYSISITEM>
+			</ANALYSISITEM>
+			<VIRTUAL-SIGNALS-MANAGER xsi:type="virtualSignalsManager">
+				<VIRTUAL-SIGNALS>
+					<VIRTUAL-SIGNAL uuid="40f274aa3b5411ea89d5bc9a78563412" xsi:type="virtualSessionSignal">
+						<NAME xsi:type="string">XCP_1_ActMod_trqClth</NAME>
+						<SIGNAL-FOR-ANALYSIS xsi:type="recordingSignalForAnalysis">
+							<KEY xsi:type="string">XCP:1/ActMod_trqClth</KEY>
+							<SOURCE-TYPE xsi:type="string">RECORDING-GROUP</SOURCE-TYPE>
+							<SOURCE-REF xsi:type="string">b187d4e83a9611eab54abc9a78563412</SOURCE-REF>
+						</SIGNAL-FOR-ANALYSIS>
+						<EVENT-TYPE xsi:type="string">PHY</EVENT-TYPE>
+					</VIRTUAL-SIGNAL>
+					<VIRTUAL-SIGNAL uuid="40f274ab3b5411ea9e0ebc9a78563412" xsi:type="virtualSessionSignal">
+						<NAME xsi:type="string">XCP_1_ActMod_trqClth_avg</NAME>
+						<EVENT-TYPE xsi:type="string">PHY</EVENT-TYPE>
+					</VIRTUAL-SIGNAL>
+					<VIRTUAL-SIGNAL uuid="40f2e9d43b5411eaae3ebc9a78563412" xsi:type="virtualSessionSignal">
+						<NAME xsi:type="string">XCP_1_B_rlxexldr_msg</NAME>
+						<SIGNAL-FOR-ANALYSIS xsi:type="recordingSignalForAnalysis">
+							<KEY xsi:type="string">XCP:1/B_rlxexldr_msg</KEY>
+							<SOURCE-TYPE xsi:type="string">RECORDING-GROUP</SOURCE-TYPE>
+							<SOURCE-REF xsi:type="string">b187d4e83a9611eab54abc9a78563412</SOURCE-REF>
+						</SIGNAL-FOR-ANALYSIS>
+						<EVENT-TYPE xsi:type="string">PHY</EVENT-TYPE>
+					</VIRTUAL-SIGNAL>
+					<VIRTUAL-SIGNAL uuid="40f2e9d53b5411eaa314bc9a78563412" xsi:type="virtualSessionSignal">
+						<NAME xsi:type="string">XCP_1_B_rlxexldr_msg_avg</NAME>
+						<EVENT-TYPE xsi:type="string">PHY</EVENT-TYPE>
+					</VIRTUAL-SIGNAL>
+					<VIRTUAL-SIGNAL uuid="40f337ea3b5411eaaf64bc9a78563412" xsi:type="virtualSessionSignal">
+						<NAME xsi:type="string">XCP_1_B_rlxred_msg</NAME>
+						<SIGNAL-FOR-ANALYSIS xsi:type="recordingSignalForAnalysis">
+							<KEY xsi:type="string">XCP:1/B_rlxred_msg</KEY>
+							<SOURCE-TYPE xsi:type="string">RECORDING-GROUP</SOURCE-TYPE>
+							<SOURCE-REF xsi:type="string">b187d4e83a9611eab54abc9a78563412</SOURCE-REF>
+						</SIGNAL-FOR-ANALYSIS>
+						<EVENT-TYPE xsi:type="string">PHY</EVENT-TYPE>
+					</VIRTUAL-SIGNAL>
+					<VIRTUAL-SIGNAL uuid="40f337eb3b5411ea92afbc9a78563412" xsi:type="virtualSessionSignal">
+						<NAME xsi:type="string">XCP_1_B_rlxred_msg_avg</NAME>
+						<EVENT-TYPE xsi:type="string">PHY</EVENT-TYPE>
+					</VIRTUAL-SIGNAL>
+					<VIRTUAL-SIGNAL uuid="40f386163b5411eaaffabc9a78563412" xsi:type="virtualSessionSignal">
+						<NAME xsi:type="string">XCP_1_AccPed_tqMapBasd</NAME>
+						<SIGNAL-FOR-ANALYSIS xsi:type="recordingSignalForAnalysis">
+							<KEY xsi:type="string">XCP:1/AccPed_tqMapBasd</KEY>
+							<SOURCE-TYPE xsi:type="string">RECORDING-GROUP</SOURCE-TYPE>
+							<SOURCE-REF xsi:type="string">b187d4e83a9611eab54abc9a78563412</SOURCE-REF>
+						</SIGNAL-FOR-ANALYSIS>
+						<EVENT-TYPE xsi:type="string">PHY</EVENT-TYPE>
+					</VIRTUAL-SIGNAL>
+					<VIRTUAL-SIGNAL uuid="40f386173b5411ea8c6dbc9a78563412" xsi:type="virtualSessionSignal">
+						<NAME xsi:type="string">XCP_1_AccPed_tqMapBasd_avg</NAME>
+						<EVENT-TYPE xsi:type="string">PHY</EVENT-TYPE>
+					</VIRTUAL-SIGNAL>
+					<VIRTUAL-SIGNAL uuid="40f3fb523b5411eaadcabc9a78563412" xsi:type="virtualSessionSignal">
+						<NAME xsi:type="string">XCP_1_APP_r</NAME>
+						<SIGNAL-FOR-ANALYSIS xsi:type="recordingSignalForAnalysis">
+							<KEY xsi:type="string">XCP:1/APP_r</KEY>
+							<SOURCE-TYPE xsi:type="string">RECORDING-GROUP</SOURCE-TYPE>
+							<SOURCE-REF xsi:type="string">b187d4e83a9611eab54abc9a78563412</SOURCE-REF>
+						</SIGNAL-FOR-ANALYSIS>
+						<EVENT-TYPE xsi:type="string">PHY</EVENT-TYPE>
+					</VIRTUAL-SIGNAL>
+					<VIRTUAL-SIGNAL uuid="40f3fb533b5411ea9ed3bc9a78563412" xsi:type="virtualSessionSignal">
+						<NAME xsi:type="string">XCP_1_APP_r_avg</NAME>
+						<EVENT-TYPE xsi:type="string">PHY</EVENT-TYPE>
+					</VIRTUAL-SIGNAL>
+					<VIRTUAL-SIGNAL uuid="40f449783b5411eabaddbc9a78563412" xsi:type="virtualSessionSignal">
+						<NAME xsi:type="string">XCP_1_ActMod_trqInr</NAME>
+						<SIGNAL-FOR-ANALYSIS xsi:type="recordingSignalForAnalysis">
+							<KEY xsi:type="string">XCP:1/ActMod_trqInr</KEY>
+							<SOURCE-TYPE xsi:type="string">RECORDING-GROUP</SOURCE-TYPE>
+							<SOURCE-REF xsi:type="string">b187d4e83a9611eab54abc9a78563412</SOURCE-REF>
+						</SIGNAL-FOR-ANALYSIS>
+						<EVENT-TYPE xsi:type="string">PHY</EVENT-TYPE>
+					</VIRTUAL-SIGNAL>
+					<VIRTUAL-SIGNAL uuid="40f449793b5411ea998dbc9a78563412" xsi:type="virtualSessionSignal">
+						<NAME xsi:type="string">XCP_1_ActMod_trqInr_avg</NAME>
+						<EVENT-TYPE xsi:type="string">PHY</EVENT-TYPE>
+					</VIRTUAL-SIGNAL>
+					<VIRTUAL-SIGNAL uuid="40f4bea43b5411ea91a2bc9a78563412" xsi:type="virtualSessionSignal">
+						<NAME xsi:type="string">XCP_1_AccPed_trqDes</NAME>
+						<SIGNAL-FOR-ANALYSIS xsi:type="recordingSignalForAnalysis">
+							<KEY xsi:type="string">XCP:1/AccPed_trqDes</KEY>
+							<SOURCE-TYPE xsi:type="string">RECORDING-GROUP</SOURCE-TYPE>
+							<SOURCE-REF xsi:type="string">b187d4e83a9611eab54abc9a78563412</SOURCE-REF>
+						</SIGNAL-FOR-ANALYSIS>
+						<EVENT-TYPE xsi:type="string">PHY</EVENT-TYPE>
+					</VIRTUAL-SIGNAL>
+					<VIRTUAL-SIGNAL uuid="40f4bea53b5411ea8241bc9a78563412" xsi:type="virtualSessionSignal">
+						<NAME xsi:type="string">XCP_1_AccPed_trqDes_avg</NAME>
+						<EVENT-TYPE xsi:type="string">PHY</EVENT-TYPE>
+					</VIRTUAL-SIGNAL>
+					<VIRTUAL-SIGNAL uuid="40f50cc23b5411eaa1d2bc9a78563412" xsi:type="virtualSessionSignal">
+						<NAME xsi:type="string">XCP_1_B_emxldr_msg</NAME>
+						<SIGNAL-FOR-ANALYSIS xsi:type="recordingSignalForAnalysis">
+							<KEY xsi:type="string">XCP:1/B_emxldr_msg</KEY>
+							<SOURCE-TYPE xsi:type="string">RECORDING-GROUP</SOURCE-TYPE>
+							<SOURCE-REF xsi:type="string">b187d4e83a9611eab54abc9a78563412</SOURCE-REF>
+						</SIGNAL-FOR-ANALYSIS>
+						<EVENT-TYPE xsi:type="string">PHY</EVENT-TYPE>
+					</VIRTUAL-SIGNAL>
+					<VIRTUAL-SIGNAL uuid="40f50cc33b5411ea829abc9a78563412" xsi:type="virtualSessionSignal">
+						<NAME xsi:type="string">XCP_1_B_emxldr_msg_avg</NAME>
+						<EVENT-TYPE xsi:type="string">PHY</EVENT-TYPE>
+					</VIRTUAL-SIGNAL>
+					<VIRTUAL-SIGNAL uuid="40f533c63b5411eabc0fbc9a78563412" xsi:type="virtualSessionSignal">
+						<NAME xsi:type="string">XCP_1_B_ldr_msg</NAME>
+						<SIGNAL-FOR-ANALYSIS xsi:type="recordingSignalForAnalysis">
+							<KEY xsi:type="string">XCP:1/B_ldr_msg</KEY>
+							<SOURCE-TYPE xsi:type="string">RECORDING-GROUP</SOURCE-TYPE>
+							<SOURCE-REF xsi:type="string">b187d4e83a9611eab54abc9a78563412</SOURCE-REF>
+						</SIGNAL-FOR-ANALYSIS>
+						<EVENT-TYPE xsi:type="string">PHY</EVENT-TYPE>
+					</VIRTUAL-SIGNAL>
+					<VIRTUAL-SIGNAL uuid="40f55de43b5411eaa0b7bc9a78563412" xsi:type="virtualSessionSignal">
+						<NAME xsi:type="string">XCP_1_B_ldr_msg_avg</NAME>
+						<EVENT-TYPE xsi:type="string">PHY</EVENT-TYPE>
+					</VIRTUAL-SIGNAL>
+					<VIRTUAL-SIGNAL uuid="40f5a8f83b5411ea8f88bc9a78563412" xsi:type="virtualSessionSignal">
+						<NAME xsi:type="string">XCP_1_ChrCtl_ratDesPosnThrVlvB1</NAME>
+						<SIGNAL-FOR-ANALYSIS xsi:type="recordingSignalForAnalysis">
+							<KEY xsi:type="string">XCP:1/ChrCtl_ratDesPosnThrVlvB1</KEY>
+							<SOURCE-TYPE xsi:type="string">RECORDING-GROUP</SOURCE-TYPE>
+							<SOURCE-REF xsi:type="string">b187d4e83a9611eab54abc9a78563412</SOURCE-REF>
+						</SIGNAL-FOR-ANALYSIS>
+						<EVENT-TYPE xsi:type="string">PHY</EVENT-TYPE>
+					</VIRTUAL-SIGNAL>
+					<VIRTUAL-SIGNAL uuid="40f5a8f93b5411ea876dbc9a78563412" xsi:type="virtualSessionSignal">
+						<NAME xsi:type="string">XCP_1_ChrCtl_ratDesPosnThrVlvB1_avg</NAME>
+						<EVENT-TYPE xsi:type="string">PHY</EVENT-TYPE>
+					</VIRTUAL-SIGNAL>
+					<VIRTUAL-SIGNAL uuid="40f5f7163b5411eaad05bc9a78563412" xsi:type="virtualSessionSignal">
+						<NAME xsi:type="string">XCP_1_AccPed_rTrq</NAME>
+						<SIGNAL-FOR-ANALYSIS xsi:type="recordingSignalForAnalysis">
+							<KEY xsi:type="string">XCP:1/AccPed_rTrq</KEY>
+							<SOURCE-TYPE xsi:type="string">RECORDING-GROUP</SOURCE-TYPE>
+							<SOURCE-REF xsi:type="string">b187d4e83a9611eab54abc9a78563412</SOURCE-REF>
+						</SIGNAL-FOR-ANALYSIS>
+						<EVENT-TYPE xsi:type="string">PHY</EVENT-TYPE>
+					</VIRTUAL-SIGNAL>
+					<VIRTUAL-SIGNAL uuid="40f5f7173b5411ea94e2bc9a78563412" xsi:type="virtualSessionSignal">
+						<NAME xsi:type="string">XCP_1_AccPed_rTrq_avg</NAME>
+						<EVENT-TYPE xsi:type="string">PHY</EVENT-TYPE>
+					</VIRTUAL-SIGNAL>
+					<VIRTUAL-SIGNAL uuid="40f645263b5411ea9114bc9a78563412" xsi:type="virtualSessionSignal">
+						<NAME xsi:type="string">Throttle_Pct_factor_In1</NAME>
+						<SIGNAL-FOR-ANALYSIS xsi:type="recordingSignalForAnalysis">
+							<KEY xsi:type="string">Throttle_Pct_factor_In1</KEY>
+							<SOURCE-TYPE xsi:type="string">RECORDING-GROUP</SOURCE-TYPE>
+							<SOURCE-REF xsi:type="string">bb347c863a9611ea9927bc9a78563412</SOURCE-REF>
+						</SIGNAL-FOR-ANALYSIS>
+						<EVENT-TYPE xsi:type="string">PHY</EVENT-TYPE>
+					</VIRTUAL-SIGNAL>
+					<VIRTUAL-SIGNAL uuid="40f645273b5411ea8f27bc9a78563412" xsi:type="virtualSessionSignal">
+						<NAME xsi:type="string">Throttle_Pct_factor_In1_avg</NAME>
+						<EVENT-TYPE xsi:type="string">PHY</EVENT-TYPE>
+					</VIRTUAL-SIGNAL>
+					<VIRTUAL-SIGNAL uuid="40f693563b5411eaa824bc9a78563412" xsi:type="virtualSessionSignal">
+						<NAME xsi:type="string">Throttle_Pct_factor_Out1</NAME>
+						<SIGNAL-FOR-ANALYSIS xsi:type="recordingSignalForAnalysis">
+							<KEY xsi:type="string">Throttle_Pct_factor_Out1</KEY>
+							<SOURCE-TYPE xsi:type="string">RECORDING-GROUP</SOURCE-TYPE>
+							<SOURCE-REF xsi:type="string">bb347c863a9611ea9927bc9a78563412</SOURCE-REF>
+						</SIGNAL-FOR-ANALYSIS>
+						<EVENT-TYPE xsi:type="string">PHY</EVENT-TYPE>
+					</VIRTUAL-SIGNAL>
+					<VIRTUAL-SIGNAL uuid="40f693573b5411ea8ec0bc9a78563412" xsi:type="virtualSessionSignal">
+						<NAME xsi:type="string">Throttle_Pct_factor_Out1_avg</NAME>
+						<EVENT-TYPE xsi:type="string">PHY</EVENT-TYPE>
+					</VIRTUAL-SIGNAL>
+					<VIRTUAL-SIGNAL uuid="40f6e1803b5411ea9c85bc9a78563412" xsi:type="virtualSessionSignal">
+						<NAME xsi:type="string">PhysicalECU_wdk_w_msg</NAME>
+						<SIGNAL-FOR-ANALYSIS xsi:type="recordingSignalForAnalysis">
+							<KEY xsi:type="string">PhysicalECU_wdk_w_msg</KEY>
+							<SOURCE-TYPE xsi:type="string">RECORDING-GROUP</SOURCE-TYPE>
+							<SOURCE-REF xsi:type="string">bb347c863a9611ea9927bc9a78563412</SOURCE-REF>
+						</SIGNAL-FOR-ANALYSIS>
+						<EVENT-TYPE xsi:type="string">PHY</EVENT-TYPE>
+					</VIRTUAL-SIGNAL>
+					<VIRTUAL-SIGNAL uuid="40f6e1813b5411eabe01bc9a78563412" xsi:type="virtualSessionSignal">
+						<NAME xsi:type="string">PhysicalECU_wdk_w_msg_avg</NAME>
+						<EVENT-TYPE xsi:type="string">PHY</EVENT-TYPE>
+					</VIRTUAL-SIGNAL>
+				</VIRTUAL-SIGNALS>
+			</VIRTUAL-SIGNALS-MANAGER>
+		</TRACE-ANALYSIS>
+	</TRACE-ANALYSES>
+</PACKAGE>
