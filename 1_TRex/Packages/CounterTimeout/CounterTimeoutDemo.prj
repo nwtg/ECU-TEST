@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PROJECT format-rev="10" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<NAME xsi:type="string">Projekt</NAME>
+	<ENABLED xsi:type="boolean">True</ENABLED>
+	<REPORTING xsi:type="boolean">True</REPORTING>
+	<ID xsi:type="string">0c6006a4e9b911e9aa2ac8f7507b5505</ID>
+	<COMPONENTS>
+		<COMPONENT format-rev="5" xsi:type="packageTest">
+			<NAME xsi:type="string">CounterTimeoutDemo_Stimulation</NAME>
+			<ENABLED xsi:type="boolean">True</ENABLED>
+			<REPORTING xsi:type="boolean">True</REPORTING>
+			<ID xsi:type="string">175ecef6e9b911e9972fc8f7507b5505</ID>
+			<COMPONENTS>
+				<COMPONENT format-rev="3" xsi:type="paramRecord">
+					<NAME xsi:type="string">Neuer P-Satz</NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<ID xsi:type="string">1d3afe52e9b911e9bb74c8f7507b5505</ID>
+					<RECORDING-GROUP-REF xsi:type="recordingGroupRefs">
+						<RECORDING-GROUP-REF-ITEM xsi:type="recordingGroupRefItem">
+							<RECORDING-GROUP-REF-NAME xsi:type="string">Aufnahmegruppe von Signalgruppe</RECORDING-GROUP-REF-NAME>
+							<RECORDINGS>
+								<ELEMENT format-rev="2" xsi:type="recordingInfo">
+									<RECORDING-TYPE xsi:type="string">STI</RECORDING-TYPE>
+									<PATHS>
+										<PATH xsi:type="fileReference">
+											<PATH xsi:type="string">Traces\Stimulus1.sti</PATH>
+											<PATH-TYPE xsi:type="string">relTraces</PATH-TYPE>
+										</PATH>
+									</PATHS>
+									<RECORDING-NAME xsi:type="string">Stimulus1.sti</RECORDING-NAME>
+									<FORMAT-DETAILS xsi:type="string">1.0</FORMAT-DETAILS>
+								</ELEMENT>
+							</RECORDINGS>
+						</RECORDING-GROUP-REF-ITEM>
+					</RECORDING-GROUP-REF>
+					<TM-INFO format-rev="1" xsi:type="testManagementInfo"/>
+				</COMPONENT>
+				<COMPONENT format-rev="3" xsi:type="paramRecord">
+					<NAME xsi:type="string">Neuer P-Satz</NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<ID xsi:type="string">3dd7fc34e9b911e99036c8f7507b5505</ID>
+					<RECORDING-GROUP-REF xsi:type="recordingGroupRefs">
+						<RECORDING-GROUP-REF-ITEM xsi:type="recordingGroupRefItem">
+							<RECORDING-GROUP-REF-NAME xsi:type="string">Aufnahmegruppe von Signalgruppe</RECORDING-GROUP-REF-NAME>
+							<RECORDINGS>
+								<ELEMENT format-rev="2" xsi:type="recordingInfo">
+									<RECORDING-TYPE xsi:type="string">STI</RECORDING-TYPE>
+									<PATHS>
+										<PATH xsi:type="fileReference">
+											<PATH xsi:type="string">Traces\Stimulus2.sti</PATH>
+											<PATH-TYPE xsi:type="string">relTraces</PATH-TYPE>
+										</PATH>
+									</PATHS>
+									<RECORDING-NAME xsi:type="string">Stimulus2.sti</RECORDING-NAME>
+									<FORMAT-DETAILS xsi:type="string">1.0</FORMAT-DETAILS>
+								</ELEMENT>
+							</RECORDINGS>
+						</RECORDING-GROUP-REF-ITEM>
+					</RECORDING-GROUP-REF>
+					<TM-INFO format-rev="1" xsi:type="testManagementInfo"/>
+				</COMPONENT>
+				<COMPONENT format-rev="3" xsi:type="paramRecord">
+					<NAME xsi:type="string">Neuer P-Satz</NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<ID xsi:type="string">b4d7b21aeff311e99d13c8f7507b5505</ID>
+					<RECORDING-GROUP-REF xsi:type="recordingGroupRefs">
+						<RECORDING-GROUP-REF-ITEM xsi:type="recordingGroupRefItem">
+							<RECORDING-GROUP-REF-NAME xsi:type="string">Aufnahmegruppe von Signalgruppe</RECORDING-GROUP-REF-NAME>
+							<RECORDINGS>
+								<ELEMENT format-rev="2" xsi:type="recordingInfo">
+									<RECORDING-TYPE xsi:type="string">STI</RECORDING-TYPE>
+									<PATHS>
+										<PATH xsi:type="fileReference">
+											<PATH xsi:type="string">Traces\Stimulus3.sti</PATH>
+											<PATH-TYPE xsi:type="string">relTraces</PATH-TYPE>
+										</PATH>
+									</PATHS>
+									<RECORDING-NAME xsi:type="string">Stimulus3.sti</RECORDING-NAME>
+									<FORMAT-DETAILS xsi:type="string">1.0</FORMAT-DETAILS>
+								</ELEMENT>
+							</RECORDINGS>
+						</RECORDING-GROUP-REF-ITEM>
+					</RECORDING-GROUP-REF>
+				</COMPONENT>
+				<COMPONENT format-rev="3" xsi:type="paramRecord">
+					<NAME xsi:type="string">Neuer P-Satz</NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<ID xsi:type="string">50433b14e9b911e9aad7c8f7507b5505</ID>
+					<RECORDING-GROUP-REF xsi:type="recordingGroupRefs">
+						<RECORDING-GROUP-REF-ITEM xsi:type="recordingGroupRefItem">
+							<RECORDING-GROUP-REF-NAME xsi:type="string">Aufnahmegruppe von Signalgruppe</RECORDING-GROUP-REF-NAME>
+							<RECORDINGS>
+								<ELEMENT format-rev="2" xsi:type="recordingInfo">
+									<RECORDING-TYPE xsi:type="string">STI</RECORDING-TYPE>
+									<PATHS>
+										<PATH xsi:type="fileReference">
+											<PATH xsi:type="string">Traces\Stimulus4.sti</PATH>
+											<PATH-TYPE xsi:type="string">relTraces</PATH-TYPE>
+										</PATH>
+									</PATHS>
+									<RECORDING-NAME xsi:type="string">Stimulus4.sti</RECORDING-NAME>
+									<FORMAT-DETAILS xsi:type="string">1.0</FORMAT-DETAILS>
+								</ELEMENT>
+							</RECORDINGS>
+						</RECORDING-GROUP-REF-ITEM>
+					</RECORDING-GROUP-REF>
+					<TM-INFO format-rev="1" xsi:type="testManagementInfo"/>
+				</COMPONENT>
+				<COMPONENT format-rev="3" xsi:type="paramRecord">
+					<NAME xsi:type="string">Neuer P-Satz</NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<ID xsi:type="string">b44cd9a5eff311e988cfc8f7507b5505</ID>
+					<RECORDING-GROUP-REF xsi:type="recordingGroupRefs">
+						<RECORDING-GROUP-REF-ITEM xsi:type="recordingGroupRefItem">
+							<RECORDING-GROUP-REF-NAME xsi:type="string">Aufnahmegruppe von Signalgruppe</RECORDING-GROUP-REF-NAME>
+							<RECORDINGS>
+								<ELEMENT format-rev="2" xsi:type="recordingInfo">
+									<RECORDING-TYPE xsi:type="string">STI</RECORDING-TYPE>
+									<PATHS>
+										<PATH xsi:type="fileReference">
+											<PATH xsi:type="string">Traces\Stimulus5.sti</PATH>
+											<PATH-TYPE xsi:type="string">relTraces</PATH-TYPE>
+										</PATH>
+									</PATHS>
+									<RECORDING-NAME xsi:type="string">Stimulus5.sti</RECORDING-NAME>
+									<FORMAT-DETAILS xsi:type="string">1.0</FORMAT-DETAILS>
+								</ELEMENT>
+							</RECORDINGS>
+						</RECORDING-GROUP-REF-ITEM>
+					</RECORDING-GROUP-REF>
+					<TM-INFO format-rev="1" xsi:type="testManagementInfo"/>
+				</COMPONENT>
+				<COMPONENT format-rev="3" xsi:type="paramRecord">
+					<NAME xsi:type="string">Neuer P-Satz</NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<ID xsi:type="string">62e16c00e9b911e9a732c8f7507b5505</ID>
+					<RECORDING-GROUP-REF xsi:type="recordingGroupRefs">
+						<RECORDING-GROUP-REF-ITEM xsi:type="recordingGroupRefItem">
+							<RECORDING-GROUP-REF-NAME xsi:type="string">Aufnahmegruppe von Signalgruppe</RECORDING-GROUP-REF-NAME>
+							<RECORDINGS>
+								<ELEMENT format-rev="2" xsi:type="recordingInfo">
+									<RECORDING-TYPE xsi:type="string">STI</RECORDING-TYPE>
+									<PATHS>
+										<PATH xsi:type="fileReference">
+											<PATH xsi:type="string">Traces\Stimulus6.sti</PATH>
+											<PATH-TYPE xsi:type="string">relTraces</PATH-TYPE>
+										</PATH>
+									</PATHS>
+									<RECORDING-NAME xsi:type="string">Stimulus6.sti</RECORDING-NAME>
+									<FORMAT-DETAILS xsi:type="string">1.0</FORMAT-DETAILS>
+								</ELEMENT>
+							</RECORDINGS>
+						</RECORDING-GROUP-REF-ITEM>
+					</RECORDING-GROUP-REF>
+					<TM-INFO format-rev="1" xsi:type="testManagementInfo"/>
+				</COMPONENT>
+			</COMPONENTS>
+			<PACKAGE-REF format-rev="1" style="relative" xsi:type="packageRef">
+				<PACKAGE-PATH xsi:type="string">CounterTimeoutDemo_Stimulation.pkg</PACKAGE-PATH>
+			</PACKAGE-REF>
+		</COMPONENT>
+	</COMPONENTS>
+</PROJECT>

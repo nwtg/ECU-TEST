@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HISTORY-SETTINGS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<RECENT-TCFFILES>
+		<ELEMENT xsi:type="string">Configurations\CounterTimeout.tcf</ELEMENT>
+	</RECENT-TCFFILES>
+	<LAST-TCF-SAVED xsi:type="boolean">True</LAST-TCF-SAVED>
+	<RECENT-TBC-FILES/>
+	<LAST-TBC-SAVED xsi:type="boolean">False</LAST-TBC-SAVED>
+	<RECENT-PROJECTS-PACKAGES>
+		<ELEMENT xsi:type="string">Packages\CounterTimeout\CounterTimeoutDemo_Stimulation.pkg</ELEMENT>
+		<ELEMENT xsi:type="string">Packages\CounterTimeout\CounterTimeoutDemo.prj</ELEMENT>
+		<ELEMENT xsi:type="string">Packages\test.pkg</ELEMENT>
+		<ELEMENT xsi:type="string">Packages\Rail.pkg</ELEMENT>
+		<ELEMENT xsi:type="string">Packages\TestRail.prj</ELEMENT>
+		<ELEMENT xsi:type="string">Configurations\CounterTimeout.tcf</ELEMENT>
+		<ELEMENT xsi:type="string">TestReports\New project1_2020-06-03_141549\New project1.trf</ELEMENT>
+		<ELEMENT xsi:type="string">TestReports\New project1_2020-06-03_134559\New project1.trf</ELEMENT>
+		<ELEMENT xsi:type="string">TestReports\CounterTimeoutDemo_2020-06-02_220259\CounterTimeoutDemo.trf</ELEMENT>
+		<ELEMENT xsi:type="string">Packages\getFilePath.pkg</ELEMENT>
+	</RECENT-PROJECTS-PACKAGES>
+	<RECENT-SEARCH-REQUESTS/>
+</HISTORY-SETTINGS>
