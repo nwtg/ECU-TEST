@@ -17,6 +17,9 @@
 		</ATTRIBUTES>
 		<DESCRIPTION xsi:type="string"/>
 		<VERSION xsi:type="string"/>
+		<TAGS>
+			<TAG xsi:type="string">TESTCASE</TAG>
+		</TAGS>
 		<ALTERNATE-CALL-REPRESENTATION-ACTION-FIELD-TEMPLATE xsi:type="string"/>
 		<ALTERNATE-CALL-REPRESENTATION-EXPECTATION-FIELD-TEMPLATE xsi:type="string"/>
 	</INFORMATION>
