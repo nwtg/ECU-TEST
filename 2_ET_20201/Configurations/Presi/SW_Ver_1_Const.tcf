@@ -5,19 +5,7 @@
 		<QUERY-TESTER xsi:type="integer">2</QUERY-TESTER>
 	</COMMON>
 	<REPORT format-rev="4" xsi:type="reportData">
-		<REPORT-FORMATES>
-			<ELEMENT format-rev="1" xsi:type="reportFormat">
-				<FORMAT-NAME xsi:type="string">HTML complete, separate package files</FORMAT-NAME>
-				<HANDLER-NAME xsi:type="string">HTML</HANDLER-NAME>
-				<FILTERS xsi:type="apiFilter"/>
-			</ELEMENT>
-			<ELEMENT format-rev="1" xsi:type="reportFormat">
-				<FORMAT-NAME xsi:type="string">New TRF-SPLIT format</FORMAT-NAME>
-				<HANDLER-NAME xsi:type="string">TRF-SPLIT</HANDLER-NAME>
-				<AUTO-GENERATE xsi:type="boolean">True</AUTO-GENERATE>
-				<FILTERS xsi:type="apiFilter"/>
-			</ELEMENT>
-		</REPORT-FORMATES>
+		<REPORT-FORMATES/>
 		<INCLUDE-APPLICATION-LOGS xsi:type="boolean">True</INCLUDE-APPLICATION-LOGS>
 	</REPORT>
 	<EXECUTION-DATA format-rev="1" xsi:type="executionData">
