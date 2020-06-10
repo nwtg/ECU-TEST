@@ -268,7 +268,7 @@ group "Model Root"
 
         endgroup -- block-group "drivemode [0|1|2|3|4]"
 
-		group "brakepedal [%]" -- block-group
+		group "bakepedal [%]" -- block-group
 		{
 		 block: "Constant"
 		 flags: BLOCK|COLLAPSED
@@ -281,7 +281,7 @@ group "Model Root"
 			 flags:   PARAM
 			}
 
-		endgroup -- block-group "brakepedal [%]"
+		endgroup -- block-group "bakepedal [%]"
 		
 	endgroup -- subsystem-group "ctrl_veh"
 
@@ -430,13 +430,13 @@ group "Model Root"
 
     endgroup -- subsystem-group "status_warnings"
    
-    group "terms"  -- subsystem-group
+    group "clamps"  -- subsystem-group
     {
      flags: COLLAPSED
      desc: ""
     }
 
-        group "term15 [0|1]" -- block-group
+        group "clamp15 [0|1]" -- block-group
         {
          block: "Scope"
          flags: BLOCK|COLLAPSED
@@ -449,9 +449,9 @@ group "Model Root"
              flags:   PARAM
             }
 
-        endgroup -- block-group "term15 [0|1]"
+        endgroup -- block-group "clamp15 [0|1]"
 
-        group "term30 [0|1]" -- block-group
+        group "clamp30 [0|1]" -- block-group
         {
          block: "Scope"
          flags: BLOCK|COLLAPSED
@@ -464,9 +464,9 @@ group "Model Root"
              flags:   PARAM
             }
 
-        endgroup -- block-group "term30 [0|1]"
+        endgroup -- block-group "clamp30 [0|1]"
 
-    endgroup -- subsystem-group "terms"
+    endgroup -- subsystem-group "clamps"
 
 endgroup
 

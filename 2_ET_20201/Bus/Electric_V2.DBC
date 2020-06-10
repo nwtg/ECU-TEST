@@ -20,7 +20,7 @@ BO_ 200 WARNINGS: 8 INSTR
 
 BO_ 300 ENG_DATA: 8 RANGE_EXTENDER
  SG_ ENG_RPM : 40|16@1+ (0.25,0) [0|12000] "1/min"  dummy
- SG_ ENG_TEMP : 0|16@1+ (1,0) [0|120] "锟紺"  dummy
+ SG_ ENG_TEMP : 0|16@1+ (1,0) [0|120] "�C"  dummy
  SG_ ENG_TORQ : 16|12@1+ (0.5,-1023.5) [-1023.5|1023.5] "Nm"  dummy
 
 BO_ 400 STATE: 8 BATTERY_UNIT

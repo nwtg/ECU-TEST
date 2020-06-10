@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PROJECT format-rev="9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<NAME xsi:type="unicode">Project</NAME>
+	<ENABLED xsi:type="boolean">True</ENABLED>
+	<REPORTING xsi:type="boolean">True</REPORTING>
+	<COMPONENTS>
+		<COMPONENT format-rev="9" xsi:type="subproject">
+			<NAME xsi:type="unicode">driving</NAME>
+			<ENABLED xsi:type="boolean">True</ENABLED>
+			<REPORTING xsi:type="boolean">True</REPORTING>
+			<COMPONENTS>
+				<COMPONENT format-rev="9" xsi:type="subproject">
+					<NAME xsi:type="unicode">vehvel_tolerance=2</NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<COMPONENTS>
+						<COMPONENT format-rev="4" xsi:type="packageTest">
+							<NAME xsi:type="unicode">Variation of DriverRequest</NAME>
+							<ENABLED xsi:type="boolean">True</ENABLED>
+							<REPORTING xsi:type="boolean">True</REPORTING>
+							<COMPONENTS>
+								<COMPONENT format-rev="2" xsi:type="paramRecord">
+									<NAME xsi:type="unicode">DriverRequest 50%</NAME>
+									<ENABLED xsi:type="boolean">False</ENABLED>
+									<REPORTING xsi:type="boolean">True</REPORTING>
+									<PARAMETER-DATA xsi:type="packageParameterData">
+										<PARAMETER xsi:type="parameterEntry">
+											<NAME xsi:type="unicode">drvreq</NAME>
+											<VALUE format-rev="1" xsi:type="valueBaseExpression">
+												<VALUE xsi:type="integer">50</VALUE>
+											</VALUE>
+										</PARAMETER>
+										<PARAMETER xsi:type="parameterEntry">
+											<NAME xsi:type="unicode">timeout</NAME>
+											<VALUE format-rev="1" xsi:type="valueBaseExpression">
+												<VALUE xsi:type="integer">9000</VALUE>
+											</VALUE>
+										</PARAMETER>
+									</PARAMETER-DATA>
+								</COMPONENT>
+								<COMPONENT format-rev="2" xsi:type="paramRecord">
+									<NAME xsi:type="unicode">DriverRequest 80%</NAME>
+									<ENABLED xsi:type="boolean">True</ENABLED>
+									<REPORTING xsi:type="boolean">True</REPORTING>
+									<PARAMETER-DATA xsi:type="packageParameterData">
+										<PARAMETER xsi:type="parameterEntry">
+											<NAME xsi:type="unicode">drvreq</NAME>
+											<VALUE format-rev="1" xsi:type="valueBaseExpression">
+												<VALUE xsi:type="integer">80</VALUE>
+											</VALUE>
+										</PARAMETER>
+										<PARAMETER xsi:type="parameterEntry">
+											<NAME xsi:type="unicode">timeout</NAME>
+											<VALUE format-rev="1" xsi:type="valueBaseExpression">
+												<VALUE xsi:type="integer">6500</VALUE>
+											</VALUE>
+										</PARAMETER>
+									</PARAMETER-DATA>
+								</COMPONENT>
+								<COMPONENT format-rev="2" xsi:type="paramRecord">
+									<NAME xsi:type="unicode">DriverRequest 100%</NAME>
+									<ENABLED xsi:type="boolean">True</ENABLED>
+									<REPORTING xsi:type="boolean">True</REPORTING>
+									<PARAMETER-DATA xsi:type="packageParameterData">
+										<PARAMETER xsi:type="parameterEntry">
+											<NAME xsi:type="unicode">drvreq</NAME>
+											<VALUE format-rev="1" xsi:type="valueBaseExpression">
+												<VALUE xsi:type="integer">100</VALUE>
+											</VALUE>
+										</PARAMETER>
+										<PARAMETER xsi:type="parameterEntry">
+											<NAME xsi:type="unicode">timeout</NAME>
+											<VALUE format-rev="1" xsi:type="valueBaseExpression">
+												<VALUE xsi:type="integer">4000</VALUE>
+											</VALUE>
+										</PARAMETER>
+									</PARAMETER-DATA>
+								</COMPONENT>
+							</COMPONENTS>
+							<PACKAGE-REF format-rev="1" style="relative" xsi:type="packageRef">
+								<PACKAGE-PATH xsi:type="unicode">BasicDrive_Parameter.pkg</PACKAGE-PATH>
+							</PACKAGE-REF>
+						</COMPONENT>
+					</COMPONENTS>
+					<PARAMETER-DATA xsi:type="packageParameterData">
+						<PARAMETER xsi:type="parameterEntry">
+							<NAME xsi:type="unicode">vehvel_tolerance</NAME>
+							<VALUE format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="integer">2</VALUE>
+							</VALUE>
+						</PARAMETER>
+					</PARAMETER-DATA>
+				</COMPONENT>
+				<COMPONENT format-rev="9" xsi:type="subproject">
+					<NAME xsi:type="unicode">vehvel_tolerance=1</NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<COMPONENTS>
+						<COMPONENT format-rev="4" xsi:type="packageTest">
+							<NAME xsi:type="unicode">Variation of DriverRequest</NAME>
+							<ENABLED xsi:type="boolean">True</ENABLED>
+							<REPORTING xsi:type="boolean">True</REPORTING>
+							<COMPONENTS>
+								<COMPONENT format-rev="2" xsi:type="paramRecord">
+									<NAME xsi:type="unicode">DriverRequest 50%</NAME>
+									<ENABLED xsi:type="boolean">False</ENABLED>
+									<REPORTING xsi:type="boolean">True</REPORTING>
+									<PARAMETER-DATA xsi:type="packageParameterData">
+										<PARAMETER xsi:type="parameterEntry">
+											<NAME xsi:type="unicode">drvreq</NAME>
+											<VALUE format-rev="1" xsi:type="valueBaseExpression">
+												<VALUE xsi:type="integer">50</VALUE>
+											</VALUE>
+										</PARAMETER>
+										<PARAMETER xsi:type="parameterEntry">
+											<NAME xsi:type="unicode">timeout</NAME>
+											<VALUE format-rev="1" xsi:type="valueBaseExpression">
+												<VALUE xsi:type="integer">9000</VALUE>
+											</VALUE>
+										</PARAMETER>
+									</PARAMETER-DATA>
+								</COMPONENT>
+								<COMPONENT format-rev="2" xsi:type="paramRecord">
+									<NAME xsi:type="unicode">DriverRequest 80%</NAME>
+									<ENABLED xsi:type="boolean">True</ENABLED>
+									<REPORTING xsi:type="boolean">True</REPORTING>
+									<PARAMETER-DATA xsi:type="packageParameterData">
+										<PARAMETER xsi:type="parameterEntry">
+											<NAME xsi:type="unicode">drvreq</NAME>
+											<VALUE format-rev="1" xsi:type="valueBaseExpression">
+												<VALUE xsi:type="integer">80</VALUE>
+											</VALUE>
+										</PARAMETER>
+										<PARAMETER xsi:type="parameterEntry">
+											<NAME xsi:type="unicode">timeout</NAME>
+											<VALUE format-rev="1" xsi:type="valueBaseExpression">
+												<VALUE xsi:type="integer">6500</VALUE>
+											</VALUE>
+										</PARAMETER>
+									</PARAMETER-DATA>
+								</COMPONENT>
+								<COMPONENT format-rev="2" xsi:type="paramRecord">
+									<NAME xsi:type="unicode">DriverRequest 100%</NAME>
+									<ENABLED xsi:type="boolean">True</ENABLED>
+									<REPORTING xsi:type="boolean">True</REPORTING>
+									<PARAMETER-DATA xsi:type="packageParameterData">
+										<PARAMETER xsi:type="parameterEntry">
+											<NAME xsi:type="unicode">drvreq</NAME>
+											<VALUE format-rev="1" xsi:type="valueBaseExpression">
+												<VALUE xsi:type="integer">100</VALUE>
+											</VALUE>
+										</PARAMETER>
+										<PARAMETER xsi:type="parameterEntry">
+											<NAME xsi:type="unicode">timeout</NAME>
+											<VALUE format-rev="1" xsi:type="valueBaseExpression">
+												<VALUE xsi:type="integer">4000</VALUE>
+											</VALUE>
+										</PARAMETER>
+									</PARAMETER-DATA>
+								</COMPONENT>
+							</COMPONENTS>
+							<PACKAGE-REF format-rev="1" style="relative" xsi:type="packageRef">
+								<PACKAGE-PATH xsi:type="unicode">BasicDrive_Parameter.pkg</PACKAGE-PATH>
+							</PACKAGE-REF>
+						</COMPONENT>
+					</COMPONENTS>
+					<PARAMETER-DATA xsi:type="packageParameterData">
+						<PARAMETER xsi:type="parameterEntry">
+							<NAME xsi:type="unicode">vehvel_tolerance</NAME>
+							<VALUE format-rev="1" xsi:type="valueBaseExpression">
+								<VALUE xsi:type="integer">1</VALUE>
+							</VALUE>
+						</PARAMETER>
+					</PARAMETER-DATA>
+				</COMPONENT>
+			</COMPONENTS>
+		</COMPONENT>
+		<COMPONENT format-rev="9" xsi:type="subproject">
+			<NAME xsi:type="unicode">standing</NAME>
+			<ENABLED xsi:type="boolean">True</ENABLED>
+			<REPORTING xsi:type="boolean">True</REPORTING>
+			<COMPONENTS>
+				<COMPONENT format-rev="4" xsi:type="packageTest">
+					<NAME xsi:type="unicode">Cable connected</NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<COMPONENTS/>
+					<PACKAGE-REF format-rev="1" style="relative" xsi:type="packageRef">
+						<PACKAGE-PATH xsi:type="unicode">Lib\Cable connected.pkg</PACKAGE-PATH>
+					</PACKAGE-REF>
+				</COMPONENT>
+				<COMPONENT format-rev="4" xsi:type="packageTest">
+					<NAME xsi:type="unicode">Open door test</NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<COMPONENTS/>
+					<PACKAGE-REF format-rev="1" style="relative" xsi:type="packageRef">
+						<PACKAGE-PATH xsi:type="unicode">Lib\Open door test.pkg</PACKAGE-PATH>
+					</PACKAGE-REF>
+				</COMPONENT>
+			</COMPONENTS>
+		</COMPONENT>
+	</COMPONENTS>
+</PROJECT>

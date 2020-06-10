@@ -30,7 +30,7 @@ pipeline {
             startET toolName: 'ECU-TEST', workspaceDir: '2_ET_20201'
             
             // Run project
-            testProject testConfig: [constants: [], forceReload: false, keepConfig: false, loadOnly: false, tbcFile: 'Presi\\SW_Ver_1_Testlab_HiL.tbc', tcfFile: 'Presi\\SW_Ver_1_Const.tcf'], testFile: 'Presi\\EV_TEST.prj'
+            testProject testConfig: [constants: [], forceReload: false, keepConfig: false, loadOnly: false, tbcFile: '', tcfFile: ''], testFile: 'Presi\\EV_TEST.prj'
             
             // Upload report to Jenkins
             publishUNIT 'ECU-TEST'
