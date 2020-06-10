@@ -5,7 +5,7 @@ pipeline {
         agent {
             node {
                 // any Windows node
-                label 'ytspc'
+                label 'YT'
             }
         }
          steps {
@@ -24,7 +24,7 @@ pipeline {
         }
         steps {
             //Checkout
-            checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'github_private', url: 'https://github.com/nwtg/testECU-TEST.git']]])
+            //checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'github_private', url: 'https://github.com/nwtg/testECU-TEST.git']]])
             
             // Start ET
             startET toolName: 'ECU-TEST', workspaceDir: '1_TRex'
