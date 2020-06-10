@@ -10,10 +10,9 @@ pipeline {
         }
          steps {
             // Echo
-            bat label: '', script: '''cd C:\\Users\\Public\\Documents\\Jenkins_Home
-                                      python .\\getJenkinsNode.py "1_Trex"'''
+            bat label: '', script: '''python .\\getJenkinsNode.py "1_Trex"'''
             script{
-                load('C:/Users/Public/Documents/Jenkins_Home/jenkinsNode.properties')}
+                load('jenkinsNode.properties')}
             echo "${env.jenkinsNode}"
          }
       }
@@ -25,7 +24,7 @@ pipeline {
         }
         steps {
             //Checkout
-            checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'github_private', url: 'https://github.com/nwtg/ECU-TEST.git']]])
+            checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'github_private', url: 'https://github.com/nwtg/testECU-TEST.git']]])
             
             // Start ET
             startET toolName: 'ECU-TEST', workspaceDir: '1_TRex'

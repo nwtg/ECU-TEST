@@ -16,11 +16,5 @@
 				<VALUE xsi:type="string">DigitalIO</VALUE>
 			</VALUE>
 		</GLOBAL-CONSTANT>
-		<GLOBAL-CONSTANT format-rev="1" xsi:type="globalConstEntry">
-			<NAME xsi:type="string">CI_Build_No</NAME>
-			<VALUE format-rev="1" xsi:type="valueBaseExpression">
-				<VALUE xsi:type="integer">5</VALUE>
-			</VALUE>
-		</GLOBAL-CONSTANT>
 	</GLOBAL-CONSTANTS>
 </CONFIGURATION>
