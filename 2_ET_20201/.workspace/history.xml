@@ -27,7 +27,9 @@
 	</RECENT-TBC-FILES>
 	<LAST-TBC-SAVED xsi:type="boolean">True</LAST-TBC-SAVED>
 	<RECENT-PROJECTS-PACKAGES>
+		<ELEMENT xsi:type="string">Packages\Presi\WarningLight.pkg</ELEMENT>
 		<ELEMENT xsi:type="string">Packages\Presi\BasicDrive.pkg</ELEMENT>
+		<ELEMENT xsi:type="string">Packages\BasicDrive.pkg</ELEMENT>
 		<ELEMENT xsi:type="string">Packages\Presi\EV_TEST.prj</ELEMENT>
 		<ELEMENT xsi:type="string">Packages\EV_TEST.prj</ELEMENT>
 		<ELEMENT xsi:type="string">Configurations\_Results\60_before_TraceAnalysis\SW_Ver_1.tcf</ELEMENT>
@@ -35,8 +37,6 @@
 		<ELEMENT xsi:type="string">C:\ECU-TEST_Reports\00_2020_PreTest_ET20201\EV_TEST_2020-06-10_125220\EV_TEST.trf</ELEMENT>
 		<ELEMENT xsi:type="string">C:\ECU-TEST_Reports\00_2020_PreTest_ET20201\EV_TEST_2020-06-08_162612\EV_TEST.trf</ELEMENT>
 		<ELEMENT xsi:type="string">C:\ECU-TEST_Reports\00_2020_PreTest_ET20201\EV_TEST_2020-06-08_153415\EV_TEST.trf</ELEMENT>
-		<ELEMENT xsi:type="string">C:\ECU-TEST_Reports\00_2020_PreTest_ET20201\BasicDrive_2020-06-08_152631\BasicDrive.trf</ELEMENT>
-		<ELEMENT xsi:type="string">Packages\testRecording_CANoe.pkg</ELEMENT>
 	</RECENT-PROJECTS-PACKAGES>
 	<RECENT-SEARCH-REQUESTS>
 		<ELEMENT xsi:type="string">Port DIAGNOSTICS - J1939 ?</ELEMENT>
