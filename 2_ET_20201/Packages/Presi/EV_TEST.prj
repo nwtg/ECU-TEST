@@ -3,25 +3,34 @@
 	<NAME xsi:type="string">Project</NAME>
 	<ENABLED xsi:type="boolean">True</ENABLED>
 	<REPORTING xsi:type="boolean">True</REPORTING>
-	<ID xsi:type="string">aff9ac6bd3d511e9b2a9f85971183200</ID>
+	<ID xsi:type="string">c81497a9aad611eab5a5bc9a78563412</ID>
 	<COMPONENTS>
+		<COMPONENT format-rev="6" xsi:type="configChange">
+			<NAME xsi:type="string">Change configuration</NAME>
+			<ENABLED xsi:type="boolean">True</ENABLED>
+			<REPORTING xsi:type="boolean">True</REPORTING>
+			<ID xsi:type="string">be891450aad711ea8c05bc9a78563412</ID>
+			<LOAD-TEST-CONFIG xsi:type="string">_Results\60_before_TraceAnalysis\SW_Ver_1.tcf</LOAD-TEST-CONFIG>
+			<LOAD-TEST-BENCH-CONFIG xsi:type="string">_Results\60_before_TraceAnalysis\Testlab_HiL.tbc</LOAD-TEST-BENCH-CONFIG>
+			<TOOL-TREATMENTS/>
+		</COMPONENT>
 		<COMPONENT format-rev="10" xsi:type="subproject">
 			<NAME xsi:type="string">driving</NAME>
 			<ENABLED xsi:type="boolean">True</ENABLED>
 			<REPORTING xsi:type="boolean">True</REPORTING>
-			<ID xsi:type="string">aff95e8bd3d511e9852bf85971183200</ID>
+			<ID xsi:type="string">c8144abeaad611eaafe8bc9a78563412</ID>
 			<COMPONENTS>
 				<COMPONENT format-rev="5" xsi:type="packageTest">
 					<NAME xsi:type="string">Variation of DriverRequest</NAME>
 					<ENABLED xsi:type="boolean">True</ENABLED>
 					<REPORTING xsi:type="boolean">True</REPORTING>
-					<ID xsi:type="string">aff95e8ad3d511e99ffff85971183200</ID>
+					<ID xsi:type="string">c8144abdaad611ea8bf3bc9a78563412</ID>
 					<COMPONENTS>
 						<COMPONENT format-rev="3" xsi:type="paramRecord">
 							<NAME xsi:type="string">DriverRequest 50%</NAME>
 							<ENABLED xsi:type="boolean">True</ENABLED>
 							<REPORTING xsi:type="boolean">True</REPORTING>
-							<ID xsi:type="string">aff9378cd3d511e997daf85971183200</ID>
+							<ID xsi:type="string">c814247faad611ea94a8bc9a78563412</ID>
 							<PARAMETER-DATA xsi:type="packageParameterData">
 								<PARAMETER xsi:type="parameterEntry">
 									<NAME xsi:type="string">drvreq</NAME>
@@ -36,35 +45,12 @@
 									</VALUE>
 								</PARAMETER>
 							</PARAMETER-DATA>
-							<TM-INFO format-rev="1" xsi:type="testManagementInfo"/>
-							<ATTRIBUTES>
-								<ATTRIBUTE xsi:type="attributeInst">
-									<NAME xsi:type="string">Execution Priority</NAME>
-									<VALUE xsi:type="string">2</VALUE>
-								</ATTRIBUTE>
-								<ATTRIBUTE xsi:type="attributeInst">
-									<NAME xsi:type="string">Designer</NAME>
-									<VALUE xsi:type="string">Toto</VALUE>
-								</ATTRIBUTE>
-								<ATTRIBUTE xsi:type="attributeInst">
-									<NAME xsi:type="string">Design Contact</NAME>
-									<VALUE xsi:type="string">yaoyt@turing.cc</VALUE>
-								</ATTRIBUTE>
-								<ATTRIBUTE xsi:type="attributeInst">
-									<NAME xsi:type="string">Design Department</NAME>
-									<VALUE xsi:type="string"/>
-								</ATTRIBUTE>
-								<ATTRIBUTE xsi:type="attributeInst">
-									<NAME xsi:type="string">ProgramVersion</NAME>
-									<VALUE xsi:type="string">v2.1</VALUE>
-								</ATTRIBUTE>
-							</ATTRIBUTES>
 						</COMPONENT>
 						<COMPONENT format-rev="3" xsi:type="paramRecord">
 							<NAME xsi:type="string">DriverRequest 80%</NAME>
-							<ENABLED xsi:type="boolean">False</ENABLED>
+							<ENABLED xsi:type="boolean">True</ENABLED>
 							<REPORTING xsi:type="boolean">True</REPORTING>
-							<ID xsi:type="string">aff9378ed3d511e981c2f85971183200</ID>
+							<ID xsi:type="string">c8144abaaad611eaa979bc9a78563412</ID>
 							<PARAMETER-DATA xsi:type="packageParameterData">
 								<PARAMETER xsi:type="parameterEntry">
 									<NAME xsi:type="string">drvreq</NAME>
@@ -82,9 +68,9 @@
 						</COMPONENT>
 						<COMPONENT format-rev="3" xsi:type="paramRecord">
 							<NAME xsi:type="string">DriverRequest 100%</NAME>
-							<ENABLED xsi:type="boolean">False</ENABLED>
+							<ENABLED xsi:type="boolean">True</ENABLED>
 							<REPORTING xsi:type="boolean">True</REPORTING>
-							<ID xsi:type="string">aff95e89d3d511e9ab07f85971183200</ID>
+							<ID xsi:type="string">c8144abcaad611eabff8bc9a78563412</ID>
 							<PARAMETER-DATA xsi:type="packageParameterData">
 								<PARAMETER xsi:type="parameterEntry">
 									<NAME xsi:type="string">drvreq</NAME>
@@ -106,26 +92,6 @@
 					</PACKAGE-REF>
 				</COMPONENT>
 			</COMPONENTS>
-		</COMPONENT>
-		<COMPONENT format-rev="5" xsi:type="packageTest">
-			<NAME xsi:type="string">Cable connected</NAME>
-			<ENABLED xsi:type="boolean">False</ENABLED>
-			<REPORTING xsi:type="boolean">True</REPORTING>
-			<ID xsi:type="string">1642574a53e411ea971dbc9a78563412</ID>
-			<COMPONENTS/>
-			<PACKAGE-REF format-rev="1" xsi:type="packageRef">
-				<PACKAGE-PATH xsi:type="string">Lib/Cable connected.pkg</PACKAGE-PATH>
-			</PACKAGE-REF>
-		</COMPONENT>
-		<COMPONENT format-rev="5" xsi:type="packageTest">
-			<NAME xsi:type="string">Open door test</NAME>
-			<ENABLED xsi:type="boolean">False</ENABLED>
-			<REPORTING xsi:type="boolean">True</REPORTING>
-			<ID xsi:type="string">16427a5053e411eaa25fbc9a78563412</ID>
-			<COMPONENTS/>
-			<PACKAGE-REF format-rev="1" xsi:type="packageRef">
-				<PACKAGE-PATH xsi:type="string">Lib/Open door test.pkg</PACKAGE-PATH>
-			</PACKAGE-REF>
 		</COMPONENT>
 	</COMPONENTS>
 </PROJECT>

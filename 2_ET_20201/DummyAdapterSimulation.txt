@@ -1,12 +1,6 @@
 ########!SIGNALDESCRIPTIONS!########
 Description: ((<triggerVarPath>, <operation>, <triggerValue>),      <WS-relative Path to STI>,              [<signal names to simulate and in STI !HAVE TO BE IDENTICAL!>])
 
-Trigger: (("temp", ">",120),                                       "_Simulation\\WarningLightStimulation.sti",  ["w1"])
-
-Trigger: (("Model Root/CTRL_VEH/StarterOn [0|1]/Value", "==", 1),   "_Simulation_ExcelImporter\\EngineStart.sti",                ["Model Root/STATUS_VEH/EngineSpeed [rpm]/In1"])
-Trigger: (("Model Root/CTRL_VEH/DriverRequest [%]/Value", ">", 0),  "_Simulation_ExcelImporter\\Acceleration.sti",               ["Model Root/STATUS_VEH/EngineSpeed [rpm]/In1"])
-Trigger: (("Model Root/CTRL_VEH/IgnitionOn [0|1]/Value", "==", 0),  "_Simulation_ExcelImporter\\EngineStop.sti",                 ["Model Root/STATUS_VEH/EngineSpeed [rpm]/In1"])
-
 Trigger: (("", "==", 0.0),                                       "_Simulation\\start.sti",                  ["VEHICLE_VELOCITY", "VEHICLE_VELOCITY_BUS", "VEHICLE_SPEED", "BATTERY_DISCHARGE", "BATTERY_HEALTH",  "VEHICLE_TRACTION_STANDBY_FTC", "VEHICLE_TRACTION_STANDBY_TCD", "VEHICLE_TRACTION_STANDBY_MEAS", "RECUPERATION"])
 Trigger: (("STARTER_BUTTON", "==", 1),                           "_Simulation\\starterButton.sti",          ["VEHICLE_TRACTION_STANDBY_TCD", "VEHICLE_TRACTION_STANDBY_MEAS"])
 Trigger: (("STARTER_BUTTON", "==", -1),                          "_Simulation\\stop.sti",                   ["VEHICLE_TRACTION_STANDBY_TCD", "VEHICLE_TRACTION_STANDBY_MEAS"]) 
@@ -29,17 +23,16 @@ Trigger: (("DOOR", "==", 1),                                     "_Simulation\\s
 
 
 ########!SIGNALMAPPINGS!########
-Mapping: {"w1":                            ("w1", "w1_intern",)}
 Mapping: {"DRIVER_REQUEST":                ("Model Easy/CTRL_VEH/DriverRequest [%]/Value", "Model Root/CTRL_VEH/DriverRequest [%]/Value", "Model Root/ctrl_veh/driverrequest [%]/Value")}
 Mapping: {"BATTERY_DISCHARGE":             ("Model Root/STATUS_BAT/StateOfCharge [%]/Value", "SoC", "BATTERY_UNIT/STATE/STATE/STATE_OF_CHARGE", "STATE.STATE_OF_CHARGE", "Model Root/status_bat/stateofcharge [%]/Value")}
-Mapping: {"VEHICLE_VELOCITY":              ("speed", "Model Easy/STATUS_VEH/VehicleVelocity [kmh]/In1", "Model Root/STATUS_VEH/VehicleVelocity [kmh]/In1", "Model Root/status_veh/vehiclevelocity [kmh]/In1")}
+Mapping: {"VEHICLE_VELOCITY":              ("speed", "Model Root/STATUS_VEH/VehicleVelocity [kmh]/In1", "Model Root/status_veh/vehiclevelocity [kmh]/In1")}
 Mapping: {"VEHICLE_VELOCITY_BUS":          ("ELECTRIC_POWER_TRAIN/VEH_DATA/VEH_DATA/VEHICLE_VELOCITY", "VEH_DATA.VEHICLE_VELOCITY")}
 Mapping: {"VEHICLE_SPEED":                 ("ELECTRIC_POWER_TRAIN/VEH_DATA/VEH_DATA/VEHICLE_SPEED", "VEH_DATA.VEHICLE_SPEED")}
 Mapping: {"VEHICLE_TRACTION_STANDBY_FTC":  ("Model Easy/STATUS_VEH/VehicleTractionStandby [0|1]/In1",)}
-Mapping: {"VEHICLE_TRACTION_STANDBY_TCD":  ("Model Root/STATUS_VEH/VehicleTractionStandby [0|1]/In1", "Model Root/status_veh/vehicletractionstandby [0|1]/In1", "VEHICLE_TRACTION_STANDBY_BUS_TARGET", "VEHICLE_TRACTION_STANDBY_BUSDOT_TARGET")}
+Mapping: {"VEHICLE_TRACTION_STANDBY_TCD":  ("Model Root/STATUS_VEH/VehicleTractionStandby [0|1]/In1", "Model Root/status_veh/vehicletractionstandby [0|1]/In1")}
 Mapping: {"VEHICLE_TRACTION_STANDBY_MEAS": ("VehTrStby",)}
 Mapping: {"STARTER_BUTTON":                ("Model Root/CTRL_VEH/StarterButton [-1|0|1]/Value", "Model Root/ctrl_veh/starterbutton [-1|0|1]/Value")}
-Mapping: {"BRAKE_PEDAL":                   ("Model Root/CTRL_VEH/BrakePedal [%]/Value", "Model Root/ctrl_veh/brakepedal [%]/Value")}
+Mapping: {"BRAKE_PEDAL":                   ("Model Root/CTRL_VEH/BrakePedal [%]/Value", "Model Root/ctrl_veh/bakepedal [%]/Value")}
 Mapping: {"BATTERY_HEALTH":                ("Model Root/STATUS_BAT/StateOfHealth [%]/Value", "SoH", "BATTERY_UNIT/STATE/STATE/STATE_OF_HEALTH", "STATE.STATE_OF_HEALTH","Model Root/status_bat/stateofhealth [%]/Value")}
 Mapping: {"CABLE":                         ("Model Root/STATUS_WARNINGS/ChargingCable [0|1]/Value", "CABLE_BUS_TARGET", "CABLE_BUSDOT_TARGET")}
 Mapping: {"DOOR":                          ("Model Root/STATUS_WARNINGS/DoorOpen [0|1]/Value", "DOOR_BUS_TARGET",)}

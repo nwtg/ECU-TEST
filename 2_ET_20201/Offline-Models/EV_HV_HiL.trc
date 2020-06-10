@@ -430,13 +430,13 @@ group "Model Root"
 
     endgroup -- subsystem-group "STATUS_WARNINGS"
    
-    group "TERMS"  -- subsystem-group
+    group "CLAMPS"  -- subsystem-group
     {
      flags: COLLAPSED
      desc: ""
     }
 
-        group "Term15 [0|1]" -- block-group
+        group "Clamp15 [0|1]" -- block-group
         {
          block: "Scope"
          flags: BLOCK|COLLAPSED
@@ -449,9 +449,9 @@ group "Model Root"
              flags:   PARAM
             }
 
-        endgroup -- block-group "Term15 [0|1]"
+        endgroup -- block-group "Clamp15 [0|1]"
 
-        group "Term30 [0|1]" -- block-group
+        group "Clamp30 [0|1]" -- block-group
         {
          block: "Scope"
          flags: BLOCK|COLLAPSED
@@ -464,9 +464,9 @@ group "Model Root"
              flags:   PARAM
             }
 
-        endgroup -- block-group "Term30 [0|1]"
+        endgroup -- block-group "Clamp30 [0|1]"
 
-    endgroup -- subsystem-group "TERMS"
+    endgroup -- subsystem-group "CLAMPS"
 
 endgroup
 

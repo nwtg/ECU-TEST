@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PROJECT format-rev="9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<NAME xsi:type="unicode">Project</NAME>
+	<ENABLED xsi:type="boolean">True</ENABLED>
+	<REPORTING xsi:type="boolean">True</REPORTING>
+	<COMPONENTS>
+		<COMPONENT format-rev="9" xsi:type="subproject">
+			<NAME xsi:type="unicode">start test bench</NAME>
+			<ENABLED xsi:type="boolean">True</ENABLED>
+			<REPORTING xsi:type="boolean">True</REPORTING>
+			<COMPONENTS>
+				<COMPONENT format-rev="4" xsi:type="configChange">
+					<NAME xsi:type="unicode">start the modell</NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<LOAD-TEST-CONFIG xsi:type="unicode">_Results\40_SW_Ver_2_IBN\SW_Ver_2_IBN.tcf</LOAD-TEST-CONFIG>
+					<LOAD-TEST-BENCH-CONFIG xsi:type="unicode">_Results\40_SW_Ver_2_IBN\IBN_HiL.tbc</LOAD-TEST-BENCH-CONFIG>
+					<TOOL-TREATMENTS>
+						<TOOL-TREATMENT dkey="NOVACARTS">
+							<DVALUE xsi:type="integer">1</DVALUE>
+						</TOOL-TREATMENT>
+						<TOOL-TREATMENT dkey="VECTOR-HW">
+							<DVALUE xsi:type="integer">4</DVALUE>
+						</TOOL-TREATMENT>
+					</TOOL-TREATMENTS>
+				</COMPONENT>
+				<COMPONENT format-rev="4" xsi:type="packageTest">
+					<NAME xsi:type="unicode">Clamp30</NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<COMPONENTS>
+						<COMPONENT format-rev="2" xsi:type="paramRecord">
+							<NAME xsi:type="unicode">on</NAME>
+							<ENABLED xsi:type="boolean">True</ENABLED>
+							<REPORTING xsi:type="boolean">True</REPORTING>
+							<PARAMETER-DATA xsi:type="packageParameterData">
+								<PARAMETER xsi:type="parameterEntry">
+									<NAME xsi:type="unicode">clamp30</NAME>
+									<VALUE format-rev="1" xsi:type="valueBaseExpression">
+										<VALUE xsi:type="integer">1</VALUE>
+									</VALUE>
+								</PARAMETER>
+							</PARAMETER-DATA>
+						</COMPONENT>
+					</COMPONENTS>
+					<PACKAGE-REF format-rev="1" style="relative" xsi:type="packageRef">
+						<PACKAGE-PATH xsi:type="unicode">Lib\Clamp30.pkg</PACKAGE-PATH>
+					</PACKAGE-REF>
+				</COMPONENT>
+				<COMPONENT format-rev="4" xsi:type="configChange">
+					<NAME xsi:type="unicode">start the other tools</NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<LOAD-TEST-CONFIG xsi:type="unicode">_Results\40_SW_Ver_2_IBN\SW_Ver_2_IBN.tcf</LOAD-TEST-CONFIG>
+					<LOAD-TEST-BENCH-CONFIG xsi:type="unicode">_Results\40_SW_Ver_2_IBN\IBN_HiL.tbc</LOAD-TEST-BENCH-CONFIG>
+					<TOOL-TREATMENTS>
+						<TOOL-TREATMENT dkey="NOVACARTS">
+							<DVALUE xsi:type="integer">4</DVALUE>
+						</TOOL-TREATMENT>
+						<TOOL-TREATMENT dkey="VECTOR-HW">
+							<DVALUE xsi:type="integer">1</DVALUE>
+						</TOOL-TREATMENT>
+					</TOOL-TREATMENTS>
+				</COMPONENT>
+			</COMPONENTS>
+		</COMPONENT>
+		<COMPONENT format-rev="4" xsi:type="packageTest">
+			<NAME xsi:type="unicode">BasicDrive_Config_Change</NAME>
+			<ENABLED xsi:type="boolean">True</ENABLED>
+			<REPORTING xsi:type="boolean">True</REPORTING>
+			<COMPONENTS/>
+			<PACKAGE-REF format-rev="1" style="relative" xsi:type="packageRef">
+				<PACKAGE-PATH xsi:type="unicode">BasicDrive_Config_Change.pkg</PACKAGE-PATH>
+			</PACKAGE-REF>
+		</COMPONENT>
+		<COMPONENT format-rev="9" xsi:type="subproject">
+			<NAME xsi:type="unicode">stop test bench</NAME>
+			<ENABLED xsi:type="boolean">True</ENABLED>
+			<REPORTING xsi:type="boolean">True</REPORTING>
+			<COMPONENTS>
+				<COMPONENT format-rev="4" xsi:type="packageTest">
+					<NAME xsi:type="unicode">Clamp30</NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<COMPONENTS>
+						<COMPONENT format-rev="2" xsi:type="paramRecord">
+							<NAME xsi:type="unicode">off</NAME>
+							<ENABLED xsi:type="boolean">True</ENABLED>
+							<REPORTING xsi:type="boolean">True</REPORTING>
+							<PARAMETER-DATA xsi:type="packageParameterData">
+								<PARAMETER xsi:type="parameterEntry">
+									<NAME xsi:type="unicode">clamp30</NAME>
+									<VALUE format-rev="1" xsi:type="valueBaseExpression">
+										<VALUE xsi:type="integer">0</VALUE>
+									</VALUE>
+								</PARAMETER>
+							</PARAMETER-DATA>
+						</COMPONENT>
+					</COMPONENTS>
+					<PACKAGE-REF format-rev="1" style="relative" xsi:type="packageRef">
+						<PACKAGE-PATH xsi:type="unicode">Lib\Clamp30.pkg</PACKAGE-PATH>
+					</PACKAGE-REF>
+				</COMPONENT>
+				<COMPONENT format-rev="4" xsi:type="configChange">
+					<NAME xsi:type="unicode">stop all tools at once</NAME>
+					<ENABLED xsi:type="boolean">True</ENABLED>
+					<REPORTING xsi:type="boolean">True</REPORTING>
+					<LOAD-TEST-CONFIG xsi:type="unicode">_Results\40_SW_Ver_2_IBN\SW_Ver_2_IBN.tcf</LOAD-TEST-CONFIG>
+					<LOAD-TEST-BENCH-CONFIG xsi:type="unicode">_Results\40_SW_Ver_2_IBN\IBN_HiL.tbc</LOAD-TEST-BENCH-CONFIG>
+					<TOOL-TREATMENTS>
+						<TOOL-TREATMENT dkey="NOVACARTS">
+							<DVALUE xsi:type="integer">3</DVALUE>
+						</TOOL-TREATMENT>
+						<TOOL-TREATMENT dkey="VECTOR-HW">
+							<DVALUE xsi:type="integer">3</DVALUE>
+						</TOOL-TREATMENT>
+					</TOOL-TREATMENTS>
+				</COMPONENT>
+			</COMPONENTS>
+		</COMPONENT>
+	</COMPONENTS>
+</PROJECT>

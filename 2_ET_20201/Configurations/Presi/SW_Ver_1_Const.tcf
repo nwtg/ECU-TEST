@@ -9,7 +9,7 @@
 		<INCLUDE-APPLICATION-LOGS xsi:type="boolean">True</INCLUDE-APPLICATION-LOGS>
 	</REPORT>
 	<EXECUTION-DATA format-rev="1" xsi:type="executionData">
-		<AUTO-RESET xsi:type="boolean">True</AUTO-RESET>
+		<AUTO-RESET xsi:type="boolean">False</AUTO-RESET>
 	</EXECUTION-DATA>
 	<GLOBAL-CONSTANTS xsi:type="globalConstData">
 		<GLOBAL-CONSTANT format-rev="1" xsi:type="globalConstEntry">
