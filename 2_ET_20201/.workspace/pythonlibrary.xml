@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PYTHONLIBRARY-SETTINGS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<INSTALL-PYTHON-LIBRARY xsi:type="pythonLibrarySetting">
+		<LIBRARY-DIR xsi:type="string">C:\ECU-TEST_PythonLib</LIBRARY-DIR>
+	</INSTALL-PYTHON-LIBRARY>
+</PYTHONLIBRARY-SETTINGS>
