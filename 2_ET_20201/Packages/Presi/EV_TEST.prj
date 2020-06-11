@@ -10,8 +10,8 @@
 			<ENABLED xsi:type="boolean">True</ENABLED>
 			<REPORTING xsi:type="boolean">True</REPORTING>
 			<ID xsi:type="string">be891450aad711ea8c05bc9a78563412</ID>
-			<LOAD-TEST-CONFIG xsi:type="string">_Results\60_before_TraceAnalysis\SW_Ver_1.tcf</LOAD-TEST-CONFIG>
-			<LOAD-TEST-BENCH-CONFIG xsi:type="string">_Results\60_before_TraceAnalysis\Testlab_HiL.tbc</LOAD-TEST-BENCH-CONFIG>
+			<LOAD-TEST-CONFIG xsi:type="string">Presi\SW_Ver_1_Const.tcf</LOAD-TEST-CONFIG>
+			<LOAD-TEST-BENCH-CONFIG xsi:type="string">Presi\SW_Ver_1_Testlab_HiL.tbc</LOAD-TEST-BENCH-CONFIG>
 			<TOOL-TREATMENTS/>
 		</COMPONENT>
 		<COMPONENT format-rev="10" xsi:type="subproject">
