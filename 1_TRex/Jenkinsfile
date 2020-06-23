@@ -4,13 +4,13 @@ pipeline {
       stage('getJenkinsNode') {
         agent {
             node {
-                // any Windows node
-                label 'YT'
+                // master node, macOS
+                label 'master'
             }
         }
          steps {
             // Echo
-            bat label: '', script: '''python .\\getJenkinsNode.py "1_Trex"'''
+            sh label: '', script: 'python3 getJenkinsNode.py "1_Trex"'
             script{
                 load('jenkinsNode.properties')}
             echo "${env.jenkinsNode}"
