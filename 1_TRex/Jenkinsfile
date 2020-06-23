@@ -10,7 +10,7 @@ pipeline {
         }
          steps {
             // Echo
-            sh label: '', script: 'python3 getJenkinsNode.py "1_Trex"'
+            sh label: '', script: '/usr/local/bin/python3 getJenkinsNode.py "1_Trex"'
             script{
                 load('jenkinsNode.properties')}
             echo "${env.jenkinsNode}"
