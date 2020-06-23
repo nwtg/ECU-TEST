@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FILTER-SETTINGS format-rev="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<PROJECT-EDITOR/>
+	<WORKSPACE-EXPLORER>
+		<ELEMENT xsi:type="string">TestmanagementID='123'</ELEMENT>
+		<ELEMENT xsi:type="string">NAME = &quot;*tes*&quot;</ELEMENT>
+		<ELEMENT xsi:type="string">NAME = &quot;*test*&quot;</ELEMENT>
+		<ELEMENT xsi:type="string">NAME = &quot;*test*&quot; and NAME = &quot;*s*&quot;</ELEMENT>
+		<ELEMENT xsi:type="string">NAME = &quot;*test*&quot; and NAME = &quot;*sc*&quot;</ELEMENT>
+	</WORKSPACE-EXPLORER>
+</FILTER-SETTINGS>
