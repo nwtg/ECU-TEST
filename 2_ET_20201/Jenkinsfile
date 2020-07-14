@@ -4,13 +4,13 @@ pipeline {
       stage('getJenkinsNode') {
         agent {
             node {
-                // master node: macOS
-                label 'master'
+                // any Windows node
+                label 'ytspc'
             }
         }
          steps {
             // Echo
-            sh label: '', script: '/usr/local/bin/python3 getJenkinsNode.py "2_ET_20201"'
+            bat label: '', script: '''python .\\getJenkinsNode.py "2_ET_20201"'''
             script{
                 load('jenkinsNode.properties')}
             echo "${env.jenkinsNode}"
